@@ -54,6 +54,112 @@ const M_ORDER: f32 = 0.55;
 /// How much of the final score comes from the contrast curve rather than the raw
 /// similarity. All contrast sharpens separation, all raw ranks more smoothly.
 const SHARPEN: f32 = 0.82;
+/// Semantic credit: what a vector match is worth next to an exact one, the cosine
+/// below which a match is mere topicality rather than a paraphrase, and the share of
+/// the answer-bearing content that vectors alone are allowed to satisfy. That last
+/// one is the guard: without it an answer that merely names the subject ("Australia"
+/// for "Canberra") reads as having answered.
+const SOFT_W: f32 = 0.85;
+const SOFT_MIN: f32 = 0.55;
+const SOFT_CAP_FRAC: f32 = 0.5;
+
+/// Squared ramp above SOFT_MIN, so a near synonym earns most of the credit and a
+/// merely related word earns almost none.
+fn soft_credit(sim: f32) -> f32 {
+    if sim < SOFT_MIN { return 0.0; }
+    let t = (sim - SOFT_MIN) / (1.0 - SOFT_MIN);
+    SOFT_W * t * t
+}
+
+// ---------------------------------------------------------------------------
+// Word vectors
+// ---------------------------------------------------------------------------
+// A scoring module gets no network and no corpus, so semantic similarity has to be
+// compiled in. This is the top 40,000 GloVe vectors, L2 normalised and quantised to
+// one byte per dimension: 2.1 MB inside the 32 MB the node allows, and a cosine is
+// an integer dot product over 50 bytes.
+//
+// The vectors supply topicality, not correctness. Distributional vectors put "rise"
+// and "fall" at cosine 0.88 because they occur in the same contexts, so direction
+// and verdict stay with the polarity axes further down. Conflating the two is how a
+// purely semantic scorer ends up rating a confidently wrong answer as a good one.
+//
+// GloVe: Pennington, Socher and Manning 2014, Open Data Commons PDDL v1.0.
+// Regenerate with tools/pack_vectors.py.
+
+static VEC_BLOB: &[u8] = include_bytes!("vectors.bin");
+const VEC_DIM: usize = 50;
+/// Two int8 rows are each scaled by 127, so their dot product is 127^2 * cosine.
+const VEC_SCALE: f32 = 16129.0;
+/// Bounds on the pairwise work, so a 78 KB answer costs a predictable amount.
+const SOFT_PAIR_CAP: usize = 128;
+const SOFT_BUDGET: usize = 512;
+
+fn u32_at(off: usize) -> u32 {
+    u32::from_le_bytes([VEC_BLOB[off], VEC_BLOB[off + 1], VEC_BLOB[off + 2], VEC_BLOB[off + 3]])
+}
+
+fn vec_count() -> usize {
+    if VEC_BLOB.len() < 12 || VEC_BLOB[0] != b'T' || VEC_BLOB[1] != b'G' || VEC_BLOB[2] != b'V' {
+        return 0;
+    }
+    if u32_at(8) as usize != VEC_DIM {
+        return 0;
+    }
+    u32_at(4) as usize
+}
+
+/// Row index for a token hash, or -1 when the word is not in the table.
+fn vec_row(hash: u32) -> i32 {
+    let n = vec_count();
+    let mut lo = 0usize;
+    let mut hi = n;
+    while lo < hi {
+        let mid = (lo + hi) / 2;
+        let k = u32_at(12 + 4 * mid);
+        if k == hash {
+            return mid as i32;
+        }
+        if k < hash { lo = mid + 1; } else { hi = mid; }
+    }
+    -1
+}
+
+fn cosine(a: i32, b: i32) -> f32 {
+    if a < 0 || b < 0 { return 0.0; }
+    if a == b { return 1.0; }
+    let base = 12 + 4 * vec_count();
+    let oa = base + a as usize * VEC_DIM;
+    let ob = base + b as usize * VEC_DIM;
+    if oa + VEC_DIM > VEC_BLOB.len() || ob + VEC_DIM > VEC_BLOB.len() { return 0.0; }
+    let mut dot = 0i32;
+    let mut k = 0;
+    while k < VEC_DIM {
+        dot += (VEC_BLOB[oa + k] as i8 as i32) * (VEC_BLOB[ob + k] as i8 as i32);
+        k += 1;
+    }
+    if dot <= 0 { return 0.0; }
+    let c = dot as f32 / VEC_SCALE;
+    if c > 1.0 { 1.0 } else { c }
+}
+
+/// Best cosine between token `i` of `from` and any content token of `to`.
+fn soft_best(from: &Toks, i: usize, to: &Toks) -> f32 {
+    let row = from.row[i];
+    if row < 0 { return 0.0; }
+    let mut best = 0.0f32;
+    let mut seen = 0usize;
+    let mut j = 0usize;
+    while j < to.n && seen < SOFT_PAIR_CAP {
+        if to.w[j] > 0.5 && to.row[j] >= 0 {
+            seen += 1;
+            let c = cosine(row, to.row[j]);
+            if c > best { best = c; }
+        }
+        j += 1;
+    }
+    best
+}
 
 // ---------------------------------------------------------------------------
 // Host memory interface
@@ -254,6 +360,8 @@ struct Toks {
     first: [u8; MAX_TOKENS],
     /// True when a clause boundary follows this token.
     bnd: [bool; MAX_TOKENS],
+    /// Row in the vector table, or -1 when the word is not in it.
+    row: [i32; MAX_TOKENS],
 }
 
 const EMPTY_TOKS: Toks = Toks {
@@ -267,6 +375,7 @@ const EMPTY_TOKS: Toks = Toks {
     acro: [0; MAX_TOKENS],
     first: [0; MAX_TOKENS],
     bnd: [false; MAX_TOKENS],
+    row: [-1; MAX_TOKENS],
 };
 
 static mut TQ: Toks = EMPTY_TOKS;
@@ -436,6 +545,7 @@ fn tokenize(src: &[u8], t: &mut Toks) {
         t.neg[k] = negwin > 0;
         t.acro[k] = acronym_key(tok);
         t.first[k] = if is_alpha(tok[0]) { lower(tok[0]) } else { 0 };
+        t.row[k] = if numeric { -1 } else { vec_row(hash) };
         if in_table(NEG, hash) {
             negwin = 4;
         } else if negwin > 0 {
@@ -843,6 +953,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         let mut p_tot = 0.0f32;
         let mut an_content = 0.0f32;
         let mut an_novel = 0.0f32;
+        let mut soft_left = SOFT_BUDGET;
         let mut i = 0;
         while i < ta.n {
             let w = ta.w[i];
@@ -857,6 +968,12 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
             } else if from_question {
                 p_tot += w * 0.35;
             } else {
+                // No exact match, so ask the vectors whether the answer said the
+                // same thing in another word.
+                if w > 0.5 && soft_left > 0 {
+                    soft_left -= 1;
+                    p_hit += w * soft_credit(soft_best(ta, i, tg));
+                }
                 p_tot += w;
             }
             i += 1;
@@ -869,19 +986,27 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         let mut r_tot = 0.0f32;
         let mut k_hit = 0.0f32;
         let mut k_tot = 0.0f32;
+        let mut r_soft = 0.0f32;
+        let mut k_soft = 0.0f32;
         i = 0;
         while i < tg.n {
             let w = tg.w[i];
             let in_question = matched(sq, tg, i);
-            let covered = matched(sa, tg, i) || gt_bridge[i];
+            let hard = matched(sa, tg, i) || gt_bridge[i];
+            let soft = if hard || w <= 0.5 { 0.0 } else { soft_credit(soft_best(tg, i, ta)) };
             r_tot += w;
-            if covered { r_hit += w; }
+            if hard { r_hit += w; } else { r_soft += w * soft; }
             if !in_question {
                 k_tot += w;
-                if covered { k_hit += w; }
+                if hard { k_hit += w; } else { k_soft += w * soft; }
             }
             i += 1;
         }
+        // Vectors can fill in for wording, not for the answer itself.
+        let r_cap = SOFT_CAP_FRAC * r_tot;
+        let k_cap = SOFT_CAP_FRAC * k_tot;
+        r_hit += if r_soft > r_cap { r_cap } else { r_soft };
+        k_hit += if k_soft > k_cap { k_cap } else { k_soft };
 
         // Concave in precision: a correct answer that adds supporting context is
         // still correct, while heavy dilution (a shotgun list of candidates, a

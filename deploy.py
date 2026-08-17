@@ -30,7 +30,7 @@ BASE = {
     "F_BETA2": 0.36, "P_CONCAVE": 1.0, "W_LEX": 0.76, "W_GRAM3": 0.20, "W_GRAM2": 0.04,
     "M_CONTRA": 0.3, "M_SILENT": 0.95, "B_AGREE": 0.35, "R_KEY_BASE": 0.5, "R_FLOOR": 0.3,
     "SHARPEN": 0.82, "M_NUM_MISS_BASE": 0.62, "M_NUM_WRONG": 0.45, "M_TWO_FACED": 0.5,
-    "M_ORDER": 0.55,
+    "M_ORDER": 0.55, "SOFT_MIN": 0.55, "SOFT_W": 0.85, "SOFT_CAP_FRAC": 0.5,
 }
 
 # Per-shape overrides. A verdict intent lives or dies on polarity, so contradicting
@@ -94,9 +94,14 @@ def build_and_gate():
 
 
 def keccak(path):
+    """keccak256 of the raw bytes. Done in process because a 2 MB binary as a hex
+    argument overflows the exec argument limit, and this is the hash the registry
+    stores (miner YAML uses sha256, WASM uses keccak256)."""
+    from Crypto.Hash import keccak as _k
     data = open(path, "rb").read()
-    out = run(["cast", "keccak", "0x" + data.hex()]).stdout.strip()
-    return out, len(data)
+    h = _k.new(digest_bits=256)
+    h.update(data)
+    return "0x" + h.hexdigest(), len(data)
 
 
 def pin(path, name):

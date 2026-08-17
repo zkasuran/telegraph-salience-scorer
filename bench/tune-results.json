@@ -1,3193 +1,415 @@
 [
  {
-  "margin": 0.5776,
+  "margin": 0.6446,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6003,
-  "stddev": 0.3455,
+  "spearman": 0.6543,
+  "stddev": 0.3754,
   "worst_self": 1.0,
-  "fails": 0,
+  "fails": 2,
   "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
-  "feasible": true
+  "feasible": false
  },
  {
-  "margin": 0.5961,
+  "margin": 0.6695,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6003,
-  "stddev": 0.3571,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.5622,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6088,
-  "stddev": 0.3409,
+  "spearman": 0.6543,
+  "stddev": 0.3891,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5812,
+  "margin": 0.6483,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6088,
-  "stddev": 0.3528,
+  "spearman": 0.6485,
+  "stddev": 0.3771,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6733,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6485,
+  "stddev": 0.3908,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5594,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6287,
-  "stddev": 0.3398,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5798,
+  "margin": 0.6191,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6287,
-  "stddev": 0.3524,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5398,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6419,
-  "stddev": 0.3333,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5607,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6419,
-  "stddev": 0.3461,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5511,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.3385,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5697,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.3505,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5323,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6479,
-  "stddev": 0.3326,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5516,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6479,
-  "stddev": 0.3449,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5384,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6255,
-  "stddev": 0.3364,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5592,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6255,
-  "stddev": 0.3493,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5143,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.638,
-  "stddev": 0.3279,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5354,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.638,
-  "stddev": 0.341,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5309,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3355,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5502,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.348,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5077,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6551,
-  "stddev": 0.3278,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5275,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6551,
-  "stddev": 0.3405,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5228,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6488,
-  "stddev": 0.3348,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5406,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6488,
-  "stddev": 0.3468,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5007,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6593,
-  "stddev": 0.3279,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5188,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6593,
-  "stddev": 0.3399,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.65,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6119,
-  "stddev": 0.3759,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6711,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6119,
-  "stddev": 0.3878,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6321,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6212,
-  "stddev": 0.3706,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6537,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6212,
-  "stddev": 0.3827,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6152,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6253,
-  "stddev": 0.3625,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6373,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6253,
-  "stddev": 0.3748,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5936,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6339,
-  "stddev": 0.3553,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6161,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6339,
-  "stddev": 0.3679,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6073,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6284,
-  "stddev": 0.3609,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6278,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6284,
-  "stddev": 0.3726,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5867,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6408,
-  "stddev": 0.3543,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6076,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6408,
-  "stddev": 0.3663,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.579,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6209,
-  "stddev": 0.3519,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6006,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6209,
-  "stddev": 0.3643,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5534,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6348,
-  "stddev": 0.3428,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5752,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6348,
-  "stddev": 0.3553,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5717,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6286,
-  "stddev": 0.3508,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5919,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6286,
-  "stddev": 0.3627,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5471,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6417,
-  "stddev": 0.3425,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5676,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6417,
-  "stddev": 0.3545,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5637,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6369,
-  "stddev": 0.3498,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5823,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6369,
-  "stddev": 0.3612,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5401,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6487,
-  "stddev": 0.3422,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.559,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6487,
-  "stddev": 0.3537,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.36,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5887,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6095,
-  "stddev": 0.3495,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6072,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6095,
-  "stddev": 0.3612,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.574,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6207,
-  "stddev": 0.3453,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5931,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6207,
-  "stddev": 0.3572,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5681,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6202,
-  "stddev": 0.3427,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5885,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6202,
-  "stddev": 0.3552,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5491,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6342,
-  "stddev": 0.3365,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5702,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6342,
-  "stddev": 0.3493,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5595,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6295,
-  "stddev": 0.3412,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5782,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6295,
-  "stddev": 0.3531,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5415,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6414,
-  "stddev": 0.3356,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5607,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6414,
-  "stddev": 0.3477,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5448,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6206,
-  "stddev": 0.3382,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5655,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6206,
-  "stddev": 0.3511,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5212,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6323,
-  "stddev": 0.33,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5424,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6323,
-  "stddev": 0.343,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5371,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6338,
-  "stddev": 0.3372,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5564,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6338,
-  "stddev": 0.3496,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5145,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6497,
-  "stddev": 0.3298,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5342,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6497,
-  "stddev": 0.3423,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5288,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.643,
-  "stddev": 0.3364,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5464,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.643,
-  "stddev": 0.3481,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5072,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6535,
-  "stddev": 0.3296,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5252,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6535,
-  "stddev": 0.3415,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.648,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6063,
-  "stddev": 0.3751,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6683,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6063,
-  "stddev": 0.3867,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6318,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6174,
-  "stddev": 0.3704,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6526,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6174,
-  "stddev": 0.3822,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.614,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6119,
-  "stddev": 0.3617,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6356,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6119,
-  "stddev": 0.3739,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5939,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6258,
-  "stddev": 0.3551,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6159,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6258,
-  "stddev": 0.3675,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6058,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6275,
-  "stddev": 0.3599,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6256,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6275,
-  "stddev": 0.3714,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5866,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3539,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6069,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6413,
+  "spearman": 0.6589,
   "stddev": 0.3656,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5784,
+  "margin": 0.6438,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6181,
-  "stddev": 0.3512,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5996,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6181,
-  "stddev": 0.3634,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5538,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6319,
-  "stddev": 0.3426,
+  "spearman": 0.6589,
+  "stddev": 0.379,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5754,
+  "margin": 0.6219,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6319,
-  "stddev": 0.355,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5708,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6247,
-  "stddev": 0.3499,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5906,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6247,
-  "stddev": 0.3616,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5473,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6378,
-  "stddev": 0.3421,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5675,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6378,
-  "stddev": 0.3539,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5625,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6328,
-  "stddev": 0.3487,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5807,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6328,
-  "stddev": 0.3599,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.54,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6461,
-  "stddev": 0.3416,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5585,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6461,
-  "stddev": 0.3529,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 0.8,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6001,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6064,
-  "stddev": 0.3544,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6187,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6064,
-  "stddev": 0.366,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.5858,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6199,
-  "stddev": 0.3502,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6051,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6199,
-  "stddev": 0.3621,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.577,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6071,
-  "stddev": 0.3462,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5974,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6071,
-  "stddev": 0.3586,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5584,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6224,
-  "stddev": 0.3401,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5795,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6224,
-  "stddev": 0.3528,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5683,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6287,
-  "stddev": 0.3445,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5869,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6287,
-  "stddev": 0.3562,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5506,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6419,
-  "stddev": 0.339,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5698,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6419,
-  "stddev": 0.351,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5513,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6148,
-  "stddev": 0.3405,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.572,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6148,
-  "stddev": 0.3531,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.528,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6265,
-  "stddev": 0.3324,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5492,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6265,
-  "stddev": 0.3452,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5435,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6206,
-  "stddev": 0.3394,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5627,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6206,
-  "stddev": 0.3514,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5212,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6365,
-  "stddev": 0.332,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5409,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6365,
-  "stddev": 0.3442,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5351,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6395,
-  "stddev": 0.3383,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5525,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6395,
-  "stddev": 0.3498,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5138,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6527,
-  "stddev": 0.3317,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5317,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6527,
-  "stddev": 0.3433,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6463,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.5945,
-  "stddev": 0.3748,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6659,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.5945,
-  "stddev": 0.386,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6311,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.608,
-  "stddev": 0.3704,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6512,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.608,
-  "stddev": 0.3819,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.613,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6058,
-  "stddev": 0.3613,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.634,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6058,
-  "stddev": 0.3732,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5937,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6198,
-  "stddev": 0.355,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6153,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6198,
-  "stddev": 0.3671,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6046,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6158,
-  "stddev": 0.3593,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6239,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6158,
-  "stddev": 0.3705,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5861,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.629,
-  "stddev": 0.3535,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.606,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.629,
-  "stddev": 0.365,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5778,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6144,
-  "stddev": 0.3507,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5987,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6144,
-  "stddev": 0.3627,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5539,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6261,
-  "stddev": 0.3423,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5752,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6261,
-  "stddev": 0.3545,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5701,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.619,
-  "stddev": 0.3493,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5895,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.619,
-  "stddev": 0.3608,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5472,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6349,
-  "stddev": 0.3417,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.567,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6349,
-  "stddev": 0.3533,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5617,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6323,
-  "stddev": 0.348,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5794,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6323,
-  "stddev": 0.3589,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5398,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6456,
-  "stddev": 0.3411,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5579,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6456,
-  "stddev": 0.3521,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 1.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6105,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6052,
-  "stddev": 0.3591,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.629,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6052,
-  "stddev": 0.3706,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": true
- },
- {
-  "margin": 0.5964,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6188,
-  "stddev": 0.3551,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6156,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6188,
+  "spearman": 0.6531,
   "stddev": 0.3668,
   "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6467,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6531,
+  "stddev": 0.3802,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6439,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6543,
+  "stddev": 0.3762,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6689,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6543,
+  "stddev": 0.3899,
+  "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5851,
+  "margin": 0.6476,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6022,
-  "stddev": 0.3496,
+  "spearman": 0.6485,
+  "stddev": 0.3779,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6728,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6485,
+  "stddev": 0.3916,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6055,
+  "margin": 0.6178,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6022,
-  "stddev": 0.3618,
+  "spearman": 0.6589,
+  "stddev": 0.3662,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6425,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6589,
+  "stddev": 0.3797,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6206,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6531,
+  "stddev": 0.3674,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6453,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6531,
+  "stddev": 0.3808,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6444,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6543,
+  "stddev": 0.3764,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6694,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6543,
+  "stddev": 0.3901,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5667,
+  "margin": 0.6481,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6197,
-  "stddev": 0.3436,
+  "spearman": 0.6485,
+  "stddev": 0.3781,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5878,
+  "margin": 0.6733,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6197,
-  "stddev": 0.356,
+  "spearman": 0.6485,
+  "stddev": 0.3918,
   "worst_self": 1.0,
-  "fails": 2,
+  "fails": 1,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5763,
+  "margin": 0.6182,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6187,
-  "stddev": 0.3477,
+  "spearman": 0.6589,
+  "stddev": 0.3664,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5948,
+  "margin": 0.6429,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6187,
-  "stddev": 0.3592,
+  "spearman": 0.6589,
+  "stddev": 0.3799,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5588,
+  "margin": 0.6211,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6319,
-  "stddev": 0.3423,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.578,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6319,
-  "stddev": 0.354,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5573,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6172,
-  "stddev": 0.3427,
+  "spearman": 0.6531,
+  "stddev": 0.3676,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5778,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6172,
-  "stddev": 0.355,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5341,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6289,
-  "stddev": 0.3346,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5552,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6289,
-  "stddev": 0.3472,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5494,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6221,
-  "stddev": 0.3414,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5684,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6221,
-  "stddev": 0.3532,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5273,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.638,
-  "stddev": 0.334,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5468,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.638,
-  "stddev": 0.3461,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5409,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.3402,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5582,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.3514,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5197,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6438,
-  "stddev": 0.3336,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5375,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6438,
-  "stddev": 0.345,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
@@ -3195,132 +417,233 @@
   "margin": 0.6458,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.5921,
-  "stddev": 0.3752,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6648,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.5921,
-  "stddev": 0.3861,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6311,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6056,
-  "stddev": 0.3709,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6506,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6056,
-  "stddev": 0.3821,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6128,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.5971,
-  "stddev": 0.3614,
+  "spearman": 0.6531,
+  "stddev": 0.381,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6335,
+  "margin": 0.6435,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.5971,
-  "stddev": 0.373,
+  "spearman": 0.6557,
+  "stddev": 0.3759,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5939,
+  "margin": 0.6684,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.611,
-  "stddev": 0.3551,
+  "spearman": 0.6557,
+  "stddev": 0.3897,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6464,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6546,
+  "stddev": 0.3773,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6715,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6546,
+  "stddev": 0.3911,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6168,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6624,
+  "stddev": 0.3655,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6413,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6624,
+  "stddev": 0.379,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6188,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6592,
+  "stddev": 0.3665,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6434,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6592,
+  "stddev": 0.3798,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6429,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6565,
+  "stddev": 0.3768,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.668,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6565,
+  "stddev": 0.3906,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6459,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6543,
+  "stddev": 0.3783,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.671,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6543,
+  "stddev": 0.3921,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
@@ -3328,816 +651,467 @@
   "margin": 0.6152,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.611,
-  "stddev": 0.3671,
+  "spearman": 0.6632,
+  "stddev": 0.3662,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6043,
+  "margin": 0.6398,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6147,
-  "stddev": 0.3592,
+  "spearman": 0.6632,
+  "stddev": 0.3797,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6173,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6589,
+  "stddev": 0.3672,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6419,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6589,
+  "stddev": 0.3806,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6431,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6565,
+  "stddev": 0.3774,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6682,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6565,
+  "stddev": 0.3912,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6232,
+  "margin": 0.6461,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6147,
-  "stddev": 0.3701,
+  "spearman": 0.6543,
+  "stddev": 0.3788,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6713,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6543,
+  "stddev": 0.3926,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5863,
+  "margin": 0.6152,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6279,
-  "stddev": 0.3536,
+  "spearman": 0.6632,
+  "stddev": 0.3668,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6058,
+  "margin": 0.6397,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6279,
-  "stddev": 0.3648,
+  "spearman": 0.6632,
+  "stddev": 0.3802,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5778,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6149,
-  "stddev": 0.3506,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5984,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6149,
-  "stddev": 0.3624,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5542,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6266,
-  "stddev": 0.3422,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5753,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6266,
-  "stddev": 0.3543,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.57,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6204,
-  "stddev": 0.349,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5891,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6204,
-  "stddev": 0.3603,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5475,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6363,
-  "stddev": 0.3415,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5671,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6363,
-  "stddev": 0.3529,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5615,
+  "margin": 0.6173,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.627,
-  "stddev": 0.3476,
+  "spearman": 0.6589,
+  "stddev": 0.3677,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5789,
+  "margin": 0.6418,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.627,
-  "stddev": 0.3582,
+  "spearman": 0.6589,
+  "stddev": 0.3811,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
+   "SOFT_MIN": 0.45,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6508,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6504,
+  "stddev": 0.3764,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5399,
+  "margin": 0.6755,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6429,
-  "stddev": 0.3408,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5578,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6429,
-  "stddev": 0.3516,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 2.5,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6197,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6048,
-  "stddev": 0.3636,
+  "spearman": 0.6504,
+  "stddev": 0.3898,
   "worst_self": 1.0,
   "fails": 0,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": true
  },
  {
-  "margin": 0.6382,
+  "margin": 0.6562,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6048,
-  "stddev": 0.3748,
+  "spearman": 0.6448,
+  "stddev": 0.3786,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6812,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6448,
+  "stddev": 0.392,
   "worst_self": 1.0,
   "fails": 0,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": true
  },
  {
-  "margin": 0.6058,
+  "margin": 0.6273,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6183,
-  "stddev": 0.3596,
+  "spearman": 0.6539,
+  "stddev": 0.3675,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6249,
+  "margin": 0.652,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6183,
-  "stddev": 0.3711,
+  "spearman": 0.6539,
+  "stddev": 0.3808,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.5923,
+  "margin": 0.6319,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.5943,
-  "stddev": 0.3527,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6126,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.5943,
-  "stddev": 0.3647,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5741,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6118,
-  "stddev": 0.3467,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5951,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6118,
-  "stddev": 0.359,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5836,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6148,
-  "stddev": 0.3507,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.602,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6148,
-  "stddev": 0.3619,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5662,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.628,
-  "stddev": 0.3453,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5853,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.628,
-  "stddev": 0.3568,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5626,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.614,
-  "stddev": 0.3447,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5831,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.614,
-  "stddev": 0.3568,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5396,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6284,
-  "stddev": 0.3366,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5606,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6284,
-  "stddev": 0.3489,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5547,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6189,
-  "stddev": 0.3433,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5736,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6189,
-  "stddev": 0.3548,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5327,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.637,
-  "stddev": 0.3359,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5521,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.637,
-  "stddev": 0.3477,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5461,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6328,
-  "stddev": 0.342,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5633,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6328,
-  "stddev": 0.3529,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5251,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6434,
-  "stddev": 0.3354,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5427,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6434,
-  "stddev": 0.3464,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 0.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.646,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.5921,
-  "stddev": 0.3758,
+  "spearman": 0.6494,
+  "stddev": 0.3693,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6645,
+  "margin": 0.6567,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.5921,
-  "stddev": 0.3865,
+  "spearman": 0.6494,
+  "stddev": 0.3826,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6509,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6504,
+  "stddev": 0.377,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6757,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6504,
+  "stddev": 0.3905,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6563,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6448,
+  "stddev": 0.3792,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6813,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6448,
+  "stddev": 0.3927,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.627,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6539,
+  "stddev": 0.3681,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6517,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6539,
+  "stddev": 0.3814,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
@@ -4145,18 +1119,557 @@
   "margin": 0.6316,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6056,
-  "stddev": 0.3717,
+  "spearman": 0.6494,
+  "stddev": 0.3698,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.04
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6564,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6494,
+  "stddev": 0.3832,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6512,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6504,
+  "stddev": 0.3771,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.676,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6504,
+  "stddev": 0.3906,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6566,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6448,
+  "stddev": 0.3793,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6817,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6448,
+  "stddev": 0.3928,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6274,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6539,
+  "stddev": 0.3682,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.652,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6539,
+  "stddev": 0.3815,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6319,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6494,
+  "stddev": 0.37,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6568,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6494,
+  "stddev": 0.3833,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6512,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6488,
+  "stddev": 0.3768,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6762,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6488,
+  "stddev": 0.3904,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6562,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6447,
+  "stddev": 0.3789,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6814,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6447,
+  "stddev": 0.3924,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6267,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6535,
+  "stddev": 0.3675,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6514,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6535,
+  "stddev": 0.3809,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6308,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6493,
+  "stddev": 0.3691,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6557,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6493,
+  "stddev": 0.3825,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6505,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6488,
+  "stddev": 0.3776,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6755,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6488,
+  "stddev": 0.3912,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6555,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6447,
+  "stddev": 0.3797,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6807,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6447,
+  "stddev": 0.3933,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6253,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6535,
+  "stddev": 0.3682,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.65,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6535,
+  "stddev": 0.3816,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6294,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6493,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6543,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6493,
+  "stddev": 0.3832,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6513,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6488,
+  "stddev": 0.378,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6763,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6488,
+  "stddev": 0.3916,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6563,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6447,
+  "stddev": 0.38,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6815,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6447,
+  "stddev": 0.3937,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.626,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6535,
+  "stddev": 0.3686,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
@@ -4164,398 +1677,917 @@
   "margin": 0.6507,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6056,
-  "stddev": 0.3826,
+  "spearman": 0.6535,
+  "stddev": 0.382,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.76,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.04
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6132,
+  "margin": 0.6301,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.5956,
-  "stddev": 0.3617,
+  "spearman": 0.6493,
+  "stddev": 0.3702,
   "worst_self": 1.0,
-  "fails": 2,
+  "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6335,
+  "margin": 0.6549,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.5956,
+  "spearman": 0.6493,
+  "stddev": 0.3835,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6554,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6407,
+  "stddev": 0.3777,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6794,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6407,
+  "stddev": 0.3908,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6622,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.633,
+  "stddev": 0.3804,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6866,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.633,
+  "stddev": 0.3936,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6347,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6461,
+  "stddev": 0.3702,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6588,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6461,
+  "stddev": 0.3833,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6408,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6383,
+  "stddev": 0.3725,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6652,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6383,
+  "stddev": 0.3856,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6566,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6407,
+  "stddev": 0.3781,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6807,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6407,
+  "stddev": 0.3913,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6634,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.633,
+  "stddev": 0.3808,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6878,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.633,
+  "stddev": 0.3941,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6358,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6461,
+  "stddev": 0.3706,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.66,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6461,
+  "stddev": 0.3837,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6419,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6383,
+  "stddev": 0.3729,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6664,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6383,
+  "stddev": 0.3861,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6566,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6407,
+  "stddev": 0.3781,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6807,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6407,
+  "stddev": 0.3913,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6634,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.633,
+  "stddev": 0.3808,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6878,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.633,
+  "stddev": 0.3941,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6358,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6461,
+  "stddev": 0.3706,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.66,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6461,
+  "stddev": 0.3837,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6419,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6383,
+  "stddev": 0.3729,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6664,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6383,
+  "stddev": 0.3861,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6565,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6413,
+  "stddev": 0.3783,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6808,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6413,
+  "stddev": 0.3916,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6632,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6332,
+  "stddev": 0.381,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6878,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6332,
+  "stddev": 0.3943,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.635,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6467,
+  "stddev": 0.3705,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6593,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6467,
+  "stddev": 0.3837,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6409,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6386,
+  "stddev": 0.3727,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6655,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6386,
+  "stddev": 0.3859,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6572,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6413,
+  "stddev": 0.3788,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6816,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6413,
+  "stddev": 0.3921,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6638,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6332,
+  "stddev": 0.3814,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6885,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6332,
+  "stddev": 0.3948,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6354,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6467,
+  "stddev": 0.3709,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6598,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6467,
+  "stddev": 0.3841,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6413,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6386,
   "stddev": 0.3731,
   "worst_self": 1.0,
-  "fails": 2,
+  "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5946,
+  "margin": 0.6659,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.608,
-  "stddev": 0.3555,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6155,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.608,
-  "stddev": 0.3672,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6046,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6119,
-  "stddev": 0.3594,
+  "spearman": 0.6386,
+  "stddev": 0.3864,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6231,
+  "margin": 0.6577,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6119,
-  "stddev": 0.3701,
+  "spearman": 0.6413,
+  "stddev": 0.3791,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6821,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6413,
+  "stddev": 0.3923,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6644,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6332,
+  "stddev": 0.3817,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.689,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6332,
+  "stddev": 0.395,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6359,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6467,
+  "stddev": 0.3711,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5869,
+  "margin": 0.6603,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6251,
-  "stddev": 0.3538,
+  "spearman": 0.6467,
+  "stddev": 0.3844,
   "worst_self": 1.0,
-  "fails": 2,
+  "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.5,
+   "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6061,
+  "margin": 0.6418,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6251,
-  "stddev": 0.3648,
+  "spearman": 0.6386,
+  "stddev": 0.3734,
   "worst_self": 1.0,
-  "fails": 2,
+  "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.6,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.5781,
-  "wins": 39,
+  "margin": 0.6664,
+  "wins": 40,
   "ties": 0,
-  "spearman": 0.6113,
-  "stddev": 0.3506,
+  "spearman": 0.6386,
+  "stddev": 0.3866,
   "worst_self": 1.0,
-  "fails": 2,
+  "fails": 1,
   "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5986,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6113,
-  "stddev": 0.3622,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5548,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.623,
-  "stddev": 0.3423,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5758,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.623,
-  "stddev": 0.3542,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.2,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.35
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5703,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6179,
-  "stddev": 0.349,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5892,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6179,
-  "stddev": 0.36,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.548,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6338,
-  "stddev": 0.3415,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5674,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6338,
-  "stddev": 0.3527,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.35,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.2
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5617,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6254,
-  "stddev": 0.3475,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5789,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6254,
-  "stddev": 0.3579,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.3,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.5404,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3407,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.6,
-   "W_GRAM2": 0.05
-  },
-  "feasible": false
- },
- {
-  "margin": 0.558,
-  "wins": 39,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3513,
-  "worst_self": 1.0,
-  "fails": 3,
-  "values": {
-   "F_BETA2": 4.0,
-   "P_CONCAVE": 1.0,
-   "W_LEX": 0.45,
-   "W_GRAM3": 0.5,
-   "M_CONTRA": 0.5,
-   "SHARPEN": 0.82,
-   "W_GRAM2": 0.05
+   "SOFT_MIN": 0.65,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
   },
   "feasible": false
  }
