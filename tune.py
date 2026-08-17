@@ -22,11 +22,10 @@ LIB = os.path.join(ROOT, "module", "src", "lib.rs")
 WASM = os.path.join(ROOT, "module", "target", "wasm32-unknown-unknown", "release", "telegraph_scorer.wasm")
 
 GRID = {
-    "SOFT_MIN": [0.45, 0.55, 0.65],
+    "SOFT_MIN": [0.35, 0.42, 0.48, 0.55],
     "SOFT_W": [0.85, 1.0],
-    "SOFT_CAP_FRAC": [0.35, 0.50, 0.70],
+    "SOFT_CAP_FRAC": [0.50, 0.70, 0.90],
     "M_CONTRA": [0.30, 0.45],
-    "R_KEY_BASE": [0.50, 0.70],
     "SHARPEN": [0.60, 0.82],
 }
 

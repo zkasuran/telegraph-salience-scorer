@@ -6,11 +6,11 @@
       "wins": 40,
       "ties": 0,
       "losses": null,
-      "candidate_margin": 0.6689564952215733,
-      "mean_good": 0.7695973929017782,
-      "mean_bad": 0.10064089768020494,
+      "candidate_margin": 0.681263354798648,
+      "mean_good": 0.7873233515769243,
+      "mean_bad": 0.1060599967782764,
       "worst_self_match": 1,
-      "score_stddev": 0.38633239688143356,
+      "score_stddev": 0.3882025646507413,
       "min_case_margin": 0.12766295671463013,
       "per_case": {
         "acad-search": [
@@ -22,7 +22,7 @@
           0.0008095947559922934
         ],
         "aidet-no": [
-          0.6094157099723816,
+          0.6675817966461182,
           0.0005071834311820567
         ],
         "aidet-yes": [
@@ -30,7 +30,7 @@
           0.00021953957912046462
         ],
         "code-git-undo": [
-          0.8871914744377136,
+          0.8871937990188599,
           0.1008186936378479
         ],
         "code-py-len": [
@@ -50,31 +50,31 @@
           0.04256885498762131
         ],
         "extract-field": [
-          0.8551707863807678,
+          0.8706871271133423,
           0.36047470569610596
         ],
         "fact-einstein-nobel": [
-          0.792143702507019,
+          0.8338102698326111,
           0.03917914256453514
         ],
         "fact-great-wall": [
-          0.6307885646820068,
+          0.6346689462661743,
           0.027817655354738235
         ],
         "fact-vaccine-autism": [
-          0.7609072923660278,
-          0.013774648308753967
+          0.7801188826560974,
+          0.014491403475403786
         ],
         "fin-bearish": [
-          0.7938836216926575,
-          0.2037869393825531
+          0.8060849905014038,
+          0.20753644406795502
         ],
         "fin-rate-cut": [
-          0.3178367614746094,
-          0.028164660558104515
+          0.4126368761062622,
+          0.05730398744344711
         ],
         "fx-pair": [
-          0.7589995265007019,
+          0.7621063590049744,
           0.04512913152575493
         ],
         "geo-ip": [
@@ -82,16 +82,16 @@
           0
         ],
         "gk-capital-au": [
-          0.8412818908691406,
-          0
+          0.8425017595291138,
+          0.017255280166864395
         ],
         "gk-largest-ocean": [
-          0.9202572107315063,
-          0.39543572068214417
+          0.9225289821624756,
+          0.4918517768383026
         ],
         "gk-photosynthesis": [
           0.8836025595664978,
-          0.15800249576568604
+          0.1584063470363617
         ],
         "gk-water-boil": [
           0.5360927581787109,
@@ -102,8 +102,8 @@
           0.0009612950379960239
         ],
         "moderation-safe": [
-          0.7535186409950256,
-          0.039266448467969894
+          0.7992997765541077,
+          0.04786064475774765
         ],
         "news-headline": [
           0.6432977318763733,
@@ -122,7 +122,7 @@
           0.000521313224453479
         ],
         "num-speed-light": [
-          0.7532516121864319,
+          0.7738215923309326,
           0.04936710745096207
         ],
         "ocr-digits": [
@@ -135,14 +135,14 @@
         ],
         "sentiment-neg": [
           0.9394057393074036,
-          0.008130518719553947
+          0.0686195120215416
         ],
         "sports-score": [
           0.9082332849502563,
           0.24701130390167236
         ],
         "ssl-expired": [
-          0.4129362404346466,
+          0.6419397592544556,
           0.020851638168096542
         ],
         "task-completion": [
@@ -170,7 +170,7 @@
           0.14194323122501373
         ],
         "weather-rain": [
-          0.5015283823013306,
+          0.6631688475608826,
           0.1803945004940033
         ]
       }
@@ -194,7 +194,7 @@
       {
         "name": "self-match beats unrelated cross-match",
         "ok": true,
-        "detail": "narrowest gap 0.1618 (fact-great-wall)"
+        "detail": "narrowest gap 0.1611 (fact-great-wall)"
       },
       {
         "name": "78KB answer does not trap",
@@ -221,17 +221,17 @@
       {
         "name": "question-echo [near_zero]",
         "ok": true,
-        "detail": "honest=0.8413 attack=0.1153"
+        "detail": "honest=0.8425 attack=0.1376"
       },
       {
         "name": "shotgun-candidates [below_honest]",
         "ok": true,
-        "detail": "honest=0.8413 attack=0.1892"
+        "detail": "honest=0.8425 attack=0.2165"
       },
       {
         "name": "negation-insert [below_honest]",
         "ok": true,
-        "detail": "honest=0.4275 attack=0.2206"
+        "detail": "honest=0.6560 attack=0.3252"
       },
       {
         "name": "verdict-flip [near_zero]",
@@ -241,7 +241,7 @@
       {
         "name": "direction-flip [below_honest]",
         "ok": true,
-        "detail": "honest=0.3178 attack=0.0282"
+        "detail": "honest=0.4126 attack=0.0573"
       },
       {
         "name": "number-swap [below_honest]",
@@ -256,7 +256,7 @@
       {
         "name": "stopword-spam [near_zero]",
         "ok": true,
-        "detail": "honest=0.9203 attack=0.0184"
+        "detail": "honest=0.9225 attack=0.0184"
       },
       {
         "name": "filler-padding [near_honest]",
@@ -276,7 +276,7 @@
       {
         "name": "empty-ish [near_zero]",
         "ok": true,
-        "detail": "honest=0.8413 attack=0.0000"
+        "detail": "honest=0.8425 attack=0.0000"
       }
     ]
   }

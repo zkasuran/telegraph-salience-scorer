@@ -1,1279 +1,205 @@
 [
  {
-  "margin": 0.6446,
+  "margin": 0.6559,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6543,
+  "spearman": 0.634,
   "stddev": 0.3754,
   "worst_self": 1.0,
-  "fails": 2,
+  "fails": 1,
   "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
+   "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6695,
+  "margin": 0.6797,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3891,
+  "spearman": 0.634,
+  "stddev": 0.3881,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
+   "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6483,
+  "margin": 0.6379,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6485,
-  "stddev": 0.3771,
+  "spearman": 0.6393,
+  "stddev": 0.3688,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6733,
+  "margin": 0.6619,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6485,
-  "stddev": 0.3908,
+  "spearman": 0.6393,
+  "stddev": 0.3816,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6559,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.634,
+  "stddev": 0.3754,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6191,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3656,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6438,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.379,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6219,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6531,
-  "stddev": 0.3668,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6467,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6531,
-  "stddev": 0.3802,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6439,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3762,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6689,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3899,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6476,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6485,
-  "stddev": 0.3779,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6728,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6485,
-  "stddev": 0.3916,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6178,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3662,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6425,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3797,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6206,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6531,
-  "stddev": 0.3674,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6453,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6531,
-  "stddev": 0.3808,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6444,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3764,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
    "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6694,
+  "margin": 0.6797,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3901,
+  "spearman": 0.634,
+  "stddev": 0.3881,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
    "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6481,
+  "margin": 0.6379,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6485,
-  "stddev": 0.3781,
+  "spearman": 0.6393,
+  "stddev": 0.3688,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6733,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6485,
-  "stddev": 0.3918,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6182,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3664,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
    "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6429,
+  "margin": 0.6619,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3799,
+  "spearman": 0.6393,
+  "stddev": 0.3816,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
    "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6211,
+  "margin": 0.6559,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6531,
-  "stddev": 0.3676,
+  "spearman": 0.634,
+  "stddev": 0.3754,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6797,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.634,
+  "stddev": 0.3881,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6379,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6393,
+  "stddev": 0.3688,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
+   "SOFT_CAP_FRAC": 0.9,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6458,
+  "margin": 0.6619,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6531,
-  "stddev": 0.381,
+  "spearman": 0.6393,
+  "stddev": 0.3816,
   "worst_self": 1.0,
   "fails": 2,
   "values": {
-   "SOFT_MIN": 0.45,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
+   "SOFT_CAP_FRAC": 0.9,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
    "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6435,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6557,
-  "stddev": 0.3759,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6684,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6557,
-  "stddev": 0.3897,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6464,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6546,
-  "stddev": 0.3773,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6715,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6546,
-  "stddev": 0.3911,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6168,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6624,
-  "stddev": 0.3655,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6413,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6624,
-  "stddev": 0.379,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6188,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6592,
-  "stddev": 0.3665,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6434,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6592,
-  "stddev": 0.3798,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6429,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6565,
-  "stddev": 0.3768,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.668,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6565,
-  "stddev": 0.3906,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6459,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3783,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.671,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3921,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6152,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6632,
-  "stddev": 0.3662,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6398,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6632,
-  "stddev": 0.3797,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6173,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3672,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6419,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3806,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6431,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6565,
-  "stddev": 0.3774,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6682,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6565,
-  "stddev": 0.3912,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6461,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3788,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6713,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6543,
-  "stddev": 0.3926,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6152,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6632,
-  "stddev": 0.3668,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6397,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6632,
-  "stddev": 0.3802,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6173,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3677,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6418,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6589,
-  "stddev": 0.3811,
-  "worst_self": 1.0,
-  "fails": 2,
-  "values": {
-   "SOFT_MIN": 0.45,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6508,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6504,
-  "stddev": 0.3764,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6755,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6504,
-  "stddev": 0.3898,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6562,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6448,
-  "stddev": 0.3786,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6812,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6448,
-  "stddev": 0.392,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6273,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6539,
-  "stddev": 0.3675,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.652,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6539,
-  "stddev": 0.3808,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6319,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6494,
-  "stddev": 0.3693,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6567,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6494,
-  "stddev": 0.3826,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6509,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6504,
-  "stddev": 0.377,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6757,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6504,
-  "stddev": 0.3905,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6563,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6448,
-  "stddev": 0.3792,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6813,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6448,
-  "stddev": 0.3927,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.627,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6539,
-  "stddev": 0.3681,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6517,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6539,
-  "stddev": 0.3814,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6316,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6494,
-  "stddev": 0.3698,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6564,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6494,
-  "stddev": 0.3832,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6512,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6504,
-  "stddev": 0.3771,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.676,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6504,
-  "stddev": 0.3906,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6566,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6448,
-  "stddev": 0.3793,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6817,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6448,
-  "stddev": 0.3928,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6274,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6539,
-  "stddev": 0.3682,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.652,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6539,
-  "stddev": 0.3815,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6319,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6494,
-  "stddev": 0.37,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
   },
   "feasible": false
  },
@@ -1281,1024 +207,202 @@
   "margin": 0.6568,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6494,
-  "stddev": 0.3833,
+  "spearman": 0.6348,
+  "stddev": 0.3758,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6512,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6488,
-  "stddev": 0.3768,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6762,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6488,
-  "stddev": 0.3904,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6562,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6447,
-  "stddev": 0.3789,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6814,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6447,
-  "stddev": 0.3924,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6267,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6535,
-  "stddev": 0.3675,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6514,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6535,
-  "stddev": 0.3809,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6308,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6493,
-  "stddev": 0.3691,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6557,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6493,
-  "stddev": 0.3825,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6505,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6488,
-  "stddev": 0.3776,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 1.0,
    "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.6
   },
   "feasible": false
- },
- {
-  "margin": 0.6755,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6488,
-  "stddev": 0.3912,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6555,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6447,
-  "stddev": 0.3797,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6807,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6447,
-  "stddev": 0.3933,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6253,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6535,
-  "stddev": 0.3682,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.65,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6535,
-  "stddev": 0.3816,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6294,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6493,
-  "stddev": 0.3698,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6543,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6493,
-  "stddev": 0.3832,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6513,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6488,
-  "stddev": 0.378,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6763,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6488,
-  "stddev": 0.3916,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6563,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6447,
-  "stddev": 0.38,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6815,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6447,
-  "stddev": 0.3937,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.626,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6535,
-  "stddev": 0.3686,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6507,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6535,
-  "stddev": 0.382,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6301,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6493,
-  "stddev": 0.3702,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6549,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6493,
-  "stddev": 0.3835,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.55,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6554,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6407,
-  "stddev": 0.3777,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6794,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6407,
-  "stddev": 0.3908,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6622,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.633,
-  "stddev": 0.3804,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6866,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.633,
-  "stddev": 0.3936,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6347,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6461,
-  "stddev": 0.3702,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6588,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6461,
-  "stddev": 0.3833,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6408,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6383,
-  "stddev": 0.3725,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6652,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6383,
-  "stddev": 0.3856,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6566,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6407,
-  "stddev": 0.3781,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6807,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6407,
-  "stddev": 0.3913,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6634,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.633,
-  "stddev": 0.3808,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6878,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.633,
-  "stddev": 0.3941,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6358,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6461,
-  "stddev": 0.3706,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.66,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6461,
-  "stddev": 0.3837,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6419,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6383,
-  "stddev": 0.3729,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6664,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6383,
-  "stddev": 0.3861,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6566,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6407,
-  "stddev": 0.3781,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6807,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6407,
-  "stddev": 0.3913,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6634,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.633,
-  "stddev": 0.3808,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6878,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.633,
-  "stddev": 0.3941,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6358,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6461,
-  "stddev": 0.3706,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.66,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6461,
-  "stddev": 0.3837,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6419,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6383,
-  "stddev": 0.3729,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6664,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6383,
-  "stddev": 0.3861,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 0.85,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6565,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3783,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
  },
  {
   "margin": 0.6808,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3916,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6632,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.381,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6878,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.3943,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.635,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6467,
-  "stddev": 0.3705,
+  "spearman": 0.6348,
+  "stddev": 0.3886,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6593,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6467,
-  "stddev": 0.3837,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
    "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6409,
+  "margin": 0.6381,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6386,
-  "stddev": 0.3727,
+  "spearman": 0.6401,
+  "stddev": 0.3689,
   "worst_self": 1.0,
-  "fails": 1,
+  "fails": 2,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
+   "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6655,
+  "margin": 0.6623,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6386,
-  "stddev": 0.3859,
+  "spearman": 0.6401,
+  "stddev": 0.3818,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6568,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6348,
+  "stddev": 0.3758,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.35,
    "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.35,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6808,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6348,
+  "stddev": 0.3886,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6381,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6401,
+  "stddev": 0.3689,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6623,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6401,
+  "stddev": 0.3818,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6568,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6348,
+  "stddev": 0.3758,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6808,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6348,
+  "stddev": 0.3886,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6381,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6401,
+  "stddev": 0.3689,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6623,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6401,
+  "stddev": 0.3818,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.35,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
    "SHARPEN": 0.82
   },
   "feasible": false
@@ -2307,286 +411,1222 @@
   "margin": 0.6572,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3788,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6816,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3921,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6638,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.3814,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6885,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.3948,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6354,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6467,
-  "stddev": 0.3709,
+  "spearman": 0.6346,
+  "stddev": 0.3757,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
    "SOFT_CAP_FRAC": 0.5,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
+   "M_CONTRA": 0.3,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6598,
+  "margin": 0.6805,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6467,
-  "stddev": 0.3841,
+  "spearman": 0.6346,
+  "stddev": 0.3882,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6404,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6381,
+  "stddev": 0.3696,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.664,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6381,
+  "stddev": 0.3822,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6572,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6346,
+  "stddev": 0.3757,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6805,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6346,
+  "stddev": 0.3882,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6404,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6381,
+  "stddev": 0.3696,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.664,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6381,
+  "stddev": 0.3822,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6572,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6346,
+  "stddev": 0.3757,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6805,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6346,
+  "stddev": 0.3882,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6404,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6381,
+  "stddev": 0.3696,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.664,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6381,
+  "stddev": 0.3822,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6584,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6323,
+  "stddev": 0.376,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.682,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6323,
+  "stddev": 0.3886,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6411,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6377,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.42,
    "SOFT_W": 1.0,
    "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
+   "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6413,
+  "margin": 0.6649,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6386,
-  "stddev": 0.3731,
+  "spearman": 0.6377,
+  "stddev": 0.3824,
   "worst_self": 1.0,
-  "fails": 1,
+  "fails": 2,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.42,
    "SOFT_W": 1.0,
    "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6584,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6323,
+  "stddev": 0.376,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6659,
+  "margin": 0.682,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6386,
-  "stddev": 0.3864,
+  "spearman": 0.6323,
+  "stddev": 0.3886,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6411,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6377,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6649,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6377,
+  "stddev": 0.3824,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6584,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6323,
+  "stddev": 0.376,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.682,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6323,
+  "stddev": 0.3886,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6411,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6377,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6649,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6377,
+  "stddev": 0.3824,
+  "worst_self": 1.0,
+  "fails": 2,
+  "values": {
+   "SOFT_MIN": 0.42,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6569,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6352,
+  "stddev": 0.3755,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6798,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6352,
+  "stddev": 0.3878,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6408,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6387,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6641,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6387,
+  "stddev": 0.3823,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6569,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6352,
+  "stddev": 0.3755,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6798,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6352,
+  "stddev": 0.3878,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6408,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6387,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6641,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6387,
+  "stddev": 0.3823,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6569,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6352,
+  "stddev": 0.3755,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6798,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6352,
+  "stddev": 0.3878,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6408,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6387,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6641,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6387,
+  "stddev": 0.3823,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6581,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6365,
+  "stddev": 0.3758,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6813,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6365,
+  "stddev": 0.3882,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6416,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.64,
+  "stddev": 0.3699,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
    "SOFT_W": 1.0,
    "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": false
- },
- {
-  "margin": 0.6577,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3791,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6821,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6413,
-  "stddev": 0.3923,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.5,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6644,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.3817,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.6
-  },
-  "feasible": true
- },
- {
-  "margin": 0.689,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6332,
-  "stddev": 0.395,
-  "worst_self": 1.0,
-  "fails": 0,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.3,
-   "R_KEY_BASE": 0.7,
-   "SHARPEN": 0.82
-  },
-  "feasible": true
- },
- {
-  "margin": 0.6359,
-  "wins": 40,
-  "ties": 0,
-  "spearman": 0.6467,
-  "stddev": 0.3711,
-  "worst_self": 1.0,
-  "fails": 1,
-  "values": {
-   "SOFT_MIN": 0.65,
-   "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
-   "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6603,
+  "margin": 0.6651,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6467,
-  "stddev": 0.3844,
+  "spearman": 0.64,
+  "stddev": 0.3824,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.48,
    "SOFT_W": 1.0,
-   "SOFT_CAP_FRAC": 0.7,
+   "SOFT_CAP_FRAC": 0.5,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.5,
    "SHARPEN": 0.82
   },
   "feasible": false
  },
  {
-  "margin": 0.6418,
+  "margin": 0.6581,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6386,
-  "stddev": 0.3734,
+  "spearman": 0.6365,
+  "stddev": 0.3758,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6813,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6365,
+  "stddev": 0.3882,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6416,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.64,
+  "stddev": 0.3699,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.48,
    "SOFT_W": 1.0,
    "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
    "SHARPEN": 0.6
   },
   "feasible": false
  },
  {
-  "margin": 0.6664,
+  "margin": 0.6651,
   "wins": 40,
   "ties": 0,
-  "spearman": 0.6386,
-  "stddev": 0.3866,
+  "spearman": 0.64,
+  "stddev": 0.3824,
   "worst_self": 1.0,
   "fails": 1,
   "values": {
-   "SOFT_MIN": 0.65,
+   "SOFT_MIN": 0.48,
    "SOFT_W": 1.0,
    "SOFT_CAP_FRAC": 0.7,
    "M_CONTRA": 0.45,
-   "R_KEY_BASE": 0.7,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6581,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6365,
+  "stddev": 0.3758,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6813,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6365,
+  "stddev": 0.3882,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6416,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.64,
+  "stddev": 0.3699,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6651,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.64,
+  "stddev": 0.3824,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.48,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6552,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3752,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6777,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3873,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6398,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6627,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3821,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6552,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3752,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6777,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3873,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6398,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6627,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3821,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6552,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3752,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6777,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3873,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6398,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3698,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6627,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3821,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 0.85,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6563,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3754,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.679,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3875,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6406,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3699,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6637,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3822,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.5,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6563,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3754,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.679,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3875,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6406,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3699,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6637,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3822,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.7,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.82
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6563,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3754,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.6
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.679,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6363,
+  "stddev": 0.3875,
+  "worst_self": 1.0,
+  "fails": 0,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.3,
+   "SHARPEN": 0.82
+  },
+  "feasible": true
+ },
+ {
+  "margin": 0.6406,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3699,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
+   "SHARPEN": 0.6
+  },
+  "feasible": false
+ },
+ {
+  "margin": 0.6637,
+  "wins": 40,
+  "ties": 0,
+  "spearman": 0.6391,
+  "stddev": 0.3822,
+  "worst_self": 1.0,
+  "fails": 1,
+  "values": {
+   "SOFT_MIN": 0.55,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.9,
+   "M_CONTRA": 0.45,
    "SHARPEN": 0.82
   },
   "feasible": false

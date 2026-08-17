@@ -59,8 +59,8 @@ const SHARPEN: f32 = 0.82;
 /// the answer-bearing content that vectors alone are allowed to satisfy. That last
 /// one is the guard: without it an answer that merely names the subject ("Australia"
 /// for "Canberra") reads as having answered.
-const SOFT_W: f32 = 0.85;
-const SOFT_MIN: f32 = 0.55;
+const SOFT_W: f32 = 1.0;
+const SOFT_MIN: f32 = 0.48;
 const SOFT_CAP_FRAC: f32 = 0.5;
 
 /// Squared ramp above SOFT_MIN, so a near synonym earns most of the credit and a
@@ -88,7 +88,7 @@ fn soft_credit(sim: f32) -> f32 {
 // Regenerate with tools/pack_vectors.py.
 
 static VEC_BLOB: &[u8] = include_bytes!("vectors.bin");
-const VEC_DIM: usize = 50;
+const VEC_DIM: usize = 300;
 /// Two int8 rows are each scaled by 127, so their dot product is 127^2 * cosine.
 const VEC_SCALE: f32 = 16129.0;
 /// Bounds on the pairwise work, so a 78 KB answer costs a predictable amount.
