@@ -18,6 +18,44 @@ fn panic(_info: &PanicInfo) -> ! {
 }
 
 // ---------------------------------------------------------------------------
+// Tunables
+// ---------------------------------------------------------------------------
+// Kept in one block because they are swept, not guessed: `tune.py` rewrites this
+// block, rebuilds and scores the result against two objectives at once, the
+// benchmark separation the node's Stage 2 measures and the rank agreement with the
+// live champion its traffic check measures. The comments say what each one trades.
+
+/// Weight on token-level precision and recall, on character triples, on character
+/// pairs. Pairs matter only as a tail breaker for short or unusual answers.
+const W_LEX: f32 = 0.76;
+const W_GRAM3: f32 = 0.2;
+const W_GRAM2: f32 = 0.04;
+/// F-beta squared. Below 1 leans on precision, above 1 leans on recall.
+const F_BETA2: f32 = 0.36;
+/// 1 to forgive dilution (concave in precision), 0 to score precision as it is.
+const P_CONCAVE: f32 = 1.0;
+/// How much of recall must come from the answer-bearing part of the ground truth,
+/// and how much overall coverage can float an answer that words things its own way.
+const R_KEY_BASE: f32 = 0.5;
+const R_FLOOR: f32 = 0.3;
+/// Polarity multipliers. Lower on contradiction separates good from bad harder;
+/// higher keeps a wrong-but-on-topic answer inside the pack, which is where the
+/// champion puts it, and the traffic gate scores agreement with the champion.
+const M_CONTRA: f32 = 0.3;
+const M_TWO_FACED: f32 = 0.5;
+const M_SILENT: f32 = 0.95;
+const B_AGREE: f32 = 0.35;
+/// Numbers: floor when a stated figure is missing, multiplier when a different one
+/// is asserted instead.
+const M_NUM_MISS_BASE: f32 = 0.62;
+const M_NUM_WRONG: f32 = 0.45;
+/// Same words, no shared adjacency.
+const M_ORDER: f32 = 0.55;
+/// How much of the final score comes from the contrast curve rather than the raw
+/// similarity. All contrast sharpens separation, all raw ranks more smoothly.
+const SHARPEN: f32 = 0.82;
+
+// ---------------------------------------------------------------------------
 // Host memory interface
 // ---------------------------------------------------------------------------
 
@@ -46,6 +84,12 @@ pub unsafe extern "C" fn alloc(size: i32) -> i32 {
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn dealloc(_ptr: i32, _size: i32) {}
+
+/// The intent this build was tuned and gated for, exported so a registered binary
+/// can be traced back to the configuration it was measured with. Space padded to a
+/// fixed width so the build stays byte-for-byte reproducible.
+#[unsafe(no_mangle)]
+pub static TELEGRAPH_INTENT: [u8; 32] = *b"CHAT_COMPLETION                 ";
 
 // ---------------------------------------------------------------------------
 // Byte-level primitives
@@ -843,7 +887,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         // still correct, while heavy dilution (a shotgun list of candidates, a
         // keyword dump) still collapses.
         let p_raw = if p_tot > 0.0 { clamp01(p_hit / p_tot) } else { 0.0 };
-        let p = p_raw * (2.0 - p_raw);
+        let p = if P_CONCAVE > 0.5 { p_raw * (2.0 - p_raw) } else { p_raw };
         let r_all = if r_tot > 0.0 { clamp01(r_hit / r_tot) } else { 0.0 };
         // Multiplicative, not blended: without the answer-bearing content there is
         // no answer, however much of the prompt's wording is echoed back.
@@ -855,7 +899,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         let novelty = if an_content > 0.0 { an_novel / an_content } else { 0.0 };
         let floor_scale = clamp01((novelty - 0.2) * 3.0);
         let r = if k_tot > 0.0 {
-            clamp01(clamp01(k_hit / k_tot) * (0.7 + 0.3 * r_all) + 0.15 * r_all * floor_scale)
+            clamp01(clamp01(k_hit / k_tot) * (R_KEY_BASE + (1.0 - R_KEY_BASE) * r_all) + R_FLOOR * r_all * floor_scale)
         } else {
             r_all
         };
@@ -863,7 +907,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         // Precision-leaning F-beta (beta = 0.6). A correct answer is often terser
         // than the ground truth, so weighting recall equally would punish being
         // right briefly.
-        let b2 = 0.36f32;
+        let b2 = F_BETA2;
         let denom = b2 * p + r;
         let lex = if denom > 0.0 { ((1.0 + b2) * p * r) / denom } else { 0.0 };
 
@@ -889,7 +933,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         let cc_g = content_count(tg);
         let cc_a = content_count(ta);
 
-        let mut raw = clamp01(0.76 * lex + 0.20 * gram3 + 0.04 * gram2);
+        let mut raw = clamp01(W_LEX * lex + W_GRAM3 * gram3 + W_GRAM2 * gram2);
 
         // Same words, different claim. "France is the capital of Paris" is a
         // perfect bag of words and a wrong answer. Word overlap cannot see the
@@ -901,7 +945,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         // or reuses some pairing, so reordering alone is not treated as a lie.
         let full_coverage = k_tot > 0.0 && k_hit >= k_tot * 0.999;
         if full_coverage && p_raw >= 0.999 && adjacency < 0.15 && cc_g >= 3 && cc_a >= 3 {
-            raw *= 0.55;
+            raw *= M_ORDER;
         }
 
         // Numbers. Omitting a figure the ground truth states is incomplete;
@@ -918,7 +962,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         }
         if gt_nums > 0 {
             let frac = gt_nums_hit as f32 / gt_nums as f32;
-            raw *= 0.62 + 0.38 * frac;
+            raw *= M_NUM_MISS_BASE + (1.0 - M_NUM_MISS_BASE) * frac;
             let mut bad = 0u32;
             i = 0;
             while i < ta.n {
@@ -930,7 +974,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
                 }
                 i += 1;
             }
-            if bad > 0 && gt_nums_hit < gt_nums { raw *= 0.45; }
+            if bad > 0 && gt_nums_hit < gt_nums { raw *= M_NUM_WRONG; }
         }
 
         // Polarity, per axis. Getting the verdict right in your own words counts
@@ -964,16 +1008,16 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
             c += 1;
         }
         if contra > 0 {
-            raw *= 0.15;
+            raw *= M_CONTRA;
         } else if two_faced > 0 {
             // Leads with the right verdict, then asserts the opposite, while
             // reusing the ground truth's wording. That is the shape of a copied
             // answer with a negation dropped in, not of a careful one.
-            raw *= 0.5;
+            raw *= M_TWO_FACED;
         } else if agree > 0 {
-            raw += (1.0 - raw) * 0.35;
+            raw += (1.0 - raw) * B_AGREE;
         } else if silent > 0 {
-            raw *= 0.85;
+            raw *= M_SILENT;
         } else if any_negation(tg) != any_negation(ta) {
             // No axis is decisive, but one side negates and the other does not.
             raw *= 1.0 - 0.35 * lex;
@@ -984,7 +1028,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         // and one that is all-or-nothing cannot rank the answers in between.
         let raw = clamp01(raw);
         let smooth = raw * raw * (3.0 - 2.0 * raw);
-        clamp01(0.82 * smooth + 0.18 * raw)
+        clamp01(SHARPEN * smooth + (1.0 - SHARPEN) * raw)
     }
 }
 

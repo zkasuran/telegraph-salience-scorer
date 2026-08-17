@@ -1,0 +1,182 @@
+[
+ {
+  "intent": "FACT_CHECK",
+  "profile": "verdict",
+  "hash": "0xfe87aff51c1565218bdbb1012dbd0a70b09d42f18f923bc84a66db7d93e3f18c",
+  "url": "https://gateway.pinata.cloud/ipfs/QmWL5jR3QNMToWMTqDKqrQmtR31vZo5sQTvGQzhtggH59U",
+  "size": 9236,
+  "tx": "0xf774d45866ccd255126df6ec70db64c2bfcb5e5523bcccb412d75450db973097",
+  "metrics": {
+   "margin": 0.696,
+   "wins": "40/40",
+   "spearman": 0.6211
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55
+  }
+ },
+ {
+  "intent": "URL_SCAN",
+  "profile": "verdict",
+  "hash": "0xf284d3db462a8f52a5900f1d1ac410be6e720a1839a84278958c6c1146a34116",
+  "url": "https://gateway.pinata.cloud/ipfs/QmV6er7QBi22bteYooHkYReMBAU3G5NrjVi3HYL29HdUXV",
+  "size": 9236,
+  "tx": "0x0fba852e32d912fe0f031a91ec7b9a23f32bd1a45f4f353b9b51fdff2fa20e54",
+  "metrics": {
+   "margin": 0.696,
+   "wins": "40/40",
+   "spearman": 0.6211
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55
+  }
+ },
+ {
+  "intent": "DEEPFAKE_DETECTION",
+  "profile": "verdict",
+  "hash": "0xa2d4ba7acb3e1d3c5fdafd666fb027bdf526464b19a623ce1a6b93ef17a86765",
+  "url": "https://gateway.pinata.cloud/ipfs/Qmbdk733h1g83tsGQ4e8Nuna53z6oyZVxerj1nDGyLwL3v",
+  "size": 9236,
+  "tx": "0x944314832903497d527e220cd55dbaada03262a65ef2d86aed70c40abd626775",
+  "metrics": {
+   "margin": 0.696,
+   "wins": "40/40",
+   "spearman": 0.6211
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55
+  }
+ },
+ {
+  "intent": "SSL_VERIFICATION",
+  "profile": "verdict",
+  "hash": "0x914633592ab2004e3b886b534d1ab28b4406009b96d68d64c2ed0eabadfe268d",
+  "url": "https://gateway.pinata.cloud/ipfs/QmbyzcepngrgxFAgcfwJdxCDwZAndBS2whXrzmHp8W2WHM",
+  "size": 9236,
+  "tx": "0xc1973791294d436e6b8a5de8de985545fef639acccfb6f2f8dc30bbacccf99ed",
+  "metrics": {
+   "margin": 0.696,
+   "wins": "40/40",
+   "spearman": 0.6211
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55
+  }
+ },
+ {
+  "intent": "SENTIMENT_ANALYSIS",
+  "profile": "verdict",
+  "hash": "0xe7d9f0d1308491ddb919c45391429aa24d5f3556917feeae56276cf043ca9229",
+  "url": "https://gateway.pinata.cloud/ipfs/QmaU6eUBV573G1www9vvVDzyMMN738qSahNPsTxr1RCcLC",
+  "size": 9236,
+  "tx": "0x4a7e9758dd5591a4762ae8585555a7fe5bdde930f5e407d7fdafb7fa441722b1",
+  "metrics": {
+   "margin": 0.696,
+   "wins": "40/40",
+   "spearman": 0.6211
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55
+  }
+ },
+ {
+  "intent": "ACADEMIC_SEARCH",
+  "profile": "reference",
+  "hash": "0x6f593980fb32bf40c96a9935868fa8204ee4dd5970971e51740248989c0c7df3",
+  "url": "https://gateway.pinata.cloud/ipfs/QmZqBCqhuHRTribJ9645sK88bdgH2WWrLv6GJqHsBWG4Uu",
+  "size": 9236,
+  "tx": "0x1c41d91a704bc5087b9ad0fd74738201d354b095304bca161885eccca8508430",
+  "metrics": {
+   "margin": 0.6746,
+   "wins": "40/40",
+   "spearman": 0.637
+  },
+  "values": {
+   "F_BETA2": 0.6,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.3,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.35,
+   "R_KEY_BASE": 0.6,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55
+  }
+ }
+]

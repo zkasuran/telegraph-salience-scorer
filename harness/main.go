@@ -16,6 +16,7 @@ import (
 	"math"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/tetratelabs/wazero"
@@ -298,6 +299,61 @@ func mustJSON(path string, v any) {
 	}
 }
 
+// The node's third gate, when an intent has real traffic: your scorer's ranking of
+// real miner answers has to agree with the champion's (Spearman, floor 0.60). It
+// compares rankings only, so the corpus needs no quality labels, just answers in
+// the shape miners actually return.
+type trafficRow struct {
+	Q  string `json:"q"`
+	GT string `json:"gt"`
+	A  string `json:"a"`
+}
+
+// ranks returns 1-based ranks with ties averaged.
+func ranks(v []float64) []float64 {
+	n := len(v)
+	idx := make([]int, n)
+	for i := range idx {
+		idx[i] = i
+	}
+	sort.Slice(idx, func(a, b int) bool { return v[idx[a]] < v[idx[b]] })
+	out := make([]float64, n)
+	for i := 0; i < n; {
+		j := i
+		for j+1 < n && v[idx[j+1]] == v[idx[i]] {
+			j++
+		}
+		avg := float64(i+j)/2 + 1
+		for k := i; k <= j; k++ {
+			out[idx[k]] = avg
+		}
+		i = j + 1
+	}
+	return out
+}
+
+func spearman(x, y []float64) float64 {
+	rx, ry := ranks(x), ranks(y)
+	var mx, my float64
+	for i := range rx {
+		mx += rx[i]
+		my += ry[i]
+	}
+	mx /= float64(len(rx))
+	my /= float64(len(ry))
+	var num, dx, dy float64
+	for i := range rx {
+		a, b := rx[i]-mx, ry[i]-my
+		num += a * b
+		dx += a * a
+		dy += b * b
+	}
+	if dx == 0 || dy == 0 {
+		return 0
+	}
+	return num / math.Sqrt(dx*dy)
+}
+
 type report struct {
 	Metrics metrics `json:"metrics"`
 	Stage1  []check `json:"stage1"`
@@ -326,6 +382,7 @@ func main() {
 
 	reports := map[string]report{}
 	var order []string
+	var mods []*mod
 	failures := 0
 
 	for i, path := range os.Args[3:] {
@@ -347,6 +404,7 @@ func main() {
 		ats := runAttacks(ctx, m, atk.Cases)
 		reports[m.name] = report{Metrics: mx, Stage1: s1, Attacks: ats}
 		order = append(order, m.name)
+		mods = append(mods, m)
 
 		role := "baseline"
 		if i == 0 {
@@ -393,6 +451,82 @@ func main() {
 			a := reports[order[0]].Metrics.PerCase[c.ID]
 			b := reports[order[1]].Metrics.PerCase[c.ID]
 			fmt.Printf("%-22s %9.4f %9.4f %9.4f %9.4f\n", c.ID, a[0], a[1], b[0], b[1])
+		}
+	}
+
+	if corpus := os.Getenv("CORPUS"); corpus != "" && len(mods) > 0 {
+		var rows struct {
+			Rows []trafficRow `json:"rows"`
+		}
+		mustJSON(corpus, &rows)
+		scores := make([][]float64, len(mods))
+		for i, m := range mods {
+			for _, r := range rows.Rows {
+				s, err := m.score(ctx, r.Q, r.GT, r.A)
+				if err != nil {
+					fmt.Printf("  [FAIL] %s on a corpus row: %v\n", m.name, err)
+					failures++
+					break
+				}
+				scores[i] = append(scores[i], s)
+			}
+		}
+		// The champion is a 24 MB module and its corpus scores never change, so a
+		// sweep caches them once here and then only re-runs the candidate.
+		if dump := os.Getenv("DUMP_SCORES"); dump != "" {
+			if blob, err := json.Marshal(scores[len(scores)-1]); err == nil {
+				os.WriteFile(dump, blob, 0o644)
+				fmt.Printf("\nbaseline corpus scores written to %s\n", dump)
+			}
+		}
+		var baselines [][]float64
+		var names []string
+		for i := 1; i < len(mods); i++ {
+			baselines = append(baselines, scores[i])
+			names = append(names, mods[i].name)
+		}
+		if bs := os.Getenv("BASELINE_SCORES"); bs != "" {
+			var cached []float64
+			mustJSON(bs, &cached)
+			if len(cached) == len(rows.Rows) {
+				baselines = append(baselines, cached)
+				names = append(names, filepath.Base(bs))
+			} else {
+				fmt.Printf("  [FAIL] %s holds %d scores for %d rows\n", bs, len(cached), len(rows.Rows))
+				failures++
+			}
+		}
+		if len(baselines) > 0 && len(scores[0]) == len(rows.Rows) {
+			fmt.Printf("\n=== traffic agreement over %d rows (%s) ===\n", len(rows.Rows), filepath.Base(corpus))
+		}
+		for i, base := range baselines {
+			if len(base) != len(rows.Rows) {
+				continue
+			}
+			rho := spearman(scores[0], base)
+			ok := rho >= 0.60
+			fmt.Printf("  %s spearman vs %-26s %.4f (node floor 0.60)\n", mark(ok), names[i], rho)
+			if i > 0 {
+				continue
+			}
+			if !ok {
+				failures++
+			}
+			rx, ry := ranks(scores[0]), ranks(base)
+			type gap struct {
+				row  int
+				diff float64
+			}
+			var gaps []gap
+			for k := range rx {
+				gaps = append(gaps, gap{k, math.Abs(rx[k]-ry[k])})
+			}
+			sort.Slice(gaps, func(a, b int) bool { return gaps[a].diff > gaps[b].diff })
+			fmt.Printf("     widest rank disagreements:\n")
+			for _, g := range gaps[:min(8, len(gaps))] {
+				fmt.Printf("     %5.1f  ours %.4f theirs %.4f | gt: %.40s | a: %.48s\n",
+					g.diff, scores[0][g.row], base[g.row], rows.Rows[g.row].GT, rows.Rows[g.row].A)
+			}
 		}
 	}
 
