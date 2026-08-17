@@ -1,3 +1,4 @@
 target/
 harness/harness
 reference/
+harness-report.json
