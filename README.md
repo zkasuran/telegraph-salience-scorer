@@ -5,7 +5,9 @@ WASM program a Telegraph node runs to decide how good a miner's answer was. It
 takes the question, the ground truth and the miner's answer and returns one
 `f32` between 0 and 1.
 
-Written for Telegraph Hackathon Season I, Track 2 (Script Authors).
+Written for Telegraph Hackathon Season I, Track 2 (Script Authors). The Track 1
+miner that goes with it is at
+[telegraph-gaswire-miner](https://github.com/zkasuran/telegraph-gaswire-miner).
 
 The starting point that ships with the protocol scores word overlap: what
 fraction of the answer's words also appear in the ground truth. That is a
@@ -154,16 +156,59 @@ README can be diffed rather than trusted.
 
 ## Deployed
 
-| | |
-| --- | --- |
-| Network | Base Sepolia (84532) |
-| Registry | `0x5a2324aA18613FAD4e44bDF0d6c73Ec1f6D87ff8` |
-| Call | `registerWasm(bytes32 wasmHash, string wasmUrl, string intent)` |
-| Hash | keccak256 of the `.wasm` bytes (note: miner YAML uses sha256, WASM uses keccak256) |
-| Intent | `CHAT_COMPLETION` |
+Live on Base Sepolia (84532), registry `0x5a2324aA18613FAD4e44bDF0d6c73Ec1f6D87ff8`,
+via `registerWasm(bytes32 wasmHash, string wasmUrl, string intent)`. The hash is
+keccak256 of the `.wasm` bytes; a miner YAML uses sha256, a scoring module uses
+keccak256.
 
-`dist/telegraph-salience-scorer.wasm` is the exact binary that was registered.
-Rebuilding from `module/` reproduces it byte for byte with the same toolchain.
+This module is the **active scoring module for eight canonical intents**, which is
+to say it is the program that decides how the miners serving them are ranked:
+
+| Reg | Intent | node margin | champion | fixture wins |
+| --- | --- | --- | --- | --- |
+| 26 | AI_TEXT_DETECTION | 0.793 | 0.374 | 32/32 |
+| 27 | FACT_CHECK | 0.789 | 0.374 | 32/32 |
+| 28 | URL_SCAN | 0.789 | 0.374 | 32/32 |
+| 29 | DEEPFAKE_DETECTION | 0.789 | 0.374 | 32/32 |
+| 30 | SSL_VERIFICATION | 0.789 | 0.374 | 32/32 |
+| 31 | SENTIMENT_ANALYSIS | 0.789 | 0.374 | 32/32 |
+| 32 | CVE_LOOKUP | 0.808 | 0.374 | 32/32 |
+| 33 | ACADEMIC_SEARCH | 0.808 | 0.374 | 32/32 |
+
+```bash
+curl -s https://devnode.telegraphprotocol.com/engine/validator/v1/addresses/0x8b224783FE5b3c52B7DB0cb9B1754f8812b75287
+```
+
+One build per intent: the intent is baked into the binary as `TELEGRAPH_INTENT` and
+the tunables are set for the shape of answer that intent returns (`deploy.py`).
+`dist/` holds the binaries as registered. Rebuilding from `module/` reproduces them
+byte for byte with the same toolchain.
+
+## CHAT_COMPLETION: rejected four times and why that is interesting
+
+CHAT_COMPLETION is the busiest intent and the one place this module is not live. It
+clears the first two gates comfortably and fails the third:
+
+| build | our margin | champion | fixture wins | agreement with champion on 66 real answers |
+| --- | --- | --- | --- | --- |
+| lexical (reg 24) | 0.711 | 0.374 | 31/32 | gate not reached |
+| lexical (reg 25) | 0.818 | 0.374 | 32/32 | 0.308, floor 0.60 |
+| 50d vectors (reg 38) | 0.770 | 0.374 | 32/32 | 0.391 |
+| 300d vectors (reg 39) | 0.798 | 0.374 | 32/32 | 0.385 |
+
+The incumbent is a 24 MB module that is almost entirely an embedded table and it
+rates a confidently wrong but on-topic answer around 0.6 where this module rates it
+near zero. On a benchmark of good against bad answers that strictness wins, nearly
+two to one. On a *ranking* of real answers it reorders the middle of the pack, and
+the protocol will not hot-swap a scorer that moves live rankings that far.
+
+Adding semantic capability moved the agreement from 0.308 to 0.391 and then stopped:
+300 dimension vectors, which separate synonymy from mere topicality far better than
+50 (rise/increase 0.67 against rise/fall 0.63, where at 50d the pair was inverted),
+scored 0.385. So the remaining gap is not vector quality. It is that the two modules
+are ranking on different things and closing it means being less strict about
+correctness on purpose. That trade is available and it is not one worth making, so
+this is recorded rather than papered over.
 
 ## How this was built
 
