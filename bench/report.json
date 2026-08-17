@@ -1,0 +1,592 @@
+{
+  "scoring_module.wasm": {
+    "metrics": {
+      "module": "scoring_module.wasm",
+      "comparable_cases": 40,
+      "wins": 13,
+      "ties": 8,
+      "losses": [
+        "gk-capital-au(tie)",
+        "gk-photosynthesis",
+        "gk-largest-ocean",
+        "gk-water-boil",
+        "num-speed-light",
+        "num-continents",
+        "fact-great-wall",
+        "fact-vaccine-autism(tie)",
+        "fact-einstein-nobel(tie)",
+        "aidet-no(tie)",
+        "deepfake-real",
+        "fin-bearish",
+        "fin-rate-cut",
+        "fx-pair",
+        "weather-berlin",
+        "weather-rain",
+        "code-py-len",
+        "ssl-expired",
+        "geo-ip(tie)",
+        "research-synth",
+        "news-headline",
+        "sports-score",
+        "tvl-lookup",
+        "sentiment-neg(tie)",
+        "extract-field",
+        "task-completion(tie)",
+        "lang-gen(tie)"
+      ],
+      "candidate_margin": -0.11687139365822077,
+      "mean_good": 0.2321464667096734,
+      "mean_bad": 0.3490178603678942,
+      "worst_self_match": 1,
+      "score_stddev": 0.28585714192099587,
+      "min_case_margin": -0.875,
+      "per_case": {
+        "acad-search": [
+          0.5555555820465088,
+          0
+        ],
+        "agent-task": [
+          0.3636363744735718,
+          0
+        ],
+        "aidet-no": [
+          0,
+          0
+        ],
+        "aidet-yes": [
+          1,
+          0
+        ],
+        "code-git-undo": [
+          0.4000000059604645,
+          0.1428571492433548
+        ],
+        "code-py-len": [
+          0,
+          0.4000000059604645
+        ],
+        "crypto-ticker": [
+          0.25,
+          0
+        ],
+        "cve-lookup": [
+          0.8333333134651184,
+          0.4285714328289032
+        ],
+        "deepfake-real": [
+          0,
+          0.6000000238418579
+        ],
+        "extract-field": [
+          0.20000000298023224,
+          0.5
+        ],
+        "fact-einstein-nobel": [
+          0.5,
+          0.5
+        ],
+        "fact-great-wall": [
+          0.10000000149011612,
+          0.6000000238418579
+        ],
+        "fact-vaccine-autism": [
+          0.3333333432674408,
+          0.3333333432674408
+        ],
+        "fin-bearish": [
+          0,
+          0.875
+        ],
+        "fin-rate-cut": [
+          0,
+          0.75
+        ],
+        "fx-pair": [
+          0.20000000298023224,
+          0.5
+        ],
+        "geo-ip": [
+          0,
+          0
+        ],
+        "gk-capital-au": [
+          0,
+          0
+        ],
+        "gk-largest-ocean": [
+          0.5,
+          0.8333333134651184
+        ],
+        "gk-photosynthesis": [
+          0.25,
+          0.800000011920929
+        ],
+        "gk-water-boil": [
+          0.125,
+          0.6666666865348816
+        ],
+        "lang-gen": [
+          0,
+          0
+        ],
+        "moderation-safe": [
+          0.5,
+          0.4285714328289032
+        ],
+        "news-headline": [
+          0,
+          0.5
+        ],
+        "num-continents": [
+          0,
+          0.75
+        ],
+        "num-http-teapot": [
+          0.3333333432674408,
+          0
+        ],
+        "num-moon-landing": [
+          0.20000000298023224,
+          0
+        ],
+        "num-speed-light": [
+          0,
+          0.75
+        ],
+        "ocr-digits": [
+          0.3333333432674408,
+          0
+        ],
+        "research-synth": [
+          0.375,
+          0.5
+        ],
+        "sentiment-neg": [
+          0,
+          0
+        ],
+        "sports-score": [
+          0,
+          0.5
+        ],
+        "ssl-expired": [
+          0,
+          0.4000000059604645
+        ],
+        "task-completion": [
+          0,
+          0
+        ],
+        "trans-es-morning": [
+          0.3333333432674408,
+          0
+        ],
+        "trans-fr-thanks": [
+          0.4000000059604645,
+          0
+        ],
+        "tvl-lookup": [
+          0,
+          0.5
+        ],
+        "urlscan-phish": [
+          0.5,
+          0.2857142984867096
+        ],
+        "weather-berlin": [
+          0.20000000298023224,
+          0.6666666865348816
+        ],
+        "weather-rain": [
+          0.5,
+          0.75
+        ]
+      }
+    },
+    "stage1": [
+      {
+        "name": "empty answer scores exactly 0",
+        "ok": true,
+        "detail": "score=0.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "whitespace-only answer scores exactly 0",
+        "ok": true,
+        "detail": "score=0.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "perfect answer scores \u003e= 0.75 everywhere",
+        "ok": true,
+        "detail": "worst_self_match=1.0000"
+      },
+      {
+        "name": "self-match beats unrelated cross-match",
+        "ok": true,
+        "detail": "narrowest gap 0.6000 (aidet-no)"
+      },
+      {
+        "name": "78KB answer does not trap",
+        "ok": true,
+        "detail": "score=0.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "oversized ground truth does not trap",
+        "ok": true,
+        "detail": "score=1.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "emoji/CJK/RTL/invalid-UTF8 answer does not trap",
+        "ok": true,
+        "detail": "score=0.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "non-text ground truth self-matches",
+        "ok": true,
+        "detail": "score=1.0000 err=\u003cnil\u003e"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "question-echo [near_zero]",
+        "ok": false,
+        "detail": "honest=0.0000 attack=0.5294"
+      },
+      {
+        "name": "shotgun-candidates [below_honest]",
+        "ok": false,
+        "detail": "honest=0.0000 attack=0.0000"
+      },
+      {
+        "name": "negation-insert [below_honest]",
+        "ok": false,
+        "detail": "honest=0.0000 attack=0.4667"
+      },
+      {
+        "name": "verdict-flip [near_zero]",
+        "ok": false,
+        "detail": "honest=1.0000 attack=0.2500"
+      },
+      {
+        "name": "direction-flip [below_honest]",
+        "ok": false,
+        "detail": "honest=0.0000 attack=0.7500"
+      },
+      {
+        "name": "number-swap [below_honest]",
+        "ok": false,
+        "detail": "honest=0.2000 attack=0.6667"
+      },
+      {
+        "name": "word-order-swap [below_honest]",
+        "ok": false,
+        "detail": "honest=0.6667 attack=0.6667"
+      },
+      {
+        "name": "stopword-spam [near_zero]",
+        "ok": true,
+        "detail": "honest=0.5000 attack=0.0667"
+      },
+      {
+        "name": "filler-padding [near_honest]",
+        "ok": false,
+        "detail": "honest=0.6250 attack=0.1951"
+      },
+      {
+        "name": "unicode-noise [near_honest]",
+        "ok": false,
+        "detail": "honest=0.2000 attack=0.0000"
+      },
+      {
+        "name": "gt-plus-dump [below_honest]",
+        "ok": true,
+        "detail": "honest=0.5556 attack=0.1250"
+      },
+      {
+        "name": "empty-ish [near_zero]",
+        "ok": true,
+        "detail": "honest=0.0000 attack=0.0000"
+      }
+    ]
+  },
+  "telegraph-salience-scorer.wasm": {
+    "metrics": {
+      "module": "telegraph-salience-scorer.wasm",
+      "comparable_cases": 40,
+      "wins": 40,
+      "ties": 0,
+      "losses": null,
+      "candidate_margin": 0.678173218399752,
+      "mean_good": 0.7541669692844153,
+      "mean_bad": 0.07599375088466331,
+      "worst_self_match": 1,
+      "score_stddev": 0.39107343508428005,
+      "min_case_margin": 0.11392821371555328,
+      "per_case": {
+        "acad-search": [
+          0.9610215425491333,
+          0.002438092604279518
+        ],
+        "agent-task": [
+          0.735029935836792,
+          0
+        ],
+        "aidet-no": [
+          0.6155901551246643,
+          0
+        ],
+        "aidet-yes": [
+          0.9206879734992981,
+          0
+        ],
+        "code-git-undo": [
+          0.8622565269470215,
+          0.05422167479991913
+        ],
+        "code-py-len": [
+          0.555690348148346,
+          0.19952915608882904
+        ],
+        "crypto-ticker": [
+          0.9955287575721741,
+          0
+        ],
+        "cve-lookup": [
+          0.9007024168968201,
+          0.15018028020858765
+        ],
+        "deepfake-real": [
+          0.8899306058883667,
+          0.010026508010923862
+        ],
+        "extract-field": [
+          0.8518869876861572,
+          0.36347082257270813
+        ],
+        "fact-einstein-nobel": [
+          0.6803654432296753,
+          0.015197580680251122
+        ],
+        "fact-great-wall": [
+          0.6229604482650757,
+          0.00735838245600462
+        ],
+        "fact-vaccine-autism": [
+          0.7541459202766418,
+          0.004572683945298195
+        ],
+        "fin-bearish": [
+          0.7759513854980469,
+          0.0653316080570221
+        ],
+        "fin-rate-cut": [
+          0.311445415019989,
+          0.008107097819447517
+        ],
+        "fx-pair": [
+          0.7672857046127319,
+          0.026468098163604736
+        ],
+        "geo-ip": [
+          0.2822110056877136,
+          0
+        ],
+        "gk-capital-au": [
+          0.8858944177627563,
+          0
+        ],
+        "gk-largest-ocean": [
+          0.9367942810058594,
+          0.24395199120044708
+        ],
+        "gk-photosynthesis": [
+          0.8865872025489807,
+          0.11538557708263397
+        ],
+        "gk-water-boil": [
+          0.5417034029960632,
+          0.11274944245815277
+        ],
+        "lang-gen": [
+          0.981304407119751,
+          0
+        ],
+        "moderation-safe": [
+          0.6480852961540222,
+          0.01184520497918129
+        ],
+        "news-headline": [
+          0.6477028131484985,
+          0.15609945356845856
+        ],
+        "num-continents": [
+          0.6379844546318054,
+          0.034617602825164795
+        ],
+        "num-http-teapot": [
+          0.9919344186782837,
+          0
+        ],
+        "num-moon-landing": [
+          0.8326529264450073,
+          0
+        ],
+        "num-speed-light": [
+          0.7693751454353333,
+          0.030219435691833496
+        ],
+        "ocr-digits": [
+          0.9997232556343079,
+          0.009268912486732006
+        ],
+        "research-synth": [
+          0.9808813333511353,
+          0.8495644927024841
+        ],
+        "sentiment-neg": [
+          0.9368988871574402,
+          0.0030331253074109554
+        ],
+        "sports-score": [
+          0.8946552872657776,
+          0.2384144812822342
+        ],
+        "ssl-expired": [
+          0.3721310794353485,
+          0.005743983201682568
+        ],
+        "task-completion": [
+          0.11392821371555328,
+          0
+        ],
+        "trans-es-morning": [
+          0.9776387214660645,
+          0.022124268114566803
+        ],
+        "trans-fr-thanks": [
+          0.9795191287994385,
+          0
+        ],
+        "tvl-lookup": [
+          0.7760531306266785,
+          0.09328420460224152
+        ],
+        "urlscan-phish": [
+          0.9643396139144897,
+          0.01129981130361557
+        ],
+        "weather-berlin": [
+          0.4554653763771057,
+          0.1378464549779892
+        ],
+        "weather-rain": [
+          0.4727354049682617,
+          0.05739960819482803
+        ]
+      }
+    },
+    "stage1": [
+      {
+        "name": "empty answer scores exactly 0",
+        "ok": true,
+        "detail": "score=0.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "whitespace-only answer scores exactly 0",
+        "ok": true,
+        "detail": "score=0.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "perfect answer scores \u003e= 0.75 everywhere",
+        "ok": true,
+        "detail": "worst_self_match=1.0000"
+      },
+      {
+        "name": "self-match beats unrelated cross-match",
+        "ok": true,
+        "detail": "narrowest gap 0.1764 (fact-great-wall)"
+      },
+      {
+        "name": "78KB answer does not trap",
+        "ok": true,
+        "detail": "score=0.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "oversized ground truth does not trap",
+        "ok": true,
+        "detail": "score=1.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "emoji/CJK/RTL/invalid-UTF8 answer does not trap",
+        "ok": true,
+        "detail": "score=0.0000 err=\u003cnil\u003e"
+      },
+      {
+        "name": "non-text ground truth self-matches",
+        "ok": true,
+        "detail": "score=1.0000 err=\u003cnil\u003e"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "question-echo [near_zero]",
+        "ok": true,
+        "detail": "honest=0.8859 attack=0.0989"
+      },
+      {
+        "name": "shotgun-candidates [below_honest]",
+        "ok": true,
+        "detail": "honest=0.8859 attack=0.1831"
+      },
+      {
+        "name": "negation-insert [below_honest]",
+        "ok": true,
+        "detail": "honest=0.3867 attack=0.2042"
+      },
+      {
+        "name": "verdict-flip [near_zero]",
+        "ok": true,
+        "detail": "honest=0.9207 attack=0.0527"
+      },
+      {
+        "name": "direction-flip [below_honest]",
+        "ok": true,
+        "detail": "honest=0.3114 attack=0.0081"
+      },
+      {
+        "name": "number-swap [below_honest]",
+        "ok": true,
+        "detail": "honest=0.4555 attack=0.1378"
+      },
+      {
+        "name": "word-order-swap [below_honest]",
+        "ok": true,
+        "detail": "honest=0.9944 attack=0.5521"
+      },
+      {
+        "name": "stopword-spam [near_zero]",
+        "ok": true,
+        "detail": "honest=0.9368 attack=0.0131"
+      },
+      {
+        "name": "filler-padding [near_honest]",
+        "ok": true,
+        "detail": "honest=0.9999 attack=0.9755"
+      },
+      {
+        "name": "unicode-noise [near_honest]",
+        "ok": true,
+        "detail": "honest=0.8327 attack=0.7069"
+      },
+      {
+        "name": "gt-plus-dump [below_honest]",
+        "ok": true,
+        "detail": "honest=0.9610 attack=0.0166"
+      },
+      {
+        "name": "empty-ish [near_zero]",
+        "ok": true,
+        "detail": "honest=0.8859 attack=0.0000"
+      }
+    ]
+  }
+}
