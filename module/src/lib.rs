@@ -148,6 +148,34 @@ const STOP: &[u32] = &[
     h(b"call"), h(b"invoke"), h(b"execute"),
 ];
 
+// Number words, mapped onto the digits they mean. Miners answer "seven" where the
+// ground truth says "7" constantly, and a scorer that reads those as unrelated
+// tokens scores a right answer like a wrong one.
+const NUMERALS: &[(u32, u32)] = &[
+    (h(b"zero"), h(b"0")), (h(b"two"), h(b"2")), (h(b"three"), h(b"3")),
+    (h(b"four"), h(b"4")), (h(b"five"), h(b"5")), (h(b"six"), h(b"6")),
+    (h(b"seven"), h(b"7")), (h(b"eight"), h(b"8")), (h(b"nine"), h(b"9")),
+    (h(b"ten"), h(b"10")), (h(b"eleven"), h(b"11")), (h(b"twelve"), h(b"12")),
+    (h(b"thirteen"), h(b"13")), (h(b"fourteen"), h(b"14")), (h(b"fifteen"), h(b"15")),
+    (h(b"sixteen"), h(b"16")), (h(b"seventeen"), h(b"17")), (h(b"eighteen"), h(b"18")),
+    (h(b"nineteen"), h(b"19")), (h(b"twenty"), h(b"20")), (h(b"thirty"), h(b"30")),
+    (h(b"forty"), h(b"40")), (h(b"fifty"), h(b"50")), (h(b"sixty"), h(b"60")),
+    (h(b"seventy"), h(b"70")), (h(b"eighty"), h(b"80")), (h(b"ninety"), h(b"90")),
+    (h(b"hundred"), h(b"100")), (h(b"thousand"), h(b"1000")),
+    (h(b"million"), h(b"1000000")), (h(b"billion"), h(b"1000000000")),
+];
+
+fn numeral_digits(key: u32) -> Option<u32> {
+    let mut i = 0;
+    while i < NUMERALS.len() {
+        if NUMERALS[i].0 == key {
+            return Some(NUMERALS[i].1);
+        }
+        i += 1;
+    }
+    None
+}
+
 fn is_stopword(hash: u32) -> bool {
     in_table(STOP, hash)
 }
@@ -180,6 +208,8 @@ struct Toks {
     acro: [u32; MAX_TOKENS],
     /// Lowercased first letter, used to spell acronyms out of a run of words.
     first: [u8; MAX_TOKENS],
+    /// True when a clause boundary follows this token.
+    bnd: [bool; MAX_TOKENS],
 }
 
 const EMPTY_TOKS: Toks = Toks {
@@ -192,6 +222,7 @@ const EMPTY_TOKS: Toks = Toks {
     neg: [false; MAX_TOKENS],
     acro: [0; MAX_TOKENS],
     first: [0; MAX_TOKENS],
+    bnd: [false; MAX_TOKENS],
 };
 
 static mut TQ: Toks = EMPTY_TOKS;
@@ -215,13 +246,26 @@ fn stem_hash(tok: &[u8]) -> u32 {
 /// Second stem for past tenses that keep a silent e: "priced" strips to "price",
 /// which matches "prices". Carried alongside the main stem rather than replacing
 /// it, since "landed" wants the other rule. Cheap to keep both.
+///
+/// It doubles as the alias for a figure with its unit stuck to it: "22C" also
+/// hashes as "22", so it matches a ground truth that says "22 degrees". Answers
+/// glue units to numbers constantly, and a scorer that misses that reads a right
+/// figure as a missing one.
 fn alt_hash(tok: &[u8]) -> u32 {
     let n = tok.len();
     if n >= 5 && tok[n - 2..].eq_ignore_ascii_case(b"ed") {
-        hash_bytes(&tok[..n - 1])
-    } else {
-        hash_bytes(tok)
+        return hash_bytes(&tok[..n - 1]);
     }
+    if is_digit(tok[0]) {
+        let mut end = 0usize;
+        while end < n && (is_digit(tok[end]) || tok[end] == b',' || tok[end] == b'.') {
+            end += 1;
+        }
+        if end < n && end > 0 {
+            return hash_bytes(&tok[..end]);
+        }
+    }
+    hash_bytes(tok)
 }
 
 /// Packed key for a token that looks like an acronym: 2 to 4 capitals, no digits.
@@ -303,6 +347,7 @@ fn tokenize(src: &[u8], t: &mut Toks) {
             // the negation applies to the verdict, not to "expired".
             if b == b'.' || b == b',' || b == b';' || b == b'!' || b == b'?' || b == b':' {
                 negwin = 0;
+                if t.n > 0 { t.bnd[t.n - 1] = true; }
             }
             i += 1;
             continue;
@@ -327,11 +372,17 @@ fn tokenize(src: &[u8], t: &mut Toks) {
         }
         let tok = &src[start..i];
         if tok.is_empty() { continue; }
-        let numeric = has_digit && !has_alpha;
+        let mut numeric = has_digit && !has_alpha;
+        let mut hash = hash_bytes(tok);
+        if !numeric && has_alpha {
+            if let Some(digits) = numeral_digits(hash) {
+                hash = digits;
+                numeric = true;
+            }
+        }
         // Mid-sentence capitals stand in for proper nouns: names, places and
         // tickers are exactly the tokens a wrong answer gets wrong.
         let proper = start > 0 && has_alpha && tok[0].is_ascii_uppercase();
-        let hash = hash_bytes(tok);
         let k = t.n;
         t.hash[k] = hash;
         t.stem[k] = if numeric { hash } else { stem_hash(tok) };
@@ -427,15 +478,15 @@ const GRAM_SCAN_LIMIT: usize = 65536;
 static mut GA: [u64; GRAM_WORDS] = [0; GRAM_WORDS];
 static mut GB: [u64; GRAM_WORDS] = [0; GRAM_WORDS];
 
-fn build_grams(src: &[u8], bits: &mut [u64; GRAM_WORDS]) -> u32 {
+fn build_grams(src: &[u8], bits: &mut [u64; GRAM_WORDS], n: usize) -> u32 {
     let mut i = 0;
     while i < GRAM_WORDS { bits[i] = 0; i += 1; }
-    let n = src.len().min(GRAM_SCAN_LIMIT);
+    let limit = src.len().min(GRAM_SCAN_LIMIT);
     let mut w = [0u8; 3];
     let mut filled = 0usize;
     let mut last_space = true;
     let mut j = 0usize;
-    while j < n {
+    while j < limit {
         let b = src[j];
         j += 1;
         let c = if is_word(b) {
@@ -451,8 +502,12 @@ fn build_grams(src: &[u8], bits: &mut [u64; GRAM_WORDS]) -> u32 {
         w[1] = w[2];
         w[2] = c;
         if filled < 3 { filled += 1; }
-        if filled == 3 {
-            let g = ((w[0] as u32) << 16) | ((w[1] as u32) << 8) | (w[2] as u32);
+        if filled >= n {
+            let g = if n == 2 {
+                ((w[1] as u32) << 8) | (w[2] as u32)
+            } else {
+                ((w[0] as u32) << 16) | ((w[1] as u32) << 8) | (w[2] as u32)
+            };
             let slot = ((g.wrapping_mul(0x9E37_79B1) >> 13) as usize) & (GRAM_BITS - 1);
             bits[slot >> 6] |= 1u64 << (slot & 63);
         }
@@ -580,23 +635,38 @@ const DIR_POS: &[u32] = &[
     h(b"increase"), h(b"increases"), h(b"increased"), h(b"gain"), h(b"gains"), h(b"bullish"),
     h(b"growth"), h(b"grew"), h(b"appreciate"), h(b"above"), h(b"more"), h(b"better"),
     h(b"stronger"), h(b"buy"), h(b"positive"), h(b"warmer"), h(b"faster"),
+    h(b"hot"), h(b"warm"), h(b"open"), h(b"enabled"), h(b"secure"), h(b"encrypted"),
+    h(b"success"), h(b"bull"),
 ];
 const DIR_NEG: &[u32] = &[
     h(b"fall"), h(b"falls"), h(b"falling"), h(b"fell"), h(b"down"), h(b"downward"), h(b"lower"),
     h(b"decrease"), h(b"decreases"), h(b"decreased"), h(b"loss"), h(b"losses"), h(b"bearish"),
     h(b"decline"), h(b"declines"), h(b"shrink"), h(b"depreciate"), h(b"below"), h(b"less"),
     h(b"worse"), h(b"weaker"), h(b"sell"), h(b"negative"), h(b"cooler"), h(b"slower"),
+    h(b"cold"), h(b"cool"), h(b"closed"), h(b"disabled"), h(b"insecure"), h(b"unencrypted"),
+    h(b"failure"), h(b"bear"),
 ];
 
-/// A string's stance on one polarity axis: -1, 0 or +1 or CONFLICT when it
-/// asserts both sides. Negation-aware, so "not valid" is negative.
-const CONFLICT: i32 = 2;
-
-fn axis_sign(t: &Toks, pos: &[u32], neg: &[u32]) -> i32 {
+/// A string's stance on one polarity axis as `(sign, self_contradicted)`. The sign
+/// is the first decisive polarity word's, negation-aware, because an answer leads
+/// with its verdict. The flag records that a later word took the other side, which
+/// is the shape of an answer built by copying the ground truth and dropping in a
+/// negation.
+fn axis_sign(t: &Toks, pos: &[u32], neg: &[u32]) -> (i32, bool) {
+    const H_NO: u32 = h(b"no");
     let mut sign = 0i32;
+    let mut mixed = false;
     let mut i = 0;
     while i < t.n {
         let key = t.hash[i];
+        // "no" is a verdict when it stands as its own clause ("No, the cert
+        // expired"). As a determiner it is not one: "no errors" is how an answer
+        // says a build passed, and reading that as a negative verdict inverts a
+        // correct answer.
+        if key == H_NO && !t.bnd[i] && t.n != 1 {
+            i += 1;
+            continue;
+        }
         let mut s = if in_table(pos, key) {
             1
         } else if in_table(neg, key) {
@@ -609,12 +679,12 @@ fn axis_sign(t: &Toks, pos: &[u32], neg: &[u32]) -> i32 {
             if sign == 0 {
                 sign = s;
             } else if sign != s {
-                return CONFLICT;
+                mixed = true;
             }
         }
         i += 1;
     }
-    sign
+    (sign, mixed)
 }
 
 fn any_negation(t: &Toks) -> bool {
@@ -799,19 +869,27 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
 
         let ga = &mut *core::ptr::addr_of_mut!(GA);
         let gb = &mut *core::ptr::addr_of_mut!(GB);
-        let cg = build_grams(gt, ga);
-        let cm = build_grams(ma, gb);
-        let gram = gram_similarity(ga, gb, cg, cm);
+        let cg3 = build_grams(gt, ga, 3);
+        let cm3 = build_grams(ma, gb, 3);
+        let gram3 = gram_similarity(ga, gb, cg3, cm3);
+
+        // Letter pairs as well as triples, at a fraction of the weight. Triples go
+        // to zero on short or unusual text (an abbreviation, a translation, a
+        // ticker), and two answers that both score a flat zero are indistinguishable
+        // even when one of them is right. Pairs keep the tail graded.
+        let cg2 = build_grams(gt, ga, 2);
+        let cm2 = build_grams(ma, gb, 2);
+        let gram2 = gram_similarity(ga, gb, cg2, cm2);
 
         // Adjacency of content words, reusing the same bitsets now that the
-        // character similarity is in hand.
+        // character similarities are in hand.
         let bg_g = build_content_bigrams(tg, ga);
         let bg_a = build_content_bigrams(ta, gb);
         let adjacency = dice(ga, gb, bg_g, bg_a);
         let cc_g = content_count(tg);
         let cc_a = content_count(ta);
 
-        let mut raw = clamp01(0.78 * lex + 0.22 * gram);
+        let mut raw = clamp01(0.76 * lex + 0.20 * gram3 + 0.04 * gram2);
 
         // Same words, different claim. "France is the capital of Paris" is a
         // perfect bag of words and a wrong answer. Word overlap cannot see the
@@ -866,30 +944,32 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         let mut agree = 0;
         let mut contra = 0;
         let mut silent = 0;
-        let mut hedged = 0;
+        let mut two_faced = 0;
         let mut c = 0;
         while c < axes.len() {
             let (pos, neg) = axes[c];
-            let g = axis_sign(tg, pos, neg);
-            if g == 1 || g == -1 {
-                let a = axis_sign(ta, pos, neg);
-                if a == CONFLICT {
-                    hedged += 1;
-                } else if a == 0 {
+            let (g, _) = axis_sign(tg, pos, neg);
+            if g != 0 {
+                let (a, a_mixed) = axis_sign(ta, pos, neg);
+                if a == 0 {
                     silent += 1;
-                } else if a == g {
-                    agree += 1;
-                } else {
+                } else if a != g {
                     contra += 1;
+                } else if a_mixed && gram3 > 0.6 {
+                    two_faced += 1;
+                } else {
+                    agree += 1;
                 }
             }
             c += 1;
         }
         if contra > 0 {
             raw *= 0.15;
-        } else if hedged > 0 {
-            // Asserting a thing and its opposite is not an answer.
-            raw *= 0.55;
+        } else if two_faced > 0 {
+            // Leads with the right verdict, then asserts the opposite, while
+            // reusing the ground truth's wording. That is the shape of a copied
+            // answer with a negation dropped in, not of a careful one.
+            raw *= 0.5;
         } else if agree > 0 {
             raw += (1.0 - raw) * 0.35;
         } else if silent > 0 {
