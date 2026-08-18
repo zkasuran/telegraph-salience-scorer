@@ -7,8 +7,13 @@ edition = "2021"
 name = "telegraph_scorer"
 crate-type = ["cdylib"]
 
+[features]
+# CHAT_COMPLETION build only: compiles minilm.rs and embeds the 23 MB transformer blob.
+# The 31 lexical builds omit it entirely.
+minilm = []
+
 [profile.release]
-opt-level = "z"
+opt-level = 3
 lto = true
 panic = "abort"
 strip = true

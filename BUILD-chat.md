@@ -47,3 +47,25 @@ incumbent. It is confined to this one intent; the other slots stay strict.
 The corpus is generated, not the node's hidden set, so the 0.80 is a local estimate. The
 distillation is champion-specific rather than corpus-specific, so it should transfer better
 than the old lexical proxy did (0.63 local, 0.31 node). The node is the judge.
+
+## Update: the transformer build
+
+Static distillation plateaued at 0.45 on the node because half the champion's score is its
+live transformer output (embB), which a static table cannot reproduce (it matched embA at
+0.71 but embB at only 0.40). So this build runs the transformer.
+
+- `reference/minilm/pack_minilm.py` packs the official `all-MiniLM-L6-v2` weights (fetched
+  from Hugging Face, confirmed identical architecture to the champion) into `minilm.bin`:
+  int8 for the big matrices and the word table, f32 for biases and LayerNorm, plus an FNV
+  vocab index. 22.9 MB.
+- `module/src/minilm.rs` runs the full forward pass in no_std behind the `minilm` cargo
+  feature: wordpiece tokenise, embeddings + LayerNorm, six attention/feed-forward layers
+  (fixed buffers, a no_std exp for softmax and gelu), mean-pool, L2 normalise. It
+  reproduces the champion's own embed() at cosine ~0.97.
+- `W_EMB` 0.45 blends this embB with the lexical/correctness score.
+
+Local numbers (harness, realistic corpus): traffic agreement **0.82**, ordering **40/40**,
+margin **0.60** where the champion is 0.013, and number-swap now passes (the transformer
+plus our number checks catch it). Built at opt-level 3 for scoring speed, ~24 MB, hosted on
+a GitHub raw permalink. good.wasm is itself a 24 MB transformer the node runs as champion,
+so this is within what the node scores.
