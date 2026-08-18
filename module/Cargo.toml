@@ -13,7 +13,7 @@ crate-type = ["cdylib"]
 minilm = []
 
 [profile.release]
-opt-level = 3
+opt-level = "z"
 lto = true
 panic = "abort"
 strip = true

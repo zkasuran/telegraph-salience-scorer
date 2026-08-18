@@ -69,3 +69,20 @@ margin **0.60** where the champion is 0.013, with number-swap now passing (the t
 plus our number checks catch it). Built at opt-level 3 for scoring speed, ~24 MB, hosted on
 a GitHub raw permalink. good.wasm is itself a 24 MB transformer the node runs as champion,
 so this is within what the node scores.
+
+## PROMOTED (reg 77, 2026-08-18): CHAT_COMPLETION is ours
+
+The node promoted the transformer build. Traffic agreement **0.6266** (floor 0.60),
+separation margin **0.572** (champion 0.3736), ordering 32/32. That is the flagship,
+busiest intent, taken from a 24 MB embedding incumbent after four earlier rejections.
+
+Progression on the node's real 66-answer gate: 0.308 lexical, 0.391 (50d vectors), 0.385
+(300d), 0.4495 (champion-distilled static), 0.5830 (transformer embB), 0.5948 (+ embA and
+softened penalties), **0.6266 (promoted)**.
+
+Exact winning config (patched onto the base lexical source, built `--features minilm`,
+opt-level 3): W_EMB gate on, score blend `0.28*embA + 0.56*embB + 0.16*lexical`; softened
+penalties M_CONTRA 0.7, M_NUM_WRONG 0.78, M_ORDER 0.85, M_ENTITY 0.72, M_NEGCOV 0.32,
+M_NUM_MISS_BASE 0.85, M_TWO_FACED 0.8; intent marker CHAT_COMPLETION. Binary keccak
+`0x31158894fc19e268f6a1aa896dcde9d03b421c9d5dcd9232c0df59530ef2c97c`, hosted at the scorer
+repo raw permalink. The 31 lexical slots keep the base source (W_EMB 0, no minilm feature).
