@@ -178,5 +178,423 @@
    "M_TWO_FACED": 0.5,
    "M_ORDER": 0.55
   }
+ },
+ {
+  "intent": "CURRENCY_EXCHANGE",
+  "profile": "numeric",
+  "hash": "0xccbfc0eafed863eaf0caa217fd9eca00232ee792dacc371a05010ccd78bb7669",
+  "url": "https://gateway.pinata.cloud/ipfs/QmdaA9nedkU5G7YwCjViEff7Sxvfb1fgX9SLXXrxtosuTR",
+  "size": 1039661,
+  "tx": "0xcdf65fcc8641e174945c04c9f2e7f1a5eb9f55aee623be843ddfce7ebfa6a0f8",
+  "metrics": {
+   "margin": 0.7058,
+   "wins": "40/40",
+   "spearman": 0.6262,
+   "family": {
+    "margin": 0.5653,
+    "wins": "15/15"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.35,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.12,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "STOCK_PRICE",
+  "profile": "numeric",
+  "hash": "0x51ce38b3cf4dd275dd571977c033583d50223aae294939fb785f8586bb652b6d",
+  "url": "https://gateway.pinata.cloud/ipfs/QmcfceVeCQab6n8PLVfJ3JgxMM4VJpxMbD5NsMv89s7xUt",
+  "size": 1039661,
+  "tx": "0xad4b6adebb6e9d5a5eeacaf77100aad0cb9133d359bf9fe4f8cd9b0bb82b6230",
+  "metrics": {
+   "margin": 0.7058,
+   "wins": "40/40",
+   "spearman": 0.6262,
+   "family": {
+    "margin": 0.5653,
+    "wins": "15/15"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.35,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.12,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "TVL_LOOKUP",
+  "profile": "numeric",
+  "hash": "0x52bf95ab9ad37da230a26f7b580b60293988b930124826003614bd523b8e3869",
+  "url": "https://gateway.pinata.cloud/ipfs/QmNV1RufiyPjkkZseWAeXpoSrtWzDPBVhyMXmMQoDvoLKi",
+  "size": 1039661,
+  "tx": "0x2538b933df8e14d1970d08e656a29680fbd11c65448246c4bc0235495c2222d5",
+  "metrics": {
+   "margin": 0.7058,
+   "wins": "40/40",
+   "spearman": 0.6262,
+   "family": {
+    "margin": 0.5653,
+    "wins": "15/15"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.35,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.12,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "IMAGE_VERIFICATION",
+  "profile": "verdict",
+  "hash": "0xb718d93782d5df987d70d40ff4ca3569b0795e5f25a4b46e4a45b73dffa62f50",
+  "url": "https://gateway.pinata.cloud/ipfs/QmcurvTXbNLbMf7QQi63WFQvVNRPd8bACAyQrxTqazPufG",
+  "size": 1039661,
+  "tx": "0xf5cd3a0023bdf9915ab092cff2fc1069b2e91130d4987ec9c27d74be1527594f",
+  "metrics": {
+   "margin": 0.7024,
+   "wins": "40/40",
+   "spearman": 0.6331,
+   "family": {
+    "margin": 0.4708,
+    "wins": "14/14"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "VIDEO_VERIFICATION",
+  "profile": "verdict",
+  "hash": "0x8f1ec8325e0824db9f4fa09383db9f1786d71aacd3f69b5f2ab400b214b2d6ca",
+  "url": "https://gateway.pinata.cloud/ipfs/QmYCUaNTDEw5mYn9hGG9B5wGhFeZZ1i9WNTnERg5BodX2i",
+  "size": 1039661,
+  "tx": "0x1e2e3a56dcbae098005da8ccd0113317add04e119eb0c850eed07ce3fd54bc62",
+  "metrics": {
+   "margin": 0.7024,
+   "wins": "40/40",
+   "spearman": 0.6331,
+   "family": {
+    "margin": 0.4708,
+    "wins": "14/14"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "MEDIA_AUTHENTICITY_CHECK",
+  "profile": "verdict",
+  "hash": "0xb5bf64281aa0c244ed7d18e8b0ca4fe13b931f616a16c9b045c4ce4f1bc9bc1a",
+  "url": "https://gateway.pinata.cloud/ipfs/QmPbj5Dv2CppHrhNP2tBoV8AgAwcxVyHy7XPbvbp7BvWAf",
+  "size": 1039661,
+  "tx": "0xeaf9879e7f4de79b28e49e0dc94b51935c592daab02566a03c2f727125a4899f",
+  "metrics": {
+   "margin": 0.7024,
+   "wins": "40/40",
+   "spearman": 0.6331,
+   "family": {
+    "margin": 0.4708,
+    "wins": "14/14"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "CONTENT_VERIFICATION",
+  "profile": "verdict",
+  "hash": "0x4a847fab1f362de7a0d2710792cc2fd5fe2615f9af69f5313178c7ca74964356",
+  "url": "https://gateway.pinata.cloud/ipfs/QmWtKBYV2YZgbYDEJ3vvg8K9RsTuRwAWKzYvbVCgaUjoBi",
+  "size": 1039661,
+  "tx": "0x7b099a931a073ed0490ef9a526f30cd54473be458b4507a474604b75a46f961f",
+  "metrics": {
+   "margin": 0.7024,
+   "wins": "40/40",
+   "spearman": 0.6331,
+   "family": {
+    "margin": 0.4708,
+    "wins": "14/14"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "IP_GEOLOCATION",
+  "profile": "reference",
+  "hash": "0x2c4fc8eced58456e597317fb26ba78f1c70fcc95343b3f0a60639681c0c6024f",
+  "url": "https://gateway.pinata.cloud/ipfs/QmbBibUo5Ei6r2BySTTnzpg7UzN4D5NL6A4RR2CnH9C2aj",
+  "size": 1039661,
+  "tx": "0xb68e9ccb3b81df3e7cfb892072b15e32c41bd6ebd8b0f112f73f17ab92083424",
+  "metrics": {
+   "margin": 0.6852,
+   "wins": "40/40",
+   "spearman": 0.6391,
+   "family": {
+    "margin": 0.5694,
+    "wins": "11/12"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.6,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.3,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.35,
+   "R_KEY_BASE": 0.6,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "NEWS_HEADLINES",
+  "profile": "reference",
+  "hash": "0x526f491f299dbf46bbadf6fa0019c52bdec24abf736c02d4f0f62245fa3ca4ab",
+  "url": "https://gateway.pinata.cloud/ipfs/QmbVs4B7yrpN1P51zpBGUuBTuQKtrhUjHcBAMRVK9ePtnT",
+  "size": 1039661,
+  "tx": "0xfeaa644e7e79dfd88d707dcb3ef9acbcaf0e4491570bcc17714542229e16bbca",
+  "metrics": {
+   "margin": 0.6852,
+   "wins": "40/40",
+   "spearman": 0.6391,
+   "family": {
+    "margin": 0.5694,
+    "wins": "11/12"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.6,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.3,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.35,
+   "R_KEY_BASE": 0.6,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "CRYPTO_PRICE",
+  "profile": "numeric",
+  "hash": "0x6f1f26e330a18ca5a0f04ffbd8fa72478794dfdddcfdc406285cacaf2337c575",
+  "url": "https://gateway.pinata.cloud/ipfs/QmXrmw6sFoKYDvo8FhdNyUHp4epW3tNVQtSg17mmMLmzWY",
+  "size": 1039661,
+  "tx": "0xdbc6fe2ac4d6559e1f381d05e66378b372493088d9f87adc0dc05b1246b2d0d2",
+  "metrics": {
+   "margin": 0.7058,
+   "wins": "40/40",
+   "spearman": 0.6262,
+   "family": {
+    "margin": 0.5653,
+    "wins": "15/15"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.35,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.12,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
+ },
+ {
+  "intent": "AI_TEXT_DETECTION",
+  "profile": "verdict",
+  "hash": "0x7f0395c493b787e59b17f738f0d2383f68586fb8dac22e8a7c4e134b35a37a53",
+  "url": "https://gateway.pinata.cloud/ipfs/QmR9Xmos3EZ4uqULhb1LyddSb7AXDXTBnBWNGLtLVpLBgf",
+  "size": 1039661,
+  "tx": "0xced31b30e5d1be04b288dc719166b4066e3c62223bd7f24c4967a8d691162ec2",
+  "metrics": {
+   "margin": 0.7024,
+   "wins": "40/40",
+   "spearman": 0.6331,
+   "family": {
+    "margin": 0.4708,
+    "wins": "14/14"
+   }
+  },
+  "values": {
+   "F_BETA2": 0.36,
+   "P_CONCAVE": 1.0,
+   "W_LEX": 0.76,
+   "W_GRAM3": 0.2,
+   "W_GRAM2": 0.04,
+   "M_CONTRA": 0.15,
+   "M_SILENT": 0.95,
+   "B_AGREE": 0.45,
+   "R_KEY_BASE": 0.5,
+   "R_FLOOR": 0.3,
+   "SHARPEN": 0.82,
+   "M_NUM_MISS_BASE": 0.62,
+   "M_NUM_WRONG": 0.45,
+   "M_TWO_FACED": 0.5,
+   "M_ORDER": 0.55,
+   "M_ENTITY": 0.3,
+   "SOFT_MIN": 0.62,
+   "SOFT_W": 1.0,
+   "SOFT_CAP_FRAC": 0.35
+  }
  }
 ]

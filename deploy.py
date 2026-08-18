@@ -21,7 +21,9 @@ WASM = os.path.join(ROOT, "module", "target", "wasm32-unknown-unknown", "release
 DIAMOND = "0x5a2324aA18613FAD4e44bDF0d6c73Ec1f6D87ff8"
 RPC = "https://sepolia.base.org"
 WALLET_ENV = os.path.join(ROOT, "..", ".wallet.env")
-COOKIE = "/tmp/tg/cookie.txt"
+# Session cookie for the console pin endpoint. Kept in the lane rather than
+# /tmp, which gets cleaned out from under a long run.
+COOKIE = os.path.join(ROOT, "..", ".tg-session")
 LEDGER = os.path.join(ROOT, "bench", "registrations.json")
 
 # The base configuration is the one swept in tune.py: best rank agreement with the
@@ -30,7 +32,8 @@ BASE = {
     "F_BETA2": 0.36, "P_CONCAVE": 1.0, "W_LEX": 0.76, "W_GRAM3": 0.20, "W_GRAM2": 0.04,
     "M_CONTRA": 0.3, "M_SILENT": 0.95, "B_AGREE": 0.35, "R_KEY_BASE": 0.5, "R_FLOOR": 0.3,
     "SHARPEN": 0.82, "M_NUM_MISS_BASE": 0.62, "M_NUM_WRONG": 0.45, "M_TWO_FACED": 0.5,
-    "M_ORDER": 0.55, "SOFT_MIN": 0.55, "SOFT_W": 0.85, "SOFT_CAP_FRAC": 0.5,
+    "M_ORDER": 0.55, "M_ENTITY": 0.3, "M_NEGCOV": 1.0, "SOFT_MIN": 0.72, "SOFT_W": 1.0,
+    "SOFT_CAP_FRAC": 0.35,
 }
 
 # Per-shape overrides. A verdict intent lives or dies on polarity, so contradicting
@@ -40,11 +43,34 @@ BASE = {
 PROFILES = {
     "verdict": {"M_CONTRA": 0.15, "B_AGREE": 0.45},
     "reference": {"F_BETA2": 0.6, "R_KEY_BASE": 0.6},
-    "numeric": {"M_NUM_WRONG": 0.3, "M_NUM_MISS_BASE": 0.5},
+    # swept against bench/family-numeric.json: a wrong figure has to be fatal, because
+    # for these intents the figure is the whole answer
+    "numeric": {"M_NUM_WRONG": 0.12, "M_CONTRA": 0.15},
     "text": {},
 }
 
+# The family benchmark a build has to clear on top of the general one. An intent with
+# no family here is gated on the general set alone.
+FAMILIES = {
+    "numeric": "bench/family-numeric.json",
+    "verdict": "bench/family-authenticity.json",
+    "reference": "bench/family-reference.json",
+}
+
 TARGETS = {
+    # numeric: the answer is a figure
+    "CRYPTO_PRICE": "numeric",
+    "CURRENCY_EXCHANGE": "numeric",
+    "STOCK_PRICE": "numeric",
+    "TVL_LOOKUP": "numeric",
+    # authenticity: the answer is a verdict about whether something is genuine
+    "IMAGE_VERIFICATION": "verdict",
+    "VIDEO_VERIFICATION": "verdict",
+    "MEDIA_AUTHENTICITY_CHECK": "verdict",
+    "CONTENT_VERIFICATION": "verdict",
+    # reference: the answer names an entity
+    "IP_GEOLOCATION": "reference",
+    "NEWS_HEADLINES": "reference",
     "AI_TEXT_DETECTION": "verdict",
     "FACT_CHECK": "verdict",
     "URL_SCAN": "verdict",
@@ -77,20 +103,26 @@ def run(cmd, **kw):
     return subprocess.run(cmd, capture_output=True, text=True, **kw)
 
 
-def build_and_gate():
+def build_and_gate(family=None):
     r = run(["cargo", "build", "--release", "--target", "wasm32-unknown-unknown"],
             cwd=os.path.join(ROOT, "module"))
     if r.returncode != 0:
         return None, r.stderr[-500:]
     env = dict(os.environ, CORPUS="bench/traffic.json",
                BASELINE_SCORES="bench/champion-corpus-scores.json", REPORT="/tmp/deploy-report.json")
+    if family:
+        env["FAMILY"] = family
     g = run(["./harness/harness", "bench/benchmark.json", "bench/attacks.json", WASM], cwd=ROOT, env=env)
     if g.returncode != 0:
         return None, "harness gates failed:\n" + g.stdout[-1200:]
     m = re.search(r"candidate_margin ([0-9.]+) \| wins (\d+)/(\d+)", g.stdout)
     s = re.search(r"spearman vs \S+\s+(-?[0-9.]+)", g.stdout)
-    return {"margin": float(m.group(1)), "wins": f"{m.group(2)}/{m.group(3)}",
-            "spearman": float(s.group(1)) if s else None}, None
+    f = re.search(r"family_margin ([0-9.]+) \| wins (\d+)/(\d+)", g.stdout)
+    out = {"margin": float(m.group(1)), "wins": f"{m.group(2)}/{m.group(3)}",
+           "spearman": float(s.group(1)) if s else None}
+    if f:
+        out["family"] = {"margin": float(f.group(1)), "wins": f"{f.group(2)}/{f.group(3)}"}
+    return out, None
 
 
 def keccak(path):
@@ -105,10 +137,21 @@ def keccak(path):
 
 
 def pin(path, name):
+    """Pin through the console. The endpoint fails transiently under a run of
+    uploads, so retry rather than losing the whole batch. Identical bytes give the
+    same CID, so a retry is free."""
     cookie = open(COOKIE).read().strip()
-    r = run(["curl", "-sS", "--max-time", "120", "https://integrate.telegraphprotocol.com/api/upload-wasm",
-             "-X", "POST", "-b", cookie, "-F", f"file=@{path};type=application/wasm", "-F", f"name={name}"])
-    return json.loads(r.stdout)["gateway"]
+    last = ""
+    for attempt in range(4):
+        r = run(["curl", "-sS", "--max-time", "150", "https://integrate.telegraphprotocol.com/api/upload-wasm",
+                 "-X", "POST", "-b", cookie, "-F", f"file=@{path};type=application/wasm", "-F", f"name={name}"])
+        try:
+            return json.loads(r.stdout)["gateway"]
+        except Exception:
+            last = (r.stdout or r.stderr)[:200]
+            print(f"  pin attempt {attempt + 1} failed: {last}", flush=True)
+            subprocess.run(["sleep", "20"])
+    raise SystemExit(f"pin failed four times: {last}")
 
 
 def wait_for_gateway(url, size):
@@ -143,13 +186,15 @@ def main():
         values = dict(BASE, **PROFILES[profile])
         print(f"\n=== {intent} ({profile} profile) ===", flush=True)
         patch(intent, values)
-        metrics, err = build_and_gate()
+        metrics, err = build_and_gate(FAMILIES.get(profile))
         if err:
             print(f"  gate failed, not registering:\n{err}")
             continue
         h, size = keccak(WASM)
+        fam = metrics.get("family")
+        famtxt = f" | family {fam['margin']:.4f} wins {fam['wins']}" if fam else ""
         print(f"  gates passed: margin {metrics['margin']:.4f} wins {metrics['wins']} "
-              f"spearman {metrics['spearman']}", flush=True)
+              f"spearman {metrics['spearman']}{famtxt}", flush=True)
         print(f"  binary {size} bytes, keccak {h}")
         if not send:
             print("  dry run, not pinning or registering")

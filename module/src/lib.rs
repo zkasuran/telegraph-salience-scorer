@@ -51,6 +51,14 @@ const M_NUM_MISS_BASE: f32 = 0.62;
 const M_NUM_WRONG: f32 = 0.45;
 /// Same words, no shared adjacency.
 const M_ORDER: f32 = 0.55;
+/// A figure attached to a different entity. Harder than a plain reordering, because
+/// "Base at 2.6 billion" when the truth is "Arbitrum at 2.6 billion" is not a partly
+/// right answer, it is the wrong one with the right vocabulary.
+const M_ENTITY: f32 = 0.3;
+/// How much of the score a negated match costs. "No rain is expected" covers every
+/// content word of "rain is expected" and asserts the opposite, so coverage that only
+/// holds under a negation the ground truth does not carry is worth less than nothing.
+const M_NEGCOV: f32 = 1.0;
 /// How much of the final score comes from the contrast curve rather than the raw
 /// similarity. All contrast sharpens separation, all raw ranks more smoothly.
 const SHARPEN: f32 = 0.82;
@@ -60,8 +68,8 @@ const SHARPEN: f32 = 0.82;
 /// one is the guard: without it an answer that merely names the subject ("Australia"
 /// for "Canberra") reads as having answered.
 const SOFT_W: f32 = 1.0;
-const SOFT_MIN: f32 = 0.48;
-const SOFT_CAP_FRAC: f32 = 0.5;
+const SOFT_MIN: f32 = 0.72;
+const SOFT_CAP_FRAC: f32 = 0.35;
 
 /// Squared ramp above SOFT_MIN, so a near synonym earns most of the credit and a
 /// merely related word earns almost none.
@@ -88,7 +96,7 @@ fn soft_credit(sim: f32) -> f32 {
 // Regenerate with tools/pack_vectors.py.
 
 static VEC_BLOB: &[u8] = include_bytes!("vectors.bin");
-const VEC_DIM: usize = 300;
+const VEC_DIM: usize = 50;
 /// Two int8 rows are each scaled by 127, so their dot product is 127^2 * cosine.
 const VEC_SCALE: f32 = 16129.0;
 /// Bounds on the pairwise work, so a 78 KB answer costs a predictable amount.
@@ -313,7 +321,38 @@ const NUMERALS: &[(u32, u32)] = &[
     (h(b"seventy"), h(b"70")), (h(b"eighty"), h(b"80")), (h(b"ninety"), h(b"90")),
     (h(b"hundred"), h(b"100")), (h(b"thousand"), h(b"1000")),
     (h(b"million"), h(b"1000000")), (h(b"billion"), h(b"1000000000")),
+    (h(b"trillion"), h(b"1000000000000")),
 ];
+
+/// Scale words and their single-letter forms. A figure and its magnitude are one
+/// claim: "3.1 trillion" against "3.1 billion" is a wrong answer that shares every
+/// other token, so the magnitude is checked the same way the digits are.
+const SCALES: &[(u32, u32)] = &[
+    (h(b"thousand"), 3), (h(b"k"), 3),
+    (h(b"million"), 6), (h(b"m"), 6), (h(b"mn"), 6),
+    (h(b"billion"), 9), (h(b"b"), 9), (h(b"bn"), 9),
+    (h(b"trillion"), 12), (h(b"t"), 12), (h(b"tn"), 12),
+];
+
+/// Magnitude a token asserts, 0 when it says nothing about scale. Also reads the
+/// suffix of a mixed token, so "3.1T" and "$11.2B" carry their scale.
+fn scale_of(tok: &[u8], hash: u32) -> u32 {
+    let mut i = 0;
+    while i < SCALES.len() {
+        if SCALES[i].0 == hash { return SCALES[i].1; }
+        i += 1;
+    }
+    if tok.len() >= 2 && is_digit(tok[0]) {
+        let last = lower(tok[tok.len() - 1]);
+        let mut j = 0;
+        while j < SCALES.len() {
+            let (key, mag) = SCALES[j];
+            if key == h(&[last]) { return mag; }
+            j += 1;
+        }
+    }
+    0
+}
 
 fn numeral_digits(key: u32) -> Option<u32> {
     let mut i = 0;
@@ -362,6 +401,15 @@ struct Toks {
     bnd: [bool; MAX_TOKENS],
     /// Row in the vector table, or -1 when the word is not in it.
     row: [i32; MAX_TOKENS],
+    /// Decimal magnitude this token asserts (3 for thousand, 9 for billion), else 0.
+    scale: [u32; MAX_TOKENS],
+    /// Looked like a proper noun in the original text (a mid-sentence capital).
+    proper: [bool; MAX_TOKENS],
+    /// Started with a capital anywhere, including the first word of a sentence.
+    /// Weighting wants the stricter test, entity matching wants this one.
+    cap: [bool; MAX_TOKENS],
+    /// First four lowercased letters, packed like an acronym key.
+    pre: [u32; MAX_TOKENS],
 }
 
 const EMPTY_TOKS: Toks = Toks {
@@ -376,6 +424,10 @@ const EMPTY_TOKS: Toks = Toks {
     first: [0; MAX_TOKENS],
     bnd: [false; MAX_TOKENS],
     row: [-1; MAX_TOKENS],
+    scale: [0; MAX_TOKENS],
+    proper: [false; MAX_TOKENS],
+    cap: [false; MAX_TOKENS],
+    pre: [0; MAX_TOKENS],
 };
 
 static mut TQ: Toks = EMPTY_TOKS;
@@ -434,6 +486,19 @@ fn acronym_key(tok: &[u8]) -> u32 {
         if !tok[i].is_ascii_uppercase() {
             return 0;
         }
+        key |= (lower(tok[i]) as u32) << (8 * i);
+        i += 1;
+    }
+    key
+}
+
+/// First four letters of a token, packed like an acronym key so a country code can
+/// be compared against the name it abbreviates ("AU" against "Australia").
+fn prefix_key(tok: &[u8]) -> u32 {
+    let mut key = 0u32;
+    let mut i = 0;
+    while i < 4 && i < tok.len() {
+        if !is_alpha(tok[i]) { break; }
         key |= (lower(tok[i]) as u32) << (8 * i);
         i += 1;
     }
@@ -543,9 +608,20 @@ fn tokenize(src: &[u8], t: &mut Toks) {
         t.w[k] = weight(tok, hash, numeric, proper);
         t.numeric[k] = numeric;
         t.neg[k] = negwin > 0;
+        // Every per-token field has to be written on every push. `bnd` is only ever
+        // set to true, by the punctuation branch above, so leaving it unwritten here
+        // let a previous call's clause boundary survive into this one: "no" in
+        // "Authentic, no sign of manipulation" then read as a standalone verdict and
+        // flipped a correct answer into a contradiction. The score depended on how
+        // many calls had come before, which is the one thing a scorer must never do.
+        t.bnd[k] = false;
         t.acro[k] = acronym_key(tok);
         t.first[k] = if is_alpha(tok[0]) { lower(tok[0]) } else { 0 };
         t.row[k] = if numeric { -1 } else { vec_row(hash) };
+        t.scale[k] = scale_of(tok, hash);
+        t.proper[k] = proper;
+        t.cap[k] = has_alpha && tok[0].is_ascii_uppercase();
+        t.pre[k] = prefix_key(tok);
         if in_table(NEG, hash) {
             negwin = 4;
         } else if negwin > 0 {
@@ -613,9 +689,71 @@ fn set_fill(s: &mut Set, t: &Toks) {
 
 /// Does token `i` of `t` appear in set `s`, by exact form or either stem.
 fn matched(s: &Set, t: &Toks, i: usize) -> bool {
-    set_get(s, t.hash[i]).is_some()
-        || set_get(s, t.stem[i]).is_some()
-        || set_get(s, t.alt[i]).is_some()
+    matched_idx(s, t, i).is_some()
+}
+
+/// Same, returning where it matched, so the two occurrences can be compared for
+/// things a set cannot carry: whether one of them was negated.
+fn matched_idx(s: &Set, t: &Toks, i: usize) -> Option<usize> {
+    if let Some(k) = set_get(s, t.hash[i]) { return Some(k); }
+    if let Some(k) = set_get(s, t.stem[i]) { return Some(k); }
+    set_get(s, t.alt[i])
+}
+
+/// Does any token of `t` assert this decimal magnitude? "3.1B" and "3.1 billion" are
+/// the same claim, and a scorer that treats them as unrelated tokens marks a right
+/// figure wrong.
+fn has_scale(t: &Toks, sc: u32) -> bool {
+    if sc == 0 { return false; }
+    let mut i = 0;
+    while i < t.n {
+        if t.scale[i] == sc { return true; }
+        i += 1;
+    }
+    false
+}
+
+/// Which capitalised entity sits next to which figure. "Arbitrum at 2.6 billion
+/// against Base at 1.9" and the same sentence with the names swapped share every
+/// token and assert different things, and content-word adjacency alone does not
+/// separate them because the figures repeat.
+fn build_entity_figures(t: &Toks, bits: &mut [u64; GRAM_WORDS]) -> u32 {
+    let mut i = 0;
+    while i < GRAM_WORDS { bits[i] = 0; i += 1; }
+    let mut n = 0u32;
+    let mut k = 0usize;
+    while k < t.n {
+        // "2.6" and "2.6B" are the same figure, so a mixed token that starts with a
+        // digit counts, and the pair is keyed on the bare digits either way.
+        let is_figure = t.numeric[k] || t.alt[k] != t.hash[k] && t.scale[k] != 0;
+        if is_figure {
+            // Nearest capitalised token only. A wider window pairs every figure with
+            // every entity in the sentence, which is exactly the ambiguity this is
+            // meant to resolve.
+            let mut best: i32 = -1;
+            let mut dist = usize::MAX;
+            let lo = if k >= 4 { k - 4 } else { 0 };
+            let hi = if k + 5 < t.n { k + 5 } else { t.n };
+            let mut j = lo;
+            while j < hi {
+                if j != k && t.cap[j] && t.w[j] > 0.5 {
+                    let d = if j > k { j - k } else { k - j };
+                    if d < dist { dist = d; best = j as i32; }
+                }
+                j += 1;
+            }
+            if best >= 0 {
+                let figure = if t.numeric[k] { t.hash[k] } else { t.alt[k] };
+                let g = t.stem[best as usize] ^ figure.wrapping_mul(0xC2B2_AE35);
+                let slot = ((g.wrapping_mul(0x9E37_79B1) >> 13) as usize) & (GRAM_BITS - 1);
+                bits[slot >> 6] |= 1u64 << (slot & 63);
+            }
+        }
+        k += 1;
+    }
+    let mut j = 0;
+    while j < GRAM_WORDS { n += bits[j].count_ones(); j += 1; }
+    n
 }
 
 // ---------------------------------------------------------------------------
@@ -790,7 +928,8 @@ const DIR_POS: &[u32] = &[
     h(b"growth"), h(b"grew"), h(b"appreciate"), h(b"above"), h(b"more"), h(b"better"),
     h(b"stronger"), h(b"buy"), h(b"positive"), h(b"warmer"), h(b"faster"),
     h(b"hot"), h(b"warm"), h(b"open"), h(b"enabled"), h(b"secure"), h(b"encrypted"),
-    h(b"success"), h(b"bull"),
+    h(b"success"), h(b"bull"), h(b"strengthened"), h(b"strengthen"), h(b"appreciated"),
+    h(b"gained"), h(b"rallied"), h(b"climbed"), h(b"surged"), h(b"outperformed"),
 ];
 const DIR_NEG: &[u32] = &[
     h(b"fall"), h(b"falls"), h(b"falling"), h(b"fell"), h(b"down"), h(b"downward"), h(b"lower"),
@@ -798,7 +937,8 @@ const DIR_NEG: &[u32] = &[
     h(b"decline"), h(b"declines"), h(b"shrink"), h(b"depreciate"), h(b"below"), h(b"less"),
     h(b"worse"), h(b"weaker"), h(b"sell"), h(b"negative"), h(b"cooler"), h(b"slower"),
     h(b"cold"), h(b"cool"), h(b"closed"), h(b"disabled"), h(b"insecure"), h(b"unencrypted"),
-    h(b"failure"), h(b"bear"),
+    h(b"failure"), h(b"bear"), h(b"weakened"), h(b"weaken"), h(b"depreciated"),
+    h(b"lost"), h(b"slumped"), h(b"slipped"), h(b"plunged"), h(b"underperformed"),
 ];
 
 /// A string's stance on one polarity axis as `(sign, self_contradicted)`. The sign
@@ -853,11 +993,22 @@ fn any_negation(t: &Toks) -> bool {
 /// Byte equality over word bytes only: case, spacing and punctuation are
 /// ignored, so a perfect answer scores exactly 1.0 however it is typeset.
 fn normalized_equal(a: &[u8], b: &[u8]) -> bool {
+    // A separator between two digits is part of the figure. Skipping it would make
+    // "1.57 JPY" identical to "157 JPY", which is the difference between a right
+    // answer and a wrong one by two orders of magnitude.
+    fn significant(s: &[u8], i: usize) -> bool {
+        if is_word(s[i]) { return true; }
+        (s[i] == b'.' || s[i] == b',')
+            && i > 0
+            && i + 1 < s.len()
+            && is_digit(s[i - 1])
+            && is_digit(s[i + 1])
+    }
     let mut i = 0usize;
     let mut j = 0usize;
     loop {
-        while i < a.len() && !is_word(a[i]) { i += 1; }
-        while j < b.len() && !is_word(b[j]) { j += 1; }
+        while i < a.len() && !significant(a, i) { i += 1; }
+        while j < b.len() && !significant(b, j) { j += 1; }
         if i >= a.len() || j >= b.len() {
             return i >= a.len() && j >= b.len();
         }
@@ -891,8 +1042,17 @@ fn acronym_bridge(
         let key = from.acro[i];
         let len = acronym_len(key);
         if key != 0 && len >= 2 {
+            let mask = if len >= 4 { 0xFFFF_FFFFu32 } else { (1u32 << (8 * len)) - 1 };
             let mut j = 0;
             while j < to.n {
+                // "AU" against "Australia": an all-caps short token that prefixes a
+                // proper noun is the same entity, which is how country codes, tickers
+                // and airport codes appear in real answers.
+                if to.w[j] > 0.5 && to.cap[j] && (to.pre[j] & mask) == key {
+                    from_hit[i] = true;
+                    to_cov[j] = true;
+                    break;
+                }
                 if to.w[j] > 0.5 && pack_initials(to, j, len) == key {
                     from_hit[i] = true;
                     let mut got = 0usize;
@@ -962,7 +1122,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
                 an_content += w;
                 if !from_question { an_novel += w; }
             }
-            if matched(sg, ta, i) || an_bridge[i] {
+            if matched(sg, ta, i) || an_bridge[i] || has_scale(tg, ta.scale[i]) {
                 p_hit += w;
                 p_tot += w;
             } else if from_question {
@@ -988,11 +1148,24 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         let mut k_tot = 0.0f32;
         let mut r_soft = 0.0f32;
         let mut k_soft = 0.0f32;
+        let mut contra_w = 0.0f32;
         i = 0;
         while i < tg.n {
             let w = tg.w[i];
             let in_question = matched(sq, tg, i);
-            let hard = matched(sa, tg, i) || gt_bridge[i];
+            // A match under a negation the ground truth does not carry is not
+            // coverage, it is the opposite claim: "no rain is expected" against
+            // "rain is expected" shares every content word.
+            let mut hard = gt_bridge[i] || has_scale(ta, tg.scale[i]);
+            if !hard {
+                if let Some(j) = matched_idx(sa, tg, i) {
+                    if ta.neg[j] && !tg.neg[i] && w > 0.5 {
+                        contra_w += w;
+                    } else {
+                        hard = true;
+                    }
+                }
+            }
             let soft = if hard || w <= 0.5 { 0.0 } else { soft_credit(soft_best(tg, i, ta)) };
             r_tot += w;
             if hard { r_hit += w; } else { r_soft += w * soft; }
@@ -1071,6 +1244,23 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         let full_coverage = k_tot > 0.0 && k_hit >= k_tot * 0.999;
         if full_coverage && p_raw >= 0.999 && adjacency < 0.15 && cc_g >= 3 && cc_a >= 3 {
             raw *= M_ORDER;
+        }
+
+        // Figures attached to different entities are a different claim even when the
+        // words and the numbers all match.
+        let ef_g = build_entity_figures(tg, ga);
+        let ef_a = build_entity_figures(ta, gb);
+        if ef_g > 0 && ef_a > 0 {
+            let shared = dice(ga, gb, ef_g, ef_a);
+            if shared < 0.05 && full_coverage {
+                raw *= M_ENTITY;
+            }
+        }
+
+        // Coverage that only holds under a negation the ground truth does not carry.
+        if contra_w > 0.0 && k_tot > 0.0 {
+            let ratio = clamp01(contra_w / k_tot);
+            raw *= 1.0 - M_NEGCOV * ratio;
         }
 
         // Numbers. Omitting a figure the ground truth states is incomplete;

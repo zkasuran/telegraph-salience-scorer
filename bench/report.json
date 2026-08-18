@@ -1,16 +1,16 @@
 {
-  "telegraph_scorer.wasm": {
+  "telegraph-salience-scorer.wasm": {
     "metrics": {
-      "module": "telegraph_scorer.wasm",
+      "module": "telegraph-salience-scorer.wasm",
       "comparable_cases": 40,
       "wins": 40,
       "ties": 0,
       "losses": null,
-      "candidate_margin": 0.681263354798648,
-      "mean_good": 0.7873233515769243,
-      "mean_bad": 0.1060599967782764,
+      "candidate_margin": 0.6846704046005471,
+      "mean_good": 0.7951044697314501,
+      "mean_bad": 0.11043406513090304,
       "worst_self_match": 1,
-      "score_stddev": 0.3882025646507413,
+      "score_stddev": 0.3930871594206553,
       "min_case_margin": 0.12766295671463013,
       "per_case": {
         "acad-search": [
@@ -19,18 +19,18 @@
         ],
         "agent-task": [
           0.7681922912597656,
-          0.0008095947559922934
+          0.0008122709696181118
         ],
         "aidet-no": [
-          0.6675817966461182,
-          0.0005071834311820567
+          0.7327269315719604,
+          0.002259431639686227
         ],
         "aidet-yes": [
           0.9281469583511353,
           0.00021953957912046462
         ],
         "code-git-undo": [
-          0.8871937990188599,
+          0.8871914744377136,
           0.1008186936378479
         ],
         "code-py-len": [
@@ -46,35 +46,35 @@
           0.15129774808883667
         ],
         "deepfake-real": [
-          0.890762209892273,
-          0.04256885498762131
+          0.8912451267242432,
+          0.050126705318689346
         ],
         "extract-field": [
-          0.8706871271133423,
+          0.8551707863807678,
           0.36047470569610596
         ],
         "fact-einstein-nobel": [
-          0.8338102698326111,
-          0.03917914256453514
+          0.876242995262146,
+          0.04207630828022957
         ],
         "fact-great-wall": [
-          0.6346689462661743,
-          0.027817655354738235
+          0.6742616891860962,
+          0.03722836449742317
         ],
         "fact-vaccine-autism": [
-          0.7801188826560974,
-          0.014491403475403786
+          0.8000828623771667,
+          0.021891552954912186
         ],
         "fin-bearish": [
-          0.8060849905014038,
-          0.20753644406795502
+          0.8205665349960327,
+          0.21637338399887085
         ],
         "fin-rate-cut": [
-          0.4126368761062622,
-          0.05730398744344711
+          0.42863214015960693,
+          0.12488793581724167
         ],
         "fx-pair": [
-          0.7621063590049744,
+          0.7589995265007019,
           0.04512913152575493
         ],
         "geo-ip": [
@@ -82,16 +82,16 @@
           0
         ],
         "gk-capital-au": [
-          0.8425017595291138,
-          0.017255280166864395
+          0.8412818908691406,
+          0.015569223091006279
         ],
         "gk-largest-ocean": [
-          0.9225289821624756,
-          0.4918517768383026
+          0.9219684600830078,
+          0.7412857413291931
         ],
         "gk-photosynthesis": [
           0.8836025595664978,
-          0.1584063470363617
+          0.15800249576568604
         ],
         "gk-water-boil": [
           0.5360927581787109,
@@ -102,8 +102,8 @@
           0.0009612950379960239
         ],
         "moderation-safe": [
-          0.7992997765541077,
-          0.04786064475774765
+          0.8410248756408691,
+          0.05974222719669342
         ],
         "news-headline": [
           0.6432977318763733,
@@ -122,7 +122,7 @@
           0.000521313224453479
         ],
         "num-speed-light": [
-          0.7738215923309326,
+          0.7770671248435974,
           0.04936710745096207
         ],
         "ocr-digits": [
@@ -134,16 +134,16 @@
           0.8585929870605469
         ],
         "sentiment-neg": [
-          0.9394057393074036,
-          0.0686195120215416
+          0.9409380555152893,
+          0.037119060754776
         ],
         "sports-score": [
           0.9082332849502563,
           0.24701130390167236
         ],
         "ssl-expired": [
-          0.6419397592544556,
-          0.020851638168096542
+          0.7349656820297241,
+          0.03740547597408295
         ],
         "task-completion": [
           0.21903689205646515,
@@ -163,15 +163,15 @@
         ],
         "urlscan-phish": [
           0.9724767208099365,
-          0.03035580739378929
+          0.032785698771476746
         ],
         "weather-berlin": [
           0.4560823440551758,
           0.14194323122501373
         ],
         "weather-rain": [
-          0.6631688475608826,
-          0.1803945004940033
+          0.6571962833404541,
+          0.003206630703061819
         ]
       }
     },
@@ -194,7 +194,7 @@
       {
         "name": "self-match beats unrelated cross-match",
         "ok": true,
-        "detail": "narrowest gap 0.1611 (fact-great-wall)"
+        "detail": "narrowest gap 0.1591 (fact-great-wall)"
       },
       {
         "name": "78KB answer does not trap",
@@ -221,27 +221,27 @@
       {
         "name": "question-echo [near_zero]",
         "ok": true,
-        "detail": "honest=0.8425 attack=0.1376"
+        "detail": "honest=0.8413 attack=0.1153"
       },
       {
         "name": "shotgun-candidates [below_honest]",
         "ok": true,
-        "detail": "honest=0.8425 attack=0.2165"
+        "detail": "honest=0.8413 attack=0.2307"
       },
       {
         "name": "negation-insert [below_honest]",
         "ok": true,
-        "detail": "honest=0.6560 attack=0.3252"
+        "detail": "honest=0.7480 attack=0.3782"
       },
       {
         "name": "verdict-flip [near_zero]",
         "ok": true,
-        "detail": "honest=0.9281 attack=0.1661"
+        "detail": "honest=0.9281 attack=0.0448"
       },
       {
         "name": "direction-flip [below_honest]",
         "ok": true,
-        "detail": "honest=0.4126 attack=0.0573"
+        "detail": "honest=0.4286 attack=0.1249"
       },
       {
         "name": "number-swap [below_honest]",
@@ -256,7 +256,7 @@
       {
         "name": "stopword-spam [near_zero]",
         "ok": true,
-        "detail": "honest=0.9225 attack=0.0184"
+        "detail": "honest=0.9220 attack=0.0184"
       },
       {
         "name": "filler-padding [near_honest]",
@@ -276,7 +276,7 @@
       {
         "name": "empty-ish [near_zero]",
         "ok": true,
-        "detail": "honest=0.8425 attack=0.0000"
+        "detail": "honest=0.8413 attack=0.0000"
       }
     ]
   }

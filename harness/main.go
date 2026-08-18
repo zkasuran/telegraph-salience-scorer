@@ -367,6 +367,32 @@ func main() {
 	}
 	ctx := context.Background()
 
+	// PROBE="question|ground truth|answer" scores one triple and exits. Keeping it
+	// in the harness means there is one loader and one code path, so a probe and a
+	// gate run can never disagree about how a module is called.
+	if probe := os.Getenv("PROBE"); probe != "" {
+		parts := strings.SplitN(probe, "|", 3)
+		if len(parts) != 3 {
+			fmt.Println(`PROBE needs "question|ground truth|answer"`)
+			os.Exit(2)
+		}
+		for _, path := range os.Args[3:] {
+			m, err := loadMod(ctx, path)
+			if err != nil {
+				fmt.Printf("%-28s load failed: %v\n", filepath.Base(path), err)
+				continue
+			}
+			s, err := m.score(ctx, parts[0], parts[1], parts[2])
+			if err != nil {
+				fmt.Printf("%-28s error: %v\n", m.name, err)
+			} else {
+				fmt.Printf("%-28s %.4f\n", m.name, s)
+			}
+			m.rt.Close(ctx)
+		}
+		return
+	}
+
 	var bench struct {
 		Cases []benchCase `json:"cases"`
 	}
@@ -381,6 +407,7 @@ func main() {
 	}
 
 	reports := map[string]report{}
+	famReports := map[string]metrics{}
 	var order []string
 	var mods []*mod
 	failures := 0
@@ -406,6 +433,25 @@ func main() {
 		order = append(order, m.name)
 		mods = append(mods, m)
 
+		// A family file is a second benchmark written for one shape of answer (a
+		// figure, a verdict about authenticity, a named entity). A build registered
+		// for those intents has to clear its family as well as the general set,
+		// which is what keeps breadth from meaning one module with many labels.
+		var fam metrics
+		if famPath := os.Getenv("FAMILY"); famPath != "" {
+			var famBench struct {
+				Cases []benchCase `json:"cases"`
+			}
+			mustJSON(famPath, &famBench)
+			fam, err = stage2(ctx, m, famBench.Cases)
+			if err != nil {
+				fmt.Printf("\n=== %s ===\n  [FAIL] family benchmark: %v\n", m.name, err)
+				failures++
+				continue
+			}
+			famReports[m.name] = fam
+		}
+
 		role := "baseline"
 		if i == 0 {
 			role = "CANDIDATE"
@@ -429,6 +475,22 @@ func main() {
 		for _, c := range ats {
 			fmt.Printf("  %s %-46s %s\n", mark(c.OK), c.Name, c.Detail)
 			if !c.OK && i == 0 {
+				failures++
+			}
+		}
+		if f, ok := famReports[m.name]; ok {
+			// One documented miss is allowed per family: the family sets deliberately
+			// include cases past what a lexical scorer can reach (an entity alias like
+			// AWS for Amazon), and pretending otherwise would mean deleting the case.
+			// The packet names whatever is missed. Everything else has to be won.
+			famOK := f.Wins >= f.ComparableCases-1 && f.CandidateMargin >= 0.40 && f.WorstSelfMatch >= 0.75
+			fmt.Printf("  -- family benchmark (%s), %d cases --\n", filepath.Base(os.Getenv("FAMILY")), f.ComparableCases)
+			fmt.Printf("  %s family_margin %.4f | wins %d/%d | worst_self_match %.4f | mean good %.4f bad %.4f\n",
+				mark(famOK), f.CandidateMargin, f.Wins, f.ComparableCases, f.WorstSelfMatch, f.MeanGood, f.MeanBad)
+			if len(f.Losses) > 0 {
+				fmt.Printf("     not won: %s\n", strings.Join(f.Losses, ", "))
+			}
+			if !famOK && i == 0 {
 				failures++
 			}
 		}

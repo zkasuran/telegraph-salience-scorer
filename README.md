@@ -151,8 +151,47 @@ every case; a 76 KB answer, an oversized ground truth and emoji / CJK / RTL /
 invalid UTF-8 input neither trap nor leave [0,1]. Then the benchmark and the
 gaming suite above.
 
+Two optional inputs, both used by `deploy.py` on every build it registers:
+
+```bash
+FAMILY=../bench/family-numeric.json          # a second benchmark for one answer shape
+CORPUS=../bench/traffic.json \
+BASELINE_SCORES=../bench/champion-corpus-scores.json   # rank agreement with the champion
+PROBE="question|ground truth|answer"         # score one triple and exit
+```
+
 `bench/report.json` is the last run, per case, checked in so the numbers in this
 README can be diffed rather than trusted.
+
+## Family benchmarks
+
+A general benchmark cannot tell you whether a build is right for the intent it is
+registered against, so each family of intents has its own fixture set and a build
+has to clear it as well as the general 40:
+
+| family | file | intents | what the cases turn on |
+| --- | --- | --- | --- |
+| numeric | `bench/family-numeric.json` | CRYPTO_PRICE, CURRENCY_EXCHANGE, STOCK_PRICE, TVL_LOOKUP | the figure, its unit, its magnitude, its direction, and which entity it is attached to |
+| authenticity | `bench/family-authenticity.json` | IMAGE_VERIFICATION, VIDEO_VERIFICATION, MEDIA_AUTHENTICITY_CHECK, CONTENT_VERIFICATION | a verdict about whether something is genuine, where the wrong answer shares almost every word |
+| reference | `bench/family-reference.json` | IP_GEOLOCATION, NEWS_HEADLINES | naming the right entity, with wrong answers that are plausible neighbours of the right one |
+
+The gate is: every case won bar at most one, family margin at least 0.40, perfect
+answers still at 1.000. One documented miss is allowed because the families
+deliberately include cases past what a lexical scorer can reach, and deleting those
+would be the dishonest way to a clean sheet. The current miss is
+`ref-ip-hosting`: the ground truth says AWS, the good answer says Amazon, and no
+amount of character overlap gets you from one to the other. That needs an entity
+alias table this module does not ship.
+
+Writing those families paid for itself immediately. `auth-img-real` failed, and the
+cause was not the scoring at all: `bnd`, the flag marking a clause boundary, was the
+one per-token field `tokenize` did not write on every push, so a previous call's
+boundary survived into the next one. "no" in "Authentic, no sign of manipulation"
+was then read as a standalone verdict and flipped a correct answer into a
+contradiction. The score depended on how many calls had come before it, which is the
+one thing a scorer must never do. Fixed, and the fix is why every build registered
+after 2026-08-17 evening carries a different binary from the eight before it.
+
 
 ## Deployed
 

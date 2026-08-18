@@ -22,11 +22,9 @@ LIB = os.path.join(ROOT, "module", "src", "lib.rs")
 WASM = os.path.join(ROOT, "module", "target", "wasm32-unknown-unknown", "release", "telegraph_scorer.wasm")
 
 GRID = {
-    "SOFT_MIN": [0.35, 0.42, 0.48, 0.55],
-    "SOFT_W": [0.85, 1.0],
-    "SOFT_CAP_FRAC": [0.50, 0.70, 0.90],
-    "M_CONTRA": [0.30, 0.45],
-    "SHARPEN": [0.60, 0.82],
+    "M_NEGCOV": [0.6, 0.85, 1.0],
+    "SOFT_MIN": [0.62, 0.72, 0.85],
+    "SOFT_W": [1.0, 0.7],
 }
 
 # Floors we refuse to trade away: the champion's own margin is 0.374 on the
@@ -55,6 +53,8 @@ def build():
 def measure():
     env = dict(os.environ, CORPUS="bench/traffic.json",
                BASELINE_SCORES="bench/champion-corpus-scores.json", REPORT="/tmp/tune-report.json")
+    if os.environ.get("FAMILY"):
+        env["FAMILY"] = os.environ["FAMILY"]
     r = subprocess.run(["./harness/harness", "bench/benchmark.json", "bench/attacks.json", WASM],
                        cwd=ROOT, capture_output=True, text=True, env=env)
     out = r.stdout
@@ -64,11 +64,20 @@ def measure():
     ws = re.search(r"worst_self_match ([0-9.]+)", out)
     if not (m and s and sd and ws):
         return None
-    return {
+    fam = re.search(r"family_margin ([0-9.]+) \| wins (\d+)/(\d+)", out)
+    res = {
         "margin": float(m.group(1)), "wins": int(m.group(2)), "ties": int(m.group(4)),
         "spearman": float(s.group(1)), "stddev": float(sd.group(1)),
         "worst_self": float(ws.group(1)), "fails": out.count("[FAIL]"),
     }
+    if fam:
+        res["fam_margin"] = float(fam.group(1))
+        res["fam_wins"] = int(fam.group(2))
+        res["fam_total"] = int(fam.group(3))
+        # the family FAIL line is expected while sweeping, so it must not count as a
+        # broken build: judge the family on its own numbers instead
+        res["fails"] = max(0, res["fails"] - (0 if res["fam_wins"] == res["fam_total"] and res["fam_margin"] >= 0.45 else 1))
+    return res
 
 
 def main():
@@ -105,6 +114,8 @@ def main():
             feasible = (got["wins"] >= MIN_WINS and got["ties"] == 0 and got["fails"] == 0
                         and got["margin"] >= MIN_MARGIN and got["stddev"] >= MIN_STDDEV
                         and got["worst_self"] >= 0.75)
+            if "fam_wins" in got:
+                feasible = feasible and got["fam_wins"] == got["fam_total"] and got["fam_margin"] >= 0.45
             got["feasible"] = feasible
             results.append(got)
             if i % 20 == 0 or feasible:
@@ -117,10 +128,11 @@ def main():
 
     json.dump(results, open(os.path.join(ROOT, "bench", "tune-results.json"), "w"), indent=1)
     good = [r for r in results if r["feasible"]]
-    good.sort(key=lambda r: -r["spearman"])
+    good.sort(key=lambda r: -r["margin"])   # separation first: the gate we have to beat
     print(f"\n{len(good)} feasible of {len(results)}. Best by traffic agreement:")
     for r in good[:12]:
-        print(f"  spearman {r['spearman']:.4f}  margin {r['margin']:.4f}  stddev {r['stddev']:.3f}  {r['values']}")
+        fam = f"fam {r.get('fam_margin', 0):.4f} ({r.get('fam_wins','-')}/{r.get('fam_total','-')})  "
+        print(f"  {fam}spearman {r['spearman']:.4f}  margin {r['margin']:.4f}  {r['values']}")
 
 
 if __name__ == "__main__":
