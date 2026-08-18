@@ -13,7 +13,7 @@ it, without shipping a transformer.
 
 1. **Dissect the champion.** `reference/champ-probe` calls the champion's exported
    `breakdown_answer`, `embed` and `bm25_score`. Its score is
-   `0.25*embA + 0.50*embB + 0.15*bm25(gt,answer) + 0.10*bm25(question,answer)`, and the
+   `0.25*embA + 0.50*embB + 0.15*bm25(gt,answer) + 0.10*bm25(question,answer)`. The
    embeddings are 384-dim sentence-transformer cosines.
 2. **Distil it.** `reference/distill` runs the top 30,000 frequency-ranked words through the
    champion's own `embed()` and stores each 384-dim vector. A mean-pool of these static
@@ -56,7 +56,7 @@ live transformer output (embB), which a static table cannot reproduce (it matche
 
 - `reference/minilm/pack_minilm.py` packs the official `all-MiniLM-L6-v2` weights (fetched
   from Hugging Face, confirmed identical architecture to the champion) into `minilm.bin`:
-  int8 for the big matrices and the word table, f32 for biases and LayerNorm, plus an FNV
+  int8 for the big matrices and the word table, f32 for biases and LayerNorm; plus an FNV
   vocab index. 22.9 MB.
 - `module/src/minilm.rs` runs the full forward pass in no_std behind the `minilm` cargo
   feature: wordpiece tokenise, embeddings + LayerNorm, six attention/feed-forward layers
@@ -65,7 +65,7 @@ live transformer output (embB), which a static table cannot reproduce (it matche
 - `W_EMB` 0.45 blends this embB with the lexical/correctness score.
 
 Local numbers (harness, realistic corpus): traffic agreement **0.82**, ordering **40/40**,
-margin **0.60** where the champion is 0.013, and number-swap now passes (the transformer
+margin **0.60** where the champion is 0.013, with number-swap now passing (the transformer
 plus our number checks catch it). Built at opt-level 3 for scoring speed, ~24 MB, hosted on
 a GitHub raw permalink. good.wasm is itself a 24 MB transformer the node runs as champion,
 so this is within what the node scores.
