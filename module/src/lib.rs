@@ -44,24 +44,24 @@ const R_FLOOR: f32 = 0.3;
 /// Polarity multipliers. Lower on contradiction separates good from bad harder;
 /// higher keeps a wrong-but-on-topic answer inside the pack, which is where the
 /// champion puts it, and the traffic gate scores agreement with the champion.
-const M_CONTRA: f32 = 0.5;
-const M_TWO_FACED: f32 = 0.68;
+const M_CONTRA: f32 = 0.7;
+const M_TWO_FACED: f32 = 0.8;
 const M_SILENT: f32 = 0.95;
 const B_AGREE: f32 = 0.35;
 /// Numbers: floor when a stated figure is missing, multiplier when a different one
 /// is asserted instead.
-const M_NUM_MISS_BASE: f32 = 0.74;
-const M_NUM_WRONG: f32 = 0.6;
+const M_NUM_MISS_BASE: f32 = 0.85;
+const M_NUM_WRONG: f32 = 0.78;
 /// Same words, no shared adjacency.
-const M_ORDER: f32 = 0.72;
+const M_ORDER: f32 = 0.85;
 /// A figure attached to a different entity. Harder than a plain reordering, because
 /// "Base at 2.6 billion" when the truth is "Arbitrum at 2.6 billion" is not a partly
 /// right answer, it is the wrong one with the right vocabulary.
-const M_ENTITY: f32 = 0.55;
+const M_ENTITY: f32 = 0.72;
 /// How much of the score a negated match costs. "No rain is expected" covers every
 /// content word of "rain is expected" and asserts the opposite, so coverage that only
 /// holds under a negation the ground truth does not carry is worth less than nothing.
-const M_NEGCOV: f32 = 0.6;
+const M_NEGCOV: f32 = 0.32;
 /// How much of the final score comes from the contrast curve rather than the raw
 /// similarity. All contrast sharpens separation, all raw ranks more smoothly.
 const SHARPEN: f32 = 0.82;
@@ -1319,7 +1319,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
             #[cfg(feature = "minilm")]
             {
                 let (ca, cb) = minilm::embed_cos_ab(gt, ma);
-                raw = clamp01(0.25 * ca + 0.50 * cb + 0.25 * raw);
+                raw = clamp01(0.28 * ca + 0.56 * cb + 0.16 * raw);
             }
             #[cfg(not(feature = "minilm"))]
             {
