@@ -226,11 +226,11 @@ static mut CTX: [f32; MAXTOK * H] = [0.0; MAXTOK * H];
 static mut TMP: [f32; MAXTOK * H] = [0.0; MAXTOK * H];
 static mut FF: [f32; MAXTOK * INTER] = [0.0; MAXTOK * INTER];
 
-fn encode(text: &[u8], out: &mut [f32; H]) {
+fn encode(text: &[u8], out_a: &mut [f32; H], out_b: &mut [f32; H]) {
     unsafe {
         let ids = &mut *core::ptr::addr_of_mut!(IDS);
         let n = tokenize(text, ids);
-        if n == 0 { let mut k = 0; while k < H { out[k] = 0.0; k += 1; } return; }
+        if n == 0 { let mut k = 0; while k < H { out_a[k] = 0.0; out_b[k] = 0.0; k += 1; } return; }
         let t = tensors();
         let x = &mut *core::ptr::addr_of_mut!(X);
         // embeddings: word + position + token_type(0), then LayerNorm
@@ -245,6 +245,21 @@ fn encode(text: &[u8], out: &mut [f32; H]) {
             r += 1;
         }
         layernorm(x, n, &t[3], &t[4]);
+        // embA: mean-pool of the embedding layer (pre-transformer), the champion's shallow
+        // 0.25-weight term. Captured here before the six layers run.
+        {
+            let mut k = 0;
+            while k < H {
+                let mut s = 0.0f32;
+                let mut r = 0; while r < n { s += x[r * H + k]; r += 1; }
+                out_a[k] = s / n as f32;
+                k += 1;
+            }
+            let mut nrm = 0.0f32;
+            k = 0; while k < H { nrm += out_a[k] * out_a[k]; k += 1; }
+            nrm = fsqrt(nrm);
+            if nrm > 0.0 { k = 0; while k < H { out_a[k] /= nrm; k += 1; } }
+        }
 
         let q = &mut *core::ptr::addr_of_mut!(QB);
         let k_ = &mut *core::ptr::addr_of_mut!(KB);
@@ -306,30 +321,39 @@ fn encode(text: &[u8], out: &mut [f32; H]) {
             z = 0; while z < n * H { x[z] = tmp[z]; z += 1; }
             li += 1;
         }
-        // mean-pool over tokens, L2 normalise
+        // mean-pool over tokens, L2 normalise -> embB (final transformer output)
         let mut k = 0;
         while k < H {
             let mut s = 0.0f32;
             let mut r = 0; while r < n { s += x[r * H + k]; r += 1; }
-            out[k] = s / n as f32;
+            out_b[k] = s / n as f32;
             k += 1;
         }
         let mut nrm = 0.0f32;
-        k = 0; while k < H { nrm += out[k] * out[k]; k += 1; }
+        k = 0; while k < H { nrm += out_b[k] * out_b[k]; k += 1; }
         nrm = fsqrt(nrm);
-        if nrm > 0.0 { k = 0; while k < H { out[k] /= nrm; k += 1; } }
+        if nrm > 0.0 { k = 0; while k < H { out_b[k] /= nrm; k += 1; } }
     }
 }
 
-/// Cosine of the two mean-pooled sentence embeddings, the champion's embB signal.
-pub fn embed_cos(gt: &[u8], ma: &[u8]) -> f32 {
-    let mut g = [0.0f32; H];
-    let mut a = [0.0f32; H];
-    encode(gt, &mut g);
-    encode(ma, &mut a);
-    let mut dot = 0.0f32;
+fn zero_out() -> [f32; H] { [0.0f32; H] }
+
+fn dotc(g: &[f32; H], a: &[f32; H]) -> f32 {
+    let mut d = 0.0f32;
     let mut k = 0;
-    while k < H { dot += g[k] * a[k]; k += 1; }
-    if dot < 0.0 { 0.0 } else if dot > 1.0 { 1.0 } else { dot }
+    while k < H { d += g[k] * a[k]; k += 1; }
+    if d < 0.0 { 0.0 } else if d > 1.0 { 1.0 } else { d }
 }
+
+/// The champion's two embedding cosines for (ground truth, answer): embA (shallow,
+/// embedding-layer mean-pool) and embB (full transformer). Returned together from two
+/// encode passes so lib.rs can weight them 0.25 / 0.50 as the champion does.
+pub fn embed_cos_ab(gt: &[u8], ma: &[u8]) -> (f32, f32) {
+    let mut ga = zero_out(); let mut gb = zero_out();
+    let mut aa = zero_out(); let mut ab = zero_out();
+    encode(gt, &mut ga, &mut gb);
+    encode(ma, &mut aa, &mut ab);
+    (dotc(&ga, &aa), dotc(&gb, &ab))
+}
+
 
