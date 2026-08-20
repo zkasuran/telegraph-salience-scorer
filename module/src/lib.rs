@@ -52,6 +52,13 @@ const B_AGREE: f32 = 0.35;
 /// is asserted instead.
 const M_NUM_MISS_BASE: f32 = 0.62;
 const M_NUM_WRONG: f32 = 0.45;
+/// Numeric agreement bonus (default 0, off for every intent but the pure-figure ones).
+/// When the answer carries every figure the ground truth states and states no wrong
+/// one, the figure IS the answer, so pull the score up toward 1 the way B_AGREE does
+/// for a right verdict. This is what lifts a correct numeric paraphrase ("roughly
+/// $3,120 per ETH" for "3,120 USD") from mid-range word-overlap up to near-perfect,
+/// which is where the FINANCIAL_DATA champion separates and our lexical build did not.
+const M_NUM_MATCH: f32 = 0.0;
 /// Same words, no shared adjacency.
 const M_ORDER: f32 = 0.55;
 /// A figure attached to a different entity. Harder than a plain reordering, because
@@ -437,6 +444,51 @@ fn numeral_digits(key: u32) -> Option<u32> {
     None
 }
 
+fn pow10_u(mag: u32) -> f32 {
+    let mut r = 1.0f32;
+    let mut e = mag;
+    while e > 0 { r *= 10.0; e -= 1; }
+    r
+}
+
+/// Leading numeric value of a token: "3,120" -> 3120, "228.50" -> 228.5,
+/// "3.1T" -> 3.1 (the scale letter is applied by the caller via scale_of).
+/// Commas between digits are thousands separators; the first dot is the decimal
+/// point. Returns 0.0 when the token does not begin with a digit.
+fn leading_value(tok: &[u8]) -> f32 {
+    if tok.is_empty() || !is_digit(tok[0]) { return 0.0; }
+    let mut int_part = 0.0f32;
+    let mut frac = 0.0f32;
+    let mut frac_div = 1.0f32;
+    let mut seen_dot = false;
+    let mut i = 0usize;
+    while i < tok.len() {
+        let b = tok[i];
+        if is_digit(b) {
+            if seen_dot { frac_div *= 10.0; frac += (b - b'0') as f32 / frac_div; }
+            else { int_part = int_part * 10.0 + (b - b'0') as f32; }
+        } else if b == b',' {
+            // thousands separator between digits, skip
+        } else if b == b'.' && !seen_dot && i + 1 < tok.len() && is_digit(tok[i + 1]) {
+            seen_dot = true;
+        } else {
+            break;
+        }
+        i += 1;
+    }
+    int_part + frac
+}
+
+/// Two figures agree within 0.5% relative error (formatting-independent).
+fn rel_close(a: f32, b: f32) -> bool {
+    let d = if a > b { a - b } else { b - a };
+    let aa = if a < 0.0 { -a } else { a };
+    let bb = if b < 0.0 { -b } else { b };
+    let m = if aa > bb { aa } else { bb };
+    let denom = if m > 1e-6 { m } else { 1.0 };
+    d / denom <= 0.005
+}
+
 fn is_stopword(hash: u32) -> bool {
     in_table(STOP, hash)
 }
@@ -482,6 +534,10 @@ struct Toks {
     cap: [bool; MAX_TOKENS],
     /// First four lowercased letters, packed like an acronym key.
     pre: [u32; MAX_TOKENS],
+    /// Parsed magnitude of a figure token (mantissa times any scale), 0 when the
+    /// token is not a figure. Used for value-based figure matching (relative error)
+    /// so "3.1T", "3.1 trillion" and "$3,100,000,000,000" all compare equal.
+    val: [f32; MAX_TOKENS],
 }
 
 const EMPTY_TOKS: Toks = Toks {
@@ -500,6 +556,7 @@ const EMPTY_TOKS: Toks = Toks {
     proper: [false; MAX_TOKENS],
     cap: [false; MAX_TOKENS],
     pre: [0; MAX_TOKENS],
+    val: [0.0; MAX_TOKENS],
 };
 
 static mut TQ: Toks = EMPTY_TOKS;
@@ -663,7 +720,8 @@ fn tokenize(src: &[u8], t: &mut Toks) {
         let tok = &src[start..i];
         if tok.is_empty() { continue; }
         let mut numeric = has_digit && !has_alpha;
-        let mut hash = hash_bytes(tok);
+        let word_hash = hash_bytes(tok);
+        let mut hash = word_hash;
         if !numeric && has_alpha {
             if let Some(digits) = numeral_digits(hash) {
                 hash = digits;
@@ -694,6 +752,17 @@ fn tokenize(src: &[u8], t: &mut Toks) {
         t.proper[k] = proper;
         t.cap[k] = has_alpha && tok[0].is_ascii_uppercase();
         t.pre[k] = prefix_key(tok);
+        // Figure value for relative-error matching. Use the ORIGINAL word hash for
+        // the scale, because a scale word ("trillion") has already been rewritten to
+        // a digit-string hash above and would otherwise read as scale 0. A digit-
+        // leading token carries its own scale suffix ("3.1T"); a standalone scale
+        // word multiplies the figure just before it ("3.1 trillion", two tokens).
+        let wscale = scale_of(tok, word_hash);
+        let lv = leading_value(tok);
+        t.val[k] = if lv > 0.0 && wscale > 0 { lv * pow10_u(wscale) } else { lv };
+        if lv == 0.0 && wscale > 0 && k > 0 && t.val[k - 1] > 0.0 {
+            t.val[k - 1] *= pow10_u(wscale);
+        }
         if in_table(NEG, hash) {
             negwin = 4;
         } else if negwin > 0 {
@@ -1337,8 +1406,12 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         // added, yet shares no adjacency with it. A paraphrase always drops, adds
         // or reuses some pairing, so reordering alone is not treated as a lie.
         let full_coverage = k_tot > 0.0 && k_hit >= k_tot * 0.999;
+        // Any signal that the answer is wrong-but-vocabulary-right. The numeric match
+        // bonus below must never rescue one of these, so it is gated on this staying false.
+        let mut claim_wrong = false;
         if full_coverage && p_raw >= 0.999 && adjacency < 0.15 && cc_g >= 3 && cc_a >= 3 {
             raw *= M_ORDER;
+            claim_wrong = true;
         }
 
         // Figures attached to different entities are a different claim even when the
@@ -1349,6 +1422,7 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
             let shared = dice(ga, gb, ef_g, ef_a);
             if shared < 0.05 && full_coverage {
                 raw *= M_ENTITY;
+                claim_wrong = true;
             }
         }
 
@@ -1356,12 +1430,14 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         if contra_w > 0.0 && k_tot > 0.0 {
             let ratio = clamp01(contra_w / k_tot);
             raw *= 1.0 - M_NEGCOV * ratio;
+            claim_wrong = true;
         }
 
         // Numbers. Omitting a figure the ground truth states is incomplete;
         // stating a different one is wrong.
         let mut gt_nums = 0u32;
         let mut gt_nums_hit = 0u32;
+        let mut num_perfect = false;
         i = 0;
         while i < tg.n {
             if tg.numeric[i] {
@@ -1385,6 +1461,52 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
                 i += 1;
             }
             if bad > 0 && gt_nums_hit < gt_nums { raw *= M_NUM_WRONG; }
+            // Value-based figure agreement for the numeric match bonus below: a GT
+            // figure is satisfied when the answer states a figure within 0.5% of it
+            // (so "3.1 trillion", "3.1T" and "3,100,000,000,000" all count), and the
+            // answer is clean when every figure it states matches the ground truth or
+            // the question. Formatting-tolerant, unlike the hash test that drives the
+            // miss/wrong penalties above.
+            let mut gt_fig = 0u32;
+            let mut gt_fig_hit = 0u32;
+            let mut ans_bad = 0u32;
+            let mut a = 0;
+            while a < tg.n {
+                if tg.val[a] > 0.0 {
+                    gt_fig += 1;
+                    let mut b = 0;
+                    while b < ta.n {
+                        if ta.val[b] > 0.0 && rel_close(tg.val[a], ta.val[b]) { gt_fig_hit += 1; break; }
+                        b += 1;
+                    }
+                }
+                a += 1;
+            }
+            a = 0;
+            while a < ta.n {
+                if ta.val[a] > 0.0 {
+                    // A bare "1" is almost always a unit denominator ("83.4 INR to 1
+                    // USD", "per 1 token"), not a claimed figure, so it does not make
+                    // the answer wrong.
+                    if (ta.val[a] - 1.0).abs() < 1e-6 { a += 1; continue; }
+                    let mut matched = false;
+                    let mut b = 0;
+                    while b < tg.n {
+                        if tg.val[b] > 0.0 && rel_close(ta.val[a], tg.val[b]) { matched = true; break; }
+                        b += 1;
+                    }
+                    if !matched {
+                        let mut b = 0;
+                        while b < tq.n {
+                            if tq.val[b] > 0.0 && rel_close(ta.val[a], tq.val[b]) { matched = true; break; }
+                            b += 1;
+                        }
+                    }
+                    if !matched { ans_bad += 1; }
+                }
+                a += 1;
+            }
+            num_perfect = gt_fig > 0 && gt_fig_hit == gt_fig && ans_bad == 0;
         }
 
         // Polarity, per axis. Getting the verdict right in your own words counts
@@ -1419,11 +1541,13 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         }
         if contra > 0 {
             raw *= M_CONTRA;
+            claim_wrong = true;
         } else if two_faced > 0 {
             // Leads with the right verdict, then asserts the opposite, while
             // reusing the ground truth's wording. That is the shape of a copied
             // answer with a negation dropped in, not of a careful one.
             raw *= M_TWO_FACED;
+            claim_wrong = true;
         } else if agree > 0 {
             raw += (1.0 - raw) * B_AGREE;
         } else if silent > 0 {
@@ -1431,6 +1555,16 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         } else if any_negation(tg) != any_negation(ta) {
             // No axis is decisive, but one side negates and the other does not.
             raw *= 1.0 - 0.35 * lex;
+            claim_wrong = true;
+        }
+
+        // Numeric agreement bonus. The answer stated every figure and no wrong one,
+        // and nothing above flagged it as wrong-but-vocabulary-right (reordered,
+        // wrong entity, negated, contradicted). For a pure-figure intent the figure
+        // is the answer, so lift toward 1 the way B_AGREE does for a right verdict.
+        // Off (M_NUM_MATCH = 0) for every intent but the pure-figure ones.
+        if M_NUM_MATCH > 0.0 && num_perfect && !claim_wrong {
+            raw += (1.0 - raw) * M_NUM_MATCH;
         }
 
         // Contrast. Pull confident matches up and near-misses down without

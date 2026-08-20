@@ -33,7 +33,7 @@ BASE = {
     "M_CONTRA": 0.3, "M_SILENT": 0.95, "B_AGREE": 0.35, "R_KEY_BASE": 0.5, "R_FLOOR": 0.3,
     "SHARPEN": 0.82, "M_NUM_MISS_BASE": 0.62, "M_NUM_WRONG": 0.45, "M_TWO_FACED": 0.5,
     "M_ORDER": 0.55, "M_ENTITY": 0.3, "M_NEGCOV": 1.0, "SOFT_MIN": 0.72, "SOFT_W": 1.0,
-    "SOFT_CAP_FRAC": 0.35,
+    "SOFT_CAP_FRAC": 0.35, "M_NUM_MATCH": 0.0,
 }
 
 # Per-shape overrides. A verdict intent lives or dies on polarity, so contradicting
@@ -46,6 +46,10 @@ PROFILES = {
     # swept against bench/family-numeric.json: a wrong figure has to be fatal, because
     # for these intents the figure is the whole answer
     "numeric": {"M_NUM_WRONG": 0.12, "M_CONTRA": 0.15},
+    # numeric plus a match bonus: for a pure-figure intent whose champion separates on
+    # exact figures (FINANCIAL_DATA), lift a correct-figure answer toward 1 so a right
+    # numeric paraphrase is not left mid-range by word overlap alone.
+    "numeric_boost": {"M_NUM_WRONG": 0.12, "M_CONTRA": 0.15, "M_NUM_MATCH": 1.0},
     "text": {},
 }
 
@@ -53,6 +57,7 @@ PROFILES = {
 # no family here is gated on the general set alone.
 FAMILIES = {
     "numeric": "bench/family-numeric.json",
+    "numeric_boost": "bench/family-numeric.json",
     "verdict": "bench/family-authenticity.json",
     "reference": "bench/family-reference.json",
 }
@@ -80,6 +85,23 @@ TARGETS = {
     "CVE_LOOKUP": "reference",
     "ACADEMIC_SEARCH": "reference",
     "CHAT_COMPLETION": "text",
+    # Second wave (2026-08-18): canonical intents still on the default word-overlap
+    # scorer (0.3736) with little or no ranked traffic, so the margin gate is the only
+    # binding one. Intents we run miners on (GAS_PRICE, TOKEN_HOLDER_COUNT,
+    # WALLET_BALANCE_CHECK) are deliberately excluded to avoid judging our own answers.
+    "CONTENT_MODERATION": "verdict",
+    "CONTENT_EXTRACTION": "reference",
+    "TEXT_AUTHENTICITY_CHECK": "verdict",
+    "TEXT_CLASSIFICATION": "verdict",
+    "FRAUD_DETECTION": "verdict",
+    "GAME_RESULT": "reference",
+    "SPORTS_SCORE": "numeric",
+    "FINANCIAL_DATA": "numeric_boost",
+    "ONCHAIN_TX_LOOKUP": "reference",
+    "LANGUAGE_TRANSLATION": "text",
+    "RESEARCH_QUERY": "text",
+    "RESEARCH_SYNTHESIS": "text",
+    "TWITTER_SEARCH": "text",
 }
 
 
