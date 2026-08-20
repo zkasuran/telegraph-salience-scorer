@@ -1,0 +1,75 @@
+{
+ "note": "LANGUAGE_GENERATION traffic: open-ended answers at four graded detail levels per prompt, house-gateway generated.",
+ "rows": [
+  {
+   "q": "Explain what a blockchain is.",
+   "gt": "A blockchain is a distributed, append-only ledger of transactions grouped into cryptographically linked blocks and agreed on by a network through a consensus mechanism, giving a tamper-resistant record without a central authority.",
+   "a": "A blockchain is a shared, tamper-resistant digital ledger that records transactions in cryptographically linked blocks across many computers."
+  },
+  {
+   "q": "Explain what a blockchain is.",
+   "gt": "A blockchain is a distributed, append-only ledger of transactions grouped into cryptographically linked blocks and agreed on by a network through a consensus mechanism, giving a tamper-resistant record without a central authority.",
+   "a": "A blockchain is a shared digital ledger that records transactions in groups called blocks, with each block cryptographically linked to the previous one. Copies are maintained across a network of computers, making past records difficult to alter without the network noticing and agreeing."
+  },
+  {
+   "q": "Explain what a blockchain is.",
+   "gt": "A blockchain is a distributed, append-only ledger of transactions grouped into cryptographically linked blocks and agreed on by a network through a consensus mechanism, giving a tamper-resistant record without a central authority.",
+   "a": "A blockchain is a shared digital ledger that records transactions in groups called blocks. Each block is cryptographically linked to the previous one, making past records difficult to alter without detection. Copies of the ledger are maintained by many computers, which use a consensus process to agree on valid updates instead of relying on one central authority. Blockchains can support cryptocurrencies, asset tracking, and automated agreements, though they may involve tradeoffs in speed, cost, privacy, and energy use."
+  },
+  {
+   "q": "Explain what a blockchain is.",
+   "gt": "A blockchain is a distributed, append-only ledger of transactions grouped into cryptographically linked blocks and agreed on by a network through a consensus mechanism, giving a tamper-resistant record without a central authority.",
+   "a": "A blockchain is a shared digital record of transactions or other data, organized into sequential groups called blocks. Each block contains data, a timestamp, and a cryptographic reference to the previous block, linking them into a chain. Copies of this record are maintained by many computers in a network, which use a consensus mechanism to agree on valid updates. Because altering an earlier block would require changing subsequent blocks and convincing the network to accept those changes, established records are difficult to tamper with. Blockchains can support cryptocurrencies, smart contracts, supply-chain tracking, and other applications where multiple parties need a consistent record without relying on one central administrator."
+  },
+  {
+   "q": "Describe how photosynthesis works.",
+   "gt": "Photosynthesis is the process by which plants use sunlight, water and carbon dioxide to produce glucose and oxygen, capturing light energy in chloroplasts and converting it to chemical energy.",
+   "a": "Photosynthesis uses sunlight to convert carbon dioxide and water into glucose, releasing oxygen."
+  },
+  {
+   "q": "Describe how photosynthesis works.",
+   "gt": "Photosynthesis is the process by which plants use sunlight, water and carbon dioxide to produce glucose and oxygen, capturing light energy in chloroplasts and converting it to chemical energy.",
+   "a": "Photosynthesis is the process by which plants, algae, and some bacteria use chlorophyll to capture sunlight and convert carbon dioxide and water into glucose, storing light energy as chemical energy. Oxygen is released as a byproduct, while the glucose fuels growth, metabolism, and other cellular activities."
+  },
+  {
+   "q": "Describe how photosynthesis works.",
+   "gt": "Photosynthesis is the process by which plants use sunlight, water and carbon dioxide to produce glucose and oxygen, capturing light energy in chloroplasts and converting it to chemical energy.",
+   "a": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to make chemical energy. Chlorophyll in chloroplasts absorbs light, powering reactions that split water molecules, release oxygen, and produce energy-carrying compounds. Those compounds then drive the Calvin cycle, which uses carbon dioxide to build sugars such as glucose. The organism uses these sugars for growth, metabolism, and energy storage, while much of the released oxygen enters the atmosphere."
+  },
+  {
+   "q": "Describe how photosynthesis works.",
+   "gt": "Photosynthesis is the process by which plants use sunlight, water and carbon dioxide to produce glucose and oxygen, capturing light energy in chloroplasts and converting it to chemical energy.",
+   "a": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into chemical energy. In plants, it occurs mainly in chloroplasts, where chlorophyll absorbs sunlight. During the light-dependent reactions, this energy splits water molecules, releasing oxygen and producing energy-carrying molecules called ATP and NADPH. The Calvin cycle then uses ATP and NADPH to combine carbon dioxide into glucose and other carbohydrates, which support growth, metabolism, and energy storage. Overall, photosynthesis can be summarized as carbon dioxide plus water, powered by light, producing glucose and oxygen. This process supplies most ecosystems with food and helps maintain Earth\u2019s atmospheric oxygen."
+  },
+  {
+   "q": "What causes the seasons on Earth?",
+   "gt": "The seasons are caused by the tilt of the Earth's axis relative to its orbit, which changes how directly sunlight strikes each hemisphere through the year.",
+   "a": "Earth\u2019s axial tilt causes each hemisphere to receive varying sunlight as Earth orbits the Sun, producing the seasons."
+  },
+  {
+   "q": "What causes the seasons on Earth?",
+   "gt": "The seasons are caused by the tilt of the Earth's axis relative to its orbit, which changes how directly sunlight strikes each hemisphere through the year.",
+   "a": "Earth\u2019s seasons are caused by its axis being tilted about 23.5 degrees as it orbits the Sun. This tilt changes the angle and duration of sunlight each hemisphere receives throughout the year, producing warmer summers and colder winters."
+  },
+  {
+   "q": "What causes the seasons on Earth?",
+   "gt": "The seasons are caused by the tilt of the Earth's axis relative to its orbit, which changes how directly sunlight strikes each hemisphere through the year.",
+   "a": "Earth\u2019s seasons are caused by the tilt of its axis, about 23.5 degrees, as it orbits the Sun. When a hemisphere tilts toward the Sun, it receives more direct sunlight and has longer days, producing summer. At the same time, the opposite hemisphere tilts away, receives less direct sunlight, and experiences winter. Seasons are not caused by changes in Earth\u2019s distance from the Sun, which vary only slightly during the year."
+  },
+  {
+   "q": "What causes the seasons on Earth?",
+   "gt": "The seasons are caused by the tilt of the Earth's axis relative to its orbit, which changes how directly sunlight strikes each hemisphere through the year.",
+   "a": "Earth\u2019s seasons are caused by the tilt of its rotational axis, about 23.5 degrees relative to the plane of its orbit around the Sun. As Earth travels around the Sun, each hemisphere alternately tilts toward or away from it. A hemisphere tilted toward the Sun receives more direct sunlight and has longer days, producing warmer temperatures and summer; the hemisphere tilted away receives sunlight at a lower angle and has shorter days, producing winter. Spring and autumn occur during the transitions between these positions. Seasons are not caused by Earth\u2019s distance from the Sun; Earth is actually closest to the Sun in early January, during Northern Hemisphere winter."
+  },
+  {
+   "q": "Explain the difference between TCP and UDP.",
+   "gt": "TCP is connection-oriented and reliable, guaranteeing ordered delivery with acknowledgements, while UDP is connectionless and unreliable but lower-latency, sending datagrams without handshakes.",
+   "a": "TCP is connection-oriented and reliable, guaranteeing ordered delivery, while UDP is connectionless and faster but provides no delivery or ordering guarantees."
+  },
+  {
+   "q": "Explain the difference between TCP and UDP.",
+   "gt": "TCP is connection-oriented and reliable, guaranteeing ordered delivery with acknowledgements, while UDP is connectionless and unreliable but lower-latency, sending datagrams without handshakes.",
+   "a": "TCP is connection-oriented and ensures reliable, ordered delivery of data through acknowledgments, retransmissions, and flow control. UDP is connectionless and faster with lower overhead, but it does not guarantee delivery, ordering, or duplicate prevention."
+  }
+ ]
+}

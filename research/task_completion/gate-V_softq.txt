@@ -1,0 +1,103 @@
+
+=== tc_softq.wasm (CANDIDATE) ===
+  [ok]   empty answer scores exactly 0                  score=0.0000 err=<nil>
+  [ok]   whitespace-only answer scores exactly 0        score=0.0000 err=<nil>
+  [ok]   perfect answer scores >= 0.75 everywhere       worst_self_match=1.0000
+  [ok]   self-match beats unrelated cross-match         narrowest gap 0.1486 (fact-great-wall)
+  [ok]   78KB answer does not trap                      score=0.0033 err=<nil>
+  [ok]   oversized ground truth does not trap           score=1.0000 err=<nil>
+  [ok]   emoji/CJK/RTL/invalid-UTF8 answer does not trap score=0.0349 err=<nil>
+  [ok]   non-text ground truth self-matches             score=1.0000 err=<nil>
+  -- benchmark, 40 cases --
+     candidate_margin 0.2895 | wins 35/40 | ties 0 | mean good 0.7546 bad 0.4651
+     worst_self_match 1.0000 | score_stddev 0.2169 | worst case margin -0.2840
+     not won: gk-photosynthesis, gk-largest-ocean, weather-berlin, geo-ip, news-headline
+  -- gaming and robustness suite --
+  [FAIL] question-echo [near_zero]                      honest=0.8487 attack=0.7077
+  [ok]   shotgun-candidates [below_honest]              honest=0.8487 attack=0.6511
+  [ok]   negation-insert [below_honest]                 honest=0.8508 attack=0.7172
+  [FAIL] verdict-flip [near_zero]                       honest=0.8847 attack=0.4982
+  [FAIL] direction-flip [below_honest]                  honest=0.6607 attack=0.5813
+  [FAIL] number-swap [below_honest]                     honest=0.5544 attack=0.5753
+  [FAIL] word-order-swap [below_honest]                 honest=0.9927 attack=0.9042
+  [ok]   stopword-spam [near_zero]                      honest=0.7584 attack=0.0402
+  [ok]   filler-padding [near_honest]                   honest=0.9691 attack=0.8276
+  [ok]   unicode-noise [near_honest]                    honest=0.6977 attack=0.6205
+  [ok]   gt-plus-dump [below_honest]                    honest=0.8267 attack=0.1167
+  [ok]   empty-ish [near_zero]                          honest=0.8487 attack=0.0000
+
+=== scoring_module.wasm (baseline) ===
+  [ok]   empty answer scores exactly 0                  score=0.0000 err=<nil>
+  [ok]   whitespace-only answer scores exactly 0        score=0.0000 err=<nil>
+  [ok]   perfect answer scores >= 0.75 everywhere       worst_self_match=1.0000
+  [ok]   self-match beats unrelated cross-match         narrowest gap 0.6000 (aidet-no)
+  [ok]   78KB answer does not trap                      score=0.0000 err=<nil>
+  [ok]   oversized ground truth does not trap           score=1.0000 err=<nil>
+  [ok]   emoji/CJK/RTL/invalid-UTF8 answer does not trap score=0.0000 err=<nil>
+  [ok]   non-text ground truth self-matches             score=1.0000 err=<nil>
+  -- benchmark, 40 cases --
+     candidate_margin -0.1169 | wins 13/40 | ties 8 | mean good 0.2321 bad 0.3490
+     worst_self_match 1.0000 | score_stddev 0.2859 | worst case margin -0.8750
+     not won: gk-capital-au(tie), gk-photosynthesis, gk-largest-ocean, gk-water-boil, num-speed-light, num-continents, fact-great-wall, fact-vaccine-autism(tie), fact-einstein-nobel(tie), aidet-no(tie), deepfake-real, fin-bearish, fin-rate-cut, fx-pair, weather-berlin, weather-rain, code-py-len, ssl-expired, geo-ip(tie), research-synth, news-headline, sports-score, tvl-lookup, sentiment-neg(tie), extract-field, task-completion(tie), lang-gen(tie)
+  -- gaming and robustness suite --
+  [FAIL] question-echo [near_zero]                      honest=0.0000 attack=0.5294
+  [FAIL] shotgun-candidates [below_honest]              honest=0.0000 attack=0.0000
+  [FAIL] negation-insert [below_honest]                 honest=0.0000 attack=0.4667
+  [FAIL] verdict-flip [near_zero]                       honest=1.0000 attack=0.2500
+  [FAIL] direction-flip [below_honest]                  honest=0.0000 attack=0.7500
+  [FAIL] number-swap [below_honest]                     honest=0.2000 attack=0.6667
+  [FAIL] word-order-swap [below_honest]                 honest=0.6667 attack=0.6667
+  [ok]   stopword-spam [near_zero]                      honest=0.5000 attack=0.0667
+  [FAIL] filler-padding [near_honest]                   honest=0.6250 attack=0.1951
+  [FAIL] unicode-noise [near_honest]                    honest=0.2000 attack=0.0000
+  [ok]   gt-plus-dump [below_honest]                    honest=0.5556 attack=0.1250
+  [ok]   empty-ish [near_zero]                          honest=0.0000 attack=0.0000
+
+=== head to head ===
+  [ok]   vs scoring_module.wasm          margin 0.2895 vs -0.1169 | wins 35 vs 13
+
+case (good / bad)             tc_softq.wasm  scoring_module.wasm
+gk-capital-au             0.8487    0.5469    0.0000    0.0000
+gk-photosynthesis         0.7880    0.8568    0.2500    0.8000
+gk-largest-ocean          0.7584    0.8837    0.5000    0.8333
+gk-water-boil             0.6159    0.5964    0.1250    0.6667
+num-speed-light           0.6502    0.4707    0.0000    0.7500
+num-moon-landing          0.6977    0.3792    0.2000    0.0000
+num-continents            0.6180    0.5699    0.0000    0.7500
+num-http-teapot           0.7534    0.1892    0.3333    0.0000
+fact-great-wall           0.7382    0.4825    0.1000    0.6000
+fact-vaccine-autism       0.7788    0.4611    0.3333    0.3333
+fact-einstein-nobel       0.7619    0.3702    0.5000    0.5000
+aidet-yes                 0.8847    0.1777    1.0000    0.0000
+aidet-no                  0.6781    0.2101    0.0000    0.0000
+deepfake-real             0.7599    0.5106    0.0000    0.6000
+urlscan-phish             0.9552    0.3004    0.5000    0.2857
+fin-bearish               0.8449    0.6348    0.0000    0.8750
+fin-rate-cut              0.6607    0.5813    0.0000    0.7500
+crypto-ticker             0.7730    0.2464    0.2500    0.0000
+fx-pair                   0.6592    0.4340    0.2000    0.5000
+weather-berlin            0.5544    0.5753    0.2000    0.6667
+weather-rain              0.8663    0.5422    0.5000    0.7500
+trans-es-morning          0.8835    0.4402    0.3333    0.0000
+trans-fr-thanks           0.8702    0.3369    0.4000    0.0000
+code-py-len               0.7618    0.6657    0.0000    0.4000
+code-git-undo             0.8891    0.5785    0.4000    0.1429
+cve-lookup                0.7548    0.2540    0.8333    0.4286
+ssl-expired               0.8370    0.5061    0.0000    0.4000
+geo-ip                    0.4493    0.5202    0.0000    0.0000
+acad-search               0.8267    0.0566    0.5556    0.0000
+research-synth            0.9214    0.8226    0.3750    0.5000
+news-headline             0.4545    0.7384    0.0000    0.5000
+sports-score              0.7922    0.6803    0.0000    0.5000
+tvl-lookup                0.6301    0.5005    0.0000    0.5000
+sentiment-neg             0.7927    0.4028    0.0000    0.0000
+moderation-safe           0.6836    0.4475    0.5000    0.4286
+extract-field             0.7951    0.5391    0.2000    0.5000
+ocr-digits                0.9284    0.4262    0.3333    0.0000
+agent-task                0.7575    0.1614    0.3636    0.0000
+task-completion           0.6177    0.2718    0.0000    0.0000
+lang-gen                  0.8946    0.2367    0.0000    0.0000
+
+report written to harness-report.json
+
+5 gate(s) failed for the candidate

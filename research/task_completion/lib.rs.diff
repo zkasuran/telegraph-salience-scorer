@@ -1,0 +1,35 @@
+--- /home/asuran/Downloads/hackathon-hq/work/telegraph/scorer/module/src/lib.rs	2026-08-19 09:29:04.322629649 +0530
++++ module/src/lib.rs	2026-08-20 08:43:52.089747284 +0530
+@@ -82,6 +82,18 @@
+ /// that in. Set high only for the CHAT_COMPLETION build.
+ const W_EMB: f32 = 0.0;
+ 
++/// TASK_COMPLETION transformer-blend coefficients (patched per build). embA (shallow)
++/// and embB (full transformer) are the champion's two (ground truth, answer) cosines;
++/// EMB_LEX_W keeps our lexical/correctness `raw` in the mix; EMB_Q_W adds a
++/// (question, answer) transformer cosine, matching the champion's own 0.10 question
++/// term. For a multi-step task the question IS the task, so task-relevance carries
++/// more of the within-cluster ordering the traffic gate is measured on. These only
++/// take effect under `--features minilm` with W_EMB > 0.
++const EMB_A_W: f32 = 0.25;
++const EMB_B_W: f32 = 0.50;
++const EMB_LEX_W: f32 = 0.25;
++const EMB_Q_W: f32 = 0.0;
++
+ /// Squared ramp above SOFT_MIN, so a near synonym earns most of the credit and a
+ /// merely related word earns almost none.
+ fn soft_credit(sim: f32) -> f32 {
+@@ -1319,7 +1331,12 @@
+             #[cfg(feature = "minilm")]
+             {
+                 let (ca, cb) = minilm::embed_cos_ab(gt, ma);
+-                raw = clamp01(0.25 * ca + 0.50 * cb + 0.25 * raw);
++                let mut blended = EMB_A_W * ca + EMB_B_W * cb + EMB_LEX_W * raw;
++                if EMB_Q_W > 0.0 {
++                    let cq = minilm::embed_cos_b(q, ma);
++                    blended += EMB_Q_W * cq;
++                }
++                raw = clamp01(blended);
+             }
+             #[cfg(not(feature = "minilm"))]
+             {

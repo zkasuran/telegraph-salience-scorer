@@ -1,0 +1,10 @@
+rows 120
+candidate(transformer) score range 0.121 .. 0.9851 mean 0.76
+champion(good.wasm) score range    0.302 .. 0.81 mean 0.6617
+
+=== Spearman vs champion proxy (good.wasm) on 120-row AGENT_TASK corpus ===
+  transformer  (reg-77 clone): 0.6985
+  our lexical  (deployed):     0.6057
+  raw word-overlap default:    0.5016
+
+  transformer vs our-lexical: 0.9315

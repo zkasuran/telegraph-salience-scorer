@@ -1,0 +1,11 @@
+{
+ "n": 13,
+ "wasm": "langgen-w45.wasm",
+ "spearman_candidate_vs_length": 0.6179,
+ "spearman_candidate_vs_word_overlap_precision": -0.4286,
+ "spearman_candidate_vs_gt_recall": 0.6446,
+ "spearman_length_vs_overlap": -0.7779,
+ "cand_score_min": 0.1908,
+ "cand_score_max": 0.7329,
+ "cand_score_stddev": 0.1401
+}
