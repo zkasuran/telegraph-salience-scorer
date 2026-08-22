@@ -1,5 +1,9 @@
 target/
 harness/harness
+harness/dumpscores
 reference/
 harness-report.json
 bench/tune-results.json
+.scratch/
+__pycache__/
+*.pyc

@@ -1,0 +1,335 @@
+{
+ "note": "WEB_SEARCH traffic proxy: 6 models answering the same requests, plus dead miners, to match the tight per-request clusters the node's agreement gate ranks.",
+ "rows": [
+  {
+   "q": "What is the current stable major release of PostgreSQL?",
+   "gt": "PostgreSQL 18 is the current stable major release.",
+   "a": "The current stable major release of PostgreSQL is 15.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "What is the current stable major release of PostgreSQL?",
+   "gt": "PostgreSQL 18 is the current stable major release.",
+   "a": "The current stable major release of PostgreSQL is 17.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "What is the current stable major release of PostgreSQL?",
+   "gt": "PostgreSQL 18 is the current stable major release.",
+   "a": "PostgreSQL 17.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "What is the current stable major release of PostgreSQL?",
+   "gt": "PostgreSQL 18 is the current stable major release.",
+   "a": "PostgreSQL 17.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "What is the current stable major release of PostgreSQL?",
+   "gt": "PostgreSQL 18 is the current stable major release.",
+   "a": "PostgreSQL 17",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "What is the official documentation URL for the Rust standard library?",
+   "gt": "https://doc.rust-lang.org/std/",
+   "a": "The official documentation URL for the Rust standard library is: https://doc.rust-lang.org/std/",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "What is the official documentation URL for the Rust standard library?",
+   "gt": "https://doc.rust-lang.org/std/",
+   "a": "https://doc.rust-lang.org/std/",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "What is the official documentation URL for the Rust standard library?",
+   "gt": "https://doc.rust-lang.org/std/",
+   "a": "https://doc.rust-lang.org/std/",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "What is the official documentation URL for the Rust standard library?",
+   "gt": "https://doc.rust-lang.org/std/",
+   "a": "https://doc.rust-lang.org/std/",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "What is the official documentation URL for the Rust standard library?",
+   "gt": "https://doc.rust-lang.org/std/",
+   "a": "https://doc.rust-lang.org/std/",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Who maintains the wazero WebAssembly runtime and under what licence is it released?",
+   "gt": "wazero is maintained by Tetrate and released under the Apache 2.0 licence.",
+   "a": "Wazero is maintained by the Wazero community, which includes contributions from various developers. It is released under the MIT License.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Who maintains the wazero WebAssembly runtime and under what licence is it released?",
+   "gt": "wazero is maintained by Tetrate and released under the Apache 2.0 licence.",
+   "a": "The wazero WebAssembly runtime is maintained by the tetratelabs organization. It is released under the Apache License 2.0.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Who maintains the wazero WebAssembly runtime and under what licence is it released?",
+   "gt": "wazero is maintained by Tetrate and released under the Apache 2.0 licence.",
+   "a": "wazero is maintained by the Tetrate team (Tetrate Labs) on GitHub under the Tetrate Labs organization. It is released under the Apache License 2.0.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Who maintains the wazero WebAssembly runtime and under what licence is it released?",
+   "gt": "wazero is maintained by Tetrate and released under the Apache 2.0 licence.",
+   "a": "wazero is maintained by Tetrate and the open source community. It is released under the Apache License 2.0.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Who maintains the wazero WebAssembly runtime and under what licence is it released?",
+   "gt": "wazero is maintained by Tetrate and released under the Apache 2.0 licence.",
+   "a": "The wazero WebAssembly runtime is maintained as a CNCF (Cloud Native Computing Foundation) sandbox project, originally created and primarily contributed to by Tetrate. It is released under the Apache License 2.0.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "What does the HTTP status code 429 mean?",
+   "gt": "429 means Too Many Requests: the client has sent too many requests in a given amount of time and should back off, usually after the Retry-After header.",
+   "a": "HTTP status code 429 means \"Too Many Requests.\" It indicates that the user has sent too many requests in a given amount of time and is being rate-limited to prevent abuse.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "What does the HTTP status code 429 mean?",
+   "gt": "429 means Too Many Requests: the client has sent too many requests in a given amount of time and should back off, usually after the Retry-After header.",
+   "a": "The HTTP 429 Too Many Requests status code indicates that the user has sent too many requests in a given amount of time. It is used by servers to prevent abuse or overloading by implementing rate limiting. Responses with this status often include a Retry-After header field to inform the client how long to wait before making a new request.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "What does the HTTP status code 429 mean?",
+   "gt": "429 means Too Many Requests: the client has sent too many requests in a given amount of time and should back off, usually after the Retry-After header.",
+   "a": "HTTP 429 means \"Too Many Requests.\" It indicates the client has sent more requests than allowed within a specified time window, typically due to rate limiting.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "What does the HTTP status code 429 mean?",
+   "gt": "429 means Too Many Requests: the client has sent too many requests in a given amount of time and should back off, usually after the Retry-After header.",
+   "a": "HTTP status code 429 means \"Too Many Requests.\" It indicates that the client has sent too many requests in a given amount of time and has been rate-limited by the server. The response should include a Retry-After header specifying how many seconds to wait before making another request.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "What does the HTTP status code 429 mean?",
+   "gt": "429 means Too Many Requests: the client has sent too many requests in a given amount of time and should back off, usually after the Retry-After header.",
+   "a": "HTTP status code 429 means \"Too Many Requests\". It indicates that the client has sent too many requests in a given amount of time, triggering the server's rate limiting. The response will often include a \"Retry-After\" header indicating how long the client should wait before making another request.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Which company develops the Base layer 2 network?",
+   "gt": "Base is developed by Coinbase, built on the OP Stack.",
+   "a": "Base layer 2 network is developed by Coinbase.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Which company develops the Base layer 2 network?",
+   "gt": "Base is developed by Coinbase, built on the OP Stack.",
+   "a": "Coinbase develops the Base layer 2 network.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Which company develops the Base layer 2 network?",
+   "gt": "Base is developed by Coinbase, built on the OP Stack.",
+   "a": "Coinbase",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Which company develops the Base layer 2 network?",
+   "gt": "Base is developed by Coinbase, built on the OP Stack.",
+   "a": "Coinbase develops the Base layer 2 network.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Which company develops the Base layer 2 network?",
+   "gt": "Base is developed by Coinbase, built on the OP Stack.",
+   "a": "Coinbase",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "What is the maximum file size GitHub allows in a repository?",
+   "gt": "GitHub blocks pushes containing files larger than 100 MB, and warns above 50 MB.",
+   "a": "GitHub allows a maximum file size of 100 MB for files in a repository. For repositories using Git Large File Storage (LFS), the limit for individual files can be larger, but the LFS storage quota is subject to billing.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "What is the maximum file size GitHub allows in a repository?",
+   "gt": "GitHub blocks pushes containing files larger than 100 MB, and warns above 50 MB.",
+   "a": "GitHub recommends keeping files under 50 MB and strictly prohibits individual files larger than 100 MB. If you need to track files larger than 100 MB, you must use Git Large File Storage (Git LFS), which allows files up to 5 GB.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "What is the maximum file size GitHub allows in a repository?",
+   "gt": "GitHub blocks pushes containing files larger than 100 MB, and warns above 50 MB.",
+   "a": "GitHub imposes a maximum file size of 100 MB per file in a repository. Files larger than 50 MB are discouraged and trigger a warning, but the hard limit is 100 MB. For larger files, GitHub recommends using Git Large File Storage (LFS).",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "What is the maximum file size GitHub allows in a repository?",
+   "gt": "GitHub blocks pushes containing files larger than 100 MB, and warns above 50 MB.",
+   "a": "GitHub enforces a hard limit of 100 MB per file in regular repositories, though they recommend keeping files under 50 MB. For files larger than 100 MB, you must use Git Large File Storage (Git LFS), which supports files up to 2 GB on free plans and up to 5 GB on Pro and Team plans.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "What is the maximum file size GitHub allows in a repository?",
+   "gt": "GitHub blocks pushes containing files larger than 100 MB, and warns above 50 MB.",
+   "a": "100 MB for standard Git pushes, and up to 5 GB using Git Large File Storage (Git LFS).",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "What licence does the all-MiniLM-L6-v2 sentence transformer use?",
+   "gt": "all-MiniLM-L6-v2 is released under the Apache 2.0 licence.",
+   "a": "The all-MiniLM-L6-v2 sentence transformer is licensed under the Apache License 2.0.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "What licence does the all-MiniLM-L6-v2 sentence transformer use?",
+   "gt": "all-MiniLM-L6-v2 is released under the Apache 2.0 licence.",
+   "a": "The all-MiniLM-L6-v2 sentence transformer is licensed under the Apache License 2.0.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "What licence does the all-MiniLM-L6-v2 sentence transformer use?",
+   "gt": "all-MiniLM-L6-v2 is released under the Apache 2.0 licence.",
+   "a": "The all-MiniLM-L6-v2 sentence transformer is licensed under Apache 2.0.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "What licence does the all-MiniLM-L6-v2 sentence transformer use?",
+   "gt": "all-MiniLM-L6-v2 is released under the Apache 2.0 licence.",
+   "a": "Apache License 2.0.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "What licence does the all-MiniLM-L6-v2 sentence transformer use?",
+   "gt": "all-MiniLM-L6-v2 is released under the Apache 2.0 licence.",
+   "a": "Apache 2.0",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "What is the default port for a PostgreSQL server?",
+   "gt": "5432",
+   "a": "The default port for a PostgreSQL server is 5432.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "What is the default port for a PostgreSQL server?",
+   "gt": "5432",
+   "a": "The default port for a PostgreSQL server is 5432.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "What is the default port for a PostgreSQL server?",
+   "gt": "5432",
+   "a": "5432",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "What is the default port for a PostgreSQL server?",
+   "gt": "5432",
+   "a": "5432",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "What is the default port for a PostgreSQL server?",
+   "gt": "5432",
+   "a": "5432",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "What is the difference between HTTP GET and HEAD?",
+   "gt": "HEAD is identical to GET except the server returns only headers and no response body, so it is used to check whether a resource exists or has changed.",
+   "a": "HTTP GET requests a resource and retrieves its data, while HTTP HEAD requests the same resource but only retrieves the headers without the body of the response. GET is used to fetch content, whereas HEAD is useful for checking metadata or the resource's status without transferring the actual content.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "What is the difference between HTTP GET and HEAD?",
+   "gt": "HEAD is identical to GET except the server returns only headers and no response body, so it is used to check whether a resource exists or has changed.",
+   "a": "The primary difference between HTTP GET and HEAD is that a GET request retrieves both the header information and the message body of a resource, whereas a HEAD request retrieves only the header information. \n\nWhen a client sends a HEAD request, the server returns the same response headers that it would have sent for a GET request\u2014such as the content type, content length, and cache-control directives\u2014but it omits the actual data content. This makes HEAD requests significantly faster and more bandwidth-efficient, making them ideal for checking if a file exists, determining the size of a resource, or validating if a document has been modified since it was last cached, all without the overhead of downloading the entire payload.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "What is the difference between HTTP GET and HEAD?",
+   "gt": "HEAD is identical to GET except the server returns only headers and no response body, so it is used to check whether a resource exists or has changed.",
+   "a": "The core difference is that GET returns the resource's full message body in the response, while HEAD is identical to GET in every other respect\u2014same request headers, same URL, same status code, and same response headers\u2014but the server must not send any message body. In other words, HEAD is a metadata-only request: you get the same headers you would receive from a GET (like Content-Length, Content-Type, Last-Modified, ETag), but the actual content is omitted, saving bandwidth and time. It is commonly used to check whether a resource exists, whether it has changed (via Last-Modified or ETag), or to discover its size without downloading it.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "What is the difference between HTTP GET and HEAD?",
+   "gt": "HEAD is identical to GET except the server returns only headers and no response body, so it is used to check whether a resource exists or has changed.",
+   "a": "HTTP GET requests retrieve a resource from a server and include the response body containing the actual content, such as an HTML page, image, or JSON data. HTTP HEAD requests are identical to GET requests in every way except that the server must not return a message body in the response; it only returns the status line and headers. This makes HEAD useful for checking if a resource exists, verifying when it was last modified, determining its content type or size, or testing link validity without incurring the overhead of downloading the full payload. Both methods are considered safe and idempotent, meaning they should not alter server state and can be repeated without side effects, but HEAD is specifically designed for retrieving metadata about resources efficiently.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "What is the difference between HTTP GET and HEAD?",
+   "gt": "HEAD is identical to GET except the server returns only headers and no response body, so it is used to check whether a resource exists or has changed.",
+   "a": "The HTTP GET method requests a resource and the server returns both the headers and the message body containing the actual data. The HTTP HEAD method requests the same resource but the server returns only the headers, omitting the message body. HEAD is typically used to check metadata, such as content length or last-modified time, without the overhead of downloading the actual content.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "What is the current version of the Ethereum execution API specification called?",
+   "gt": "The Ethereum execution API is specified in the execution-apis repository, published as the JSON-RPC specification.",
+   "a": "The current version of the Ethereum execution API specification is called \"EIP-1898\".",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "What is the current version of the Ethereum execution API specification called?",
+   "gt": "The Ethereum execution API is specified in the execution-apis repository, published as the JSON-RPC specification.",
+   "a": "The current version of the Ethereum execution API specification is called the Engine API.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "What is the current version of the Ethereum execution API specification called?",
+   "gt": "The Ethereum execution API is specified in the execution-apis repository, published as the JSON-RPC specification.",
+   "a": "The current version of the Ethereum execution API specification is called the **Ethereum Engine API**, specifically version **1.0.0-alpha.7** (as of the latest stable release). This API defines the interface between the execution layer and consensus layer clients.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "What is the current version of the Ethereum execution API specification called?",
+   "gt": "The Ethereum execution API is specified in the execution-apis repository, published as the JSON-RPC specification.",
+   "a": "The Ethereum Execution API Specification (commonly referred to as the **Execution API**). It uses semantic versioning, with the current stable version being **v1.0** (e.g., v1.0.0 or later patch releases), and is maintained in the `ethereum/execution-apis` repository. Unlike Ethereum protocol upgrades, the specification itself does not use codenames like \"Paris\" or \"Cancun\"; instead, individual methods are grouped by the hard forks that introduced them.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "What is the current version of the Ethereum execution API specification called?",
+   "gt": "The Ethereum execution API is specified in the execution-apis repository, published as the JSON-RPC specification.",
+   "a": "Ethereum Execution API",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "What is the current stable major release of PostgreSQL?",
+   "gt": "PostgreSQL 18 is the current stable major release.",
+   "a": "",
+   "model": "dead"
+  },
+  {
+   "q": "What is the official documentation URL for the Rust standard library?",
+   "gt": "https://doc.rust-lang.org/std/",
+   "a": "   ",
+   "model": "dead"
+  },
+  {
+   "q": "Who maintains the wazero WebAssembly runtime and under what licence is it released?",
+   "gt": "wazero is maintained by Tetrate and released under the Apache 2.0 licence.",
+   "a": "I'm sorry, I can't help with that.",
+   "model": "dead"
+  },
+  {
+   "q": "What does the HTTP status code 429 mean?",
+   "gt": "429 means Too Many Requests: the client has sent too many requests in a given amount of time and should back off, usually after the Retry-After header.",
+   "a": "Error: upstream timeout",
+   "model": "dead"
+  },
+  {
+   "q": "Which company develops the Base layer 2 network?",
+   "gt": "Base is developed by Coinbase, built on the OP Stack.",
+   "a": "As an AI language model, I do not have access to that information.",
+   "model": "dead"
+  }
+ ]
+}

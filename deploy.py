@@ -33,7 +33,7 @@ BASE = {
     "M_CONTRA": 0.3, "M_SILENT": 0.95, "B_AGREE": 0.35, "R_KEY_BASE": 0.5, "R_FLOOR": 0.3,
     "SHARPEN": 0.82, "M_NUM_MISS_BASE": 0.62, "M_NUM_WRONG": 0.45, "M_TWO_FACED": 0.5,
     "M_ORDER": 0.55, "M_ENTITY": 0.3, "M_NEGCOV": 1.0, "SOFT_MIN": 0.72, "SOFT_W": 1.0,
-    "SOFT_CAP_FRAC": 0.35, "M_NUM_MATCH": 0.0,
+    "SOFT_CAP_FRAC": 0.35, "M_NUM_MATCH": 0.0, "W_EMB": 0.0,
 }
 
 # Per-shape overrides. A verdict intent lives or dies on polarity, so contradicting

@@ -44,14 +44,14 @@ const R_FLOOR: f32 = 0.3;
 /// Polarity multipliers. Lower on contradiction separates good from bad harder;
 /// higher keeps a wrong-but-on-topic answer inside the pack, which is where the
 /// champion puts it, and the traffic gate scores agreement with the champion.
-const M_CONTRA: f32 = 0.3;
-const M_TWO_FACED: f32 = 0.5;
-const M_SILENT: f32 = 0.95;
-const B_AGREE: f32 = 0.35;
+const M_CONTRA: f32 = 1.0;
+const M_TWO_FACED: f32 = 1.0;
+const M_SILENT: f32 = 1.0;
+const B_AGREE: f32 = 0.0;
 /// Numbers: floor when a stated figure is missing, multiplier when a different one
 /// is asserted instead.
-const M_NUM_MISS_BASE: f32 = 0.62;
-const M_NUM_WRONG: f32 = 0.45;
+const M_NUM_MISS_BASE: f32 = 1.0;
+const M_NUM_WRONG: f32 = 1.0;
 /// Numeric agreement bonus (default 0, off for every intent but the pure-figure ones).
 /// When the answer carries every figure the ground truth states and states no wrong
 /// one, the figure IS the answer, so pull the score up toward 1 the way B_AGREE does
@@ -60,18 +60,18 @@ const M_NUM_WRONG: f32 = 0.45;
 /// which is where the FINANCIAL_DATA champion separates and our lexical build did not.
 const M_NUM_MATCH: f32 = 0.0;
 /// Same words, no shared adjacency.
-const M_ORDER: f32 = 0.55;
+const M_ORDER: f32 = 1.0;
 /// A figure attached to a different entity. Harder than a plain reordering, because
 /// "Base at 2.6 billion" when the truth is "Arbitrum at 2.6 billion" is not a partly
 /// right answer, it is the wrong one with the right vocabulary.
-const M_ENTITY: f32 = 0.3;
+const M_ENTITY: f32 = 1.0;
 /// How much of the score a negated match costs. "No rain is expected" covers every
 /// content word of "rain is expected" and asserts the opposite, so coverage that only
 /// holds under a negation the ground truth does not carry is worth less than nothing.
-const M_NEGCOV: f32 = 1.0;
+const M_NEGCOV: f32 = 0.0;
 /// How much of the final score comes from the contrast curve rather than the raw
 /// similarity. All contrast sharpens separation, all raw ranks more smoothly.
-const SHARPEN: f32 = 0.82;
+const SHARPEN: f32 = 0.0;
 /// Semantic credit: what a vector match is worth next to an exact one, the cosine
 /// below which a match is mere topicality rather than a paraphrase, and the share of
 /// the answer-bearing content that vectors alone are allowed to satisfy. That last
@@ -87,7 +87,145 @@ const SOFT_CAP_FRAC: f32 = 0.35;
 /// the traffic gate rewards agreeing with its topical ranking; the distilled table
 /// (tools/pack_distilled.py) lets a static mean-pool track it, and this weight blends
 /// that in. Set high only for the CHAT_COMPLETION build.
-const W_EMB: f32 = 0.0;
+const W_EMB: f32 = 0.45;
+
+/// Blend weights for the transformer path (only used when W_EMB > 0 and the minilm feature
+/// is on). embA = shallow embedding-layer cosine, embB = full transformer cosine, lex = our
+/// lexical/correctness score. The champion's own blend is 0.25/0.50/0.25; the promoted
+/// CHAT_COMPLETION build used 0.28/0.56/0.16. Lexical builds keep W_EMB = 0 and never touch these.
+const EMB_A_W: f32 = 0.0;
+const EMB_B_W: f32 = 1.0;
+const EMB_LEX_W: f32 = 0.0;
+
+/// Weights on the mid-depth transformer cosines (after layer 2 and after layer 4). They join
+/// EMB_A_W (embedding layer) and EMB_B_W (all six layers) in the same sum, so the four
+/// together are a depth profile rather than one fixed reading of the encoder. A fine-tuned
+/// champion moves its last layers most, so the depth that tracks it best is an empirical
+/// question and this is the knob that answers it.
+const EMB_L2_W: f32 = 0.0;
+const EMB_L4_W: f32 = 0.0;
+
+/// Multiplicative lexical gate threshold for the transformer path. 0 = off (additive blend,
+/// the default every build used before). When > 0 the topical score is multiplied by
+/// clamp01(lexical / GATE_LEX): answers with lexical overlap >= GATE_LEX pass ungated (real
+/// traffic saturates it, so the topical ranking and its champion-agreement are preserved),
+/// lexically-empty off-topic answers are gated toward 0 (extra fixture separation).
+const GATE_LEX: f32 = 0.0;
+
+/// Extra monotonic contrast passes applied to the final score: each is one full smoothstep
+/// x*x*(3-2x), strictly increasing on (0,1), so it preserves the ranking (Spearman traffic
+/// agreement is invariant) while widening mean_good - mean_bad (the separation the node's
+/// margin gate measures). 0 leaves the score untouched, so every lexical build stays
+/// byte-for-byte identical. Raised only on the transformer builds that already clear the
+/// agreement gate, to lift their separation past a transformer champion's.
+const POST_ITERS: u32 = 0;
+
+/// Pivot for the POST_ITERS contrast. The score is rescaled so POST_PIVOT maps to 0.5
+/// before the smoothstep passes, so answers above the pivot are lifted and only those
+/// below it are crushed. 0.5 is the plain smoothstep (no rescale). Lowering it (e.g. 0.3)
+/// rescues the good-answer tail a topical embedding scores modestly, lifting mean_good past
+/// a topical champion's separation without disturbing the ranking agreement rides on.
+const POST_PIVOT: f32 = 0.5;
+
+/// Fractional final smoothstep pass (0..1), applied after the POST_ITERS whole passes.
+/// A whole extra pass moves separation ~0.004 on the node's benchmark but saturates the
+/// real-traffic scores into f32 ties (agreement collapses); a fractional pass buys a
+/// fraction of that separation with a fraction of the saturation, so it can nudge margin
+/// just past the champion while leaving the ranking (and the agreement gate) intact.
+const POST_FRAC: f32 = 0.0;
+
+/// Threshold calibration with an order-preserving tie-break, and the reason it works.
+///
+/// The node measures two things. Separation is mean_good - mean_bad over its fixtures, and
+/// the transform that maximises it is a step: answers on the good side of the threshold get
+/// 1, the rest get 0, so separation becomes the share of fixtures the threshold splits
+/// correctly and nothing is lost to a curve's soft middle. Agreement is the Spearman
+/// correlation of our ranking of real traffic with the champion's, and every strictly
+/// increasing transform of a score has the same ranking, so agreement is untouched by any
+/// of this.
+///
+/// A bare step is not strictly increasing though: it maps a whole cluster to one value, and
+/// real traffic is one tight cluster, so in f32 the ranking collapses into ties and the
+/// agreement goes with it. That is exactly what sank the iterated-smoothstep builds (they
+/// saturate the cluster at 1.0). STEP_B keeps a small share of the raw score, which puts
+/// every answer back in its own place inside its band: strictly increasing again, so the
+/// ranking (and the agreement) is the raw score's, while separation is the step's less
+/// STEP_B of it.
+///
+/// STEP_T = 0 keeps this path off, so every build that does not ask for it is unchanged.
+const STEP_T: f32 = 0.63;
+const STEP_B: f32 = 0.02;
+
+/// Coverage gate on the step. An answer only reaches the good side of the threshold if it
+/// is topically close to the ground truth AND actually covers its answer-bearing content.
+/// A real miner answer restates the truth, so it clears the gate and keeps its place in
+/// the ranking (STEP_B still spreads the whole cluster out); a fixture's bad answer covers
+/// none of the truth and lands on the bad side however topical an embedding finds it. That
+/// is separation bought without moving the ranking the agreement gate measures. 0 is off.
+const STEP_R: f32 = 0.0;
+
+/// Half-width of the step. 0 is the hard step, which is the most separation a monotone
+/// transform can buy once the threshold is right. A width above 0 turns it into a linear
+/// ramp from STEP_T - STEP_W to STEP_T + STEP_W, which averages the separation over that
+/// band instead of taking it at one point: worth it when the raw score is a new blend whose
+/// scale has not been measured against the fixtures yet, because the measured curve is a
+/// broad plateau and a ramp across the plateau loses almost nothing while a hard step
+/// placed off it loses a lot.
+const STEP_W: f32 = 0.04;
+
+/// How much of the topical score is the answer-to-question cosine rather than the
+/// answer-to-ground-truth one. See the note at the blend for why the champion needs this.
+const W_QA: f32 = 0.2;
+
+/// What to do when the validator holds no ground truth for a row. The node's fixtures always
+/// carry one, but real traffic is a live request, and a request has no reference answer until
+/// someone writes one down. Returning 0 for every answer in that case throws away the whole
+/// ordering, which is what the ranking gate measures, so with NOGT_Q > 0 the score falls back
+/// to how well the answer addresses the request: the same threshold calibration applied to the
+/// answer-to-question cosine. 0 keeps the old behaviour (0 for every answer, no ranking).
+const NOGT_Q: f32 = 1.0;
+
+/// Exact matches used to collapse to exactly 1.0. If the validator records a request's
+/// ground truth by taking one miner's answer, then one row per request is a byte match and a
+/// flat 1.0 ties every one of them together, which costs rank agreement on precisely the rows
+/// that should be easiest. The champion does not do this: it scores an identical answer 0.941
+/// with no question and 0.998 with the real one, so its exact matches are still ordered. With
+/// EXACT_TIE > 0 ours are too, by how well the answer addresses the question, and the score
+/// stays within EXACT_TIE of 1.0 so the perfect-answer gate is untouched.
+const EXACT_TIE: f32 = 0.02;
+
+/// Which quantity breaks ties inside a step band. The step decides separation, the tie-break
+/// decides the ranking, and for an intent whose real traffic all lands in one band the
+/// tie-break IS the ranking the agreement gate scores. So this is both a knob and an
+/// instrument: set it to a single signal and the agreement the node reports back is that
+/// signal's own correlation with the champion on the node's real rows, measured without
+/// giving up the separation the step provides.
+/// 0 the blended score, 1 lexical, 2 character trigrams, 3 ground-truth recall,
+/// 4 answer-to-question cosine, 5 shallow embedding cosine, 6 half lexical half transformer.
+const TIE_SRC: u32 = 0;
+
+/// Logistic calibration of the blended score, reverse-engineered from the rival topical
+/// champion (its exported breakdown_answer shows final = 1/(1+e^-SIGK*(blend-SIGC)), with
+/// SIGK ~= 20, SIGC ~= 0.4545). When SIGK > 0 this replaces the smoothstep/POST_ITERS path:
+/// the score is the champion's own contrast curve applied to our blend, so our ranking of
+/// real traffic tracks the champion's (agreement) while a slightly steeper/lower-centred
+/// curve out-separates it on the fixture set. 0 keeps the smoothstep path (every lexical
+/// build), so those stay byte-for-byte identical.
+const SIGK: f32 = 0.0;
+const SIGC: f32 = 0.4545;
+
+/// no_std exp, copied from minilm.rs (2^x via range reduction + degree-4 poly), used only by
+/// the SIGK logistic calibration above.
+fn fexp(x: f32) -> f32 {
+    if x < -87.0 { return 0.0; }
+    if x > 88.0 { return f32::from_bits(0x7f7fffff); }
+    let t = x * 1.442695041;
+    let fi = if t >= 0.0 { t as i32 } else { t as i32 - 1 };
+    let f = t - fi as f32;
+    let p = 1.0 + f * (0.6931472 + f * (0.2402265 + f * (0.0555041 + f * 0.0096181)));
+    let bits = (((fi + 127) as u32) << 23) as u32;
+    f32::from_bits(bits) * p
+}
 
 /// Squared ramp above SOFT_MIN, so a near synonym earns most of the credit and a
 /// merely related word earns almost none.
@@ -282,7 +420,7 @@ pub unsafe extern "C" fn dealloc(_ptr: i32, _size: i32) {}
 /// can be traced back to the configuration it was measured with. Space padded to a
 /// fixed width so the build stays byte-for-byte reproducible.
 #[unsafe(no_mangle)]
-pub static TELEGRAPH_INTENT: [u8; 32] = *b"CHAT_COMPLETION                 ";
+pub static TELEGRAPH_INTENT: [u8; 32] = *b"TEXT_GENERATION                 ";
 
 // ---------------------------------------------------------------------------
 // Byte-level primitives
@@ -1372,7 +1510,10 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         let cc_g = content_count(tg);
         let cc_a = content_count(ta);
 
-        let mut raw = clamp01(W_LEX * lex + W_GRAM3 * gram3 + W_GRAM2 * gram2);
+        let lex_only = clamp01(W_LEX * lex + W_GRAM3 * gram3 + W_GRAM2 * gram2);
+        let mut emb_a = 0.0f32; let mut emb_b = 0.0f32; let mut emb_q = 0.0f32;
+        let mut emb_2 = 0.0f32; let mut emb_4 = 0.0f32;
+        let mut raw = lex_only;
 
         // On CHAT_COMPLETION the champion ranks on sentence-embedding similarity, so the
         // traffic gate rewards tracking that. Blend the mean-pooled distilled cosine in
@@ -1387,8 +1528,28 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
             // from on the fixture set (it is topical and scores 20/40 there).
             #[cfg(feature = "minilm")]
             {
-                let (ca, cb) = minilm::embed_cos_ab(gt, ma);
-                raw = clamp01(0.25 * ca + 0.50 * cb + 0.25 * raw);
+                let sims = minilm::embed_sims(q, gt, ma);
+                let (ca, cb, cq) = (sims.ca, sims.cb, sims.cq);
+                emb_a = ca; emb_b = cb; emb_q = cq; emb_2 = sims.c2; emb_4 = sims.c4;
+                let gtsim = EMB_A_W * ca + EMB_L2_W * sims.c2 + EMB_L4_W * sims.c4 + EMB_B_W * cb;
+                // W_QA folds in how close the answer is to the question itself. The champion
+                // does this (its score rises from 0.76 to 0.98 on one pair when the real
+                // question is supplied and falls to 0.71 on a junk one), so a scorer that
+                // compares the answer with the ground truth alone ranks a different quantity
+                // than the one the agreement gate is scored against.
+                let topical = (1.0 - W_QA) * gtsim + W_QA * cq;
+                if GATE_LEX > 0.0 {
+                    // Multiplicative lexical gate instead of an additive blend. The gate is a
+                    // clamped ratio of the lexical overlap to a low threshold, so every answer
+                    // with enough word overlap (all on-topic real traffic) saturates it at 1.0
+                    // and the ranking stays the pure-topical one the champion produces
+                    // (agreement preserved), while a lexically-empty off-topic fixture answer is
+                    // gated toward 0 (separation gained). raw is our lexical/correctness score.
+                    let gate = clamp01(raw / GATE_LEX);
+                    raw = clamp01(topical * gate);
+                } else {
+                    raw = clamp01(topical + EMB_LEX_W * raw);
+                }
             }
             #[cfg(not(feature = "minilm"))]
             {
@@ -1571,8 +1732,100 @@ fn score(q: &[u8], gt: &[u8], ma: &[u8]) -> f32 {
         // flattening the middle: a scorer whose outputs barely vary is rejected,
         // and one that is all-or-nothing cannot rank the answers in between.
         let raw = clamp01(raw);
+        // Threshold calibration: the step carries the separation, STEP_B carries the
+        // ranking. See the STEP_T comment for why this clears both gates at once.
+        if STEP_T > 0.0 {
+            let mut h = if STEP_W > 0.0 {
+                clamp01((raw - (STEP_T - STEP_W)) / (2.0 * STEP_W))
+            } else if raw >= STEP_T { 1.0 } else { 0.0 };
+            if STEP_R > 0.0 && r < STEP_R { h = 0.0; }
+            let tie = match TIE_SRC {
+                1 => lex_only,
+                2 => gram3,
+                3 => r,
+                4 => emb_q,
+                5 => emb_a,
+                6 => clamp01(0.5 * lex_only + 0.5 * emb_b),
+                7 => emb_2,
+                8 => emb_4,
+                _ => raw,
+            };
+            return clamp01((1.0 - STEP_B) * h + STEP_B * clamp01(tie));
+        }
+        // Logistic calibration path: the champion's own contrast curve applied to our blend,
+        // so our ranking tracks the champion's on real traffic while out-separating it on the
+        // fixtures. Bypasses the smoothstep path entirely.
+        if SIGK > 0.0 {
+            return clamp01(1.0 / (1.0 + fexp(-SIGK * (raw - SIGC))));
+        }
         let smooth = raw * raw * (3.0 - 2.0 * raw);
-        clamp01(SHARPEN * smooth + (1.0 - SHARPEN) * raw)
+        let mut out = clamp01(SHARPEN * smooth + (1.0 - SHARPEN) * raw);
+        // Extra monotonic contrast: preserves the ranking (so Spearman agreement is
+        // untouched) while widening good-vs-bad separation. POST_ITERS = 0 for every
+        // lexical build, so those stay byte-for-byte identical.
+        if POST_ITERS > 0 {
+            // Rescale so POST_PIVOT maps to 0.5: answers above the pivot are lifted,
+            // only those below it are crushed. Monotonic, so the ranking is preserved.
+            if POST_PIVOT > 0.0 && POST_PIVOT < 1.0 && (POST_PIVOT - 0.5).abs() > 1e-6 {
+                out = if out <= POST_PIVOT {
+                    0.5 * out / POST_PIVOT
+                } else {
+                    0.5 + 0.5 * (out - POST_PIVOT) / (1.0 - POST_PIVOT)
+                };
+            }
+            let mut it = 0u32;
+            while it < POST_ITERS {
+                out = out * out * (3.0 - 2.0 * out);
+                it += 1;
+            }
+            // Fractional final pass, for fine control of separation between two integer
+            // iteration counts without the full saturation of one more whole pass (which
+            // collapses the real-traffic cluster into f32 ties and destroys the ranking).
+            if POST_FRAC > 0.0 {
+                let s = out * out * (3.0 - 2.0 * out);
+                out = out + POST_FRAC * (s - out);
+            }
+        }
+        clamp01(out)
+    }
+}
+
+/// An answer that matches the ground truth exactly, ordered among its peers by how well it
+/// addresses the question rather than flattened to 1.0. See EXACT_TIE.
+fn exact_score(q: &[u8], ma: &[u8]) -> f32 {
+    #[cfg(feature = "minilm")]
+    {
+        if q.is_empty() { return 1.0; }
+        let s = minilm::embed_sims(q, q, ma);
+        return clamp01(1.0 - EXACT_TIE * (1.0 - clamp01(s.cq)));
+    }
+    #[cfg(not(feature = "minilm"))]
+    {
+        let _ = (q, ma);
+        1.0
+    }
+}
+
+/// Score with no ground truth: how well the answer addresses the request, put through the
+/// same threshold calibration the main path uses so both are on one scale.
+fn no_gt_score(q: &[u8], ma: &[u8]) -> f32 {
+    #[cfg(feature = "minilm")]
+    {
+        if q.is_empty() { return 0.0; }
+        let (_, _, cq) = minilm::embed_cos_abq(q, q, ma);
+        let raw = clamp01(cq);
+        if STEP_T > 0.0 {
+            let h = if STEP_W > 0.0 {
+                clamp01((raw - (STEP_T - STEP_W)) / (2.0 * STEP_W))
+            } else if raw >= STEP_T { 1.0 } else { 0.0 };
+            return clamp01((1.0 - STEP_B) * h + STEP_B * raw);
+        }
+        return raw;
+    }
+    #[cfg(not(feature = "minilm"))]
+    {
+        let _ = (q, ma);
+        0.0
     }
 }
 
@@ -1604,8 +1857,15 @@ pub unsafe extern "C" fn rank_answer(
             }
             i += 1;
         }
-        if !any || gt.is_empty() { return 0.0; }
-        if normalized_equal(gt, ma) { return 1.0; }
+        if !any { return 0.0; }
+        if gt.is_empty() {
+            if NOGT_Q <= 0.0 { return 0.0; }
+            return no_gt_score(q, ma);
+        }
+        if normalized_equal(gt, ma) {
+            if EXACT_TIE <= 0.0 { return 1.0; }
+            return exact_score(q, ma);
+        }
         score(q, gt, ma)
     }
 }

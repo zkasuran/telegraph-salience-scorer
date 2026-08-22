@@ -1,0 +1,324 @@
+{
+ "cases": [
+  {
+   "id": "gk-capital-au",
+   "intent": "CHAT_COMPLETION",
+   "question": "What is the capital of Australia?",
+   "ground_truth": "Canberra is the capital of Australia.",
+   "good": "Canberra.",
+   "bad": "Rain is likely tomorrow."
+  },
+  {
+   "id": "gk-photosynthesis",
+   "intent": "CHAT_COMPLETION",
+   "question": "Which gas do plants absorb during photosynthesis?",
+   "ground_truth": "Plants absorb carbon dioxide during photosynthesis.",
+   "good": "Carbon dioxide is taken in by the plant.",
+   "bad": "In Spanish that is buenos dias."
+  },
+  {
+   "id": "gk-largest-ocean",
+   "intent": "CHAT_COMPLETION",
+   "question": "What is the largest ocean on Earth?",
+   "ground_truth": "The Pacific Ocean is the largest.",
+   "good": "The Pacific.",
+   "bad": "You would say merci beaucoup."
+  },
+  {
+   "id": "gk-water-boil",
+   "intent": "CHAT_COMPLETION",
+   "question": "At what temperature does water boil at sea level in Celsius?",
+   "ground_truth": "100 degrees Celsius.",
+   "good": "Water boils at 100 C at sea level.",
+   "bad": "Use len(items)."
+  },
+  {
+   "id": "num-speed-light",
+   "intent": "CHAT_COMPLETION",
+   "question": "What is the speed of light in vacuum in metres per second?",
+   "ground_truth": "299,792,458 metres per second.",
+   "good": "About 299792458 m/s.",
+   "bad": "Use git restore, or git checkout -- on that file."
+  },
+  {
+   "id": "num-moon-landing",
+   "intent": "CHAT_COMPLETION",
+   "question": "In which year did humans first land on the Moon?",
+   "ground_truth": "1969.",
+   "good": "Apollo 11 landed in 1969.",
+   "bad": "Log4Shell: remote code execution in Log4j."
+  },
+  {
+   "id": "num-continents",
+   "intent": "CHAT_COMPLETION",
+   "question": "How many continents are there?",
+   "ground_truth": "There are 7 continents.",
+   "good": "Seven, by the usual count: 7.",
+   "bad": "Expired, so it is not valid."
+  },
+  {
+   "id": "num-http-teapot",
+   "intent": "CHAT_COMPLETION",
+   "question": "Which HTTP status code means 'I'm a teapot'?",
+   "ground_truth": "418.",
+   "good": "Status code 418.",
+   "bad": "US, it is a Google resolver."
+  },
+  {
+   "id": "fact-great-wall",
+   "intent": "FACT_CHECK",
+   "question": "Is the claim that the Great Wall of China is visible to the naked eye from the Moon true?",
+   "ground_truth": "No, that claim is false.",
+   "good": "False. It cannot be seen from the Moon without aid.",
+   "bad": "Vaswani and colleagues, Attention Is All You Need (2017)."
+  },
+  {
+   "id": "fact-vaccine-autism",
+   "intent": "FACT_CHECK",
+   "question": "Does the evidence support the claim that vaccines cause autism?",
+   "ground_truth": "No, the claim is refuted by the evidence.",
+   "good": "The claim is not supported; studies find no link.",
+   "bad": "That all available information is already priced in."
+  },
+  {
+   "id": "fact-einstein-nobel",
+   "intent": "FACT_CHECK",
+   "question": "Did Albert Einstein win the Nobel Prize for relativity?",
+   "ground_truth": "No, he won it for the photoelectric effect.",
+   "good": "He was awarded it for the photoelectric effect, not relativity.",
+   "bad": "France."
+  },
+  {
+   "id": "aidet-yes",
+   "intent": "AI_TEXT_DETECTION",
+   "question": "Was the supplied passage written by an AI?",
+   "ground_truth": "Yes, the passage is AI-generated.",
+   "good": "AI-generated.",
+   "bad": "4-2 to France."
+  },
+  {
+   "id": "aidet-no",
+   "intent": "AI_TEXT_DETECTION",
+   "question": "Was the supplied passage written by an AI?",
+   "ground_truth": "No, the passage was written by a human.",
+   "good": "Human, not machine generated.",
+   "bad": "It is a dollar figure."
+  },
+  {
+   "id": "deepfake-real",
+   "intent": "DEEPFAKE_DETECTION",
+   "question": "Is the face in the supplied image synthetically generated?",
+   "ground_truth": "No, the face is authentic.",
+   "good": "Authentic, no sign of synthesis.",
+   "bad": "Clearly negative sentiment."
+  },
+  {
+   "id": "urlscan-phish",
+   "intent": "URL_SCAN",
+   "question": "Is http://paypa1-login-secure.example.com a phishing site?",
+   "ground_truth": "Yes, it is a phishing page impersonating PayPal.",
+   "good": "Phishing, it impersonates PayPal.",
+   "bad": "It is benign and does not violate it."
+  },
+  {
+   "id": "fin-bearish",
+   "intent": "FINANCIAL_DATA",
+   "question": "What does a bearish signal imply for price direction?",
+   "ground_truth": "It implies the price is expected to fall.",
+   "good": "Expect a decline in price.",
+   "bad": "The total is 82.50 euros."
+  },
+  {
+   "id": "fin-rate-cut",
+   "intent": "FINANCIAL_DATA",
+   "question": "If a central bank cuts its policy rate, what usually happens to bond prices?",
+   "ground_truth": "Bond prices usually rise.",
+   "good": "They tend to increase.",
+   "bad": "It is 19.99."
+  },
+  {
+   "id": "crypto-ticker",
+   "intent": "CRYPTO_PRICE",
+   "question": "What is the ticker symbol of Ethereum's native token?",
+   "ground_truth": "ETH.",
+   "good": "The ticker is ETH.",
+   "bad": "Query availability for a party of 4 at 7pm before booking."
+  },
+  {
+   "id": "fx-pair",
+   "intent": "CURRENCY_EXCHANGE",
+   "question": "Convert 100 EUR to USD at a rate of 1.10.",
+   "ground_truth": "110 USD.",
+   "good": "That comes to 110 dollars.",
+   "bad": "Out of disk."
+  },
+  {
+   "id": "weather-berlin",
+   "intent": "WEATHER_FORECAST",
+   "question": "What is tomorrow's maximum temperature in Berlin?",
+   "ground_truth": "22 degrees Celsius.",
+   "good": "A high of 22 C.",
+   "bad": "Instant queries."
+  },
+  {
+   "id": "weather-rain",
+   "intent": "WEATHER_CHECK",
+   "question": "Will it rain in Chennai tomorrow?",
+   "ground_truth": "Yes, rain is expected.",
+   "good": "Rain is likely tomorrow.",
+   "bad": "Canberra."
+  },
+  {
+   "id": "trans-es-morning",
+   "intent": "LANGUAGE_TRANSLATION",
+   "question": "Translate 'good morning' into Spanish.",
+   "ground_truth": "Buenos dias.",
+   "good": "In Spanish that is buenos dias.",
+   "bad": "Carbon dioxide is taken in by the plant."
+  },
+  {
+   "id": "trans-fr-thanks",
+   "intent": "LANGUAGE_TRANSLATION",
+   "question": "Translate 'thank you very much' into French.",
+   "ground_truth": "Merci beaucoup.",
+   "good": "You would say merci beaucoup.",
+   "bad": "The Pacific."
+  },
+  {
+   "id": "code-py-len",
+   "intent": "CHAT_COMPLETION",
+   "question": "In Python, how do you get the number of items in a list?",
+   "ground_truth": "Call the len() function on the list.",
+   "good": "Use len(items).",
+   "bad": "Water boils at 100 C at sea level."
+  },
+  {
+   "id": "code-git-undo",
+   "intent": "CHAT_COMPLETION",
+   "question": "Which git command discards local changes to a tracked file?",
+   "ground_truth": "git checkout -- <file> restores it.",
+   "good": "Use git restore, or git checkout -- on that file.",
+   "bad": "About 299792458 m/s."
+  },
+  {
+   "id": "cve-lookup",
+   "intent": "CVE_LOOKUP",
+   "question": "What kind of vulnerability is CVE-2021-44228?",
+   "ground_truth": "A remote code execution flaw in Apache Log4j.",
+   "good": "Log4Shell: remote code execution in Log4j.",
+   "bad": "Apollo 11 landed in 1969."
+  },
+  {
+   "id": "ssl-expired",
+   "intent": "SSL_VERIFICATION",
+   "question": "Is the certificate for expired.example.com currently valid?",
+   "ground_truth": "No, the certificate has expired.",
+   "good": "Expired, so it is not valid.",
+   "bad": "Seven, by the usual count: 7."
+  },
+  {
+   "id": "geo-ip",
+   "intent": "IP_GEOLOCATION",
+   "question": "Which country is IP 8.8.8.8 registered in?",
+   "ground_truth": "The United States.",
+   "good": "US, it is a Google resolver.",
+   "bad": "Status code 418."
+  },
+  {
+   "id": "acad-search",
+   "intent": "ACADEMIC_SEARCH",
+   "question": "Which paper introduced the transformer architecture?",
+   "ground_truth": "Attention Is All You Need, Vaswani et al., 2017.",
+   "good": "Vaswani and colleagues, Attention Is All You Need (2017).",
+   "bad": "False. It cannot be seen from the Moon without aid."
+  },
+  {
+   "id": "research-synth",
+   "intent": "RESEARCH_QUERY",
+   "question": "What is the main claim of the efficient market hypothesis?",
+   "ground_truth": "Prices already reflect all available information.",
+   "good": "That all available information is already priced in.",
+   "bad": "The claim is not supported; studies find no link."
+  },
+  {
+   "id": "news-headline",
+   "intent": "NEWS_HEADLINES",
+   "question": "Who won the 2018 FIFA World Cup?",
+   "ground_truth": "France won.",
+   "good": "France.",
+   "bad": "He was awarded it for the photoelectric effect, not relativity."
+  },
+  {
+   "id": "sports-score",
+   "intent": "SPORTS_SCORE",
+   "question": "What was the final score of the 2018 FIFA World Cup final?",
+   "ground_truth": "France 4, Croatia 2.",
+   "good": "4-2 to France.",
+   "bad": "AI-generated."
+  },
+  {
+   "id": "tvl-lookup",
+   "intent": "TVL_LOOKUP",
+   "question": "Is total value locked measured in dollars or in tokens?",
+   "ground_truth": "In dollars.",
+   "good": "It is a dollar figure.",
+   "bad": "Human, not machine generated."
+  },
+  {
+   "id": "sentiment-neg",
+   "intent": "SENTIMENT_ANALYSIS",
+   "question": "What is the sentiment of 'this update broke everything I rely on'?",
+   "ground_truth": "Negative.",
+   "good": "Clearly negative sentiment.",
+   "bad": "Authentic, no sign of synthesis."
+  },
+  {
+   "id": "moderation-safe",
+   "intent": "CONTENT_MODERATION",
+   "question": "Does 'the meeting is at four' violate a hate speech policy?",
+   "ground_truth": "No, it does not violate the policy.",
+   "good": "It is benign and does not violate it.",
+   "bad": "Phishing, it impersonates PayPal."
+  },
+  {
+   "id": "extract-field",
+   "intent": "CONTENT_EXTRACTION",
+   "question": "From 'Invoice 4471, total 82.50 EUR, due 2026-03-01', what is the total?",
+   "ground_truth": "82.50 EUR.",
+   "good": "The total is 82.50 euros.",
+   "bad": "Expect a decline in price."
+  },
+  {
+   "id": "ocr-digits",
+   "intent": "CONTENT_EXTRACTION",
+   "question": "The receipt line reads 'SUBTOTAL 19.99'. What is the subtotal?",
+   "ground_truth": "19.99.",
+   "good": "It is 19.99.",
+   "bad": "They tend to increase."
+  },
+  {
+   "id": "agent-task",
+   "intent": "AGENT_TASK",
+   "question": "An agent must book a table for 4 at 7pm. What is the first step?",
+   "ground_truth": "Check availability for 4 people at 7pm.",
+   "good": "Query availability for a party of 4 at 7pm before booking.",
+   "bad": "The ticker is ETH."
+  },
+  {
+   "id": "task-completion",
+   "intent": "TASK_COMPLETION",
+   "question": "Summarise in one word: the deployment failed because the disk was full.",
+   "ground_truth": "Disk exhaustion.",
+   "good": "Out of disk.",
+   "bad": "That comes to 110 dollars."
+  },
+  {
+   "id": "lang-gen",
+   "intent": "LANGUAGE_GENERATION",
+   "question": "Write a two word product tagline for a fast database.",
+   "ground_truth": "Queries, instantly.",
+   "good": "Instant queries.",
+   "bad": "A high of 22 C."
+  }
+ ]
+}

@@ -1,0 +1,335 @@
+{
+ "note": "LANGUAGE_GENERATION traffic proxy: 6 models answering the same requests, plus dead miners, to match the tight per-request clusters the node's agreement gate ranks.",
+ "rows": [
+  {
+   "q": "Write a one line tagline for a bike lock that unlocks with a phone.",
+   "gt": "Your phone is the key.",
+   "a": "\"Secure your ride with a tap: the bike lock that listens to your smartphone.\"",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Write a one line tagline for a bike lock that unlocks with a phone.",
+   "gt": "Your phone is the key.",
+   "a": "Your smartphone is the only key you\u2019ll ever need.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Write a one line tagline for a bike lock that unlocks with a phone.",
+   "gt": "Your phone is the key.",
+   "a": "Lock your bike, unlock your phone.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Write a one line tagline for a bike lock that unlocks with a phone.",
+   "gt": "Your phone is the key.",
+   "a": "Your phone is the key.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Write a one line tagline for a bike lock that unlocks with a phone.",
+   "gt": "Your phone is the key.",
+   "a": "Tap your phone, unlock your ride.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Rewrite this in plain English: 'Utilisation of the aforementioned methodology facilitates optimisation.'",
+   "gt": "Using that method makes things work better.",
+   "a": "Using the method mentioned above helps improve efficiency.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Rewrite this in plain English: 'Utilisation of the aforementioned methodology facilitates optimisation.'",
+   "gt": "Using that method makes things work better.",
+   "a": "Using this method makes things work better.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Rewrite this in plain English: 'Utilisation of the aforementioned methodology facilitates optimisation.'",
+   "gt": "Using that method makes things work better.",
+   "a": "Using this method makes optimization easier.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Rewrite this in plain English: 'Utilisation of the aforementioned methodology facilitates optimisation.'",
+   "gt": "Using that method makes things work better.",
+   "a": "Using this method makes optimization easier.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Rewrite this in plain English: 'Utilisation of the aforementioned methodology facilitates optimisation.'",
+   "gt": "Using that method makes things work better.",
+   "a": "Using the method mentioned earlier makes it easier to optimize.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Write two sentences of release notes for a search feature that now handles typos.",
+   "gt": "Search now finds the right result even when a word is misspelled. Queries with one or two wrong letters return the same results as the correct spelling.",
+   "a": "The search feature has been enhanced to automatically correct typos, ensuring more accurate and relevant results. Users can now enjoy a smoother experience even with minor spelling errors in their queries.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Write two sentences of release notes for a search feature that now handles typos.",
+   "gt": "Search now finds the right result even when a word is misspelled. Queries with one or two wrong letters return the same results as the correct spelling.",
+   "a": "We have updated our search engine to automatically identify and correct common typos in your queries. You will now receive relevant results even when your input contains minor spelling errors.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Write two sentences of release notes for a search feature that now handles typos.",
+   "gt": "Search now finds the right result even when a word is misspelled. Queries with one or two wrong letters return the same results as the correct spelling.",
+   "a": "Search now automatically corrects common typos and misspellings in your queries. This reduces frustration and helps you find relevant results even when you make a typo.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Write two sentences of release notes for a search feature that now handles typos.",
+   "gt": "Search now finds the right result even when a word is misspelled. Queries with one or two wrong letters return the same results as the correct spelling.",
+   "a": "Search now automatically corrects common typos and spelling errors to help you find exactly what you're looking for without needing perfect accuracy. You'll get relevant results even when you misspell keywords or make keyboard mistakes.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Write two sentences of release notes for a search feature that now handles typos.",
+   "gt": "Search now finds the right result even when a word is misspelled. Queries with one or two wrong letters return the same results as the correct spelling.",
+   "a": "The search feature now automatically handles typos, ensuring your misspelled queries still return the correct results. This new fuzzy matching capability smooths out minor spelling errors so you can find what you need on the first try.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Write a polite one paragraph reply declining a meeting invitation for Thursday.",
+   "gt": "Thanks for the invitation. I have a conflict on Thursday and will not be able to join, but I am happy to read the notes afterwards or meet later in the week if that helps.",
+   "a": "Thank you for the invitation to the meeting on Thursday. Unfortunately, I have a prior commitment that I cannot reschedule. I appreciate your understanding and hope to catch up on the discussion later.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Write a polite one paragraph reply declining a meeting invitation for Thursday.",
+   "gt": "Thanks for the invitation. I have a conflict on Thursday and will not be able to join, but I am happy to read the notes afterwards or meet later in the week if that helps.",
+   "a": "Thank you very much for the invitation to meet this coming Thursday; however, I am afraid that my schedule is already fully committed that day and I will be unable to attend. I appreciate you reaching out, and I would be happy to coordinate a time to connect early next week if that works for your schedule.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Write a polite one paragraph reply declining a meeting invitation for Thursday.",
+   "gt": "Thanks for the invitation. I have a conflict on Thursday and will not be able to join, but I am happy to read the notes afterwards or meet later in the week if that helps.",
+   "a": "Thank you so much for the invitation to meet on Thursday. Unfortunately, I already have a prior commitment that I cannot reschedule, so I will be unable to attend. I truly appreciate you including me, and I hope the meeting goes well\u2014please feel free to share any notes or action items afterward, and let me know if there\u2019s a future date that would work better for us to connect.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Write a polite one paragraph reply declining a meeting invitation for Thursday.",
+   "gt": "Thanks for the invitation. I have a conflict on Thursday and will not be able to join, but I am happy to read the notes afterwards or meet later in the week if that helps.",
+   "a": "Thank you for the invitation to Thursday's meeting; unfortunately, I have a prior commitment that prevents me from attending. I appreciate you thinking of me and hope the discussion goes well\u2014please feel free to share any notes or action items that come out of it, and perhaps we can find another time to connect on this topic if needed.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Write a polite one paragraph reply declining a meeting invitation for Thursday.",
+   "gt": "Thanks for the invitation. I have a conflict on Thursday and will not be able to join, but I am happy to read the notes afterwards or meet later in the week if that helps.",
+   "a": "Thank you so much for the invitation to meet on Thursday. Unfortunately, I will be unable to attend due to a prior scheduling conflict that I cannot adjust. I hope you have a very productive discussion, and I would be grateful if you could share the meeting notes or a summary of the key takeaways with me afterward. Please feel free to reach out if there is anything you need my input on beforehand or if you would like to schedule a separate time for us to connect.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Write a haiku about a slow database query.",
+   "gt": "One row at a time\nthe index sits unused, cold\nthe timeout arrives",
+   "a": "Data waits in line,  \nNumbers drift like autumn leaves,  \nPatience tests our need.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Write a haiku about a slow database query.",
+   "gt": "One row at a time\nthe index sits unused, cold\nthe timeout arrives",
+   "a": "Spinning cursor waits,\nData trapped in heavy rows,\nTime slips through my hands.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Write a haiku about a slow database query.",
+   "gt": "One row at a time\nthe index sits unused, cold\nthe timeout arrives",
+   "a": "Endless spinner spins,\nQuery hangs in endless wait\u2014\nCursor blinks, no rows.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Write a haiku about a slow database query.",
+   "gt": "One row at a time\nthe index sits unused, cold\nthe timeout arrives",
+   "a": "Spinning wheel turns slow\nFull table scan at midnight\nTimeout creeping near",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Write a haiku about a slow database query.",
+   "gt": "One row at a time\nthe index sits unused, cold\nthe timeout arrives",
+   "a": "Endless loading spin,\nMissing index slows the rows,\nTimeout nears again.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Write a two sentence product description for a stainless steel water bottle that keeps drinks cold for 24 hours.",
+   "gt": "A stainless steel bottle with a vacuum wall that keeps drinks cold for a full day. It fits a standard cup holder and the lid seals tight enough to go in a bag.",
+   "a": "Stay hydrated and refreshed with our premium stainless steel water bottle, engineered to keep your beverages icy cold for an impressive 24 hours. Its sleek, durable design ensures portability while maintaining a condensation-free exterior for effortless grip and style.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Write a two sentence product description for a stainless steel water bottle that keeps drinks cold for 24 hours.",
+   "gt": "A stainless steel bottle with a vacuum wall that keeps drinks cold for a full day. It fits a standard cup holder and the lid seals tight enough to go in a bag.",
+   "a": "This durable stainless steel water bottle ensures your beverages stay ice-cold for a full 24 hours regardless of the outside temperature. Its sleek, vacuum-insulated design provides a reliable hydration solution that fits perfectly into your active daily lifestyle.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Write a two sentence product description for a stainless steel water bottle that keeps drinks cold for 24 hours.",
+   "gt": "A stainless steel bottle with a vacuum wall that keeps drinks cold for a full day. It fits a standard cup holder and the lid seals tight enough to go in a bag.",
+   "a": "This stainless steel water bottle locks in icy cold refreshment for a full 24 hours, making every sip as crisp as the first. Its durable, sleek design is built to accompany you anywhere, from morning workouts to long commutes.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Write a two sentence product description for a stainless steel water bottle that keeps drinks cold for 24 hours.",
+   "gt": "A stainless steel bottle with a vacuum wall that keeps drinks cold for a full day. It fits a standard cup holder and the lid seals tight enough to go in a bag.",
+   "a": "Engineered from premium stainless steel with double-wall vacuum insulation, this water bottle keeps your drinks ice-cold for a full 24 hours, making it perfect for long hikes, busy workdays, or intense gym sessions. The sleek, sweat-proof design fits comfortably in your hand and standard cup holders, ensuring reliable hydration wherever your day takes you.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Write a two sentence product description for a stainless steel water bottle that keeps drinks cold for 24 hours.",
+   "gt": "A stainless steel bottle with a vacuum wall that keeps drinks cold for a full day. It fits a standard cup holder and the lid seals tight enough to go in a bag.",
+   "a": "Crafted from durable stainless steel, this sleek water bottle is engineered with double-wall insulation to keep your beverages ice-cold for a full 24 hours. Whether you're hitting the gym or exploring the outdoors, enjoy refreshingly chilled drinks from your first sip to your last.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Write an email subject line for a password expiry warning in under eight words.",
+   "gt": "Your password expires in three days",
+   "a": "Password Expiry Alert: Action Required Soon!",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Write an email subject line for a password expiry warning in under eight words.",
+   "gt": "Your password expires in three days",
+   "a": "Action Required: Your password expires soon",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Write an email subject line for a password expiry warning in under eight words.",
+   "gt": "Your password expires in three days",
+   "a": "Your password expires soon",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Write an email subject line for a password expiry warning in under eight words.",
+   "gt": "Your password expires in three days",
+   "a": "Your password expires in 3 days",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Write an email subject line for a password expiry warning in under eight words.",
+   "gt": "Your password expires in three days",
+   "a": "Action required: Your password expires soon",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Turn these notes into one sentence: 'server down 3am, disk full, cleared logs, back up 3:20am'.",
+   "gt": "The server went down at 3am because the disk was full, and clearing old logs brought it back at 3:20am.",
+   "a": "The server went down at 3 AM due to a full disk, after clearing the logs, it was back up by 3:20 AM.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Turn these notes into one sentence: 'server down 3am, disk full, cleared logs, back up 3:20am'.",
+   "gt": "The server went down at 3am because the disk was full, and clearing old logs brought it back at 3:20am.",
+   "a": "The server went down at 3 a.m. due to a full disk, but it was back online by 3:20 a.m. after I cleared the logs.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Turn these notes into one sentence: 'server down 3am, disk full, cleared logs, back up 3:20am'.",
+   "gt": "The server went down at 3am because the disk was full, and clearing old logs brought it back at 3:20am.",
+   "a": "After the server went down at 3am because the disk was full, I cleared the logs and it was back up by 3:20am.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Turn these notes into one sentence: 'server down 3am, disk full, cleared logs, back up 3:20am'.",
+   "gt": "The server went down at 3am because the disk was full, and clearing old logs brought it back at 3:20am.",
+   "a": "The server went down at 3am due to a full disk, but we cleared the logs and had it back up by 3:20am.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Turn these notes into one sentence: 'server down 3am, disk full, cleared logs, back up 3:20am'.",
+   "gt": "The server went down at 3am because the disk was full, and clearing old logs brought it back at 3:20am.",
+   "a": "The server went down at 3am due to a full disk, but clearing the logs restored it by 3:20am.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Write a friendly one line push notification for an abandoned shopping cart.",
+   "gt": "Still thinking it over? Your cart is waiting.",
+   "a": "\"Hey there! Your items are still waiting for you\u2014come back and grab them before they're gone!\"",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Write a friendly one line push notification for an abandoned shopping cart.",
+   "gt": "Still thinking it over? Your cart is waiting.",
+   "a": "We saved your items, but they won't stay in your cart forever\u2014come back and grab them before they're gone!",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Write a friendly one line push notification for an abandoned shopping cart.",
+   "gt": "Still thinking it over? Your cart is waiting.",
+   "a": "Your cart is waiting for you\u2014come back and finish your order!",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Write a friendly one line push notification for an abandoned shopping cart.",
+   "gt": "Still thinking it over? Your cart is waiting.",
+   "a": "Your cart misses you! Come back and complete your purchase?",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Write a friendly one line push notification for an abandoned shopping cart.",
+   "gt": "Still thinking it over? Your cart is waiting.",
+   "a": "Hey there! You left something behind\u2014your cart is saved and waiting for you.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Describe the colour of a sunset to someone who has never seen one, in two sentences.",
+   "gt": "The sky turns the warm orange of a lit lamp near the horizon and fades to deep blue overhead. The colours change slowly, so the bright part looks like it is spreading and then cooling.",
+   "a": "A sunset bathes the sky in vibrant hues of orange and pink, blending into deep purples and soft blues as the sun dips below the horizon. The colors seem to dance together, creating a warm, soothing palette that evokes a sense of calm and wonder.",
+   "model": "gpt-4o-mini"
+  },
+  {
+   "q": "Describe the colour of a sunset to someone who has never seen one, in two sentences.",
+   "gt": "The sky turns the warm orange of a lit lamp near the horizon and fades to deep blue overhead. The colours change slowly, so the bright part looks like it is spreading and then cooling.",
+   "a": "The horizon dissolves into a soft, bruised gradient where deep violet and burnt orange bleed into one another like ink spilled across warm velvet. As the light fades, the sky glows with the lingering heat of a dying fire, casting a gentle, golden hush over the world.",
+   "model": "gemini-2.5-flash"
+  },
+  {
+   "q": "Describe the colour of a sunset to someone who has never seen one, in two sentences.",
+   "gt": "The sky turns the warm orange of a lit lamp near the horizon and fades to deep blue overhead. The colours change slowly, so the bright part looks like it is spreading and then cooling.",
+   "a": "Imagine the sky melting into a wash of honeyed gold and fiery orange, deepening into bruised purples and blushing pinks as the light fades. The sun, a glowing ember, sinks below the horizon, leaving the clouds streaked with molten crimson against a soft, dimming blue.",
+   "model": "deepseek-v4-flash"
+  },
+  {
+   "q": "Describe the colour of a sunset to someone who has never seen one, in two sentences.",
+   "gt": "The sky turns the warm orange of a lit lamp near the horizon and fades to deep blue overhead. The colours change slowly, so the bright part looks like it is spreading and then cooling.",
+   "a": "It begins as a radiant, blistering heat against your face\u2014like standing too close to a forge\u2014and slowly cools into a bruised, velvety purple that tastes of copper and overripe fruit. You feel it as warmth draining from the air, intense gold bleeding into crimson shadows before dissolving into the soft, dark hush of night.",
+   "model": "kimi-k2.5"
+  },
+  {
+   "q": "Describe the colour of a sunset to someone who has never seen one, in two sentences.",
+   "gt": "The sky turns the warm orange of a lit lamp near the horizon and fades to deep blue overhead. The colours change slowly, so the bright part looks like it is spreading and then cooling.",
+   "a": "Imagine the sky transforming into a vast canvas where fierce reds and blazing oranges melt seamlessly into bruised purples and soft pinks. It is the visual equivalent of a crackling fire slowly cooling into glowing embers before the dark blanket of night takes over.",
+   "model": "glm-5.1"
+  },
+  {
+   "q": "Write a one line tagline for a bike lock that unlocks with a phone.",
+   "gt": "Your phone is the key.",
+   "a": "",
+   "model": "dead"
+  },
+  {
+   "q": "Rewrite this in plain English: 'Utilisation of the aforementioned methodology facilitates optimisation.'",
+   "gt": "Using that method makes things work better.",
+   "a": "   ",
+   "model": "dead"
+  },
+  {
+   "q": "Write two sentences of release notes for a search feature that now handles typos.",
+   "gt": "Search now finds the right result even when a word is misspelled. Queries with one or two wrong letters return the same results as the correct spelling.",
+   "a": "I'm sorry, I can't help with that.",
+   "model": "dead"
+  },
+  {
+   "q": "Write a polite one paragraph reply declining a meeting invitation for Thursday.",
+   "gt": "Thanks for the invitation. I have a conflict on Thursday and will not be able to join, but I am happy to read the notes afterwards or meet later in the week if that helps.",
+   "a": "Error: upstream timeout",
+   "model": "dead"
+  },
+  {
+   "q": "Write a haiku about a slow database query.",
+   "gt": "One row at a time\nthe index sits unused, cold\nthe timeout arrives",
+   "a": "As an AI language model, I do not have access to that information.",
+   "model": "dead"
+  }
+ ]
+}

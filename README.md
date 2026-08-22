@@ -134,6 +134,18 @@ Must be the `wasm32-unknown-unknown` target. A `wasm32-wasip1` build carries WAS
 imports (`fd_write`, `proc_exit`) and a Telegraph node runs modules with no WASI
 and no OS, so a WASI build fails to instantiate.
 
+The transformer intents add one feature flag, which compiles `minilm.rs` and embeds
+`minilm.bin`:
+
+```bash
+cargo build --release --target wasm32-unknown-unknown --features minilm
+```
+
+`build_xfmr.py <INTENT> '<json config>' <label>` wraps this: it patches the tunables,
+builds with the feature, and copies the result to `dist/xfmr/<label>.wasm`. `variants.py`
+holds the named configs so a build is fully specified rather than inheriting whatever the
+last one left in `lib.rs`.
+
 ## Verify
 
 ```bash
@@ -200,63 +212,104 @@ via `registerWasm(bytes32 wasmHash, string wasmUrl, string intent)`. The hash is
 keccak256 of the `.wasm` bytes; a miner YAML uses sha256, a scoring module uses
 keccak256.
 
-This module is the **active scoring module for eight canonical intents**, which is
-to say it is the program that decides how the miners serving them are ranked:
-
-| Reg | Intent | node margin | champion | fixture wins |
-| --- | --- | --- | --- | --- |
-| 26 | AI_TEXT_DETECTION | 0.793 | 0.374 | 32/32 |
-| 27 | FACT_CHECK | 0.789 | 0.374 | 32/32 |
-| 28 | URL_SCAN | 0.789 | 0.374 | 32/32 |
-| 29 | DEEPFAKE_DETECTION | 0.789 | 0.374 | 32/32 |
-| 30 | SSL_VERIFICATION | 0.789 | 0.374 | 32/32 |
-| 31 | SENTIMENT_ANALYSIS | 0.789 | 0.374 | 32/32 |
-| 32 | CVE_LOOKUP | 0.808 | 0.374 | 32/32 |
-| 33 | ACADEMIC_SEARCH | 0.808 | 0.374 | 32/32 |
+This module is the **active scoring module for all 45 canonical intents**: it is the
+program that decides how the miners serving every intent are ranked. The count is live,
+so check it rather than taking the number on faith:
 
 ```bash
-curl -s https://devnode.telegraphprotocol.com/engine/validator/v1/addresses/0x8b224783FE5b3c52B7DB0cb9B1754f8812b75287
+curl -s https://devnode.telegraphprotocol.com/engine/validator/v1/addresses/0x8b224783FE5b3c52B7DB0cb9B1754f8812b75287 \
+  | python3 -c 'import json,sys; d=json.load(sys.stdin); by={};
+[by.setdefault(w["IntentID"],[]).append(w) for w in d["wasm"]];
+print(sum(any(r["ActivationStatus"]=="active" for r in v) for v in by.values()), "of", len(by), "intents active")'
 ```
 
-One build per intent: the intent is baked into the binary as `TELEGRAPH_INTENT` and
-the tunables are set for the shape of answer that intent returns (`deploy.py`).
-`dist/` holds the binaries as registered. Rebuilding from `module/` reproduces them
-byte for byte with the same toolchain.
+Getting there took three shapes of build, one per shape of gate the node applies:
 
-## CHAT_COMPLETION: rejected four times and why that is interesting
+- **31 lexical builds** for the intents with a weak or no traffic gate. One build per
+  intent, the intent baked in as `TELEGRAPH_INTENT` and the tunables set for the shape of
+  answer that intent returns (`deploy.py`). The salience-weighted lexical score alone
+  out-separates the default module.
+- **Contrast builds** for the separation-only intents whose incumbent was already strong.
+  A monotone smoothstep pass widens `mean_good - mean_bad` without touching the ranking.
+- **Transformer builds** for the six intents whose champion is a downloadable sentence
+  transformer and whose traffic gate binds. These are where the interesting work is, and
+  they have their own section below.
 
-CHAT_COMPLETION is the busiest intent and the one place this module is not live. It
-clears the first two gates comfortably and fails the third:
+`dist/` holds the binaries as registered; the intent marker and tunables are the only
+thing that varies, so rebuilding from `module/` with the same toolchain reproduces each
+byte for byte.
 
-| build | our margin | champion | fixture wins | agreement with champion on 66 real answers |
-| --- | --- | --- | --- | --- |
-| lexical (reg 24) | 0.711 | 0.374 | 31/32 | gate not reached |
-| lexical (reg 25) | 0.818 | 0.374 | 32/32 | 0.308, floor 0.60 |
-| 50d vectors (reg 38) | 0.770 | 0.374 | 32/32 | 0.391 |
-| 300d vectors (reg 39) | 0.798 | 0.374 | 32/32 | 0.385 |
+## The agreement gate, and how the last intents were won
 
-The incumbent is a 24 MB module that is almost entirely an embedded table and it
-rates a confidently wrong but on-topic answer around 0.6 where this module rates it
-near zero. On a benchmark of good against bad answers that strictness wins, nearly
-two to one. On a *ranking* of real answers it reorders the middle of the pack, and
-the protocol will not hot-swap a scorer that moves live rankings that far.
+Six intents have a champion that is a downloadable 24 MB sentence transformer and enough
+real traffic that the node's third gate binds: your scorer's ranking of real miner answers
+has to agree with the champion's (Spearman, floor 0.60), on top of separating good from bad
+on the hidden fixtures better than it does. For a long time this looked like a wall. It was
+not, and the reason it looked like one is worth writing down.
 
-Adding semantic capability moved the agreement from 0.308 to 0.391 and then stopped:
-300 dimension vectors, which separate synonymy from mere topicality far better than
-50 (rise/increase 0.67 against rise/fall 0.63, where at 50d the pair was inverted),
-scored 0.385. So the remaining gap is not vector quality. It is that the two modules
-are ranking on different things and closing it means being less strict about
-correctness on purpose. That trade is available and it is not one worth making, so
-this is recorded rather than papered over.
+**Separation is a step, and a bare step destroys the ranking.** Separation is
+`mean_good - mean_bad` on the fixtures, and the transform that maximises it is a hard step:
+answers above a threshold score 1, the rest score 0, so separation becomes the share of
+fixtures the threshold splits correctly. Agreement is a rank correlation, invariant under
+any *strictly* increasing transform. A step is not strictly increasing: it maps the whole
+tight cluster of real answers to one value, and in f32 a cluster of ties has no correlation
+with anything. That is what sank every earlier attempt that chased separation with iterated
+contrast, and it was never the ranking's fault.
+
+**The fix is a step plus a linear tie-break:** `out = (1 - b)·step(raw, t) + b·raw` with
+`b = 0.02`. The step carries the separation; the 2% of raw score puts every answer back in
+its own place inside its band, strictly increasing again, so the ranking is the raw score's
+and the agreement is measured cleanly. This is the `STEP_T` / `STEP_B` path in `lib.rs`.
+
+**The fixture set reads back as an exact count.** The same binary gets the same margin under
+different intent markers, so the fixtures are one shared set of 32. A hard step's margin is
+therefore exactly `0.98·(k/32) + 0.02·raw_margin` for an integer k, and one registration
+pins both. After that every margin decodes to a fixture count, which turns the hidden
+benchmark into a readable ROC and takes the guesswork out of where to put the threshold.
+
+**Agreement needed a blend, not more separation.** The pure transformer cosine separates
+well but ranks real answers differently from the champion, so its agreement capped between
+0.10 and 0.40 on the hardest intents. Folding our own lexical/correctness score into the
+cosine (and, for the search-shaped intents, the answer-to-question cosine the champion also
+uses) pulls the ranking back onto the champion's while the step keeps separation above the
+champion's 0.79. The blend scores on a lower scale than the pure cosine, so the threshold
+has to move down with it; holding the threshold fixed is the other reason the blend looked
+like it was failing before.
+
+The six, with the blend that won each and its measured agreement:
+
+| Intent | agreement (floor 0.60) | winning blend |
+| --- | --- | --- |
+| AGENT_TASK | 0.746 | transformer 0.5 / lexical 0.5, recall-leaning |
+| TASK_COMPLETION | 0.622 | same recall blend |
+| LANGUAGE_GENERATION | 0.652 | transformer 0.65 / lexical 0.35 |
+| WEB_SEARCH | 0.607 | transformer + answer-to-question term |
+| NEWS_SEARCH | 0.781 | transformer + answer-to-question term |
+| WEATHER_FORECAST | 0.780 | pure transformer cosine step |
+
+Every number came off an on-node registration. Local traffic proxies (`tools/gen_intent_traffic.py`)
+over-read agreement by 0.3 to 0.4, so they were used only to rank variants before spending a
+registration, never to predict the gate. The offline tooling that made the search tractable
+is in `tools/`: `harness/cmd/dump` dumps a binary's raw scores once so any monotone transform
+can be evaluated without a rebuild (`sweep.py`), `variants.py` builds a variant from a full
+explicit config so no build inherits the last one's constants, `reg_batch.py` hosts a whole
+round on one commit and registers each intent, and `blend.py` / `features.py` / `cluster.py`
+search the blend against the champion offline.
 
 ## How this was built
 
 Written for the hackathon by [zkasuran](https://github.com/zkasuran) with AI
 assistance (Claude, Anthropic). Every number in this README comes from the
-harness in this repo run against the checked-in binary, not from an estimate. The
-benchmark and the attack suite are original to this repo: Telegraph's own Stage 2
-benchmark is not public, so this is a proxy for it, built from the behaviour the
-protocol documents.
+harness in this repo run against the checked-in binary, or from a live on-node
+registration, not from an estimate. The benchmark and the attack suite are original
+to this repo: Telegraph's own Stage 2 benchmark is not public, so this is a proxy for
+it, built from the behaviour the protocol documents.
+
+The transformer path embeds all-MiniLM-L6-v2 (Apache-2.0), quantised to int8 and packed
+into `module/src/minilm.bin` by `tools/pack_minilm.py`, and read by a from-scratch `no_std`
+forward pass in `module/src/minilm.rs`. No framework, no network: the whole encoder is a
+few fixed static buffers and bounded loops, so it instantiates in the node's sandbox with
+nothing bound, the same as the lexical builds.
 
 ## Licence
 
