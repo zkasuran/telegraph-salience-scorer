@@ -5,9 +5,13 @@ WASM program a Telegraph node runs to decide how good a miner's answer was. It
 takes the question, the ground truth and the miner's answer and returns one
 `f32` between 0 and 1.
 
-Written for Telegraph Hackathon Season I, Track 2 (Script Authors). The Track 1
-miner that goes with it is at
-[telegraph-gaswire-miner](https://github.com/zkasuran/telegraph-gaswire-miner).
+Written for Telegraph Hackathon Season I, Track 2 (Script Authors). As of this writing
+it is the **active scoring module for all 45 of the network's canonical intents**. The
+Track 1 miners that go with it are five workers across three repos:
+[gaswire](https://github.com/zkasuran/telegraph-gaswire-miner) (GAS_PRICE),
+[chainwire](https://github.com/zkasuran/telegraph-chainwire-miner) (TOKEN_HOLDER_COUNT,
+WALLET_BALANCE_CHECK) and [skywire](https://github.com/zkasuran/telegraph-skywire-miner)
+(WEATHER_CHECK, WEATHER_FORECAST).
 
 The starting point that ships with the protocol scores word overlap: what
 fraction of the answer's words also appear in the ground truth. That is a
@@ -23,7 +27,11 @@ This module is built around that gap. Words are weighted by how much they
 actually pin down the answer, coverage is measured against what the question did
 not already give away and the handful of features that flip an answer from right
 to wrong (numbers, negation, polarity) are checked before overlap is allowed to
-count for anything.
+count for anything. That lexical core carries most of the 45 intents. The six whose
+champion is a sentence transformer and whose live-traffic gate binds get a second
+path: a from-scratch `no_std` MiniLM encoder embedded in the binary, blended with the
+lexical score. How that clears both of the node's gates at once is its own section
+below.
 
 ## Interface
 
@@ -42,7 +50,8 @@ unpredictable amount of memory. All parsing is byte level: the input is whatever
 a miner sent, so emoji, CJK, right to left script and invalid UTF-8 all have to
 score without trapping.
 
-Compiled size: 8.4 KB.
+Compiled size: 8.4 KB for a lexical build, about 24 MB for a transformer build (the
+embedded MiniLM table). Both instantiate under the node's 32 MB limit.
 
 ## How it scores
 
@@ -76,6 +85,13 @@ Compiled size: 8.4 KB.
    down, without flattening the middle: a module whose scores do not vary is
    rejected by the node and one that is all or nothing cannot rank the answers
    in between.
+9. **Transformer blend and threshold calibration (feature `minilm`, six intents).**
+   Where the champion is a sentence transformer, an embedded MiniLM cosine is blended
+   with the score above and the result is put through a hard step plus a small linear
+   tie-break. The step wins the node's separation gate, the tie-break keeps the ranking
+   the traffic-agreement gate scores. The "agreement gate" section explains why both are
+   needed. Off by default, so the other 39 builds are pure lexical and byte-for-byte
+   reproducible without the model.
 
 ## What it will not reward
 
@@ -142,7 +158,7 @@ cargo build --release --target wasm32-unknown-unknown --features minilm
 ```
 
 `build_xfmr.py <INTENT> '<json config>' <label>` wraps this: it patches the tunables,
-builds with the feature, and copies the result to `dist/xfmr/<label>.wasm`. `variants.py`
+builds with the feature and copies the result to `dist/xfmr/<label>.wasm`. `variants.py`
 holds the named configs so a build is fully specified rather than inheriting whatever the
 last one left in `lib.rs`.
 
@@ -183,25 +199,25 @@ has to clear it as well as the general 40:
 
 | family | file | intents | what the cases turn on |
 | --- | --- | --- | --- |
-| numeric | `bench/family-numeric.json` | CRYPTO_PRICE, CURRENCY_EXCHANGE, STOCK_PRICE, TVL_LOOKUP | the figure, its unit, its magnitude, its direction, and which entity it is attached to |
+| numeric | `bench/family-numeric.json` | CRYPTO_PRICE, CURRENCY_EXCHANGE, STOCK_PRICE, TVL_LOOKUP | the figure, its unit, its magnitude, its direction and which entity it is attached to |
 | authenticity | `bench/family-authenticity.json` | IMAGE_VERIFICATION, VIDEO_VERIFICATION, MEDIA_AUTHENTICITY_CHECK, CONTENT_VERIFICATION | a verdict about whether something is genuine, where the wrong answer shares almost every word |
 | reference | `bench/family-reference.json` | IP_GEOLOCATION, NEWS_HEADLINES | naming the right entity, with wrong answers that are plausible neighbours of the right one |
 
 The gate is: every case won bar at most one, family margin at least 0.40, perfect
 answers still at 1.000. One documented miss is allowed because the families
-deliberately include cases past what a lexical scorer can reach, and deleting those
+deliberately include cases past what a lexical scorer can reach. Deleting those
 would be the dishonest way to a clean sheet. The current miss is
-`ref-ip-hosting`: the ground truth says AWS, the good answer says Amazon, and no
+`ref-ip-hosting`: the ground truth says AWS, the good answer says Amazon. No
 amount of character overlap gets you from one to the other. That needs an entity
 alias table this module does not ship.
 
-Writing those families paid for itself immediately. `auth-img-real` failed, and the
+Writing those families paid for itself immediately. `auth-img-real` failed. The
 cause was not the scoring at all: `bnd`, the flag marking a clause boundary, was the
 one per-token field `tokenize` did not write on every push, so a previous call's
 boundary survived into the next one. "no" in "Authentic, no sign of manipulation"
 was then read as a standalone verdict and flipped a correct answer into a
 contradiction. The score depended on how many calls had come before it, which is the
-one thing a scorer must never do. Fixed, and the fix is why every build registered
+one thing a scorer must never do. Fixed, which is why every build registered
 after 2026-08-17 evening carries a different binary from the eight before it.
 
 
@@ -239,22 +255,22 @@ Getting there took three shapes of build, one per shape of gate the node applies
 thing that varies, so rebuilding from `module/` with the same toolchain reproduces each
 byte for byte.
 
-## The agreement gate, and how the last intents were won
+## The agreement gate and how the last intents were won
 
 Six intents have a champion that is a downloadable 24 MB sentence transformer and enough
 real traffic that the node's third gate binds: your scorer's ranking of real miner answers
 has to agree with the champion's (Spearman, floor 0.60), on top of separating good from bad
 on the hidden fixtures better than it does. For a long time this looked like a wall. It was
-not, and the reason it looked like one is worth writing down.
+not. The reason is worth writing down.
 
-**Separation is a step, and a bare step destroys the ranking.** Separation is
-`mean_good - mean_bad` on the fixtures, and the transform that maximises it is a hard step:
+**Separation is a step and a bare step destroys the ranking.** Separation is
+`mean_good - mean_bad` on the fixtures. The transform that maximises it is a hard step:
 answers above a threshold score 1, the rest score 0, so separation becomes the share of
 fixtures the threshold splits correctly. Agreement is a rank correlation, invariant under
 any *strictly* increasing transform. A step is not strictly increasing: it maps the whole
-tight cluster of real answers to one value, and in f32 a cluster of ties has no correlation
+tight cluster of real answers to one value. In f32 a cluster of ties has no correlation
 with anything. That is what sank every earlier attempt that chased separation with iterated
-contrast, and it was never the ranking's fault.
+contrast. It was never the ranking's fault.
 
 **The fix is a step plus a linear tie-break:** `out = (1 - b)·step(raw, t) + b·raw` with
 `b = 0.02`. The step carries the separation; the 2% of raw score puts every answer back in
@@ -263,7 +279,7 @@ and the agreement is measured cleanly. This is the `STEP_T` / `STEP_B` path in `
 
 **The fixture set reads back as an exact count.** The same binary gets the same margin under
 different intent markers, so the fixtures are one shared set of 32. A hard step's margin is
-therefore exactly `0.98·(k/32) + 0.02·raw_margin` for an integer k, and one registration
+therefore exactly `0.98·(k/32) + 0.02·raw_margin` for an integer k. One registration
 pins both. After that every margin decodes to a fixture count, which turns the hidden
 benchmark into a readable ROC and takes the guesswork out of where to put the threshold.
 
@@ -293,20 +309,20 @@ registration, never to predict the gate. The offline tooling that made the searc
 is in `tools/`: `harness/cmd/dump` dumps a binary's raw scores once so any monotone transform
 can be evaluated without a rebuild (`sweep.py`), `variants.py` builds a variant from a full
 explicit config so no build inherits the last one's constants, `reg_batch.py` hosts a whole
-round on one commit and registers each intent, and `blend.py` / `features.py` / `cluster.py`
+round on one commit and registers each intent. `blend.py`, `features.py` and `cluster.py`
 search the blend against the champion offline.
 
 ## How this was built
 
 Written for the hackathon by [zkasuran](https://github.com/zkasuran) with AI
 assistance (Claude, Anthropic). Every number in this README comes from the
-harness in this repo run against the checked-in binary, or from a live on-node
+harness in this repo run against the checked-in binary or from a live on-node
 registration, not from an estimate. The benchmark and the attack suite are original
 to this repo: Telegraph's own Stage 2 benchmark is not public, so this is a proxy for
 it, built from the behaviour the protocol documents.
 
 The transformer path embeds all-MiniLM-L6-v2 (Apache-2.0), quantised to int8 and packed
-into `module/src/minilm.bin` by `tools/pack_minilm.py`, and read by a from-scratch `no_std`
+into `module/src/minilm.bin` by `tools/pack_minilm.py` and read by a from-scratch `no_std`
 forward pass in `module/src/minilm.rs`. No framework, no network: the whole encoder is a
 few fixed static buffers and bounded loops, so it instantiates in the node's sandbox with
 nothing bound, the same as the lexical builds.
