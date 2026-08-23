@@ -12,7 +12,7 @@
 use core::f32;
 
 const H: usize = 384;
-const LAYERS: usize = 12;
+const LAYERS: usize = 6;
 const HEADS: usize = 12;
 const HDIM: usize = H / HEADS; // 32
 const INTER: usize = 1536;
@@ -31,7 +31,7 @@ const MAXTOK: usize = 128; // wordpiece tokens per text, truncated; bounds the n
 const TOK_SPAN: usize = 1;
 const TOKCAP: usize = 1024;
 
-static MLM: &[u8] = include_bytes!("gte-small.bin");
+static MLM: &[u8] = include_bytes!("minilm.bin");
 
 // ---- little-endian readers ----
 fn u32le(o: usize) -> u32 {
