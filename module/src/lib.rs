@@ -239,9 +239,11 @@ fn soft_credit(sim: f32) -> f32 {
 // Word vectors
 // ---------------------------------------------------------------------------
 // A scoring module gets no network and no corpus, so semantic similarity has to be
-// compiled in. This is the top 40,000 GloVe vectors, L2 normalised and quantised to
-// one byte per dimension: 2.1 MB inside the 32 MB the node allows, and a cosine is
-// an integer dot product over 50 bytes.
+// compiled in. This is the top 14,700 GloVe vectors, L2 normalised and quantised to
+// one byte per dimension: 775 KiB inside the 32 MB the node allows, and a cosine is
+// an integer dot product over 50 bytes. The count and dimension are read from the
+// blob header at runtime (vec_count), so repacking with tools/pack_vectors.py does
+// not need this comment to be right -- but keep it in step anyway.
 //
 // The vectors supply topicality, not correctness. Distributional vectors put "rise"
 // and "fall" at cosine 0.88 because they occur in the same contexts, so direction
