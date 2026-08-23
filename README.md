@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img alt="live intents" src="https://img.shields.io/badge/live_intents-45%20%2F%2045%20active-2ea44f">
+  <img alt="intents held" src="https://img.shields.io/badge/intents_held-44%20%2F%2045%20%C2%B7%202026--08--23-2ea44f">
   <img alt="benchmark margin" src="https://img.shields.io/badge/benchmark_margin-0.6847-1f6feb">
   <img alt="wins" src="https://img.shields.io/badge/good_above_bad-40%20%2F%2040-1f6feb">
   <img alt="gaming suite" src="https://img.shields.io/badge/gaming_suite-12%20%2F%2012-1f6feb">
@@ -18,8 +18,9 @@
 A scoring module for the [Telegraph protocol](https://telegraphprotocol.com). It takes the
 question, the ground truth and the miner's answer, and returns one `f32` between 0 and 1.
 
-Written for Telegraph Hackathon Season I, Track 2 (Script Authors). As of this writing it is
-the **active scoring module for all 45 of the network's canonical intents** — a claim you can
+Written for Telegraph Hackathon Season I, Track 2 (Script Authors). It is the active scoring
+module for **44 of the network's 45 canonical intents** as of 2026-08-23, with the 45th
+(WEATHER_FORECAST) mid-handover — a claim you can
 [check against the chain](#deployed) rather than take on faith. The Track 1 miners that go
 with it are five workers across three repos:
 [gaswire](https://github.com/zkasuran/telegraph-gaswire-miner) (GAS_PRICE),
@@ -31,7 +32,7 @@ WALLET_BALANCE_CHECK) and [skywire](https://github.com/zkasuran/telegraph-skywir
 [How it scores](#how-it-scores) · [What it will not reward](#what-it-will-not-reward) ·
 [Measured](#measured) · [Family benchmarks](#family-benchmarks) · [Build](#build) ·
 [Verify](#verify) · [Deployed](#deployed) · [The agreement gate](#the-agreement-gate-and-how-the-traffic-gated-intents-were-won) ·
-[Layout](#repository-layout)
+[Layout](#repository-layout) · [How this was built](#how-this-was-built) · [Licence](#licence)
 
 ## The gap this fills
 
@@ -66,24 +67,25 @@ The exports the node calls:
 | `dealloc` | func | `(i32, i32)` | no-op, every call gets fresh memory |
 | `rank_answer` | func | `(i32,i32,i32,i32,i32,i32) -> f32` | `(q_ptr,q_len, gt_ptr,gt_len, ma_ptr,ma_len)` |
 | `memory` | memory | — | the module's own linear memory |
-| `TELEGRAPH_INTENT` | global | `[u8; 32]` | the intent this build is tuned for, baked in at build time |
+| `TELEGRAPH_INTENT` | global | `i32` | address of a 32-byte marker naming the intent this build is tuned for |
 
-`no_std`, no allocator, and **zero imports** — verified by parsing the import section of the
-shipped binary, not assumed — so it instantiates in the node's sandbox with nothing bound.
-Every buffer is a fixed static and every loop is bounded, so a 78 KB answer costs a
-predictable amount of work rather than an unpredictable amount of memory. All parsing is byte
-level: the input is whatever a miner sent, so emoji, CJK, right-to-left script and invalid
-UTF-8 all have to score without trapping.
+`no_std`, no allocator, and **zero imports**: the shipped binary has no import section at all,
+so it instantiates in the node's sandbox with nothing bound. The harness enforces this by
+registering no host module, exactly as the node does — a WASI build fails right there. Every
+buffer is a fixed static and every loop is bounded, so a 78 KB answer costs a predictable
+amount of work rather than an unpredictable amount of memory. All parsing is byte level: the
+input is whatever a miner sent, so emoji, CJK, right-to-left script and invalid UTF-8 all have
+to score without trapping.
 
 **Compiled size**, `opt-level = "z"`, LTO, stripped:
 
 | Build | Bytes | Size | What is embedded |
 | --- | --- | --- | --- |
-| lexical | 1,039,655 | 0.99 MiB | `vectors.bin`, the 14,700-word GloVe table |
-| transformer (`--features minilm`) | 23,959,595 – 23,987,892 | ~22.9 MiB | the above plus `minilm.bin`, 21.84 MiB |
+| lexical | 1,039,655 – 1,071,765 | 0.99 – 1.02 MiB | `vectors.bin`, the 14,700-word GloVe table |
+| transformer (`--features minilm`) | 23,959,595 – 28,988,928 | 22.85 – 27.65 MiB | the above plus `minilm.bin`, 21.84 MiB |
 
-Both instantiate under the node's 32 MB limit. The largest binary ever promoted here is the
-WEATHER_CHECK build at 28,988,928 bytes (27.6 MiB), still inside it.
+Both ranges are the spread across the binaries actually promoted; every one instantiates under
+the node's 32 MB limit. The largest is the WEATHER_CHECK build at 28,988,928 bytes.
 
 ## How it scores
 
@@ -103,11 +105,12 @@ WEATHER_CHECK build at 28,988,928 bytes (27.6 MiB), still inside it.
    vectors, 50 dimensions, L2-normalised and quantised to one byte per dimension, so a cosine
    is an integer dot product over 50 bytes. A match below cosine `SOFT_MIN = 0.72` earns
    nothing, and vectors alone may satisfy at most `SOFT_CAP_FRAC = 0.35` of the
-   answer-bearing content. That cap is the guard: without it, an answer that merely names the
-   subject ("Australia" for "Canberra") reads as having answered. Distributional vectors put
-   "rise" and "fall" at cosine 0.88 because they occur in the same contexts, so **the vectors
-   supply topicality, never correctness** — direction and verdict stay with the polarity axes
-   in step 7.
+   answer-bearing content. That cap is the guard: decoded from the shipped table,
+   cos(*france*, *paris*) is 0.80, so without a cap an answer that merely names the containing
+   entity reads as having answered. And cos(*rise*, *fall*) is 0.88 — distributional vectors
+   place antonyms together because they occur in the same contexts — so **the vectors supply
+   topicality, never correctness**. Direction and verdict stay with the polarity axes in
+   step 7.
 6. **Character trigrams,** taking the better of symmetric Dice and how much of the ground
    truth's structure is present in the answer. The asymmetric half is why boilerplate padding
    does not read as a wrong answer.
@@ -126,8 +129,15 @@ WEATHER_CHECK build at 28,988,928 bytes (27.6 MiB), still inside it.
 10. **Transformer blend and threshold calibration** (feature `minilm`). Where the champion is
     a sentence transformer, an embedded MiniLM cosine is blended with the score above and the
     result is put through a hard step plus a small linear tie-break. The step wins the node's
-    separation gate; the tie-break keeps the ranking the traffic-agreement gate scores. Off by
-    default (`STEP_T = 0` disables it), so lexical builds are unaffected.
+    separation gate; the tie-break keeps the ranking the traffic-agreement gate scores. The
+    path is inert at `STEP_T = 0`, which is what the lexical profiles in `deploy.py` set.
+
+> **These ten steps describe a *configured* build, not the source tree as committed.** Every
+> threshold above is a `const` in `lib.rs` that `deploy.py` and `variants.py` rewrite per
+> intent, and the tree is checked in carrying whatever the last variant build left behind —
+> at this commit, a transformer-shaped configuration with the polarity and numeric penalties
+> neutralised at 1.0 and `STEP_T = 0.63`. See [Build](#build) before you draw conclusions from
+> a bare `cargo build`.
 
 ## What it will not reward
 
@@ -165,24 +175,25 @@ plausible wrong answer.
 | --- | --- | --- |
 | `candidate_margin` (mean good − mean bad) | **0.6847** | −0.1169 |
 | good ranked above bad | **40 / 40**, 0 ties | 13 / 40, 8 ties |
-| mean score, good answers | 0.7951 | — |
-| mean score, wrong answers | 0.1104 | — |
-| `worst_self_match` (node floor is 0.75) | 1.0000 | — |
-| `score_stddev` | 0.3931 | — |
-| narrowest single-case margin | 0.1277 | — |
-| structural gates | 8 / 8 | — |
-| gaming and robustness suite | 12 / 12 | — |
+| mean score, good answers | 0.7951 | 0.2321 |
+| mean score, wrong answers | 0.1104 | 0.3490 |
+| `worst_self_match` (node floor is 0.75) | 1.0000 | 1.0000 |
+| `score_stddev` | 0.3931 | 0.2859 |
+| narrowest single-case margin | 0.1277 | −0.8750 |
+| structural gates | 8 / 8 | 8 / 8 |
+| gaming and robustness suite | **12 / 12** | 3 / 12 |
 
 The default module scores wrong answers *higher* than right ones on this benchmark — a
 negative margin — because a plausible wrong answer usually reuses the question's words, and
 word overlap cannot see the difference.
 
-> **On the baseline column.** The default module lives in `reference/`, which is
-> `.gitignore`d (it is not ours to redistribute), so that column cannot be re-run from a fresh
-> clone. The two figures shown are the ones corroborated in
-> `research/agent_task/RESEARCH.md`. Independently, the node's own evaluator reports
-> `champion_margin = 0.37360683` for the default scorer on its hidden fixture set, the same
-> value on every intent where nobody has won the slot — which is its own evidence that the
+> **On the baseline column.** The default module itself lives in `reference/`, which is
+> `.gitignore`d, so you cannot re-run that column from a fresh clone. The figures come from a
+> checked-in harness transcript of it at `research/task_completion/gate-V_softq.txt`, and are
+> repeated independently in `research/agent_task/RESEARCH.md` and
+> `research/web_search/RESEARCH.md`. Separately, the node's own evaluator reports
+> `champion_margin = 0.37360683` for the default scorer on its hidden fixture set — the same
+> value on every intent where nobody has won the slot, which is its own evidence that the
 > default is one fixed function used everywhere.
 
 `bench/report.json` is the last run, per case, checked in so the numbers above can be diffed
@@ -201,19 +212,34 @@ well as the general 40.
 | authenticity | `bench/family-authenticity.json` | 14 | IMAGE_VERIFICATION, VIDEO_VERIFICATION, MEDIA_AUTHENTICITY_CHECK, CONTENT_VERIFICATION | 0.4154 | 14 / 14 | a verdict about whether something is genuine, where the wrong answer shares almost every word |
 | reference | `bench/family-reference.json` | 12 | IP_GEOLOCATION, NEWS_HEADLINES | 0.5778 | 11 / 12 | naming the right entity, with wrong answers that are plausible neighbours of the right one |
 
+Those figures are the checked-in `dist/telegraph-salience-scorer.wasm` — the generic `text`
+profile, the same binary as the [Measured](#measured) table — so they reproduce with one
+command. The builds actually *registered* against each family are tuned to its profile and do
+better; `bench/registrations.json` records them:
+
+| Family | generic build (above) | registered profile build |
+| --- | --- | --- |
+| numeric | 0.4716, 14 / 15 | **0.5653, 15 / 15** |
+| authenticity | 0.4154, 14 / 14 | **0.4708, 14 / 14** |
+| reference | 0.5778, 11 / 12 | **0.5694, 11 / 12** |
+
 The gate, from `harness/main.go`, is: every case won bar at most one, family margin at least
 0.40, `worst_self_match` at least 0.75 (measured: 1.0000 in all three). One documented miss is
 allowed per family because the families deliberately include cases past what a lexical scorer
-can reach. Deleting those would be the dishonest way to a clean sheet. Both current misses:
+can reach. Deleting those would be the dishonest way to a clean sheet.
 
-- **`ref-ip-hosting`** — ground truth says *AWS*, the good answer says *Amazon cloud range*.
-  No amount of character overlap gets you from one to the other, and the wrong answer ("home
-  broadband") is fluent English about the same subject. This needs an entity alias table the
-  module does not ship.
-- **`num-tvl-aave`** — ground truth *"11.2 billion USD"*, good answer *"Aave's TVL is about
-  $11.2B"*, wrong answer *"1.12 billion USD"*. The correct answer abbreviates the unit while
-  the wrong one reuses the ground truth's exact wording around a decimal-shifted figure. The
-  magnitude check catches the digits; the unit spelling still favours the impostor.
+**`ref-ip-hosting`** is the miss that survives even a properly profiled build: ground truth says
+*AWS*, the good answer says *Amazon cloud range*. Neither word shares a trigram with the other,
+and the two tokens are not both in the GloVe table, so there is no path from one to the other —
+while the wrong answer ("home broadband") is fluent English about the same subject. This needs
+an entity alias table the module does not ship.
+
+**`num-tvl-aave`** is the more interesting one, because it is only missed by the generic build.
+Ground truth *"11.2 billion USD"*, good answer *"Aave's TVL is about $11.2B"*, wrong answer
+*"1.12 billion USD"*: the correct answer abbreviates the unit while the impostor reuses the
+ground truth's exact wording around a decimal-shifted figure. The `numeric` profile makes a
+wrong figure near-fatal (`M_NUM_WRONG` 0.45 → 0.12) and that is enough to settle it, which is
+the whole argument for per-intent profiles in one case.
 
 Writing those families paid for itself immediately. `auth-img-real` failed, and the cause was
 not the scoring at all: `bnd`, the flag marking a clause boundary, was the one per-token field
@@ -235,6 +261,31 @@ It must be the `wasm32-unknown-unknown` target. A `wasm32-wasip1` build carries 
 (`fd_write`, `proc_exit`), and a Telegraph node runs modules with no WASI and no OS, so a WASI
 build fails to instantiate.
 
+> ### ⚠ A bare `cargo build` is not a gate-passing build
+>
+> Every tunable is a `const` in `lib.rs`, and both build drivers rewrite those constants in
+> place. Whichever variant was built last is therefore what the tree is checked in carrying.
+> At this commit that is a transformer configuration — `STEP_T = 0.63`, `W_EMB = 0.45`,
+> `SHARPEN = 0`, and the polarity and numeric penalties all neutralised at 1.0 — so compiling
+> the tree as-is and running the harness against it gives `candidate_margin 0.2810`, 30/40
+> wins and **five failed gates**: negation-insert, verdict-flip, direction-flip, number-swap
+> and word-order-swap all score at or above the honest answer, because the penalties that
+> catch them are switched off.
+>
+> To get the scorer this README describes, let a driver set the tunables first:
+>
+> ```bash
+> python3 deploy.py IP_GEOLOCATION      # patch profile, build, run the full gate set
+> ```
+>
+> Without `--send` that is a dry run: it patches `lib.rs` for the intent's profile, builds,
+> and runs the benchmark, the family fixtures and the traffic-agreement check, registering
+> nothing. `deploy.py` deliberately leaves the tree on a known profile when it finishes, so
+> running it is also the way to get the tree back to a sane state.
+>
+> This is a real wart, not a documentation quirk: the source of truth for a build's behaviour
+> is the driver's config, not the file you are reading.
+
 The transformer intents add one feature flag, which compiles `minilm.rs` and embeds
 `minilm.bin`:
 
@@ -248,10 +299,12 @@ the constants it is handed, a build run after another inherits whatever the prev
 in `lib.rs` — `variants.py` exists to close that hole, passing every constant that matters so
 a named config is the whole module and two runs of a name give the same binary.
 
-Reproducibility is per-toolchain, not absolute: rebuilding a given source tree with the
-*same* rustc reproduces a registered binary byte for byte (spot-checked for the AGENT_TASK
-transformer in `research/agent_task/RESEARCH.md`), but a different rustc will not. A fresh
-build here on rustc 1.92.0 is 1,066,050 bytes against the registered 1,039,655.
+Reproducibility is per-configuration and per-toolchain: rebuilding the *same* patched source
+with the *same* rustc reproduces a registered binary byte for byte, spot-checked for the
+AGENT_TASK transformer in `research/agent_task/RESEARCH.md`. A fresh build of the tree as
+committed is 1,066,050 bytes against the registered 1,039,655 — a gap that is partly the
+toolchain and partly the different tunables described in the warning above, so do not read it
+as a pure rustc artifact.
 
 ## Verify
 
@@ -261,6 +314,11 @@ cd harness && go build -o harness .
   ../dist/telegraph-salience-scorer.wasm \
   [any other .wasm to compare against]
 ```
+
+That points at the checked-in artifact on purpose: `dist/telegraph-salience-scorer.wasm` is the
+registered text-profile build, and it is the binary every figure in this README describes. To
+gate a binary you compiled yourself, patch the tunables first (see the warning under
+[Build](#build)) — or just use `deploy.py <INTENT>`, which builds and gates in one step.
 
 It exits non-zero if the candidate misses any gate. What it checks, in the node's own terms:
 the module loads with no imports and exports `alloc`, `dealloc`, `rank_answer` plus linear
@@ -286,10 +344,15 @@ Live on **Base Sepolia** (chain 84532), registry
 via `registerWasm(bytes32 wasmHash, string wasmUrl, string intent)`. The hash is keccak256 of
 the `.wasm` bytes — a miner YAML uses sha256, a scoring module uses keccak256.
 
-This module is the active scoring module for **all 45 canonical intents**: it is the program
-that decides how the miners serving every intent are ranked. Across the author wallet's 271
-registrations, 45 are active, 32 superseded and 194 rejected — the rejections are the search,
-kept visible on purpose. The count is live, so check it rather than trusting this line:
+This module is the active scoring module for **44 of the 45 canonical intents**: it is the
+program that decides how the miners serving those intents are ranked. Snapshot of 2026-08-23:
+across the author wallet's 274 registrations, 44 are active, 33 superseded, 196 rejected and 1
+pending. The rejections are the search, kept visible on purpose.
+
+The 45th is WEATHER_FORECAST, which shows what holding a slot actually costs. It has been won
+and lost repeatedly — fifteen registrations against that one intent — and at this snapshot the
+promoted `wfc_t66` build has been superseded with `wfc_t70` pending, so the slot is briefly
+unheld. Expect this count to move; the numbers above are a reading, not a constant:
 
 ```bash
 curl -s https://devnode.telegraphprotocol.com/engine/validator/v1/addresses/0x8b224783FE5b3c52B7DB0cb9B1754f8812b75287 \
@@ -301,19 +364,26 @@ print(sum("active" in v for v in by.values()), "of", len(by), "intents active")
 print(collections.Counter(s for v in by.values() for s in v))'
 ```
 
-What is actually promoted, by build class — every row identified by matching the on-chain
-`WasmHash` against a keccak256 of the local binaries in `dist/`:
+What is actually promoted, by build class, at that same snapshot:
 
 | Build class | Intents | Size | Where it is used |
 | --- | --- | --- | --- |
-| lexical + GloVe | 26 | ~0.99 MiB | the intents with a weak or no traffic gate, plus the numeric, authenticity and reference families |
-| transformer (`minilm`) | 16 | ~22.9 MiB | every intent whose champion ranks topically, including 8 of the 9 traffic-gated wins |
+| lexical + GloVe | 26 | 0.99 – 1.02 MiB | the intents with a weak or no traffic gate, plus the numeric, authenticity and reference families |
+| transformer (`minilm`) | 15 | 22.85 – 27.65 MiB | every intent whose champion ranks topically, including 8 of the 9 traffic-gated wins |
 | lexical, pre-GloVe | 3 | 9,236 B | ACADEMIC_SEARCH, DEEPFAKE_DETECTION, SSL_VERIFICATION — won early and never needed replacing |
 
+How those rows were derived, since the method matters: keccak256 over every binary in `dist/`
+matches the on-chain `WasmHash` for 23 of the 44 active slots, which is what fixes the
+transformer count. The remaining 21 are the older lexical builds, identified from
+`bench/registrations.json` — which records 30 registrations with the exact tunables, size and
+measured margin for each — and from registration order. Those binaries were hosted and
+registered but not kept in the tree, so `dist/` holds *most* of what was registered, not all
+of it: nothing in the repo is 9,236 bytes or 1,039,661 bytes any more.
+
 Each build bakes its intent into `TELEGRAPH_INTENT` and sets the tunables for the shape of
-answer that intent returns (`deploy.py` holds the per-family profiles: `verdict`, `numeric`,
-`reference`, `text`). `bench/registrations.json` records 30 of the registrations with the exact
-tunables and measured margin for each; `dist/` holds the binaries as registered.
+answer that intent returns. `deploy.py` holds five profiles: `verdict`, `numeric`,
+`numeric_boost` (numeric plus a correct-figure bonus, for FINANCIAL_DATA), `reference` and
+`text`.
 
 ## The agreement gate and how the traffic-gated intents were won
 
@@ -363,7 +433,7 @@ node:
 | Intent | Agreement (floor 0.60) | Node margin | Champion margin | Promoted build |
 | --- | --- | --- | --- | --- |
 | AI_TEXT_DETECTION | **0.9713** | 0.9241 | 0.9125 | `xfmr/aidet_lexc` — lexical |
-| WEATHER_FORECAST | **0.9044** | 0.9524 | 0.9417 | `xfmr/wfc_t66` |
+| WEATHER_FORECAST | **0.9044** | 0.9524 | 0.9417 | `xfmr/wfc_t66` — since superseded |
 | WEB_SEARCH | **0.8442** | 0.9900 | 0.9650 | `xfmr/websrch_rpen` |
 | NEWS_SEARCH | **0.7812** | 0.8900 | 0.7859 | `xfmr/news_q40s` |
 | AGENT_TASK | **0.7456** | 0.8343 | 0.7859 | `xfmr/at_recall` |
@@ -377,10 +447,14 @@ AI_TEXT_DETECTION is the instructive exception: it was won with a *lexical* buil
 highest agreement of the nine. A transformer is not the answer to a traffic gate — matching
 what the champion actually ranks on is, and for that intent the champion was not topical.
 
-Every number here came off an on-node registration. Local traffic proxies
-(`tools/gen_intent_traffic.py`) over-read agreement by roughly 0.1 to 0.4, so they were used
-only to rank variants before spending a registration, never to predict the gate; the
-calibration arithmetic is worked through in `research/agent_task/RESEARCH.md`. The offline
+Every number here came off an on-node registration, and that distinction earned its keep.
+Local traffic proxies (`tools/gen_intent_traffic.py`) disagree with the node in both
+directions: the three measured anchors in the repo are 0.023 for the promoted WEB_SEARCH build
+(0.8668 local against 0.8442 on the node), ~0.062 for TASK_COMPLETION and 0.125 for
+word-overlap on AGENT_TASK. The worked calibration in `research/agent_task/RESEARCH.md` went
+the *other* way and badly: it predicted 0.52–0.57 for AGENT_TASK and filed the intent as
+`winnable_confidence: LOW`, and the node returned 0.7456. So proxies were used to rank variants
+before spending a registration, never to predict whether the gate would open. The offline
 tooling that made the search tractable: `harness/cmd/dump` dumps a binary's raw scores once so
 any monotone transform can be evaluated without a rebuild (`tools/sweep.py`); `variants.py`
 builds a variant from a full explicit config; `reg_batch.py` hosts a whole round on one commit
