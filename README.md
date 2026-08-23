@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img alt="intents held" src="https://img.shields.io/badge/intents_held-44%20%2F%2045%20%C2%B7%202026--08--23-2ea44f">
+  <img alt="intents held" src="https://img.shields.io/badge/intents_held-43%20%2F%2045%20%C2%B7%202026--08--23-2ea44f">
   <img alt="benchmark margin" src="https://img.shields.io/badge/benchmark_margin-0.6847-1f6feb">
   <img alt="wins" src="https://img.shields.io/badge/good_above_bad-40%20%2F%2040-1f6feb">
   <img alt="gaming suite" src="https://img.shields.io/badge/gaming_suite-12%20%2F%2012-1f6feb">
@@ -18,9 +18,10 @@
 A scoring module for the [Telegraph protocol](https://telegraphprotocol.com). It takes the
 question, the ground truth and the miner's answer, and returns one `f32` between 0 and 1.
 
-Written for Telegraph Hackathon Season I, Track 2 (Script Authors). It is the active scoring
-module for **44 of the network's 45 canonical intents** as of 2026-08-23, with the 45th
-(WEATHER_FORECAST) mid-handover — a claim you can
+Written for Telegraph Hackathon Season I, Track 2 (Script Authors). It has held the scoring slot
+for **all 45 of the network's canonical intents**, and holds **43 of 45** at the 2026-08-23
+snapshot below — slots are contested continuously, by other authors as well as by newer builds
+of this one, so that figure moves. It is a claim you can
 [check against the chain](#deployed) rather than take on faith. The Track 1 miners that go
 with it are five workers across three repos:
 [gaswire](https://github.com/zkasuran/telegraph-gaswire-miner) (GAS_PRICE),
@@ -218,15 +219,18 @@ command. The builds actually *registered* against each family are tuned to that 
 trades one thing for another rather than strictly improving; `bench/registrations.json` records
 them:
 
-| Family | generic build (above) | registered profile build |
+| Family | generic build (above) | registered profile builds |
 | --- | --- | --- |
-| numeric | 0.4716, 14 / 15 | **0.5653, 15 / 15** |
-| authenticity | 0.4154, 14 / 14 | **0.4708, 14 / 14** |
-| reference | 0.5778, 11 / 12 | 0.5694, 11 / 12 |
+| numeric | 0.4716, 14 / 15 | **0.5582 – 0.5653, 15 / 15** |
+| authenticity | 0.4154, 14 / 14 | **0.4605 – 0.4708, 14 / 14** |
+| reference | 0.5778, 11 / 12 | 0.5694 – 0.5777, 11 / 12 |
 
-The `reference` row is the one that goes backwards: its profile only shifts `F_BETA2` and
-`R_KEY_BASE`, buying recall of the ground truth at a small cost in margin, which is the right
-trade for an intent that turns on naming an entity even though the headline number dips.
+Each range spans two generations of registration against that profile. The numeric profile is
+the clearest win — it takes the family to 15/15, settling `num-tvl-aave` below. The `reference`
+profile is the one that does *not* improve the headline: it only shifts `F_BETA2` and
+`R_KEY_BASE`, buying recall of the ground truth at a margin cost that lands it either side of
+the generic 0.5778. That is still the right trade for intents that turn on naming an entity, but
+the number does not advertise it.
 
 The gate, from `harness/main.go`, is: every case won bar at most one, family margin at least
 0.40, `worst_self_match` at least 0.75 (measured: 1.0000 in all three). One documented miss is
@@ -266,9 +270,9 @@ It must be the `wasm32-unknown-unknown` target. A `wasm32-wasip1` build carries 
 (`fd_write`, `proc_exit`), and a Telegraph node runs modules with no WASI and no OS, so a WASI
 build fails to instantiate.
 
-The tree is checked in on the generic `text` profile, so the command above reproduces the
-scorer this README describes: `candidate_margin 0.6847`, 40/40, all structural and gaming
-gates green. Worth knowing why that is worth stating.
+The tree is checked in on the generic `text` profile, so the command above reproduces the scorer
+this README describes: `candidate_margin 0.6847`, 40/40, all structural and gaming gates green.
+That is not automatic, and the reason is worth knowing before you build a variant.
 
 > ### ⚠ Every tunable is a `const`, and the build drivers rewrite them in place
 >
@@ -287,9 +291,13 @@ gates green. Worth knowing why that is worth stating.
 >
 > Without `--send` that is a dry run: it patches `lib.rs` for the intent's profile, builds, and
 > runs the benchmark, the family fixtures and the traffic-agreement check, registering nothing.
-> Its `BASE` pins every constant that matters — including the transformer-path ones it must
-> switch *off* — so the config is the whole module rather than a delta against whatever came
-> before, the same guarantee `variants.py` gives on the transformer side.
+> Its `BASE` pins every constant in the lexical scoring path, including the transformer-path
+> ones it has to switch *off* and the two `u32` sweep knobs (`POST_ITERS`, `TIE_SRC`) that a
+> transformer sweep can leave behind — `POST_ITERS` is the second sharp edge, since it adds a
+> contrast pass in the plain lexical path. So the config is the whole module rather than a delta
+> against whatever came before, which is the same property `variants.py` provides on the
+> transformer side. Verified by dirtying all three constants and recovering: same metrics, same
+> binary, `lib.rs` restored byte for byte.
 
 The transformer intents add one feature flag, which compiles `minilm.rs` and embeds
 `minilm.bin`:
@@ -349,15 +357,16 @@ Live on **Base Sepolia** (chain 84532), registry
 via `registerWasm(bytes32 wasmHash, string wasmUrl, string intent)`. The hash is keccak256 of
 the `.wasm` bytes — a miner YAML uses sha256, a scoring module uses keccak256.
 
-This module is the active scoring module for **44 of the 45 canonical intents**: it is the
-program that decides how the miners serving those intents are ranked. Snapshot of 2026-08-23:
-across roughly 280 registrations from the author wallet, 44 are active and 33 superseded, with
-the balance rejected. The rejections are the search, kept visible on purpose.
+This module has held the scoring slot for every one of the 45 canonical intents, and holds
+**43 of 45** at the snapshot of 2026-08-23: across roughly 280 registrations from the author
+wallet, 43 are active and 34 superseded, with the balance rejected. The rejections are the
+search, kept visible on purpose.
 
-The 45th is WEATHER_FORECAST, and it is the honest counterexample: the slot has been won and
-lost repeatedly across twenty-odd registrations against that one intent, and at this snapshot
-nobody holds it. Treat every count here as a reading rather than a constant — that intent alone
-turned over several times while this section was being written, so run the query: 
+The two unheld slots are the honest part. WEATHER_FORECAST has been won and lost repeatedly
+across twenty-odd registrations against that one intent and is mid-handover again;
+ONCHAIN_TX_LOOKUP was held from 2026-08-18 until another author superseded it. Both directions
+are normal — a scoring slot is not a trophy, it is a position you defend against anyone who can
+beat your margin. Treat every count here as a reading rather than a constant, and run the query: 
 
 ```bash
 curl -s https://devnode.telegraphprotocol.com/engine/validator/v1/addresses/0x8b224783FE5b3c52B7DB0cb9B1754f8812b75287 \
@@ -378,10 +387,12 @@ What is actually promoted, by build class, at that same snapshot:
 | lexical, pre-GloVe | 3 | 9,236 B | ACADEMIC_SEARCH, DEEPFAKE_DETECTION, SSL_VERIFICATION — won early and never needed replacing |
 
 How those rows were derived, since the method matters: keccak256 over every binary in `dist/`
-matches the on-chain `WasmHash` for 23 of the 44 active slots, which is what fixes the
-transformer count. The remaining 21 are the older lexical builds, identified from
-`bench/registrations.json` — which records 30 registrations with the exact tunables, size and
-measured margin for each — and from registration order. Those binaries were hosted and
+matches the on-chain `WasmHash` for 23 of the active slots, 15 of them above 20 MB, which is what
+fixes the transformer count. The rest are older lexical builds, identified from
+`bench/registrations.json`, which records 30 registrations with the hash, size, measured margin
+and the 15–20 tunables that mattered for each. Those entries name the profile rather than the
+whole configuration — they predate `deploy.py` pinning every constant — so treat them as a
+ledger, not as something you can replay to a binary. Those binaries were hosted and
 registered but not kept in the tree, so `dist/` holds *most* of what was registered, not all of
 it — no binary matching an active pre-GloVe or first-generation lexical registration survives
 here.
@@ -459,12 +470,14 @@ CHAT_COMPLETION (~0.82–0.87 locally against 0.6266 on the node), ~0.062 on TAS
 0.125 for word-overlap on AGENT_TASK — the champion is not downloadable for most intents, so a
 proxy is standing in for the judge and the corpus at the same time.
 
-They are unreliable in the other direction too, which is the more useful warning. The one
-worked calibration in the repo, `research/agent_task/RESEARCH.md`, predicted 0.52–0.57 for its
-AGENT_TASK candidate and filed the intent `winnable_confidence: LOW`; that build was rejected on
-separation without an agreement ever being read, and the intent was eventually taken at 0.7456
-by a later recall-weighted variant the calibration knew nothing about. So proxies were used only
-to rank variants before spending a registration, never to decide whether a gate was reachable. The offline
+Knowing the direction of the bias still does not make a proxy a predictor, which is the more
+useful warning. The one worked calibration in the repo, `research/agent_task/RESEARCH.md`,
+subtracted its measured gap and concluded AGENT_TASK would land at 0.52–0.57, filing the intent
+`winnable_confidence: LOW`. That build was rejected on separation without an agreement ever being
+read, and the intent was later taken at 0.7456 by a recall-weighted variant the calibration knew
+nothing about. The arithmetic was sound and the conclusion was wrong, because what moved the gate
+was a change to the module rather than a better estimate of the gap. So proxies were used to rank
+variants before spending a registration, never to decide whether a gate was reachable. The offline
 tooling that made the search tractable: `harness/cmd/dump` dumps a binary's raw scores once so
 any monotone transform can be evaluated without a rebuild (`tools/sweep.py`); `variants.py`
 builds a variant from a full explicit config; `reg_batch.py` hosts a whole round on one commit

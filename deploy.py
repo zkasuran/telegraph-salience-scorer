@@ -41,7 +41,7 @@ BASE = {
     # module, the same guarantee variants.py gives on the transformer side.
     "STEP_T": 0.0, "STEP_W": 0.0, "STEP_B": 0.02, "STEP_R": 0.0,
     "NOGT_Q": 0.0, "EXACT_TIE": 0.0, "GATE_LEX": 0.0, "W_QA": 0.0,
-    "SIGK": 0.0, "POST_FRAC": 0.0, "POST_PIVOT": 0.5,
+    "SIGK": 0.0, "POST_FRAC": 0.0, "POST_PIVOT": 0.5, "POST_ITERS": 0, "TIE_SRC": 0,
     "EMB_A_W": 0.0, "EMB_B_W": 1.0, "EMB_LEX_W": 0.0, "EMB_L2_W": 0.0, "EMB_L4_W": 0.0,
 }
 
@@ -117,7 +117,14 @@ TARGETS = {
 def patch(intent, values):
     src = open(LIB).read()
     for name, val in values.items():
-        src, n = re.subn(rf"const {name}: f32 = [0-9.]+;", f"const {name}: f32 = {val};", src)
+        # POST_ITERS and TIE_SRC are u32. They have to be patchable here and not only in
+        # build_xfmr.py: POST_ITERS gates an extra contrast pass in the plain lexical path,
+        # so a value left behind by a transformer sweep changes a lexical build's scores
+        # while every gate still reports green.
+        if name in ("POST_ITERS", "TIE_SRC"):
+            src, n = re.subn(rf"const {name}: u32 = \d+;", f"const {name}: u32 = {int(val)};", src)
+        else:
+            src, n = re.subn(rf"const {name}: f32 = [0-9.]+;", f"const {name}: f32 = {val};", src)
         if n != 1:
             raise SystemExit(f"could not patch {name}")
     padded = intent.ljust(32)
@@ -243,8 +250,9 @@ def main():
         ledger.append({"intent": intent, "profile": profile, "hash": h, "url": url,
                        "size": size, "tx": tx, "metrics": metrics, "values": values})
         json.dump(ledger, open(LEDGER, "w"), indent=1)
-    # Leave the tree on the CHAT_COMPLETION build so a plain `cargo build` is
-    # reproducible against dist/.
+    # Leave the tree on the CHAT_COMPLETION build so a plain `cargo build` reproduces the
+    # behaviour of the registered text-profile binary. Same metrics, not the same bytes:
+    # the registered one was built on an older rustc.
     patch("CHAT_COMPLETION", dict(BASE, **PROFILES["text"]))
     build_and_gate()
 
