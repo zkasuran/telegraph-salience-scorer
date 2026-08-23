@@ -44,14 +44,14 @@ const R_FLOOR: f32 = 0.3;
 /// Polarity multipliers. Lower on contradiction separates good from bad harder;
 /// higher keeps a wrong-but-on-topic answer inside the pack, which is where the
 /// champion puts it, and the traffic gate scores agreement with the champion.
-const M_CONTRA: f32 = 1.0;
-const M_TWO_FACED: f32 = 1.0;
-const M_SILENT: f32 = 1.0;
-const B_AGREE: f32 = 0.0;
+const M_CONTRA: f32 = 0.3;
+const M_TWO_FACED: f32 = 0.5;
+const M_SILENT: f32 = 0.95;
+const B_AGREE: f32 = 0.35;
 /// Numbers: floor when a stated figure is missing, multiplier when a different one
 /// is asserted instead.
-const M_NUM_MISS_BASE: f32 = 1.0;
-const M_NUM_WRONG: f32 = 1.0;
+const M_NUM_MISS_BASE: f32 = 0.62;
+const M_NUM_WRONG: f32 = 0.45;
 /// Numeric agreement bonus (default 0, off for every intent but the pure-figure ones).
 /// When the answer carries every figure the ground truth states and states no wrong
 /// one, the figure IS the answer, so pull the score up toward 1 the way B_AGREE does
@@ -60,18 +60,18 @@ const M_NUM_WRONG: f32 = 1.0;
 /// which is where the FINANCIAL_DATA champion separates and our lexical build did not.
 const M_NUM_MATCH: f32 = 0.0;
 /// Same words, no shared adjacency.
-const M_ORDER: f32 = 1.0;
+const M_ORDER: f32 = 0.55;
 /// A figure attached to a different entity. Harder than a plain reordering, because
 /// "Base at 2.6 billion" when the truth is "Arbitrum at 2.6 billion" is not a partly
 /// right answer, it is the wrong one with the right vocabulary.
-const M_ENTITY: f32 = 1.0;
+const M_ENTITY: f32 = 0.3;
 /// How much of the score a negated match costs. "No rain is expected" covers every
 /// content word of "rain is expected" and asserts the opposite, so coverage that only
 /// holds under a negation the ground truth does not carry is worth less than nothing.
-const M_NEGCOV: f32 = 0.0;
+const M_NEGCOV: f32 = 1.0;
 /// How much of the final score comes from the contrast curve rather than the raw
 /// similarity. All contrast sharpens separation, all raw ranks more smoothly.
-const SHARPEN: f32 = 0.0;
+const SHARPEN: f32 = 0.82;
 /// Semantic credit: what a vector match is worth next to an exact one, the cosine
 /// below which a match is mere topicality rather than a paraphrase, and the share of
 /// the answer-bearing content that vectors alone are allowed to satisfy. That last
@@ -87,7 +87,7 @@ const SOFT_CAP_FRAC: f32 = 0.35;
 /// the traffic gate rewards agreeing with its topical ranking; the distilled table
 /// (tools/pack_distilled.py) lets a static mean-pool track it, and this weight blends
 /// that in. Set high only for the CHAT_COMPLETION build.
-const W_EMB: f32 = 0.45;
+const W_EMB: f32 = 0.0;
 
 /// Blend weights for the transformer path (only used when W_EMB > 0 and the minilm feature
 /// is on). embA = shallow embedding-layer cosine, embB = full transformer cosine, lex = our
@@ -153,7 +153,7 @@ const POST_FRAC: f32 = 0.0;
 /// STEP_B of it.
 ///
 /// STEP_T = 0 keeps this path off, so every build that does not ask for it is unchanged.
-const STEP_T: f32 = 0.63;
+const STEP_T: f32 = 0.0;
 const STEP_B: f32 = 0.02;
 
 /// Coverage gate on the step. An answer only reaches the good side of the threshold if it
@@ -171,11 +171,11 @@ const STEP_R: f32 = 0.0;
 /// scale has not been measured against the fixtures yet, because the measured curve is a
 /// broad plateau and a ramp across the plateau loses almost nothing while a hard step
 /// placed off it loses a lot.
-const STEP_W: f32 = 0.04;
+const STEP_W: f32 = 0.0;
 
 /// How much of the topical score is the answer-to-question cosine rather than the
 /// answer-to-ground-truth one. See the note at the blend for why the champion needs this.
-const W_QA: f32 = 0.2;
+const W_QA: f32 = 0.0;
 
 /// What to do when the validator holds no ground truth for a row. The node's fixtures always
 /// carry one, but real traffic is a live request, and a request has no reference answer until
@@ -183,7 +183,7 @@ const W_QA: f32 = 0.2;
 /// ordering, which is what the ranking gate measures, so with NOGT_Q > 0 the score falls back
 /// to how well the answer addresses the request: the same threshold calibration applied to the
 /// answer-to-question cosine. 0 keeps the old behaviour (0 for every answer, no ranking).
-const NOGT_Q: f32 = 1.0;
+const NOGT_Q: f32 = 0.0;
 
 /// Exact matches used to collapse to exactly 1.0. If the validator records a request's
 /// ground truth by taking one miner's answer, then one row per request is a byte match and a
@@ -192,7 +192,7 @@ const NOGT_Q: f32 = 1.0;
 /// with no question and 0.998 with the real one, so its exact matches are still ordered. With
 /// EXACT_TIE > 0 ours are too, by how well the answer addresses the question, and the score
 /// stays within EXACT_TIE of 1.0 so the perfect-answer gate is untouched.
-const EXACT_TIE: f32 = 0.02;
+const EXACT_TIE: f32 = 0.0;
 
 /// Which quantity breaks ties inside a step band. The step decides separation, the tie-break
 /// decides the ranking, and for an intent whose real traffic all lands in one band the
@@ -422,7 +422,7 @@ pub unsafe extern "C" fn dealloc(_ptr: i32, _size: i32) {}
 /// can be traced back to the configuration it was measured with. Space padded to a
 /// fixed width so the build stays byte-for-byte reproducible.
 #[unsafe(no_mangle)]
-pub static TELEGRAPH_INTENT: [u8; 32] = *b"TEXT_GENERATION                 ";
+pub static TELEGRAPH_INTENT: [u8; 32] = *b"CHAT_COMPLETION                 ";
 
 // ---------------------------------------------------------------------------
 // Byte-level primitives

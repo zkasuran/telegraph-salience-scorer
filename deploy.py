@@ -34,6 +34,15 @@ BASE = {
     "SHARPEN": 0.82, "M_NUM_MISS_BASE": 0.62, "M_NUM_WRONG": 0.45, "M_TWO_FACED": 0.5,
     "M_ORDER": 0.55, "M_ENTITY": 0.3, "M_NEGCOV": 1.0, "SOFT_MIN": 0.72, "SOFT_W": 1.0,
     "SOFT_CAP_FRAC": 0.35, "M_NUM_MATCH": 0.0, "W_EMB": 0.0,
+    # The transformer-path constants, pinned off. patch() only rewrites what it is handed,
+    # so anything omitted here is inherited from whatever build_xfmr.py/variants.py left in
+    # lib.rs -- and STEP_T in particular binarises the lexical score, which silently fails
+    # the direction-flip and number-swap gates. Listing them makes this config the whole
+    # module, the same guarantee variants.py gives on the transformer side.
+    "STEP_T": 0.0, "STEP_W": 0.0, "STEP_B": 0.02, "STEP_R": 0.0,
+    "NOGT_Q": 0.0, "EXACT_TIE": 0.0, "GATE_LEX": 0.0, "W_QA": 0.0,
+    "SIGK": 0.0, "POST_FRAC": 0.0, "POST_PIVOT": 0.5,
+    "EMB_A_W": 0.0, "EMB_B_W": 1.0, "EMB_LEX_W": 0.0, "EMB_L2_W": 0.0, "EMB_L4_W": 0.0,
 }
 
 # Per-shape overrides. A verdict intent lives or dies on polarity, so contradicting

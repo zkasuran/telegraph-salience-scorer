@@ -132,12 +132,10 @@ the node's 32 MB limit. The largest is the WEATHER_CHECK build at 28,988,928 byt
     separation gate; the tie-break keeps the ranking the traffic-agreement gate scores. The
     path is inert at `STEP_T = 0`, which is what the lexical profiles in `deploy.py` set.
 
-> **These ten steps describe a *configured* build, not the source tree as committed.** Every
-> threshold above is a `const` in `lib.rs` that `deploy.py` and `variants.py` rewrite per
-> intent, and the tree is checked in carrying whatever the last variant build left behind —
-> at this commit, a transformer-shaped configuration with the polarity and numeric penalties
-> neutralised at 1.0 and `STEP_T = 0.63`. See [Build](#build) before you draw conclusions from
-> a bare `cargo build`.
+> **Every threshold above is a `const` that the build drivers rewrite per intent.** The ten
+> steps describe a *configured* build; the weights and penalties differ by intent profile, and
+> the transformer path in step 10 is switched off entirely for the lexical ones. See
+> [Build](#build) for why that matters before you compile anything.
 
 ## What it will not reward
 
@@ -188,10 +186,12 @@ negative margin — because a plausible wrong answer usually reuses the question
 word overlap cannot see the difference.
 
 > **On the baseline column.** The default module itself lives in `reference/`, which is
-> `.gitignore`d, so you cannot re-run that column from a fresh clone. The figures come from a
-> checked-in harness transcript of it at `research/task_completion/gate-V_softq.txt`, and are
-> repeated independently in `research/agent_task/RESEARCH.md` and
-> `research/web_search/RESEARCH.md`. Separately, the node's own evaluator reports
+> `.gitignore`d, so you cannot re-run that column from a fresh clone. Every figure in it comes
+> from a checked-in harness transcript of that module at
+> `research/task_completion/gate-V_softq.txt`, which is the only place all nine appear.
+> `research/web_search/RESEARCH.md` independently repeats four of them (margin, wins,
+> `worst_self_match`, `score_stddev`) and `research/agent_task/RESEARCH.md` three (margin, wins,
+> ties). Separately, the node's own evaluator reports
 > `champion_margin = 0.37360683` for the default scorer on its hidden fixture set — the same
 > value on every intent where nobody has won the slot, which is its own evidence that the
 > default is one fixed function used everywhere.
@@ -214,14 +214,19 @@ well as the general 40.
 
 Those figures are the checked-in `dist/telegraph-salience-scorer.wasm` — the generic `text`
 profile, the same binary as the [Measured](#measured) table — so they reproduce with one
-command. The builds actually *registered* against each family are tuned to its profile and do
-better; `bench/registrations.json` records them:
+command. The builds actually *registered* against each family are tuned to that profile, which
+trades one thing for another rather than strictly improving; `bench/registrations.json` records
+them:
 
 | Family | generic build (above) | registered profile build |
 | --- | --- | --- |
 | numeric | 0.4716, 14 / 15 | **0.5653, 15 / 15** |
 | authenticity | 0.4154, 14 / 14 | **0.4708, 14 / 14** |
-| reference | 0.5778, 11 / 12 | **0.5694, 11 / 12** |
+| reference | 0.5778, 11 / 12 | 0.5694, 11 / 12 |
+
+The `reference` row is the one that goes backwards: its profile only shifts `F_BETA2` and
+`R_KEY_BASE`, buying recall of the ground truth at a small cost in margin, which is the right
+trade for an intent that turns on naming an entity even though the headline number dips.
 
 The gate, from `harness/main.go`, is: every case won bar at most one, family margin at least
 0.40, `worst_self_match` at least 0.75 (measured: 1.0000 in all three). One documented miss is
@@ -261,30 +266,30 @@ It must be the `wasm32-unknown-unknown` target. A `wasm32-wasip1` build carries 
 (`fd_write`, `proc_exit`), and a Telegraph node runs modules with no WASI and no OS, so a WASI
 build fails to instantiate.
 
-> ### ⚠ A bare `cargo build` is not a gate-passing build
+The tree is checked in on the generic `text` profile, so the command above reproduces the
+scorer this README describes: `candidate_margin 0.6847`, 40/40, all structural and gaming
+gates green. Worth knowing why that is worth stating.
+
+> ### ⚠ Every tunable is a `const`, and the build drivers rewrite them in place
 >
-> Every tunable is a `const` in `lib.rs`, and both build drivers rewrite those constants in
-> place. Whichever variant was built last is therefore what the tree is checked in carrying.
-> At this commit that is a transformer configuration — `STEP_T = 0.63`, `W_EMB = 0.45`,
-> `SHARPEN = 0`, and the polarity and numeric penalties all neutralised at 1.0 — so compiling
-> the tree as-is and running the harness against it gives `candidate_margin 0.2810`, 30/40
-> wins and **five failed gates**: negation-insert, verdict-flip, direction-flip, number-swap
-> and word-order-swap all score at or above the honest answer, because the penalties that
-> catch them are switched off.
+> There is no config file. `deploy.py` and `variants.py` patch the constants in `lib.rs`
+> before each build, so **whatever variant was built last is what the tree carries** — build a
+> transformer variant and a subsequent bare `cargo build` silently gives you that variant's
+> tuning, not the lexical profile. `STEP_T` is the sharp edge: it binarises the score and sits
+> in the main path rather than behind the `minilm` feature, so a stale `STEP_T = 0.63` leaves
+> the benchmark looking healthy while the direction-flip and number-swap gates quietly fail.
 >
-> To get the scorer this README describes, let a driver set the tunables first:
+> To put the tree back on a known profile, or to gate a build properly, let the driver do it:
 >
 > ```bash
 > python3 deploy.py IP_GEOLOCATION      # patch profile, build, run the full gate set
 > ```
 >
-> Without `--send` that is a dry run: it patches `lib.rs` for the intent's profile, builds,
-> and runs the benchmark, the family fixtures and the traffic-agreement check, registering
-> nothing. `deploy.py` deliberately leaves the tree on a known profile when it finishes, so
-> running it is also the way to get the tree back to a sane state.
->
-> This is a real wart, not a documentation quirk: the source of truth for a build's behaviour
-> is the driver's config, not the file you are reading.
+> Without `--send` that is a dry run: it patches `lib.rs` for the intent's profile, builds, and
+> runs the benchmark, the family fixtures and the traffic-agreement check, registering nothing.
+> Its `BASE` pins every constant that matters — including the transformer-path ones it must
+> switch *off* — so the config is the whole module rather than a delta against whatever came
+> before, the same guarantee `variants.py` gives on the transformer side.
 
 The transformer intents add one feature flag, which compiles `minilm.rs` and embeds
 `minilm.bin`:
@@ -301,10 +306,10 @@ a named config is the whole module and two runs of a name give the same binary.
 
 Reproducibility is per-configuration and per-toolchain: rebuilding the *same* patched source
 with the *same* rustc reproduces a registered binary byte for byte, spot-checked for the
-AGENT_TASK transformer in `research/agent_task/RESEARCH.md`. A fresh build of the tree as
-committed is 1,066,050 bytes against the registered 1,039,655 — a gap that is partly the
-toolchain and partly the different tunables described in the warning above, so do not read it
-as a pure rustc artifact.
+AGENT_TASK transformer in `research/agent_task/RESEARCH.md`. Matching the configuration is not
+sufficient on its own — a build of the checked-in tree on rustc 1.92.0 is 1,065,591 bytes
+against the registered 1,039,655, and that entire 25,936-byte gap is the toolchain, since the
+tunables now match what those builds were registered with.
 
 ## Verify
 
@@ -315,10 +320,10 @@ cd harness && go build -o harness .
   [any other .wasm to compare against]
 ```
 
-That points at the checked-in artifact on purpose: `dist/telegraph-salience-scorer.wasm` is the
-registered text-profile build, and it is the binary every figure in this README describes. To
-gate a binary you compiled yourself, patch the tunables first (see the warning under
-[Build](#build)) — or just use `deploy.py <INTENT>`, which builds and gates in one step.
+That points at the checked-in artifact because it is the exact binary every figure in this
+README describes — the registered `text`-profile build. Swap in
+`../module/target/wasm32-unknown-unknown/release/telegraph_scorer.wasm` to gate your own build;
+from the tree as committed it returns the same metrics, differing only in size.
 
 It exits non-zero if the candidate misses any gate. What it checks, in the node's own terms:
 the module loads with no imports and exports `alloc`, `dealloc`, `rank_answer` plus linear
@@ -346,13 +351,13 @@ the `.wasm` bytes — a miner YAML uses sha256, a scoring module uses keccak256.
 
 This module is the active scoring module for **44 of the 45 canonical intents**: it is the
 program that decides how the miners serving those intents are ranked. Snapshot of 2026-08-23:
-across the author wallet's 274 registrations, 44 are active, 33 superseded, 196 rejected and 1
-pending. The rejections are the search, kept visible on purpose.
+across roughly 280 registrations from the author wallet, 44 are active and 33 superseded, with
+the balance rejected. The rejections are the search, kept visible on purpose.
 
-The 45th is WEATHER_FORECAST, which shows what holding a slot actually costs. It has been won
-and lost repeatedly — fifteen registrations against that one intent — and at this snapshot the
-promoted `wfc_t66` build has been superseded with `wfc_t70` pending, so the slot is briefly
-unheld. Expect this count to move; the numbers above are a reading, not a constant:
+The 45th is WEATHER_FORECAST, and it is the honest counterexample: the slot has been won and
+lost repeatedly across twenty-odd registrations against that one intent, and at this snapshot
+nobody holds it. Treat every count here as a reading rather than a constant — that intent alone
+turned over several times while this section was being written, so run the query: 
 
 ```bash
 curl -s https://devnode.telegraphprotocol.com/engine/validator/v1/addresses/0x8b224783FE5b3c52B7DB0cb9B1754f8812b75287 \
@@ -369,7 +374,7 @@ What is actually promoted, by build class, at that same snapshot:
 | Build class | Intents | Size | Where it is used |
 | --- | --- | --- | --- |
 | lexical + GloVe | 26 | 0.99 – 1.02 MiB | the intents with a weak or no traffic gate, plus the numeric, authenticity and reference families |
-| transformer (`minilm`) | 15 | 22.85 – 27.65 MiB | every intent whose champion ranks topically, including 8 of the 9 traffic-gated wins |
+| transformer (`minilm`) | 15 | 22.85 – 27.65 MiB | every intent whose champion ranks topically, including 7 of the 9 traffic-gated wins |
 | lexical, pre-GloVe | 3 | 9,236 B | ACADEMIC_SEARCH, DEEPFAKE_DETECTION, SSL_VERIFICATION — won early and never needed replacing |
 
 How those rows were derived, since the method matters: keccak256 over every binary in `dist/`
@@ -377,8 +382,9 @@ matches the on-chain `WasmHash` for 23 of the 44 active slots, which is what fix
 transformer count. The remaining 21 are the older lexical builds, identified from
 `bench/registrations.json` — which records 30 registrations with the exact tunables, size and
 measured margin for each — and from registration order. Those binaries were hosted and
-registered but not kept in the tree, so `dist/` holds *most* of what was registered, not all
-of it: nothing in the repo is 9,236 bytes or 1,039,661 bytes any more.
+registered but not kept in the tree, so `dist/` holds *most* of what was registered, not all of
+it — no binary matching an active pre-GloVe or first-generation lexical registration survives
+here.
 
 Each build bakes its intent into `TELEGRAPH_INTENT` and sets the tunables for the shape of
 answer that intent returns. `deploy.py` holds five profiles: `verdict`, `numeric`,
@@ -447,14 +453,18 @@ AI_TEXT_DETECTION is the instructive exception: it was won with a *lexical* buil
 highest agreement of the nine. A transformer is not the answer to a traffic gate — matching
 what the champion actually ranks on is, and for that intent the champion was not topical.
 
-Every number here came off an on-node registration, and that distinction earned its keep.
-Local traffic proxies (`tools/gen_intent_traffic.py`) disagree with the node in both
-directions: the three measured anchors in the repo are 0.023 for the promoted WEB_SEARCH build
-(0.8668 local against 0.8442 on the node), ~0.062 for TASK_COMPLETION and 0.125 for
-word-overlap on AGENT_TASK. The worked calibration in `research/agent_task/RESEARCH.md` went
-the *other* way and badly: it predicted 0.52–0.57 for AGENT_TASK and filed the intent as
-`winnable_confidence: LOW`, and the node returned 0.7456. So proxies were used to rank variants
-before spending a registration, never to predict whether the gate would open. The offline
+Every number here came off an on-node registration, and that distinction earned its keep. Local
+traffic proxies (`tools/gen_intent_traffic.py`) consistently over-read the gate, by ~0.24 on
+CHAT_COMPLETION (~0.82–0.87 locally against 0.6266 on the node), ~0.062 on TASK_COMPLETION and
+0.125 for word-overlap on AGENT_TASK — the champion is not downloadable for most intents, so a
+proxy is standing in for the judge and the corpus at the same time.
+
+They are unreliable in the other direction too, which is the more useful warning. The one
+worked calibration in the repo, `research/agent_task/RESEARCH.md`, predicted 0.52–0.57 for its
+AGENT_TASK candidate and filed the intent `winnable_confidence: LOW`; that build was rejected on
+separation without an agreement ever being read, and the intent was eventually taken at 0.7456
+by a later recall-weighted variant the calibration knew nothing about. So proxies were used only
+to rank variants before spending a registration, never to decide whether a gate was reachable. The offline
 tooling that made the search tractable: `harness/cmd/dump` dumps a binary's raw scores once so
 any monotone transform can be evaluated without a rebuild (`tools/sweep.py`); `variants.py`
 builds a variant from a full explicit config; `reg_batch.py` hosts a whole round on one commit
