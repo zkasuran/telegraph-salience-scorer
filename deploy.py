@@ -19,7 +19,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 LIB = os.path.join(ROOT, "module", "src", "lib.rs")
 WASM = os.path.join(ROOT, "module", "target", "wasm32-unknown-unknown", "release", "telegraph_scorer.wasm")
 DIAMOND = "0x5a2324aA18613FAD4e44bDF0d6c73Ec1f6D87ff8"
-RPC = "https://sepolia.base.org"
+RPC = "https://base-sepolia-rpc.publicnode.com"
 WALLET_ENV = os.path.join(ROOT, "..", ".wallet.env")
 # Session cookie for the console pin endpoint. Kept in the lane rather than
 # /tmp, which gets cleaned out from under a long run.

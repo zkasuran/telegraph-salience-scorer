@@ -25,7 +25,7 @@ BASE = {
     "SHARPEN": 0.0, "SOFT_W": 1.0, "SOFT_MIN": 0.72, "SOFT_CAP_FRAC": 0.35,
     "W_EMB": 0.45, "EMB_A_W": 0.0, "EMB_B_W": 1.0, "EMB_LEX_W": 0.0, "EMB_L2_W": 0.0, "EMB_L4_W": 0.0, "GATE_LEX": 0.0,
     "POST_ITERS": 0, "POST_PIVOT": 0.5, "POST_FRAC": 0.0, "SIGK": 0.0, "SIGC": 0.4545,
-    "STEP_T": 0.0, "STEP_B": 0.02, "STEP_R": 0.0, "STEP_W": 0.0, "W_QA": 0.0, "TOK_SPAN": 1, "NOGT_Q": 0.0, "TIE_SRC": 0, "EXACT_TIE": 0.0,
+    "STEP_T": 0.0, "STEP_B": 0.02, "STEP_R": 0.0, "STEP_W": 0.0, "STEP_SHARP": 0, "STEP_PIVOT": 0.5, "W_QA": 0.0, "TOK_SPAN": 1, "NOGT_Q": 0.0, "TIE_SRC": 0, "EXACT_TIE": 0.0, "NUM_TOL": 0.0,
 }
 
 # The correctness penalties the promoted CHAT_COMPLETION build ran with. They only fire

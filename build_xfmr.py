@@ -20,7 +20,7 @@ OUT = os.path.join(ROOT, "dist", "xfmr")
 def patch(intent, values):
     src = open(LIB).read()
     for name, val in values.items():
-        if name in ("POST_ITERS", "TIE_SRC"):
+        if name in ("POST_ITERS", "TIE_SRC", "STEP_SHARP"):
             src, n = re.subn(rf"const {name}: u32 = \d+;", f"const {name}: u32 = {int(val)};", src)
         elif name in ("TOK_SPAN", "MAXTOK"):
             # these live in minilm.rs and are usize

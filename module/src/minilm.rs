@@ -12,7 +12,7 @@
 use core::f32;
 
 const H: usize = 384;
-const LAYERS: usize = 6;
+const LAYERS: usize = 12;
 const HEADS: usize = 12;
 const HDIM: usize = H / HEADS; // 32
 const INTER: usize = 1536;
@@ -31,7 +31,7 @@ const MAXTOK: usize = 128; // wordpiece tokens per text, truncated; bounds the n
 const TOK_SPAN: usize = 1;
 const TOKCAP: usize = 1024;
 
-static MLM: &[u8] = include_bytes!("minilm.bin");
+static MLM: &[u8] = include_bytes!("gte-small.bin");
 
 // ---- little-endian readers ----
 fn u32le(o: usize) -> u32 {
@@ -100,26 +100,33 @@ fn vocab_lookup(hash: u32) -> i32 {
 }
 
 #[derive(Copy, Clone)]
-struct Tn { off: usize, kind: u8, scale: f32, len: usize, soff: usize }
+struct Tn { off: usize, kind: u8, scale: f32, len: usize, soff: usize, cols: usize }
 
 // Walk the 101 tensor headers (data skipped by arithmetic) into a fixed table.
-fn tensors() -> [Tn; 101] {
-    let mut t = [Tn { off: 0, kind: 1, scale: 0.0, len: 0, soff: 0 }; 101];
+const NTENS: usize = 5 + 16 * LAYERS;
+
+fn tensors() -> [Tn; NTENS] {
+    let mut t = [Tn { off: 0, kind: 1, scale: 0.0, len: 0, soff: 0, cols: 0 }; NTENS];
     let mut o = tensor_base();
     let mut i = 0;
-    while i < 101 {
+    while i < NTENS {
         let kind = MLM[o]; o += 1;
-        if kind == 2 {
-            // per-row int8: rows u32, rows*f32 scales, len u32, int8 data
+        if kind == 3 {
+            let rows = u32le(o) as usize; o += 4;
+            let cols = u32le(o) as usize; o += 4;
+            let soff = o; o += rows * 4;
+            t[i] = Tn { off: o, kind, scale: 0.0, len: rows * cols, soff, cols };
+            o += rows * (cols / 2);
+        } else if kind == 2 {
             let rows = u32le(o) as usize; o += 4;
             let soff = o; o += rows * 4;
             let len = u32le(o) as usize; o += 4;
-            t[i] = Tn { off: o, kind, scale: 0.0, len, soff };
+            t[i] = Tn { off: o, kind, scale: 0.0, len, soff, cols: 0 };
             o += len;
         } else {
             let scale = f32le(o); o += 4;
             let len = u32le(o) as usize; o += 4;
-            t[i] = Tn { off: o, kind, scale, len, soff: 0 };
+            t[i] = Tn { off: o, kind, scale, len, soff: 0, cols: 0 };
             o += if kind == 0 { len } else { len * 4 };
         }
         i += 1;
@@ -137,7 +144,15 @@ fn wel(t: &Tn, e: usize) -> f32 {
 // looked up per row; otherwise falls back to wel.
 #[inline]
 fn wel_r(t: &Tn, e: usize, row: usize) -> f32 {
-    if t.kind == 2 { (MLM[t.off + e] as i8 as f32) * f32le(t.soff + row * 4) } else { wel(t, e) }
+    if t.kind == 3 {
+        let col = e - row * t.cols;
+        let byte = MLM[t.off + row * (t.cols / 2) + col / 2];
+        let nib = if col & 1 == 0 { byte & 0x0F } else { byte >> 4 };
+        let v = if nib >= 8 { nib as i32 - 16 } else { nib as i32 };
+        (v as f32) * f32le(t.soff + row * 4)
+    } else if t.kind == 2 {
+        (MLM[t.off + e] as i8 as f32) * f32le(t.soff + row * 4)
+    } else { wel(t, e) }
 }
 
 // y[r][o] = sum_k x[r][k]*W[o,k] + b[o], W is [out,in] row-major, over `n` rows.
