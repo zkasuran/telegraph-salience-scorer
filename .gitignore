@@ -7,3 +7,18 @@ bench/tune-results.json
 .scratch/
 __pycache__/
 *.pyc
+
+# This repo hosts dist/ only. Source, research, drivers and tooling live in the
+# private working repo; kept on disk here to build and register, never published.
+module/
+research/
+tools/
+harness/
+bench/
+build_xfmr.py
+deploy.py
+reclaim.py
+reg_batch.py
+reg_xfmr.py
+tune.py
+variants.py

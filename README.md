@@ -1,42 +1,33 @@
 # Telegraph salience scorer
 
-A scoring module for the [Telegraph protocol](https://telegraphprotocol.com): the WASM program a
-Telegraph node runs to decide how good a miner's answer was. It takes the question, the ground
-truth and the miner's answer, and returns one `f32` between 0 and 1.
+Champion scoring binaries for the [Telegraph protocol](https://telegraphprotocol.com):
+the WASM programs a Telegraph node runs to score a miner's answer against the ground
+truth, one `f32` in `[0, 1]` per intent.
 
 Written for Telegraph Hackathon Season I, Track 2 (Script Authors).
 
-## Layout
+This repository hosts the compiled modules. Each binary under `dist/` is registered
+on-chain for its intent, and the node fetches it from a commit-pinned raw URL here, so
+the files are kept stable and are not rewritten.
 
 ```
-module/     the scoring module (Rust, no_std, wasm32-unknown-unknown)
-harness/    Go + wazero harness; loads a .wasm the way the node does
-bench/      benchmark, attack suite and family fixtures
-dist/       binaries as registered on-chain
+dist/    the WASM binaries, exactly as registered on-chain
 ```
 
-## Build
+Each `.wasm` is a `wasm32-unknown-unknown` module exporting the node's scoring entry
+point. A WASI build would carry imports a node cannot bind, so these are freestanding.
+
+## Verify a binary
+
+The keccak256 of any file here matches the hash stored in its on-chain registration:
 
 ```bash
-rustup target add wasm32-unknown-unknown        # once
-cd module && cargo build --release --target wasm32-unknown-unknown
+python3 - <<'PY'
+from Crypto.Hash import keccak
+h = keccak.new(digest_bits=256); h.update(open("dist/<file>.wasm", "rb").read())
+print("0x" + h.hexdigest())
+PY
 ```
-
-Must be the `wasm32-unknown-unknown` target: a WASI build carries imports a Telegraph node
-cannot bind, so it fails to instantiate.
-
-Tunables are `const` values in `lib.rs` that the build drivers rewrite in place, so build
-through `deploy.py <INTENT>` rather than by hand — it patches the profile, builds and runs the
-full gate set.
-
-## Verify
-
-```bash
-cd harness && go build -o harness .
-./harness ../bench/benchmark.json ../bench/attacks.json ../dist/telegraph-salience-scorer.wasm
-```
-
-Exits non-zero if the candidate misses any gate. `bench/report.json` is the last run.
 
 ## Licence
 
