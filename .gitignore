@@ -50,3 +50,4 @@ dist/reclaim/gasc_ms_*.wasm
 rev/*
 !rev/wasmx.py
 !rev/provenance.py
+!rev/stamp.py

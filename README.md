@@ -30,6 +30,26 @@ print("0x" + h.hexdigest())
 PY
 ```
 
+## The terms travel in the bytes
+
+A scoring module is fetched as a bare `.wasm` from a raw URL, so whoever ends up holding
+one has no `LICENSE` and no `NOTICE` beside it. Every module built from 2026-08-30 onward
+carries its licence notice inside the binary, in a custom wasm section named `license`:
+
+```bash
+strings dist/<file>.wasm | grep -A6 SPDX
+python3 rev/stamp.py dist/<file>.wasm --check     # report, change nothing
+```
+
+The section is inert. A wasm runtime ignores every custom section, the exports are
+unchanged and `rank_answer` returns the same `f32` for the same input, checked against the
+unstamped build under wazero. `rev/stamp.py` writes it and verifies it, and the
+registration drivers refuse to register a binary that does not carry it.
+
+Binaries registered before that date do not have the section and are not being
+re-stamped, because changing one byte changes the keccak and would break a live
+registration. Their terms are the ones in `LICENSE-HISTORY.md`.
+
 ## Licence
 
 The modules here are the work of zkasuran under
