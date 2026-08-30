@@ -7,11 +7,12 @@ truth, one `f32` in `[0, 1]` per intent.
 Written for Telegraph Hackathon Season I, Track 2 (Script Authors).
 
 This repository hosts the compiled modules. Each binary under `dist/` is registered
-on-chain for its intent, and the node fetches it from a commit-pinned raw URL here, so
+on-chain for its intent and the node fetches it from a commit-pinned raw URL here, so
 the files are kept stable and are not rewritten.
 
 ```
-dist/    the WASM binaries, exactly as registered on-chain
+dist/         the WASM binaries, exactly as registered on-chain
+LICENSES/     the full text of every third-party licence that applies to a file here
 ```
 
 Each `.wasm` is a `wasm32-unknown-unknown` module exporting the node's scoring entry
@@ -31,4 +32,20 @@ PY
 
 ## Licence
 
-MIT. See [`LICENSE`](LICENSE).
+The modules here are the work of zkasuran under
+[`LICENSE`](LICENSE), the Source-Available No-Derivatives Licence 1.0. In short:
+run them for any purpose including commercially, read them, disassemble them,
+measure them, publish what you find. Do not redistribute them or publish a modified
+copy.
+
+Files up to and including commit `9250395a8131e4f7da51ab548d455c7270d4acd3` were
+released under MIT and stay MIT for anyone who obtained them under it. That grant is
+not being withdrawn. [`LICENSE-HISTORY.md`](LICENSE-HISTORY.md) gives the boundary and
+a command to check which grant covers a file you hold.
+
+Some binaries are built on another author's work. Those keep their author's licence,
+which overrides ours for that file. [`NOTICE`](NOTICE) names each one with its
+upstream and its terms, [`LICENSES/`](LICENSES) carries the full licence texts, and
+[`PROVENANCE.json`](PROVENANCE.json) records the lineage of every published binary,
+derived from the bytes rather than from a hand-kept list, so the record cannot drift
+from what is actually here.

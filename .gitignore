@@ -22,3 +22,31 @@ reg_batch.py
 reg_xfmr.py
 tune.py
 variants.py
+
+# Withdrawn 2026-08-30: 44 binaries that were monotone rescalings of a compiled
+# module published by another author with no licence attached. No licence means no
+# permission to redistribute a modified copy, so they are not hosted here. NOTICE
+# lists them and PROVENANCE.json records why. Ignored so a build script cannot
+# re-add them by accident.
+dist/fork/cid_*.wasm
+dist/fork/crt_n*.wasm
+dist/fork/cve_e*.wasm
+dist/fork/cve_idc.wasm
+dist/fork/cve_r1*.wasm
+dist/fork/cve_r2*.wasm
+dist/fork/cve_rail_*.wasm
+dist/fork/cvew_*.wasm
+dist/fork/cvp_k*.wasm
+dist/fork/fxs_*.wasm
+dist/fork/lts_e*.wasm
+dist/fork/ltw_*.wasm
+dist/reclaim/cve_ms_*.wasm
+dist/reclaim/fxc_ms_*.wasm
+dist/reclaim/gas_ms_*.wasm
+dist/reclaim/gasc_ms_*.wasm
+
+# rev/ is the reverse-engineering and wrapper tooling. Only the two files a reader
+# needs to verify PROVENANCE.json for themselves are published.
+rev/*
+!rev/wasmx.py
+!rev/provenance.py

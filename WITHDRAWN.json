@@ -1,0 +1,1282 @@
+{
+ "note": "The 44 binaries withdrawn on 2026-08-30. Each was a monotone rescaling of a compiled scoring module published by another author with no licence attached, so we had no permission to redistribute a modified copy. They are no longer in the tree. This file keeps the record, with hashes, because removing a file from a git tree does not unpublish the bytes: GitHub still serves any blob at a commit-pinned raw URL. See NOTICE, section Withdrawals.",
+ "withdrawn_on": "2026-08-30",
+ "count": 44,
+ "files": {
+  "dist/fork/cid_c30.wasm": {
+   "bytes": 1075774,
+   "sha256": "0a0f9306d03a30b40532c227e0377f18de503f448412a7158f52995b0f8cde67",
+   "keccak256": "d9e1f77b4347d681e20475a63fa241f8c36f325027fa26eb7839b4c53fe77d65",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cid_c50.wasm": {
+   "bytes": 1075774,
+   "sha256": "559b3da37ffe71884604a9d3dce536bd2bbfd0557f0404ab826487d13fc18c20",
+   "keccak256": "f03127b9668a4c5747df12737898259bfd4d1b7bd1aa6373d2481dca7887e5a2",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cid_id.wasm": {
+   "bytes": 1075740,
+   "sha256": "8d89a601b76aaa989e9b41ae1e573d0a28fc1bb7f750e422785796c24d28c817",
+   "keccak256": "813a56371e46f175cd0a59eb5a2c7fe4bdd4f298138750df080b870d2c99a773",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/crt_n1.wasm": {
+   "bytes": 1075731,
+   "sha256": "e5c5d8cbe0284f44b9e07a5af9ec344658165268891ece7aa08f7a8a141b4cf5",
+   "keccak256": "73647fc1958838bb4f64967d71a6c8fc8809b20bbc0279713c80cae89939ad78",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/crt_n1_cut.wasm": {
+   "bytes": 1075793,
+   "sha256": "75c9dac72eec79fdb91c09f0e18119dc26edc83cf9c403ac9ad7475b89582d13",
+   "keccak256": "1249949202e8de912fc11b364316b459dceeab7dbc429403831dd071ccda20bc",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/crt_n2.wasm": {
+   "bytes": 1075732,
+   "sha256": "ccbcb2630feb8654e740095581b841ca8279fe5c16f65c226fe11f24726afda5",
+   "keccak256": "34d1993b21477cbab4124474c28557820edcd8251557adc4d9e312d5f979c5e9",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/crt_n2_cut.wasm": {
+   "bytes": 1075794,
+   "sha256": "ea0d5f449401e870ed4dfd060d0c181052479ac674c50e4c77ba23c7d864f207",
+   "keccak256": "5243a6cb38e9142f5a7a9ae3830e6cf4f835b507411793bc5b4549cc075c92ce",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/crt_n3.wasm": {
+   "bytes": 1075733,
+   "sha256": "7510dcc5b5073e616ec1667deb678f2a83508323ca1ada885ac79e927f3d52f1",
+   "keccak256": "45312d8e83e1f1e346261b8f3171e6880096c477f9a237339bb7494f70c49469",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_e3.wasm": {
+   "bytes": 1075817,
+   "sha256": "b1a3020966454ff675a10c836d0b5953b7bc849ad1645007381f479e823cd1bb",
+   "keccak256": "59ba4ec0ff2fc2dd38dc924fd472552a18b7cf1af3481463f49bd1f7d6baf71f",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_e6.wasm": {
+   "bytes": 1075817,
+   "sha256": "09bcc1e5ce50e7038f4f81e9440e36631810098eb74e05ad02757d110ea06b2a",
+   "keccak256": "c4d11482136f20ab5071b0a276e54e2e6c908d9aa43761b971d4defa532216c4",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_e9.wasm": {
+   "bytes": 1075817,
+   "sha256": "f1f1c632cb99cf26944cc5436b885af0b40e8400d6785440e16f7b69b824df7c",
+   "keccak256": "ddd2a19df8d3ced3e8bfedf9cb9ea891d7aaf92ed746442394469ff7897981a4",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_idc.wasm": {
+   "bytes": 1075912,
+   "sha256": "a910e19dfead0710807b7bb201bad38e9232a1810d6c9bbc01d728af2a7ff758",
+   "keccak256": "6d6fe38e34aee48e2223bc865108fda65f0ce59ec797608c32dcbb6a1213d6db",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_r1.wasm": {
+   "bytes": 1075869,
+   "sha256": "2922dfc043ce7bcf4e91360fb9925ce646b9af91f80a164b27c3898ec01d01e2",
+   "keccak256": "a54fb1ea286487365138cb6c932ba509cbc3e6e09ebf78d21b4d5cdef2065aa3",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_r1c.wasm": {
+   "bytes": 1075931,
+   "sha256": "cd2d06694a4bb3f1719f6bff370d4ecbb9c8c71552cd0ecd35c11b369beae4c9",
+   "keccak256": "a5912033c43da62b450dc55309fda194c4f39d996f59d663bf8cc66ff810f268",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_r2.wasm": {
+   "bytes": 1075870,
+   "sha256": "a9bf614a7a5861bfcf8b80a0fbb0278a54a1823dee214910dc0776d8befaf6fd",
+   "keccak256": "b637461fd75a2a306d8254e22dc7a4f001af7669778c3bf92b37abad6402c7a4",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_r2c.wasm": {
+   "bytes": 1075932,
+   "sha256": "4aefd87011a9bfc18689b46c15ec156307e0d4dea77b9af0725f905143f0ca36",
+   "keccak256": "1882891cd92d7a784e96e10794db03956cf68952656890aad416af4d8eb1161e",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_rail_s0.wasm": {
+   "bytes": 1075821,
+   "sha256": "b6d781632b6907765f4707a54b84533c307e1d2f6cb31e1388e9cac8359ebf37",
+   "keccak256": "3ccedec0ade9680763fef9217c9e4227e07600ac687ac2b0b0e62038b09d87e4",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cve_rail_s005.wasm": {
+   "bytes": 1075821,
+   "sha256": "65f4f8e59455fbd9bc9ba373e214da72e79fb4d438cc7f61a9a2b2d5fa9f3ae9",
+   "keccak256": "77b7cab9981c10978fc2de79f594c0a6c23561f22b79e79b880e91e1c393d540",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cvew_s005f001.wasm": {
+   "bytes": 1075774,
+   "sha256": "65c510e12bf827c9e8afb887df15348599e2da243e74d55c66f138026b05f06a",
+   "keccak256": "eb434c58440da783448208868e062cb93c751c2087189950e774042f5ff01677",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cvew_s02f002.wasm": {
+   "bytes": 1075774,
+   "sha256": "62d491e953df5e316f384ec27a5006f7278a32f6c82dae17c178843cd8fa40f7",
+   "keccak256": "9ef20fe6c1ce4b2b33bac52ba584472367930bb6ae2bb79ab3a43d306bea5f11",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cvew_s0f01.wasm": {
+   "bytes": 1075774,
+   "sha256": "dc8168022358e46146bdea832a4ee843d010460e378fa630228101d13e686a1b",
+   "keccak256": "0261633fa6ba4fffa0d552d424ad44bf323c795c7fe03a1ce8cc907242c9da9e",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cvp_k2.wasm": {
+   "bytes": 1075747,
+   "sha256": "ee7cf6be8645c3afdb76b147fc0af4cea834d473c212b75f9bf86cbb2b0a3471",
+   "keccak256": "16726082ad0d2c0e45ef42fefc29d900195cf0bb1fb411c538ce59ea8e7d8d72",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cvp_k3.wasm": {
+   "bytes": 1075754,
+   "sha256": "c387c7a81dc6e189e5774dc085af807024b8477e544e10beb9a0843f71f290b4",
+   "keccak256": "6f73193068601f3d6fd03f10c0d22b0e6c4f03b6a7ed5a55e3d1a430836850cf",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/cvp_k4.wasm": {
+   "bytes": 1075761,
+   "sha256": "0451939705df85b781cc38b3bd01ec03f090b0410c2dd67df7a93ee700aa7bd7",
+   "keccak256": "70e2e2e1714c09712e10347b3a358d3c8117d9d747b8c96d764a778c665f3de9",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/fxs_03.wasm": {
+   "bytes": 9744,
+   "sha256": "441be3169c5aa6b2d0fd122995105c5bf158a7f99689ab3cd8d7f1040469fcfb",
+   "keccak256": "53cfb3cf459b0d78f62087209727c6fe8b274504f623acaf08702695a3db0ebb",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "currency_exchange_scorer15extract_numbers",
+    "currency_exchange_scorer6tokens",
+    "currency_exchange_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/fxs_06.wasm": {
+   "bytes": 9744,
+   "sha256": "7d1c1865bef15c39da1df0314229dd567a03fec2acb3e6e15454efdae64b5b69",
+   "keccak256": "d287799d8a76bd4f6c22ab3e0c12b40f586a28e13216752e4ea76b29df23ff35",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "currency_exchange_scorer15extract_numbers",
+    "currency_exchange_scorer6tokens",
+    "currency_exchange_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/fxs_099.wasm": {
+   "bytes": 9744,
+   "sha256": "7d212828d8bb755215536b0e6e23aa34b65cf65fdc527c07d67abb9156686a1d",
+   "keccak256": "0eb41133e0f4a17d83f4e3a2a16050eef7444573f43a541bcda3c249a045ee7e",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "currency_exchange_scorer15extract_numbers",
+    "currency_exchange_scorer6tokens",
+    "currency_exchange_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/lts_e3.wasm": {
+   "bytes": 5114,
+   "sha256": "ed060cce0fac4badf5c76648dff5a81c8d45ccd1734976d22276236a58485943",
+   "keccak256": "96b7ecbbce75018596a40e86b5562b847b84fcc32d6dc46c6b7b87e0555431ad",
+   "data_digest": "c59a83e73490",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "language_translation",
+    "author": "0x22db3a96",
+    "url": "https://github.com/seekdaseek/telegraph-scorer",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/lts_e6.wasm": {
+   "bytes": 5114,
+   "sha256": "9407b62d1980c8a2e9cc7622da33485d02c390007695d02ab138e64b916ced9e",
+   "keccak256": "106360773c2c6646bfd7a4fdca579989d01a00716ac37c8337de611f24d63237",
+   "data_digest": "c59a83e73490",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "language_translation",
+    "author": "0x22db3a96",
+    "url": "https://github.com/seekdaseek/telegraph-scorer",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/ltw_c15s30f001.wasm": {
+   "bytes": 5118,
+   "sha256": "caf202108ca0d30c7dfe922e4993d930aee5a7ca754e10fbe3b14d278b25c1d5",
+   "keccak256": "1d538b03c0f927474cf56c39e92c83cc6e850c3ca0f969ee4563bbcbc0ec81d7",
+   "data_digest": "c59a83e73490",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "language_translation",
+    "author": "0x22db3a96",
+    "url": "https://github.com/seekdaseek/telegraph-scorer",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/ltw_c30s10f02.wasm": {
+   "bytes": 5118,
+   "sha256": "079804255964d0f1be6362d2b3ac1316f473e4eba2a1e0222c42553cbf66b8bf",
+   "keccak256": "3cea21542896412008b4233ba14fd630446bd97721e6e40f39ccaad5f935ca37",
+   "data_digest": "c59a83e73490",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "language_translation",
+    "author": "0x22db3a96",
+    "url": "https://github.com/seekdaseek/telegraph-scorer",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/fork/ltw_c50s10f02.wasm": {
+   "bytes": 5118,
+   "sha256": "ce74feb5d24870bf6bdd36db338818285d0a5769c4b3f2484fa75b9b2550279d",
+   "keccak256": "54179ed4a43808c6cbe8111425a708b5bcaeee4b172656ad2f43fd5e11b865bd",
+   "data_digest": "c59a83e73490",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "language_translation",
+    "author": "0x22db3a96",
+    "url": "https://github.com/seekdaseek/telegraph-scorer",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/cve_ms_06.wasm": {
+   "bytes": 1075759,
+   "sha256": "c41d0a6d60e30653591e2776af32880960e7854511102c84323af0e03f70a73d",
+   "keccak256": "74b265976befef570d578b418ad7588a2da8b9f9853f382e39f02eff4e9fdaeb",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/cve_ms_08.wasm": {
+   "bytes": 1075759,
+   "sha256": "9dbd88aa51910dff60b7bcb0fceedf35424c54dd7775570b07d3a3a22875df52",
+   "keccak256": "c290fc4e7679a6ea0688411e7051e9d8514fccd9570fef61bde9eb6e0e6ad12f",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/cve_ms_10.wasm": {
+   "bytes": 1075759,
+   "sha256": "3a75b2047229348cfdca43d6c167f9f63912b30cc0ef2fa09ded0588900f6e57",
+   "keccak256": "66439dd479d6f0b6259c65c23be02641c170b6da0a63394593c71af5208dfa56",
+   "data_digest": "5453d6ca8dba",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "patchsignal",
+    "author": "0x236891fe",
+    "url": "https://169.58.206.25.sslip.io/telegraph/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/fxc_ms_07.wasm": {
+   "bytes": 9740,
+   "sha256": "56f3d47ca8b4c0e29ce4000f14d0c11a2193889e9e8f26f3ae70c55946f0a6e1",
+   "keccak256": "1f37d777fbb199020b8f567f43c52e9dde39749019e6c80dbf12453c8484964c",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "currency_exchange_scorer15extract_numbers",
+    "currency_exchange_scorer6tokens",
+    "currency_exchange_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/fxc_ms_08.wasm": {
+   "bytes": 9740,
+   "sha256": "1aa2ee932d10fd2f5e32db6c064d00d85684f7e1b8d7d5d572656437e1debe33",
+   "keccak256": "95987325d26c7bdaee5015d2c2f50809a4140e0b0550fb75682f9dad42f62d96",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "currency_exchange_scorer15extract_numbers",
+    "currency_exchange_scorer6tokens",
+    "currency_exchange_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/fxc_ms_09.wasm": {
+   "bytes": 9740,
+   "sha256": "87aa84e2c69686bccf145cbea452bdb26b79e9e804c039a5b32a14c3f3bc4c83",
+   "keccak256": "70cd908d3f49f7caa061e3b8e7935c100718d5b0da8282012411fbbc3bfc2b53",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "currency_exchange_scorer15extract_numbers",
+    "currency_exchange_scorer6tokens",
+    "currency_exchange_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/gas_ms_06.wasm": {
+   "bytes": 9708,
+   "sha256": "34f29c3b0a8ec40f01d0dfa567c3cc0c6585913eee709d784b582f4512264d99",
+   "keccak256": "952a9165316133b74fac954db7ba6cf3f5c23fa321eecb50c9a3cb4ca41b5116",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "gas_price_scorer15extract_numbers",
+    "gas_price_scorer6tokens",
+    "gas_price_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/gas_ms_08.wasm": {
+   "bytes": 9708,
+   "sha256": "cca8c123859955b1a9ac25d877fe519e3ca327c9d97a612a3f180d5c887760b4",
+   "keccak256": "e2a1ae1489a5440cad5d0aa7cb4acffeeb840934416d079189634edfbc18b736",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "gas_price_scorer15extract_numbers",
+    "gas_price_scorer6tokens",
+    "gas_price_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/gas_ms_10.wasm": {
+   "bytes": 9708,
+   "sha256": "2086f0ab206572ee3f766670bbdd979603dbbcaf914ee66ad4bb4f9fbb269aa2",
+   "keccak256": "26100d9224bdc091eb6e7f9c24c6824cbc443be89c27a1a2d45fe88826f77e41",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "gas_price_scorer15extract_numbers",
+    "gas_price_scorer6tokens",
+    "gas_price_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/gasc_ms_07.wasm": {
+   "bytes": 9708,
+   "sha256": "c3547af51a8612ced29e4b9299aca149bda3a48dff995b32f6af99f95518b239",
+   "keccak256": "58ce1dac7a87b5aa80042bbd29741c6b900d4faf3cf7184d762b418b29e848ce",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "gas_price_scorer15extract_numbers",
+    "gas_price_scorer6tokens",
+    "gas_price_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/gasc_ms_08.wasm": {
+   "bytes": 9708,
+   "sha256": "4b56c4f68db8429ffd3f5322fc1764d75be077d1fcc6240827123edf522c50b4",
+   "keccak256": "fbdcf1571b05360c7d9469130b279f7c86029af02d7e13e2b61a15eab3b07d6f",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "gas_price_scorer15extract_numbers",
+    "gas_price_scorer6tokens",
+    "gas_price_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  },
+  "dist/reclaim/gasc_ms_09.wasm": {
+   "bytes": 9708,
+   "sha256": "dba33d8e2cea2a8ae02bed23055c60d4890957be61b9d73f452006271d4658d4",
+   "keccak256": "7d636da223f2b2052febc3ef55e0c974b6dc5904ff5a2c82d9f3478c490ccc18",
+   "data_digest": "383fd369b20e",
+   "our_intent_marker": false,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [
+    "___rustc17rust_begin_unwind",
+    "gas_price_scorer15extract_numbers",
+    "gas_price_scorer6tokens",
+    "gas_price_scorer9normalize"
+   ],
+   "exports": [
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "binary_wrap",
+   "upstream": {
+    "name": "gas_price_scorer / currency_exchange_scorer",
+    "author": "0x5d27fee6",
+    "url": "https://pub-307068a26c7b48ab80b3d2ccced8a7be.r2.dev/artifact/",
+    "licence": "none published",
+    "copyright": "unstated",
+    "kind": "binary wrap of a compiled module we did not write",
+    "ours": "a monotone rescaling appended to their output",
+    "withdrawn": true
+   },
+   "licence": "none published"
+  }
+ }
+}

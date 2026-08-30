@@ -1,0 +1,166 @@
+# Third-party notices
+
+The scoring modules in this repository are the work of zkasuran and are licensed
+under [`LICENSE`](LICENSE), except where this file says otherwise.
+
+Some binaries under `dist/` are built on another author's work. Every one is listed
+below with its upstream, that upstream's licence and the author's own copyright
+line. Nothing here is presented as our own algorithm.
+
+Where the upstream is MIT, the MIT terms continue to apply to the upstream portions
+of the file and are reproduced in [`LICENSES/`](LICENSES) as MIT requires. MIT
+permits sublicensing, so `LICENSE` covers our own additions and the compiled result,
+while nothing in it restricts anyone's rights in the upstream work: you can always go
+to the upstream repository and build it yourself.
+
+Where the upstream published no licence at all, we had no permission to redistribute
+a modified copy and hosting one here did exactly that. Those files are being
+withdrawn. See **Withdrawals**.
+
+Full lineage per file, machine readable, is in [`PROVENANCE.json`](PROVENANCE.json).
+It carries the byte fingerprint used to group a build with its base, so any claim
+below can be checked against the bytes rather than taken on trust.
+
+---
+
+## Modules built on another author's source
+
+Each of these three upstreams is MIT. MIT permits modification, redistribution and
+sublicensing, so these builds are lawful and stay published. Their upstream notices
+and copyright lines are preserved here and in `LICENSES/`, which is what MIT asks.
+
+### `assay` (FACT_CHECK)
+
+MIT © [GreatSage-dev](https://github.com/GreatSage-dev),
+<https://github.com/GreatSage-dev/Assay>
+
+Files: `dist/reclaim/fact_pure.wasm`, `fact_b0002.wasm`, `fact_b0005.wasm`,
+`fact_b001.wasm`, `fact_s002.wasm`, `fact_s005.wasm`, `fact_s01.wasm`,
+`dist/xfmr/fact_fork_stretch.wasm`.
+
+These are rebuilds of the Assay scorer with its final output bands widened. The
+scoring model, the fact tokeniser, the polarity logic and the vocabulary are
+GreatSage-dev's. Our change is the calibration curve. The Rust symbol names of the
+`assay` crate are still in the binaries, which is how you can confirm this from the
+bytes.
+
+### `telegraph-wasm-scoring` (CHAT_COMPLETION)
+
+MIT © 2026 telegraphprotocol, published at
+<https://github.com/ssoni4751/telegraph-wasm-scoring>
+
+Files: `dist/xfmr/chat_fork_k8c50.wasm`, `chat_fork_k12c45.wasm`,
+`chat_fork_k16c40.wasm`, `chat_fork_k30.wasm`, `chat_fork_k50.wasm`,
+`chat_fork_k60.wasm`, `chat_fork_k80.wasm`, `chat_k10c50.wasm`, `chat_k16c40.wasm`,
+`chat_k16c50.wasm`, `chat_k16c60.wasm`, `chat_k24c50.wasm`.
+
+Rebuilt from that source with `--features real_weights`, then its composite score
+passed through a monotone logistic sharpener we added. The embedded transformer
+weights, the BM25 path and the scoring composite are upstream. The `embed`,
+`bm25_score`, `cosine_sim` and `rank_answer_cached` exports are upstream's and are
+left in place.
+
+### `amanat` (GAME_RESULT)
+
+MIT © 2026 Pugar Huda Mantoro, <https://github.com/PugarHuda/amanat>
+
+Files: `dist/xfmr/game_fork_pivot10.wasm`, `game_fork_stretch.wasm`.
+
+Rebuilt from that source with `--features verdict`, then a pivoted smoothstep
+applied to its output. The verdict model is upstream's, including its
+`breakdown_answer` export.
+
+---
+
+## Modules built on another author's compiled binary
+
+These are monotone rescalings of a registered binary we did not write. We did not
+have the source. The upstream author's rights in the compiled work are unaffected by
+ours and we make no authorship claim over the scorer inside.
+
+### `patchsignal` (CVE_LOOKUP)
+
+Author `0x236891fe`, registered on Telegraph and served from
+`169.58.206.25.sslip.io/telegraph/`. No licence was published with it. The binary was
+supplied to us by its owner, who directed the reverse engineering.
+
+Files: `dist/reclaim/cve_ms_06.wasm`, `cve_ms_08.wasm`, `cve_ms_10.wasm` and the
+`dist/fork/` builds sharing its 1,054,904 byte data section: `cid_*`, `crt_n*`,
+`cve_e*`, `cve_idc`, `cve_r1*`, `cve_r2*`, `cve_rail_*`, `cvew_*`, `cvp_k*`.
+
+### `gas_price_scorer` and `currency_exchange_scorer` (GAS_PRICE, CURRENCY_EXCHANGE)
+
+Author `0x5d27fee6`, served from a Cloudflare R2 bucket. No licence was published
+with it. Its Rust symbol names are still in the binaries.
+
+Files: `dist/reclaim/gas_ms_06.wasm`, `gas_ms_08.wasm`, `gas_ms_10.wasm`,
+`gasc_ms_07.wasm`, `gasc_ms_08.wasm`, `gasc_ms_09.wasm`, `fxc_ms_07.wasm`,
+`fxc_ms_08.wasm`, `fxc_ms_09.wasm`, `dist/fork/fxs_03.wasm`, `fxs_06.wasm`,
+`fxs_099.wasm`.
+
+### `language_translation` (LANGUAGE_TRANSLATION)
+
+Author `0x22db3a96`, <https://github.com/seekdaseek/telegraph-scorer>. That
+repository publishes no licence file, so no licence is granted by it.
+
+Files: `dist/fork/lts_e3.wasm`, `lts_e6.wasm`, `ltw_c15s30f001.wasm`,
+`ltw_c30s10f02.wasm`, `ltw_c50s10f02.wasm`.
+
+**These three upstreams published no licence.** Two of the authors are identifiable
+and one supplied their binary to us directly, but "no licence" means no permission to
+redistribute a modified copy and hosting these files here does exactly that. All 44
+of them are being withdrawn: see **Withdrawals** below.
+
+---
+
+## Embedded model weights
+
+Some builds embed sentence-embedding weights, quantised and repacked into a fixed
+binary layout. The layout and the no_std inference code are ours; the weights are
+not.
+
+| Weights | Source | Licence | Text |
+| --- | --- | --- | --- |
+| all-MiniLM-L6-v2 | `sentence-transformers/all-MiniLM-L6-v2` | Apache-2.0 | `LICENSES/Apache-2.0-all-MiniLM-L6-v2.txt` |
+| gte-small | `thenlper/gte-small` | MIT | `LICENSES/MIT-thenlper-gte-small.txt` |
+| GloVe 6B vectors | Pennington, Socher and Manning 2014, Stanford NLP | PDDL-1.0 | `LICENSES/PDDL-1.0-GloVe.txt` |
+
+Apache-2.0 requires that its notice travel with the work, which is what this entry
+and that licence file do.
+
+---
+
+## Withdrawals
+
+The 44 files in the three binary-wrapped families above have been removed from `dist/`.
+The two on-chain registrations that still rest on them (CVE_LOOKUP reg 1947, GAS_PRICE
+reg 1535) are being replaced with our own builds.
+
+Removing a file from the tree does not unpublish it. GitHub keeps serving any blob at a
+commit-pinned raw URL and the registrations point at exactly those pinned URLs, so the
+honest statement is that these bytes were published here and stay reachable through git
+history. That is why they are listed rather than quietly deleted.
+[`WITHDRAWN.json`](WITHDRAWN.json) keeps the full record, every file with its hashes and
+its upstream, so the withdrawal is auditable rather than a gap.
+
+If you are the author of any binary named above and want it handled differently, open an
+issue on this repository.
+
+## How to check any of this
+
+Every claim above is derived from the bytes, not from memory:
+
+```bash
+python3 rev/provenance.py > PROVENANCE.json     # regenerate from dist/
+python3 -c "import json; print(json.load(open('PROVENANCE.json'))['counts'])"
+# {'own': 977, 'source_fork': 22, 'binary_wrap': 0}
+```
+
+`PROVENANCE.json` records, per file, the data-section digest that groups a build with
+its base, whether our own `TELEGRAPH_INTENT` marker is present, whether the module was
+post-processed with walrus (which means we did not compile it) and any upstream Rust
+crate symbols left in the binary. A file we authored has our marker and no upstream
+symbols. A fork carries the upstream's data section. A binary wrap has neither our
+marker nor a base we ever compiled, which is why `binary_wrap` reads zero now: all 44
+are out of the tree.
+
