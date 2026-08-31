@@ -8,7 +8,7 @@
   "leftover_crate_symbols": "Rust crate names the upstream author left in the binary"
  },
  "counts": {
-  "own": 977,
+  "own": 1110,
   "source_fork": 22,
   "binary_wrap": 0
  },
@@ -2754,6 +2754,1713 @@
    "lineage": "own",
    "licence": "LicenseRef-zkasuran-SAND-1.0"
   },
+  "dist/lock/c2_t1e4.wasm": {
+   "bytes": 1040337,
+   "sha256": "3e13e1bb19e2f88ed0222e9e609748a243dfc702dd52a7adb57c46a352a4d903",
+   "keccak256": "39a5dd0a6a6843fd38131b03d98d31d09eb5a3a9b6343519f08cb3fcab849623",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/c2_t2e4.wasm": {
+   "bytes": 1040337,
+   "sha256": "78bfd2400795b991c8b46577bfca7eac78286e0ee81876c7d2278d53bc42887f",
+   "keccak256": "dbef636d3f8c3273749ffacb5b6c40ee029e61e929553612b215470a674c2843",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/c2_t3e5.wasm": {
+   "bytes": 1040337,
+   "sha256": "323f2b4b997104455089ba4de231991f47efd238505493cb1c856746433b878d",
+   "keccak256": "a319e37ed0bc969a6f1f3c5336ee3b3f12b64f3510dfb49db4a92891469d315e",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/c2_t55.wasm": {
+   "bytes": 1040337,
+   "sha256": "da161b7741191d3e2c3869865b62b54b85f81fe3ffd526763752fcf9aca141cf",
+   "keccak256": "d556bd208308110e30ec4cb13fe787b362ce4381dd964ed55de7632dd4f87c28",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/c2_t5e4.wasm": {
+   "bytes": 1040337,
+   "sha256": "da4d5fc53453af81aef75adf2cbafb2973fa4f4a8ebf71472cc7ee7dcaa45af7",
+   "keccak256": "0e422fa458dc9afbb86083b6917829e54af598949d6a238b1a94326458db7bbe",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/c2_t65.wasm": {
+   "bytes": 1040337,
+   "sha256": "86665235759cf3d3c6698b8804144240cc4586caaebb816c57c36d2b6b8b91f2",
+   "keccak256": "fa614cda0d9fa26f67069bf88fa9020ec42b00bf99876cbde9253755ea578ac5",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/c2_t75.wasm": {
+   "bytes": 1040337,
+   "sha256": "2adaeee6b259dba7f7cad1d69a857a78abfe55b65e3c6d5deb3c50a633131b4a",
+   "keccak256": "6e7786a60021c27f2860d4949ea1d4282900d6e153118ebbbb3306981860b5e2",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/c2_t85.wasm": {
+   "bytes": 1040337,
+   "sha256": "97168bf1a5e14be7fb0176cc27343ecfbc1ba08016b60dc417d77c1743ec82e2",
+   "keccak256": "0830afcd5b00ae2185a1c8e6dad7cae3eb2d0663b75b2a8bc6d480722a34d6e8",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/c2_t8e5.wasm": {
+   "bytes": 1040337,
+   "sha256": "6aa63beec7d8d1b3a1746b681731b817f6d3a66aead6e8faf73e3256d8176e7d",
+   "keccak256": "b0b07ba283edddc92bf8eaa0a83c305bd7892266bea2bc46786237381745fe89",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cmod_r5.wasm": {
+   "bytes": 23988924,
+   "sha256": "37d4757872405153adbddf75fe2d2153993485bf5c6bb8aebba5ddc456e3310a",
+   "keccak256": "bc4ff2174ff753212f487143dce094345302efa499f3e78344432b7c8673f0d1",
+   "data_digest": "9ee42c7fa565",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cry_r5.wasm": {
+   "bytes": 1072322,
+   "sha256": "6a8254ce5b33a1f32d022ce73f2693d7914638e3a619b35bcc825e710259aa7d",
+   "keccak256": "db52505158b459f7ce90dd6d429f07afcc502a861380e97f9e96a89e1e291672",
+   "data_digest": "a73aa5b585cb",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cry_r6.wasm": {
+   "bytes": 1072322,
+   "sha256": "c9588dfac5c13ea409a9ecb57e65f13cabc8f993549f5fcec6227f3e1e9474c4",
+   "keccak256": "3b55dcd261486930fdda38344d81f97c5e8fa72a36f29cbd9dbdda15137c3c40",
+   "data_digest": "a73aa5b585cb",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cv_f45.wasm": {
+   "bytes": 23990241,
+   "sha256": "1fde507121d1dac97e5193594e92e0a94dd215e66df8f1daf339d9a41b598514",
+   "keccak256": "712a98442741ad47bb11d78e1205b049995be5491846b3b7df22e3b6caad02b0",
+   "data_digest": "a67df52dd813",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvh_0.wasm": {
+   "bytes": 1075013,
+   "sha256": "d70fac7ca925c1a88f767954d2c8423c9702e986210be1343664e1fdf4630939",
+   "keccak256": "4b4c178631e88eaa25dfaa03090a54bb3d68eba8970b827a4f29252449b7c55f",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvh_1.wasm": {
+   "bytes": 1075013,
+   "sha256": "0ae763f02aa63fb36abf3e50c6b678aaec387356df82242a100e5aeea2b1250c",
+   "keccak256": "41d82d3ad6cb154220a68264eb37a5eda6a5b220bc3a71edcac59dcd339ac079",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvh_2.wasm": {
+   "bytes": 1075013,
+   "sha256": "c26c8e5feadc29626b6d195a6fd3d901bb573f21acd8f43c70ef55d8c35eeadb",
+   "keccak256": "6f58bbf659e040c828372108b8a6d97dbb29ad6d785c2aeb5369a7c4ee913b91",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvh_3.wasm": {
+   "bytes": 1075013,
+   "sha256": "bd291e9fb94a8f4badde189e165fb1acf704b98e9fb38060073a80a4fe5e90a9",
+   "keccak256": "e34895fc5830c8937aa548805ff6dc2ad115e2b75545c3258eba65b127d1c63e",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvh_4.wasm": {
+   "bytes": 1075013,
+   "sha256": "144da0a9303cc484e0af4b65a98fd5f0dbe4c8bc7f1eda6248db2e7df45a8346",
+   "keccak256": "949d02a8fdbe2ca93d41594c932c8c60a658f862010a51d1c2d43e548846ed06",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvh_5.wasm": {
+   "bytes": 1075013,
+   "sha256": "eb430bf4608dd5de210e99a7b805ac9e43040468515f2ede63407e48db396077",
+   "keccak256": "f7b63624e63a8f22003005e483286c0393a9603964165961dc4db1b9311ebac5",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvh_6.wasm": {
+   "bytes": 1075013,
+   "sha256": "d8819e019b8f625cce088bee125d146a51aaf76989169ab6ca7a116b5ae27e02",
+   "keccak256": "21bb563b6aeaafc288ed92c9a24d56a0d2fac1fcb06c05aef4fdfe05c505d81b",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvh_7.wasm": {
+   "bytes": 1075013,
+   "sha256": "1b8341b7685ed9562fdcad3e5e41e7956b21c3f7c54dfb8e44d5fbdf7c502048",
+   "keccak256": "7754fd9284e32e3b17b8c9300a59f437a7686c81fa2a95bc0a4e837d7415deff",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvn_n0.wasm": {
+   "bytes": 1075028,
+   "sha256": "a7f2af34a1e80907609cc2f2c93ba0db3448c020e5d6d190b920bac46130cb52",
+   "keccak256": "bd850063de3296972c6f2ffcd5683d2fe9fcd666c0fea19cc8e0e539e40df688",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvn_n1.wasm": {
+   "bytes": 1075028,
+   "sha256": "a331d3d7b0fd391c48b4d8d39829f178caecddcab527d2c6b74677ec06ecb9eb",
+   "keccak256": "eaed4b430959807e6eb10b63389cee35bcf683227440645de929efa8a9dbdd27",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvn_n2.wasm": {
+   "bytes": 1075028,
+   "sha256": "5f0e0438153491f4bb85481dcffe1da7c3214ee84e6a5291252b4109a661e2a5",
+   "keccak256": "aac08edc5f8d30b70d38c791cb6a5d57c0a48753210c1419cd308ff57cd4f282",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvr2_0.wasm": {
+   "bytes": 1074515,
+   "sha256": "cfe15ab60c9ba7780bda12f6716fee283d4c98d1e535da287dd70335fb417159",
+   "keccak256": "2ce67b7438379392792806759fe69c1db91fe0a03dc0840a53b0350bd79d8b00",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvr2_2.wasm": {
+   "bytes": 1074515,
+   "sha256": "14ff84d402fb13d261603d5f80e05df4ad898c87cecd66462666adeda1465dd7",
+   "keccak256": "f3b5df05075d4dd27b77bb9ebc41a63b1f7179bd3d3d37547b943646ca872d86",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvr3_0.wasm": {
+   "bytes": 1074516,
+   "sha256": "d44a6078e8912b9f03b686f2da715b5f059ff448734be8d127e8adebf197c82d",
+   "keccak256": "0c8439a22c03b925f4638f4c84205ab8b06d2014efac442e1aa780aec8b1dbfc",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvr3_2.wasm": {
+   "bytes": 1074516,
+   "sha256": "65806c18da104b5cfc20086d71d63f8bc1ae165cc2442db8721a777c6c878963",
+   "keccak256": "722ab40cae320d48f7b1ebc95d08ee93c1b1f4f7b23ed1ec784afbb45379ed5f",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvr4_0.wasm": {
+   "bytes": 1074517,
+   "sha256": "337437cd4abbc469f6e96fd326767e6c7758693d48984bb53496816e00028d9e",
+   "keccak256": "b0daa6280caad9736a6fdad353d8d78330f5028e7f6ff962518840b0c1003f78",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/cvt_r5.wasm": {
+   "bytes": 1075028,
+   "sha256": "49f6429ce63ee005cd46fa6181956b7317132dc36ec26f4001b246535c297ebb",
+   "keccak256": "ed668b690dd0282014c8241d3d5f2ae87dcb33c8e7306f9693a20c2f0ecee73d",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/iv_n0.wasm": {
+   "bytes": 23988924,
+   "sha256": "8071e92d8ea42efa0b773ca1b11f1e9e2db6125ecf263005432af33aceafe314",
+   "keccak256": "fc7ada969b72c36c5365b71fc0639177d5453d66da25b5fe1499fdc293df779a",
+   "data_digest": "7faf359ad679",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/iv_n1.wasm": {
+   "bytes": 23988924,
+   "sha256": "6ebcdf57b32629a963de59a3234add9af09601cb31426615d9bfafb349f1134e",
+   "keccak256": "4f7391fc7e2341699fb30b78e879c837fc728b986ada0d9922495ba0d4e6503b",
+   "data_digest": "7faf359ad679",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/iv_n2.wasm": {
+   "bytes": 23988924,
+   "sha256": "74102098d1b7693c9872902a7c1c115dcdb6d4fac363e76d14ceca750ce266d3",
+   "keccak256": "41431071e536ebcc0a55b27df5957ba922b4206cb5bee8b1faf47e0fbb7fe960",
+   "data_digest": "7faf359ad679",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lg2_n0.wasm": {
+   "bytes": 23986957,
+   "sha256": "717896ea6d9793fd67c53bf97245098c0a8931646d42b8fd2b88b058b2ed0dea",
+   "keccak256": "15391b1fd9a66cec807ec95be655aae08793d45f40a554a1381fda5f7284177a",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lg2_n1.wasm": {
+   "bytes": 23986957,
+   "sha256": "f924928f254b915b061be2f5ed29114b8be986479bfecee39eca07f0a13c770a",
+   "keccak256": "fadd25112cf57b6ef5ffef68e5aa11eca15df4fcd5568fa6cb726afd4733fa85",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lg2_n2.wasm": {
+   "bytes": 23986957,
+   "sha256": "7da9e9a6df298e0cf3fed4e68c62b3b43b9ef42c3556f769e5d153f6e989005c",
+   "keccak256": "9bcdd963435bfe1e87e9d269fd280541a741c6a43569b0253a7699277a2110ab",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lgA.wasm": {
+   "bytes": 23986957,
+   "sha256": "b42c6b4f67173e423417fe9d5274909c20e728a925418771d1eb01546c8b736d",
+   "keccak256": "8532c69cfd7d066b8fedd9b1925c2df2bec3c2e613ba1b08734dbae0ea92ab08",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lgB.wasm": {
+   "bytes": 23986957,
+   "sha256": "cc36a9782bf407e4a575c5fda52ae03e6a5fa69f666ab27fe1948d436fff707b",
+   "keccak256": "e4e737658926a16e1313edd9cc24e3f77f72f86c6b5616cfac8889ac8a5d8f13",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lgC.wasm": {
+   "bytes": 23986957,
+   "sha256": "bc4872f3a4a94c3a31f4b9d1518b3d830fe7b3ea172ae71338c917565dca3a40",
+   "keccak256": "8eda278ccbf77dd741dcacfc928423867e09c44661d95365568726979348aa69",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lgD.wasm": {
+   "bytes": 23986957,
+   "sha256": "c7e49a1d9728d61c1ce845d43502cc0b63d319ddf3e00c1530274317720d7fff",
+   "keccak256": "7ddd7e30b3a2434e7a7d88b57880fedd1c1aa7de032b4e69e86c7311fa521a2c",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lge_0.wasm": {
+   "bytes": 24205115,
+   "sha256": "19ff80d41db34938ca9665eb3ca34339fa4feb397bf5cc39c11a8d6fcc66d56f",
+   "keccak256": "f6fe4b75f8f4049610b6d48250451234c389387287a059e0c995c4b1ff9a4e0e",
+   "data_digest": "56673a1c6dc3",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "bm25_score",
+    "breakdown_answer",
+    "cosine_sim",
+    "dealloc",
+    "embed",
+    "memory",
+    "rank_answer",
+    "rank_answer_cached"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lge_1.wasm": {
+   "bytes": 24205115,
+   "sha256": "1efbf7e6860b30e6f796ffc7e578c42506642d0b5338447bf7112ea5144a7659",
+   "keccak256": "64f598fa1b2b807169141fd4c07fc76aebc66f0bdf5eabd4e11095276c61e9bf",
+   "data_digest": "56673a1c6dc3",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "bm25_score",
+    "breakdown_answer",
+    "cosine_sim",
+    "dealloc",
+    "embed",
+    "memory",
+    "rank_answer",
+    "rank_answer_cached"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lge_2.wasm": {
+   "bytes": 24205115,
+   "sha256": "d60bb028d868f4d232731db89813dc18d4d36df5fbb1c1fea8166ac17d9e7590",
+   "keccak256": "50c499835cd7ca02266163540c58bf533cee1a0e712efaee43f852dd4e830e3a",
+   "data_digest": "56673a1c6dc3",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "bm25_score",
+    "breakdown_answer",
+    "cosine_sim",
+    "dealloc",
+    "embed",
+    "memory",
+    "rank_answer",
+    "rank_answer_cached"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lgen_r5.wasm": {
+   "bytes": 23986957,
+   "sha256": "e0d8834711c9703d7a297f209551f39883aeb1ed55432fbd24b3a99be5dc646c",
+   "keccak256": "0e1a5fd32ed8dbb97426e2cb82925a984e9edae4691c8df6539932b7f780c843",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lt_c0.wasm": {
+   "bytes": 1040337,
+   "sha256": "d89e2542a1b7af1f9bbaba9c903e252b0d43a143d88a63181e370c8553476065",
+   "keccak256": "89a78498e3f7525ab3701d764d423a24140f2d282c5ae5ed0896b97013e194ee",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lt_c1.wasm": {
+   "bytes": 1040337,
+   "sha256": "749013a6b8f1bd574ee9b1dcc6a0e642607947246f17ef71c52ca4bae8cbea2b",
+   "keccak256": "d101b988b063690f7818e6fe150917f5cc9fac2646022047cc73af5c8829e045",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lt_c2.wasm": {
+   "bytes": 1040337,
+   "sha256": "6763d9ec5f374ea068e434bb75097b261ab403a9db51bde369838f2a29f0d1c0",
+   "keccak256": "be1792f1d47e7e107e72a371e98063b545c603c504d71d3c55e2cbfd5d93a4fe",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lt_d0.wasm": {
+   "bytes": 1040337,
+   "sha256": "a04830eec532b7af8dae1b75e347ad4074bbed7a148cf12ab03a6a542d8e058f",
+   "keccak256": "6b96be2ff67c5273a2a17ea50480cf10603a4683e1d161a8e771363c3636607b",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/lt_d1.wasm": {
+   "bytes": 1040337,
+   "sha256": "ba0ebc171a6cfce1039186a95be3f2863c7894b06e0d260bca1217b34486b799",
+   "keccak256": "fde09e1db56aa4fae73cb0a2a6efe79a541d5bafb9357d2988031186e356beaa",
+   "data_digest": "d5cbb27ed6dc",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/mac_q0.wasm": {
+   "bytes": 23990245,
+   "sha256": "70de03eb5f94efcf32842a0c593fc394e68e30d9536a3e9e7b15e8c5222690c0",
+   "keccak256": "12284e1f12d1475dc73ca87ad3d89a3fee0b564bd0e51134277a4c2e650ac8c3",
+   "data_digest": "2e5182ffc781",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/rs_q0.wasm": {
+   "bytes": 23990239,
+   "sha256": "b38b4e208bc69fdbbc4a80925059bcfd1c61a861965dca6998068ff81187ef42",
+   "keccak256": "e9f4608e0a64bbe4a988261774917e9d44dcb8cba93272297ecb6208d7d91d92",
+   "data_digest": "a57a5d0c257e",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sg_0.wasm": {
+   "bytes": 1072674,
+   "sha256": "c23b72d9922ccc4a7724a71dd95037d935814b5ad0191f02f0764be3a1997fb5",
+   "keccak256": "5a84698c0ecd56c5fa41e008937bb8ab1d7af533b2a7d25978654edebb122f75",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sg_1.wasm": {
+   "bytes": 1072674,
+   "sha256": "9d6606e48184897dc02c1a8fde3cac7ed000b7debfd39c09f4cd689640b70b41",
+   "keccak256": "a786f4154eb5fc6557a24c0128f98d1e81b37101a8207a3609721c3159f1c230",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sk_0.wasm": {
+   "bytes": 1072678,
+   "sha256": "911c34c97536cd435fb69929ae6b32d48ff942972c0c165627675bf96fd04296",
+   "keccak256": "12d9ae3709a25f16be0fb6b0d014669ea0a3e963f04fbb66205e59caa6f8c5ae",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sk_1.wasm": {
+   "bytes": 1072678,
+   "sha256": "39affce934bec2921d49c948b144810df5b3a14da27db01e1629d2fcb7d3db6a",
+   "keccak256": "0c1f91613a1860621e02d478615b6702b2435f3e1dec594a4dab3b2ae65aa56d",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sl_0.wasm": {
+   "bytes": 1072678,
+   "sha256": "264013e4617a1fc4260295994fe409456a552e4d8a447823284070102f6b1f6a",
+   "keccak256": "58a525b2e86cdfebd2f55331036a705bd5d437796584413774ec01bbeb7118f7",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sl_1.wasm": {
+   "bytes": 1072678,
+   "sha256": "b92ef386dac9772f1486b2ab9dd62c108e79d74f1620ac6d622004d888e4279f",
+   "keccak256": "7a29b5bcc5fdef6f19ea292304ce433c80a25769cbbdd410bd44963bf5e1dc4c",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sp3_0.wasm": {
+   "bytes": 1040686,
+   "sha256": "397c85fd457b0f9b2ba117e0fa1b21acfcea7376ae6d8caa04beccc95bd40e19",
+   "keccak256": "bc4d09f7d6eebbe3bc448adb2bd01ea29e3d0d476a6d6d6facbf3cf5e6f971d9",
+   "data_digest": "fa1394da913b",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sp3_1.wasm": {
+   "bytes": 1040686,
+   "sha256": "a106922ac87809e63e02eb231d0afdddec81e6cf97bf917e288b22bee26c8327",
+   "keccak256": "c67607603a6cfbc56f65ad0f93090a94b8ba8f809020b15a3a0a901f94336712",
+   "data_digest": "fa1394da913b",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sp3_2.wasm": {
+   "bytes": 1040686,
+   "sha256": "2e4a2e4d306e0a80ecc8b50509e85d9551b9a4d87728fad3235887ac061655f9",
+   "keccak256": "e4d36c3f7ca5f1bc0dbc1cdd5f3e06a56aefecbea003d99befc6903db47d6cb7",
+   "data_digest": "fa1394da913b",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sp_q0.wasm": {
+   "bytes": 1040671,
+   "sha256": "cc540ddbf81ffc0189df16f403b85330113cca8d1b607b01fb9e01e753cdebe2",
+   "keccak256": "f04549b29a2cf5c4f11017fd2ab36f62afc4cb615495333f464fedbfcc612854",
+   "data_digest": "fa1394da913b",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sv_0.wasm": {
+   "bytes": 1072677,
+   "sha256": "cf7353bf6920a1ca4064fc1521b972421e1fd5969a8f97a0f4bef4faba623de4",
+   "keccak256": "25b95d8699e69b90e9fc2b4537c75f353c60954a1b815042df80d0ba7dd4bcea",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/sv_1.wasm": {
+   "bytes": 1072677,
+   "sha256": "faf00195fd5edde1ee6e96aae4720df38f8aaa98d351a4d8a1fb3043f7df1d21",
+   "keccak256": "ef12e06dae987bdd3003202704d53798f8f8e0b478a437b9f72f17191c3d8299",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/ta_t50.wasm": {
+   "bytes": 23987519,
+   "sha256": "d6e632d50f205a2f5d5e2ea7dc1e73ac115cfb65b4052121065d7ef637ef185a",
+   "keccak256": "01cb870da46cebfc2662a5f4fcdacff196b0287cf5456bc4b04b70af6b143c0f",
+   "data_digest": "1d7b11d7c9d7",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/ta_t70.wasm": {
+   "bytes": 23987519,
+   "sha256": "5e5c26af960b674807afbf4663652118408666080e10e0cd687540a0c0a4655e",
+   "keccak256": "ba9c7dc57c7776826d7302e8b88a892135b15bd7bc0835ee564c2cd3e56d5f4c",
+   "data_digest": "1d7b11d7c9d7",
+   "our_intent_marker": true,
+   "walrus_processed": true,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tae_9.wasm": {
+   "bytes": 1068167,
+   "sha256": "084802cadbf2dd3c373b4e0c20d6a6c4a0c6606bcd7784956f70ccee59f758d4",
+   "keccak256": "47b7d32f7ddbb0934f6eeed6030550336246d4ac1ee185c0bb53772b239fdaae",
+   "data_digest": "00e4fbfdd244",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tae_98.wasm": {
+   "bytes": 1068167,
+   "sha256": "fafda520e99b7f52747195d2c17446cc2db3afe49e0392df5a47b0040144a197",
+   "keccak256": "e1ff9791bf6b2201088fd63d90e297181901515404014b3e2ee6d675c0564b3f",
+   "data_digest": "00e4fbfdd244",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tae_9b.wasm": {
+   "bytes": 1068167,
+   "sha256": "bc717df4a97b0b6e0f6853a799b98f1b1bf961bd9c4d52576515428ba70111fa",
+   "keccak256": "7edc25cb33638f9b5540e89b9de8b68462c30ae876644b2bb4fc0873dc5a3614",
+   "data_digest": "00e4fbfdd244",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tap1.wasm": {
+   "bytes": 1068110,
+   "sha256": "71b6101d01de6ea7f8126af528747cf7a31e0024df02c1266cd81b2fd0a6fb16",
+   "keccak256": "7aa4033fcee3220da56a80d24a3c10243d8a01af4af9fbc72f1df3dd35397023",
+   "data_digest": "00e4fbfdd244",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tap2.wasm": {
+   "bytes": 1068110,
+   "sha256": "2af1459b258c6c5899be77231936729db818400154acb99bb4a34934f312c4f9",
+   "keccak256": "a8599189a36b035c69e58ea624d9b74a4a9af328a7340e97e8a143d85c108c86",
+   "data_digest": "00e4fbfdd244",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tap4.wasm": {
+   "bytes": 1068104,
+   "sha256": "7c8aac1f019287c20ed8fb8948ab9bc016ce7f19cd7c36d03f6907813a6f90c4",
+   "keccak256": "1e50dd7d058180bc4dc04c29678f50d7e7174c8988732dc6a6dcf299bc88411a",
+   "data_digest": "00e4fbfdd244",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tg_n0.wasm": {
+   "bytes": 23988921,
+   "sha256": "3230f7834157cd7b57a1442a51665f90b738a3bcd6169547e5e472bfe6fab550",
+   "keccak256": "6eaa6fe893b6f470462baba35bd0cc23c994b34a8815dcb0bfc38eb50ddd5c05",
+   "data_digest": "edb38726d25d",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tg_n1.wasm": {
+   "bytes": 23988921,
+   "sha256": "11f0379cdebbfa9ec47d69e2f31ab1f3cef9dfe7cf52bb8edd25a86371898274",
+   "keccak256": "05ccc2500ec5f1487f2801badc4ec29c44e781e6d900086872d9c395172edf13",
+   "data_digest": "edb38726d25d",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tg_n2.wasm": {
+   "bytes": 23988921,
+   "sha256": "6eb9400b536af853024eb2eef7739e7c3c92275dd600e5d38dda2223a8d61062",
+   "keccak256": "08d8db950ac20d7afa250634a691575ba001c04134f4bd28efddf6d4b772ece3",
+   "data_digest": "edb38726d25d",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/thc_r5.wasm": {
+   "bytes": 23990254,
+   "sha256": "c0ac2af7bb09ee79add3c0026ad99cda3354b1d3381b6f170619e703ae7b5506",
+   "keccak256": "02b596f3fc07b4d031a85558c15b4d918349983af7993dd3a30fb196eaeabb74",
+   "data_digest": "89e786b8edb3",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tk_n0.wasm": {
+   "bytes": 23988925,
+   "sha256": "bec45bca7123eb36e903b587ee4811f2acc626b4b755c6bdb423832e6ccb2795",
+   "keccak256": "0e68a1d83be6e074fa57cae4dab1b56c256f6c65f5f61db40b2c1ff557edcc19",
+   "data_digest": "e77b76aa2574",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tk_n1.wasm": {
+   "bytes": 23988925,
+   "sha256": "d3b2af20e6db510aad0f9d5334e0f123dfe291a66b9d48d2e16e8449ad8a548d",
+   "keccak256": "ed6451065d9e6a54f0ad3f736cee747c57ea26ff18112502f816c827f6776d65",
+   "data_digest": "e77b76aa2574",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tk_n2.wasm": {
+   "bytes": 23988925,
+   "sha256": "0f93e557daae4a12d38617bf1d6ab63102819c2ede2f9007f80ab947c6e39378",
+   "keccak256": "2dc978227d68584125a216117c3fd563ca774aa8dd1315c899f187dfef7ddc9d",
+   "data_digest": "e77b76aa2574",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tv2_q0.wasm": {
+   "bytes": 1040670,
+   "sha256": "0f58fb1ff1a8a9a33101065077ee13be29237f8d1d511a8fab277972a98ef236",
+   "keccak256": "36632dd865c37fd13d4cad86cebd48c5b7c941f0fde660f003b52bdde8d95e6c",
+   "data_digest": "85f3acfe01cf",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tv3_0.wasm": {
+   "bytes": 1040685,
+   "sha256": "f05a1eaf4ee33667174265d6ebf0cfd55a84f6d2888cfd69bbd58a6bb804c079",
+   "keccak256": "987e463be63dbf885f93c9c9fad324f73e4fbfb24ad519b12b619fe6e5899b4b",
+   "data_digest": "85f3acfe01cf",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tv3_1.wasm": {
+   "bytes": 1040685,
+   "sha256": "a6ea8521e80b51897a8ac6d04205150df8c7cfc6b5e874a3e75e1192e5e0eda6",
+   "keccak256": "9ba9038ef09ed3ec4ff18d656a262e071454701e712a9837586100b58c8d8104",
+   "data_digest": "85f3acfe01cf",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tv3_2.wasm": {
+   "bytes": 1040685,
+   "sha256": "b1562892b8be3045109f9e61e46478ed08ee1749af580ace9515f30093d04cbc",
+   "keccak256": "5ae1c28540b98fd2829dce9899bbdda6bcb887e8880aadfd46799bd45a1a06c4",
+   "data_digest": "85f3acfe01cf",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/tw_f50.wasm": {
+   "bytes": 23990235,
+   "sha256": "ff6be56a69ad70d4a1bb8949cc7c65f0c880ff4748f5cfb3ec58607bea49d1dd",
+   "keccak256": "2baa027ede172bbca0f075f8e2a08f058c4cd96e1aa99ef8a4ba7f59372cb327",
+   "data_digest": "ea30955646d7",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/us_q0.wasm": {
+   "bytes": 1072652,
+   "sha256": "a6ead138c55f581cb3f0a9a2706ec10585cf25e7dd8c28a256a286f9193ebda2",
+   "keccak256": "32bda79434057300e37c4f80ac9f81b36ea7b7251364a533ab797d5a2b7c8ad2",
+   "data_digest": "4c5f352dc8b7",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/vv_q0.wasm": {
+   "bytes": 23990239,
+   "sha256": "f750ece05aaef85255dfe40c5283615bb0d0e1d6064093723a1c73dc0018d1f0",
+   "keccak256": "35dd43bffc66c657466bc81d960af7d4249037582da12583b0ed0af825832082",
+   "data_digest": "2161bb0c5a0c",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xlg2_0.wasm": {
+   "bytes": 1040688,
+   "sha256": "824befdef69b580f6bd44a9022ae8f43ea45642a5523087d175f06bd84db2063",
+   "keccak256": "ce56ced9230fd67eb25cce8de8c5e2966bcc5416a5a179f25404a74c7588a615",
+   "data_digest": "ac3cb83ac288",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xlg2_1.wasm": {
+   "bytes": 1040688,
+   "sha256": "e421281e9416f716cf0696a42e0e5b01379c976dfffd45d07650911e46895937",
+   "keccak256": "04fab167874716a35156d757e9415931b7d2ed5794680aaaa26dbc9fb5ec80ad",
+   "data_digest": "ac3cb83ac288",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xlg2_2.wasm": {
+   "bytes": 1040688,
+   "sha256": "2d55237ad318a40f43bf02aa5c4a512abf5ccd4043237d419d4aa70c063be6dc",
+   "keccak256": "c314517bd3e2c7a658d748a283927b680fb6d5aee59d7b48771a483f4effb3b3",
+   "data_digest": "ac3cb83ac288",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xlg_0.wasm": {
+   "bytes": 1066360,
+   "sha256": "6bf2bc7bf7df52ed6f7a1ac62cb7ed04547d5ebb0257786a645680693e2a04d0",
+   "keccak256": "93eec1c8c517ffe5e1d259693f8a63f6dd73336478f7ccda772d02240bd1b782",
+   "data_digest": "fcafd531e689",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xlg_1.wasm": {
+   "bytes": 1066360,
+   "sha256": "24a94c6f8ce2fbb06170398952cdf39b68499a884ff4f43f586e926292cc5125",
+   "keccak256": "9958d584f4d149d0ee3959ecd9f081ae6ea47ddb59b9131ee01fe17865f00570",
+   "data_digest": "fcafd531e689",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xlg_2.wasm": {
+   "bytes": 1066360,
+   "sha256": "ebb53434bf7f7ca610e07790d19a00dc0e171266c48e4db4a013dd84a8ab5119",
+   "keccak256": "5e6ec6752e419b98269af869b7e6ebbdcdf2adc194b46d939f815eb452166a84",
+   "data_digest": "fcafd531e689",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xtg_0.wasm": {
+   "bytes": 1040684,
+   "sha256": "5aa0506dcbe4923c80dd86520902745d87a9f9502a310a80e9ed1b70b2f525bf",
+   "keccak256": "fa31f5896db12cedc53ace8b0f3cdf92fce4ce8c7a677fa105f44904b1fcc0f6",
+   "data_digest": "90deab59bf63",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xtg_1.wasm": {
+   "bytes": 1040684,
+   "sha256": "6de3cbfbf368b5bb20f47ac4dd47881538e756a977ffec8b95349a60cd139b90",
+   "keccak256": "68c4f36cc6143b092fb6e39532fcb4d750ec75825b47883cc7a2c69d9a4b01a8",
+   "data_digest": "90deab59bf63",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/lock/xtg_2.wasm": {
+   "bytes": 1040684,
+   "sha256": "a1fee124788679c237c44ce34950863687d9e457489ed9b9c939b8a8697c1e32",
+   "keccak256": "4b5040dbf5b5928c30bba4e06c3df3a67b9b3f5111cee3086b2f1b1fa13ccc83",
+   "data_digest": "90deab59bf63",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
   "dist/reclaim/academic_search.wasm": {
    "bytes": 9268,
    "sha256": "77e62692b81b02b0271b1b83bd20bcb8b74b7cd4c8398ede28965227d5e0921a",
@@ -3380,6 +5087,708 @@
     "memory",
     "rank_answer",
     "rank_answer_cached"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cv_pen_a.wasm": {
+   "bytes": 1075027,
+   "sha256": "5f09d9314876a4c64bebb4ca865b3ab1919d2f028198cfb18adc9b74c1da924b",
+   "keccak256": "cf0009eb7140ad11df32db8622ec8a81c12073147783082079461d4528a36ab4",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cv_sw_c.wasm": {
+   "bytes": 1073454,
+   "sha256": "d0c3c85235e3b798f94f72afd63bc55f1bda2be4616d35d681096f42dd98faae",
+   "keccak256": "9ef34707cc3fb5e0642d17b27b8d7f24ab39a2520051f0700c77c7f93836e811",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cv_tie1.wasm": {
+   "bytes": 1075027,
+   "sha256": "f7d3205b222c5f533604e96fa2f1d81adce0d59976cb1e3c2aad1334dac1742f",
+   "keccak256": "3ec8bd2319a04700324cf2585755430bf30f4d5fe8a2ed0d88a7344f62b1928f",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cv_tie2.wasm": {
+   "bytes": 1075025,
+   "sha256": "3b8386f0abc5f3761d5b4185180c35848daa346216103a365dabf7c2e2f969c4",
+   "keccak256": "8adaddfb5f7cfb0e5b334265657b5b97201460365048eb80fae52122304eb951",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cv_tie3.wasm": {
+   "bytes": 1075028,
+   "sha256": "a21820e4545e894c1de94e7a54453ff1b283c56dfbb6a9876ad6d74573c70785",
+   "keccak256": "edde27e454dd9e37ed032b5cf6f3ee0f5d33630eb734e8cfbd9688ac3ce7444e",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cv_tie4.wasm": {
+   "bytes": 1074981,
+   "sha256": "d3ace6cf3ccce3897979c99c585f1360a06e748c7ddf7aace70d9a3dd174f65c",
+   "keccak256": "15a50ea69b0c67253326eeb0bec727bcf6612d6663a6fc05bbcb3e3d8a9b4629",
+   "data_digest": "4c9498cad494",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cvr_n1_15.wasm": {
+   "bytes": 1073168,
+   "sha256": "8b9205ea30d85214bfd5504cf13dc63b03e5a5051a969ffbae7badeb697b1004",
+   "keccak256": "021f6eae6200c1c8e273b06dde7fc8d5c6a452fc4b7966d8e863fcbbcb6ec736",
+   "data_digest": "6488aef28c25",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cvr_n1_35.wasm": {
+   "bytes": 1073168,
+   "sha256": "1be189bcc254a9c9fc7fd9e23cc9c01d053abe56ca9aedee34d5d8d188655d25",
+   "keccak256": "3a8fcbaa2b1be448423a12c081e883095031bd13e1dcd6f909ddd260a1f1973c",
+   "data_digest": "6488aef28c25",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cvr_n2_50.wasm": {
+   "bytes": 1073246,
+   "sha256": "2fb9e57842c907711a08b593a55ac5ea42c0c9c19b09ab764b4a572ef10714d4",
+   "keccak256": "926bf3cc722f83c84ecb1454380c67a8534876b058a242d6beec4f0ada9284ee",
+   "data_digest": "6488aef28c25",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/cvr_n3_50.wasm": {
+   "bytes": 1073246,
+   "sha256": "1e337a87a87aebb9b7c11f7f4ebf7520a9f772c957dc13ccb31dab022b297647",
+   "keccak256": "acc99f5b7e0f82a66861115ce5de475e883a7a2756b558349409afe56f1e7067",
+   "data_digest": "6488aef28c25",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/lg_r012.wasm": {
+   "bytes": 23986957,
+   "sha256": "17b0b6f4ec7d413762215f274ec01a1333e7f8d1d63ad1b281811e9717bbecc4",
+   "keccak256": "ce0b61a3f6bea3e2c5ed0a378fb80f01f2aaa5e701677c73d553a3043c9e6bbe",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/lg_r024.wasm": {
+   "bytes": 23986957,
+   "sha256": "2517fe76d8f7425d2c9f853e73cf14820c88c36a8440449d6754971e96acb4b8",
+   "keccak256": "629a5c82fecec64993c68a4511a81d364604aa915f6ba57899d4eabb55fe9bb9",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/lg_r036.wasm": {
+   "bytes": 23986957,
+   "sha256": "1f399d0a303e79e620d7a4ea1e79c3d84f416217f13bd07ef068fbe115607659",
+   "keccak256": "97476182491a129362502192be68b9a6f7064003c3613260bedffbd79a1359cb",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/lg_r048.wasm": {
+   "bytes": 23986957,
+   "sha256": "684e7c8d60407e3eb7acab3970485069fbbb5888b8c01419906c304835ee2ebd",
+   "keccak256": "bf262c12553f04149f6534fcade6b764558fe528ec791102febc43447341f0df",
+   "data_digest": "a45a086caaac",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v1_55.wasm": {
+   "bytes": 1074590,
+   "sha256": "d8b89e266ceb1181355310846c28788244753da02c4d23884c2886f44df678e0",
+   "keccak256": "03eb391ca3f239ab0d1513d6b4a0b635dcccce613e9a18479c54d4701f8a3e37",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v1_75.wasm": {
+   "bytes": 1074590,
+   "sha256": "2baf4d5563568267f6a96be6d955525ccc51b4b9cbf070a2139a5add14be966a",
+   "keccak256": "ccde135329cef7299b537d240546c23e9150de9b3d96ad35394d45d65d091ba9",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v2_67.wasm": {
+   "bytes": 1074838,
+   "sha256": "c58c2ef501b77f72b578a69268d2f464b9483b6018d74d10ee794534cd322187",
+   "keccak256": "ebfb699635a00d9493d6cb8d59d991ebd7d0039d4c907d86d349e042a6a32504",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v3_76.wasm": {
+   "bytes": 1074613,
+   "sha256": "11823d146725da8ce348609e089f7bb0fc392dfcd8404660f2001554e4fc887b",
+   "keccak256": "44bc57d94a285311b513aa56ddd8b44d189bbd198030f4428eafc611f5cf8dcc",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v4_75.wasm": {
+   "bytes": 1074590,
+   "sha256": "02b77e0934cc64f66c253139a1f7573489d518a942a18246cb08f6dbbb3f7d8d",
+   "keccak256": "c245df02e0983c2b17c3a18295aaff46825042ed5317bdc9aaabfaf49c145116",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v5_55.wasm": {
+   "bytes": 1073743,
+   "sha256": "c31cdaa23c94a20d6914fdddf4b7e51138d2ed3df9b52905cfc25d0b0a5e2a78",
+   "keccak256": "ba3593414c05d97a38be8d9b85cb6451b8f877b7777b5b9d91ec3a06ca31c8fc",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v5_75.wasm": {
+   "bytes": 1073743,
+   "sha256": "973114bb9b2ef306fb9e5344d5dde5a8f2bd91665d3cd3d1ea74cd21e70b19e2",
+   "keccak256": "fd031359851d906147944bcbd826f3f823cf5eea1335fa94dfe987cf01cb5692",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v5_75s.wasm": {
+   "bytes": 1073743,
+   "sha256": "5d4d58a1b7350bbc61b81e245bed90d99615e10585cf3c49215f712b4a9ebbe8",
+   "keccak256": "f9d178a836fc1f9d6f3a75d10700857795e7840ccb8100ed30d71d742546621e",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v5_75t.wasm": {
+   "bytes": 1073743,
+   "sha256": "1a7d589d8c71c3164d9affaf555ecf01bd3288edcebc8a5c55d3e831d8fc87b8",
+   "keccak256": "bcc340b01c4124d672aab81ca02bb09d4346d9c34e78e058e9bca1f4802a9132",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v5_85.wasm": {
+   "bytes": 1073743,
+   "sha256": "fedfba262d87d7d65ea9b94257ec368a453024302de7f0acba952b7cdc17397c",
+   "keccak256": "39e7ee3ad91ba1369ccf6f6ceb1637eb35064520f3ae8257205dcf7b065bb665",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v5_90.wasm": {
+   "bytes": 1073743,
+   "sha256": "6f275d59f5a0dab12aab2c53290ab9ccf52190f646e3c1836a57b1f950124341",
+   "keccak256": "227234f2353c0374e9bbf292146c36bb019168cece57e88615ad7eff3b1708d7",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v6_74.wasm": {
+   "bytes": 1074607,
+   "sha256": "e75ec8b70f20d7268e047d73ea02d61057b730f055122596a36059d4732f8a4e",
+   "keccak256": "d426aee2720997bf003c6e4b2cbb3338b5fe1f4e7eae37326fea0872fde13e55",
+   "data_digest": "f57c2f172238",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v7_75.wasm": {
+   "bytes": 1072674,
+   "sha256": "134bb62c4e231ef20b9564805d581d07e34e8d728f2ee9f885698f49f66d6431",
+   "keccak256": "879bb48f03d6acf921d8ced7cd8cf0f35638076264ec80234ad673b96e22e603",
+   "data_digest": "c27e95e45b89",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v7_85.wasm": {
+   "bytes": 1072674,
+   "sha256": "173e652bc84da5b60b9968c85604edb2ddbed36fd048a9e7ebeb1225d2ca30cf",
+   "keccak256": "956373c57862e133b306efaae5e91fd655262346a2467435a1fba819c96a7cd8",
+   "data_digest": "c27e95e45b89",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/ltr_v8_75.wasm": {
+   "bytes": 1072674,
+   "sha256": "c07474c776a8220fd223fab99c4e5f12bd576f4c5655b28ba390579ce6244564",
+   "keccak256": "25f334888ddf57c5c1484f43148638c4033f1492abbee9575fe47043873fba5f",
+   "data_digest": "c27e95e45b89",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tar_b40.wasm": {
+   "bytes": 23990692,
+   "sha256": "26c3de8f7880c55c432a0094dfd0fc66d8f3447b0565a5f5b5c815c5f8c04584",
+   "keccak256": "6352e4872f44fa21ce126958b48ce47bf691bfdf0a020e0e66c7b02048af04be",
+   "data_digest": "27c54138f1f0",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tar_b70.wasm": {
+   "bytes": 23990697,
+   "sha256": "398fb3ce1af61bba66f0a0bc26abfd445ea9f2de67793a20d6fb88a8fef71e5e",
+   "keccak256": "a433e12697e4fe3e20b03df53b258bbaffe97969dfb3b69d3bdd0ba963412b9d",
+   "data_digest": "27c54138f1f0",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tar_be4.wasm": {
+   "bytes": 23990716,
+   "sha256": "bc4e5d06e9a892f103b4a7d20ec3d9dd568eba331fca51a516f8033d8d6af8b8",
+   "keccak256": "2c855091f1cc22eac492824b9c07ffda72501a7d32d6e47b795332afecdb08d6",
+   "data_digest": "8e9e16c87eee",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tar_be4n.wasm": {
+   "bytes": 23990964,
+   "sha256": "ce08792283bb76c61401127fea9d1cdaa2c998d5e7ce9579561bed28527b8f42",
+   "keccak256": "e77d4d544f3d038b878502e613f501cb969ba1fdc28ffa9d3fbad6643c9bba0c",
+   "data_digest": "8e9e16c87eee",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tar_be7.wasm": {
+   "bytes": 23990721,
+   "sha256": "a565e2668bea7cd246e65862d2280d5f932e359a0324b7f87482b791a130c585",
+   "keccak256": "9b00bff96fe84fc383d7abdf93f4611f52e3dafb3521ad1a243578cb792a497c",
+   "data_digest": "8e9e16c87eee",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tar_echo.wasm": {
+   "bytes": 23990599,
+   "sha256": "2f88543f8ee1cbb403f8203ed17354e6945b2320f3a1d8d895554bfd090d02f1",
+   "keccak256": "bde24b2c0b77ca2822b7801c13b26762c5af3a5ca0b84ee1550959d5aa2011b4",
+   "data_digest": "27c54138f1f0",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tg_r011.wasm": {
+   "bytes": 23988921,
+   "sha256": "40478f229db994f874ad380bb4091e9fa9a5d9e11c1f9dc912a8789d9ad696aa",
+   "keccak256": "f998b1b0ab3c2a3faa410d19c67b0efd7316f70ec97516fb0c097ca19f0a32e0",
+   "data_digest": "edb38726d25d",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tg_r022.wasm": {
+   "bytes": 23988921,
+   "sha256": "e6241feaa55bd2727df4e29f82be2603beb48f3346b895455b94d272ac36ee26",
+   "keccak256": "06a7953594838befc6a3e3694f8f2396b518130c448fb3e357402bfba518d925",
+   "data_digest": "edb38726d25d",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tg_r034.wasm": {
+   "bytes": 23988921,
+   "sha256": "2a76ef7fc2eee4c3ef9814b9a380f79a4249ff2cec3c08b066692643d821332e",
+   "keccak256": "d5031fea904fec769eacffb272b3cde88853f701a10b37570a6ee3c0858215e0",
+   "data_digest": "edb38726d25d",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim5/tg_r046.wasm": {
+   "bytes": 23988921,
+   "sha256": "5dd6c295437436b9807556c927c3680d086644cc0915e2c37ce99117c19e5e5d",
+   "keccak256": "9c1d380ae78732e09f9c139b7491a53575d079866849712db7667e3112da86fe",
+   "data_digest": "edb38726d25d",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
    ],
    "lineage": "own",
    "licence": "LicenseRef-zkasuran-SAND-1.0"
