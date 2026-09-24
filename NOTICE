@@ -153,7 +153,7 @@ Every claim above is derived from the bytes, not from memory:
 ```bash
 python3 rev/provenance.py > PROVENANCE.json     # regenerate from dist/
 python3 -c "import json; print(json.load(open('PROVENANCE.json'))['counts'])"
-# {'own': 977, 'source_fork': 22, 'binary_wrap': 0}
+# {'own': 1429, 'source_fork': 32, 'binary_wrap': 0}
 ```
 
 `PROVENANCE.json` records, per file, the data-section digest that groups a build with
