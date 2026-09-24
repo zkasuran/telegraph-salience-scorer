@@ -8,7 +8,7 @@
   "leftover_crate_symbols": "Rust crate names the upstream author left in the binary"
  },
  "counts": {
-  "own": 1429,
+  "own": 1430,
   "source_fork": 32,
   "binary_wrap": 0
  },
@@ -8882,6 +8882,24 @@
    "sha256": "91e1b0c83c0e478e7087c8eb98ee465183bfac1ac3b322fa8ac3e5ddacbcda46",
    "keccak256": "41faa402873c31d7a61a8b3c320ee88ec418e6775eafb2b16cc6190fb76e73c0",
    "data_digest": "dbcc868d56f1",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim6/ta_vb09c.wasm": {
+   "bytes": 1067623,
+   "sha256": "1f1b38cfe6c123882ada5672473587e6993f8bc9fc09ba4f1ed98de4cfbc5bf5",
+   "keccak256": "969ab6effd88aea85134c2a6f774502dfee048a842a961e11db6b5493cfd3299",
+   "data_digest": "af10cd004436",
    "our_intent_marker": true,
    "walrus_processed": false,
    "leftover_crate_symbols": [],
