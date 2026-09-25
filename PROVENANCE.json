@@ -8,7 +8,7 @@
   "leftover_crate_symbols": "Rust crate names the upstream author left in the binary"
  },
  "counts": {
-  "own": 1430,
+  "own": 1431,
   "source_fork": 32,
   "binary_wrap": 0
  },
@@ -4539,9 +4539,9 @@
    "licence": "LicenseRef-zkasuran-SAND-1.0"
   },
   "dist/reclaim/currency_exchange.wasm": {
-   "bytes": 23991243,
-   "sha256": "9891aafd1d1b84597f73ee257907629089000898c149a69a2b5ff173ec657fb7",
-   "keccak256": "f042471bc1b76d590ed2db21f0aec8540b1a3f9c94e0816d6c0f83e4d95f0386",
+   "bytes": 23991277,
+   "sha256": "8071e04e83d675c6165a5ae21f003970efe588e7f925f9b48a5d4a3c0a829b73",
+   "keccak256": "df049b8f13895a7e5e30f818a0373998206219c4b5a74f237ab27bcce0af3f1c",
    "data_digest": "ebd96f1acd57",
    "our_intent_marker": true,
    "walrus_processed": false,
@@ -8882,6 +8882,24 @@
    "sha256": "91e1b0c83c0e478e7087c8eb98ee465183bfac1ac3b322fa8ac3e5ddacbcda46",
    "keccak256": "41faa402873c31d7a61a8b3c320ee88ec418e6775eafb2b16cc6190fb76e73c0",
    "data_digest": "dbcc868d56f1",
+   "our_intent_marker": true,
+   "walrus_processed": false,
+   "leftover_crate_symbols": [],
+   "exports": [
+    "TELEGRAPH_INTENT",
+    "alloc",
+    "dealloc",
+    "memory",
+    "rank_answer"
+   ],
+   "lineage": "own",
+   "licence": "LicenseRef-zkasuran-SAND-1.0"
+  },
+  "dist/reclaim6/curr_embed.wasm": {
+   "bytes": 23991243,
+   "sha256": "9891aafd1d1b84597f73ee257907629089000898c149a69a2b5ff173ec657fb7",
+   "keccak256": "f042471bc1b76d590ed2db21f0aec8540b1a3f9c94e0816d6c0f83e4d95f0386",
+   "data_digest": "ebd96f1acd57",
    "our_intent_marker": true,
    "walrus_processed": false,
    "leftover_crate_symbols": [],
